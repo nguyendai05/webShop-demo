@@ -1,7 +1,3 @@
-/* ===================================
-   LOGIN PAGE STYLES
-   Phong cách Ó thç công mù nghÇ ViÇt Nam
-   =================================== */
 
 /* Main container */
 .login-main {
@@ -319,6 +315,11 @@
     justify-content: center;
     gap: 10px;
     box-shadow: 0 4px 15px rgba(192, 57, 43, 0.3);
+}
+
+.btn-login a {
+    color: white;
+    text-decoration: none;
 }
 
 .btn-login:hover {
