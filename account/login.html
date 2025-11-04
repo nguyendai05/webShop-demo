@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <title>ng Nh­p - Website Handmake</title>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">Nhóm 10</a>
+            </div>
+            <div class="menu">
+                <li class="nav-item"><a href="../index.html">Trang chç</a></li>
+                <li class="nav-item"><a href="#">GiÛi thiÇu</a></li>
+                <li class="nav-item list-product">
+                    <a href="#" class="caret-down a red">S£n ph©m
+                        <div class="dropdown">
+                            <div class="product-items">
+                                <div class="menu-product-item">
+                                    <h2>Ó gÑm</h2>
+                                </div>
+                                <div class="menu-product-item">Phå kiÇn bàn n</div>
+                                <div class="menu-product-item">Sé nghÇ thu­t</div>
+                                <div class="menu-product-item">G× iêu kh¯c</div>
+                            </div>
+                            <img width="414" src="../public/logo.png">
+                        </div>
+                    </a>
+                    <i class="fa-solid fa-caret-down red"></i>
+                </li>
+                <li class="nav-item"><a href="#">Tin téc</a></li>
+                <li class="nav-item"><a href="#">Cía hàng</a></li>
+                <li class="nav-item"><a href="../contact.html">Liên hÇ</a></li>
+            </div>
+            <div class="others">
+                <div class="icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <div class="icon">
+                    <a href="login.html"><i class="fa-regular fa-user"></i></a>
+                </div>
+                <div class="icon badge">
+                    <a href="../wishlist.html"><i class="fa-regular fa-heart"></i></a>
+                    <span>0</span>
+                </div>
+                <div class="icon badge">
+                    <a href="../cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <span>0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="login-main">
+        <div class="login-container">
+            <!-- Left side - Decorative -->
+            <div class="login-decoration">
+                <div class="decoration-content">
+                    <h2>Ó thç công mù nghÇ ViÇt</h2>
+                    <p>Tinh t¿  MÙc m¡c  ­m b£n s¯c ViÇt</p>
+                    <div class="decoration-pattern">
+                        <i class="fa-solid fa-leaf"></i>
+                        <i class="fa-solid fa-spa"></i>
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right side - Login Form -->
+            <div class="login-form-wrapper">
+                <div class="login-form-container">
+                    <div class="login-header">
+                        <h1>ng Nh­p</h1>
+                        <p>Chào mëng b¡n quay trß l¡i</p>
+                    </div>
+
+                    <form class="login-form" id="loginForm">
+                        <div class="form-group">
+                            <label for="emailOrPhone">
+                                <i class="fa-solid fa-envelope"></i>
+                                Email ho·c SÑ iÇn tho¡i
+                            </label>
+                            <input
+                                type="text"
+                                id="emailOrPhone"
+                                name="emailOrPhone"
+                                placeholder="Nh­p email ho·c sÑ iÇn tho¡i"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">
+                                <i class="fa-solid fa-lock"></i>
+                                M­t kh©u
+                            </label>
+                            <div class="password-input-wrapper">
+                                <input
+                                    type="password"
+                                    id="password"
+                                    name="password"
+                                    placeholder="Nh­p m­t kh©u"
+                                    required
+                                >
+                                <button type="button" class="toggle-password" onclick="togglePassword()">
+                                    <i class="fa-solid fa-eye" id="toggleIcon"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-options">
+                            <label class="remember-me">
+                                <input type="checkbox" id="rememberMe" name="rememberMe">
+                                <span>Ghi nhÛ ng nh­p</span>
+                            </label>
+                            <a href="forgot-password.html" class="forgot-password">Quên m­t kh©u?</a>
+                        </div>
+
+                        <button type="submit" class="btn-login">
+                            <i class="fa-solid fa-right-to-bracket"></i>
+                            ng nh­p
+                        </button>
+                    </form>
+
+                    <div class="divider">
+                        <span>Ho·c ng nh­p b±ng</span>
+                    </div>
+
+                    <div class="social-login">
+                        <button type="button" class="btn-social btn-facebook" onclick="loginWithFacebook()">
+                            <i class="fa-brands fa-facebook-f"></i>
+                            Facebook
+                        </button>
+                        <button type="button" class="btn-social btn-google" onclick="loginWithGoogle()">
+                            <i class="fa-brands fa-google"></i>
+                            Google
+                        </button>
+                    </div>
+
+                    <div class="register-link">
+                        <p>Ch°a có tài kho£n? <a href="register.html">ng ký ngay</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="content">
+                <div class="info">
+                    <div class="info_details">
+                        <h2>Thông tin</h2>
+                        <div>
+                            <p>Tr°Ýng ¡i hÍc Nông Lâm Tp.Hcm</p>
+                        </div>
+                        <div>
+                            0337429995
+                        </div>
+                        <div>
+                            23130240@st.hcmuaf.edu.vn
+                        </div>
+                    </div>
+                    <div class="info_media">
+                        <!-- Social media icons -->
+                    </div>
+                </div>
+                <div class="policy guide">
+                    <div class="component policy">
+                        <li><a href="#" class="hover color">Chính sách b£o m­t</a></li>
+                        <li><a href="#" class="hover color">Chính sách v­n chuyÃn</a></li>
+                        <li><a href="#" class="hover color">Chính sách Õi tr£</a></li>
+                        <li><a href="#" class="hover color">Quy Ënh sí dång</a></li>
+                    </div>
+                    <div class="component guide">
+                        <li><a href="#" class="hover color">H°Ûng d«n mua hàng</a></li>
+                        <li><a href="#" class="hover color">H°Ûng d«n thanh toán</a></li>
+                        <li><a href="#" class="hover color">H°Ûng d«n giao nh­n</a></li>
+                        <li><a href="#" class="hover color">iÁu kho£n sí dång</a></li>
+                    </div>
+                </div>
+                <div class="others">
+                    <h2>ng ký nh­n tin</h2>
+                    <p>ng ký ngay! Ã nh­n nhiÁu °u ãi</p>
+                    <div class="input">
+                        <input type="text" name="Email" id="email" placeholder="Nh­p Ëa chÉ email">
+                        <button>ng ký</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle password visibility
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const toggleIcon = document.getElementById('toggleIcon');
+
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.classList.remove('fa-eye');
+                toggleIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.classList.remove('fa-eye-slash');
+                toggleIcon.classList.add('fa-eye');
+            }
+        }
+
+        // Handle login form submission
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const emailOrPhone = document.getElementById('emailOrPhone').value;
+            const password = document.getElementById('password').value;
+            const rememberMe = document.getElementById('rememberMe').checked;
+
+            // Get the redirect URL from query parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const redirectUrl = urlParams.get('redirect') || '../index.html';
+
+            // TODO: Implement actual login logic here
+            // For now, just simulate a successful login
+            console.log('Login attempt:', { emailOrPhone, password, rememberMe });
+
+            // Simulate API call
+            setTimeout(() => {
+                // Store login state (in real implementation, use secure authentication)
+                if (rememberMe) {
+                    localStorage.setItem('rememberMe', 'true');
+                    localStorage.setItem('userEmail', emailOrPhone);
+                }
+                sessionStorage.setItem('isLoggedIn', 'true');
+
+                // Redirect to previous page or dashboard
+                window.location.href = redirectUrl;
+            }, 500);
+        });
+
+        // Login with Facebook
+        function loginWithFacebook() {
+            // TODO: Implement Facebook OAuth login
+            alert('Chéc nng ng nh­p b±ng Facebook s½ °ãc c­p nh­t sau');
+        }
+
+        // Login with Google
+        function loginWithGoogle() {
+            // TODO: Implement Google OAuth login
+            alert('Chéc nng ng nh­p b±ng Google s½ °ãc c­p nh­t sau');
+        }
+
+        // Check if user is already logged in
+        if (sessionStorage.getItem('isLoggedIn') === 'true') {
+            const urlParams = new URLSearchParams(window.location.search);
+            const redirectUrl = urlParams.get('redirect') || '../index.html';
+            // Uncomment to auto-redirect logged-in users
+            // window.location.href = redirectUrl;
+        }
+
+        // Load remembered email
+        if (localStorage.getItem('rememberMe') === 'true') {
+            document.getElementById('emailOrPhone').value = localStorage.getItem('userEmail') || '';
+            document.getElementById('rememberMe').checked = true;
+        }
+    </script>
+</body>
+</html>
