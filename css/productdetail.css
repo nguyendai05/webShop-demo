@@ -1,0 +1,353 @@
+body{
+    background-color: #ffffff;
+    font-family: "Poppins", "Segoe UI", sans-serif;
+    margin:0 auto;
+    padding:0;
+}
+.product-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.product-details .container {
+    display: grid;
+    grid-template-columns:45fr 55fr;
+    gap: 30px;
+    padding-top: 30px;
+}
+
+.product-gallery .product-img {
+    background-color: rgb(255, 250, 240, 255);
+    border: 1px solid #eeeeee;
+    width: 100%;
+    height: 77%;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+.product-gallery .product-imgs {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+}
+.product-gallery .product-imgs a {
+    display: flex;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: rgb(255, 250, 240, 255);
+}
+
+.product-gallery .product-imgs img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.product-gallery .product-imgs a:hover{
+    border: 1px solid #c97a3a;
+}
+
+.product-detail-info h2 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.product-detail-info .inventory {
+    font-size: 14px;
+    font-weight: 400;
+    color: #555;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.product-detail-info .product-price {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.product-detail-info .prices {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.product-detail-info .price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #c97a3a;
+}
+
+.product-detail-info .compare-price {
+    font-size: 14px;
+    font-weight: 400;
+    color: #777;
+}
+
+.product-detail-info .sale-info {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.product-detail-info .save-amount {
+    color: #d9534f;
+    font-weight: bold;
+}
+
+.product-detail-info .product-amount-cart {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.product-detail-info .quantity label {
+    font-size: 14px;
+    font-weight: 400;
+    margin-right: 12px;
+}
+
+.product-detail-info .quantity input {
+    width: 50px;
+    height: 37px;
+    text-align: center;
+    border: 1px solid #c97a3a;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.product-detail-info .cart button {
+    font-size: 16px;
+    font-weight: bold;
+    width: 550px;
+    height: 40px;
+    background-color: #fff;
+    color: #c97a3a;
+    border: 1px solid #c97a3a;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.product-detail-info .cart button:hover {
+    background-color: #c97a3a;
+    color: #fff;
+}
+
+.product-detail-info .combo {
+    background-color: transparent;
+    border: 2px solid #eeeeee;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.product-detail-info .combo h3 {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.product-detail-info .combo ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 40px;
+}
+
+.product-detail-info .combo li {
+    text-align: center;
+}
+
+.product-detail-info .combo li img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    background-color: transparent;
+    object-fit: contain;
+}
+
+.product-detail-info .combo .price-box {
+    font-size: 14px;
+    color: #d9534f;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.product-detail-info > ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    font-size: 14px;
+    color: #555;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.product-detail-info > ul li {
+    gap: 15px;
+}
+
+.product-detail-info > ul li::before {
+    content: '✔';
+    color: #c97a3a;
+    font-weight: bold;
+}
+
+.product-detail-info .notice {
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #c97a3a;
+    text-align: center;
+    margin-top: 15px;
+}
+.product-tab > ul{
+    display: flex;
+    font-size: 16px;
+    font-weight: 500;
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    border-bottom: 1px solid #eeeeee;
+    gap: 30px;
+}
+.product-tab > ul li h3{
+    cursor: pointer;
+    margin: 0;
+
+}
+.product-tab > ul li:hover{
+    color: #c97a3a;
+}
+.product-content{
+    border-bottom: 1px solid #eeeeee;
+}
+
+.product-content p{
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: 20px;
+}
+.product-content .BoTra{
+    font-size: 19px;
+    font-weight: bold;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.product-content .BoTra:hover{
+    color: #c97a3a;
+}
+
+.product-grid {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.product-card {
+    background-color: rgb(255, 250, 240, 255);
+    border: 1px solid #eeeeee;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: box-shadow 0.4s ease;
+}
+
+.product-card:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.product-link {
+    text-decoration: none;
+    color: #333333;
+}
+
+.product-imgs {
+    position: relative;
+    padding: 10px;
+}
+.product-imgs span{
+    margin: 0 auto;
+}
+.product-imgs img {
+    width: 100%;
+    height: 100%;
+}
+
+.sale {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #d9534f;
+    color: white;
+    padding: 4px 8px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.product-info {
+    padding: 15px;
+}
+
+.product-info h3 {
+    font-size: 14px;
+    font-weight: 450;
+    margin: 0 0 10px 0;
+    height: 40px;
+}
+
+.price {
+    font-size: 14px;
+    font-weight: bold;
+    color: #d9534f;
+    margin-right: 10px;
+}
+
+.compare-price {
+    font-size: 14px;
+    color: #777777;
+}
+
+.carousel{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.carousel span{
+    font-size: 19px;
+    font-weight: bold;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.carousel span:hover{
+    color: #c97a3a;
+}
+
+.arrows button{
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.arrows button:hover{
+    background-color: #c97a3a;
+}
+.product-watched{
+    margin-bottom: 40px;
+}
+
+
