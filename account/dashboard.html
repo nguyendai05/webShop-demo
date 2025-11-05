@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <title>Tài Khoản - Dashboard - Website Handmake</title>
+</head>
+<body>
+    <main class="dashboard-main">
+        <div class="dashboard-container">
+            <!-- Sidebar Menu -->
+            <aside class="dashboard-sidebar">
+                <div class="sidebar-header">
+                    <div class="user-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <h3>Nguyễn Văn A</h3>
+                    <p>nguyenvana@email.com</p>
+                </div>
+
+                <nav class="sidebar-menu">
+                    <a href="dashboard.html" class="menu-item active">
+                        <i class="fa-solid fa-gauge"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <i class="fa-solid fa-box"></i>
+                        <span>Đơn hàng</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <i class="fa-solid fa-user-circle"></i>
+                        <span>Thông tin</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Địa chỉ</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <i class="fa-solid fa-key"></i>
+                        <span>Đổi mật khẩu</span>
+                    </a>
+                    <a href="../index.html" class="menu-item logout">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>Đăng xuất</span>
+                    </a>
+                </nav>
+
+                <!-- Decorative Pattern -->
+                <div class="sidebar-decoration">
+                    <div class="pattern-circle"></div>
+                    <div class="pattern-circle"></div>
+                    <div class="pattern-circle"></div>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <div class="dashboard-content">
+                <!-- Welcome Section -->
+                <div class="welcome-section">
+                    <div class="welcome-text">
+                        <h1>Xin chào, Nguyễn Văn A!</h1>
+                        <p>Chào mừng bạn trở lại với cửa hàng đồ thủ công mỹ nghệ</p>
+                    </div>
+                    <div class="welcome-image">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                    </div>
+                </div>
+
+                <!-- Statistics Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card card-orders">
+                        <div class="stat-icon">
+                            <i class="fa-solid fa-shopping-bag"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>12</h3>
+                            <p>Đơn hàng</p>
+                        </div>
+                        <div class="stat-decoration">
+                            <i class="fa-solid fa-certificate"></i>
+                        </div>
+                    </div>
+
+                    <div class="stat-card card-points">
+                        <div class="stat-icon">
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>850</h3>
+                            <p>Điểm tích lũy</p>
+                        </div>
+                        <div class="stat-decoration">
+                            <i class="fa-solid fa-gem"></i>
+                        </div>
+                    </div>
+
+                    <div class="stat-card card-wishlist">
+                        <div class="stat-icon">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>8</h3>
+                            <p>Yêu thích</p>
+                        </div>
+                        <div class="stat-decoration">
+                            <i class="fa-solid fa-feather"></i>
+                        </div>
+                    </div>
+
+                    <div class="stat-card card-voucher">
+                        <div class="stat-icon">
+                            <i class="fa-solid fa-ticket"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>3</h3>
+                            <p>Mã giảm giá</p>
+                        </div>
+                        <div class="stat-decoration">
+                            <i class="fa-solid fa-crown"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Orders -->
+                <div class="section-container">
+                    <div class="section-header">
+                        <h2>
+                            <i class="fa-solid fa-clock-rotate-left"></i>
+                            Đơn hàng gần đây
+                        </h2>
+                        <a href="#" class="view-all">Xem tất cả <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                    <div class="orders-list">
+                        <div class="order-item">
+                            <div class="order-image">
+                                <img src="https://i.pinimg.com/736x/df/8d/24/df8d24cf36eb3e03aa91e94c71bbccaf.jpg" alt="Sản phẩm">
+                            </div>
+                            <div class="order-info">
+                                <h4>Bình gốm hoa sen trắng</h4>
+                                <p class="order-date">
+                                    <i class="fa-regular fa-calendar"></i>
+                                    Ngày đặt: 25/10/2024
+                                </p>
+                                <p class="order-id">Mã đơn: #DH001234</p>
+                            </div>
+                            <div class="order-status">
+                                <span class="status-badge status-shipping">Đang giao</span>
+                                <p class="order-price">450.000đ</p>
+                            </div>
+                            <div class="order-actions">
+                                <a href="#" class="btn-detail">Chi tiết</a>
+                            </div>
+                        </div>
+
+                        <div class="order-item">
+                            <div class="order-image">
+                                <img src="https://i.pinimg.com/736x/3b/62/8f/3b628f2e7b3e9e7f8d8f1e8f8d8f8d8f.jpg" alt="Sản phẩm">
+                            </div>
+                            <div class="order-info">
+                                <h4>Chén sứ họa tiết truyền thống</h4>
+                                <p class="order-date">
+                                    <i class="fa-regular fa-calendar"></i>
+                                    Ngày đặt: 20/10/2024
+                                </p>
+                                <p class="order-id">Mã đơn: #DH001233</p>
+                            </div>
+                            <div class="order-status">
+                                <span class="status-badge status-completed">Hoàn thành</span>
+                                <p class="order-price">320.000đ</p>
+                            </div>
+                            <div class="order-actions">
+                                <a href="#" class="btn-detail">Chi tiết</a>
+                            </div>
+                        </div>
+
+                        <div class="order-item">
+                            <div class="order-image">
+                                <img src="https://i.pinimg.com/736x/f4/f0/cb/f4f0cbc735a15b5e88b80eec0a265860.jpg" alt="Sản phẩm">
+                            </div>
+                            <div class="order-info">
+                                <h4>Tượng gỗ điêu khắc thủ công</h4>
+                                <p class="order-date">
+                                    <i class="fa-regular fa-calendar"></i>
+                                    Ngày đặt: 15/10/2024
+                                </p>
+                                <p class="order-id">Mã đơn: #DH001232</p>
+                            </div>
+                            <div class="order-status">
+                                <span class="status-badge status-completed">Hoàn thành</span>
+                                <p class="order-price">1.250.000đ</p>
+                            </div>
+                            <div class="order-actions">
+                                <a href="#" class="btn-detail">Chi tiết</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Favorite Products -->
+                <div class="section-container">
+                    <div class="section-header">
+                        <h2>
+                            <i class="fa-solid fa-heart"></i>
+                            Sản phẩm yêu thích
+                        </h2>
+                        <a href="#" class="view-all">Xem tất cả <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                    <div class="wishlist-grid">
+                        <div class="wishlist-item">
+                            <div class="wishlist-image">
+                                <img src="https://i.pinimg.com/736x/df/8d/24/df8d24cf36eb3e03aa91e94c71bbccaf.jpg" alt="Sản phẩm">
+                                <button class="btn-remove-wishlist">
+                                    <i class="fa-solid fa-heart"></i>
+                                </button>
+                            </div>
+                            <div class="wishlist-info">
+                                <h4>Bình hoa gốm sứ</h4>
+                                <p class="wishlist-price">350.000đ</p>
+                                <a href="#" class="btn-add-cart">
+                                    <i class="fa-solid fa-cart-plus"></i>
+                                    Thêm vào giỏ
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="wishlist-item">
+                            <div class="wishlist-image">
+                                <img src="https://i.pinimg.com/736x/3b/62/8f/3b628f2e7b3e9e7f8d8f1e8f8d8f8d8f.jpg" alt="Sản phẩm">
+                                <button class="btn-remove-wishlist">
+                                    <i class="fa-solid fa-heart"></i>
+                                </button>
+                            </div>
+                            <div class="wishlist-info">
+                                <h4>Chén trà gốm đất</h4>
+                                <p class="wishlist-price">280.000đ</p>
+                                <a href="#" class="btn-add-cart">
+                                    <i class="fa-solid fa-cart-plus"></i>
+                                    Thêm vào giỏ
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="wishlist-item">
+                            <div class="wishlist-image">
+                                <img src="https://i.pinimg.com/736x/f4/f0/cb/f4f0cbc735a15b5e88b80eec0a265860.jpg" alt="Sản phẩm">
+                                <button class="btn-remove-wishlist">
+                                    <i class="fa-solid fa-heart"></i>
+                                </button>
+                            </div>
+                            <div class="wishlist-info">
+                                <h4>Tượng gỗ điêu khắc</h4>
+                                <p class="wishlist-price">850.000đ</p>
+                                <a href="#" class="btn-add-cart">
+                                    <i class="fa-solid fa-cart-plus"></i>
+                                    Thêm vào giỏ
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="wishlist-item">
+                            <div class="wishlist-image">
+                                <img src="https://i.pinimg.com/736x/df/8d/24/df8d24cf36eb3e03aa91e94c71bbccaf.jpg" alt="Sản phẩm">
+                                <button class="btn-remove-wishlist">
+                                    <i class="fa-solid fa-heart"></i>
+                                </button>
+                            </div>
+                            <div class="wishlist-info">
+                                <h4>Đĩa sứ hoa văn</h4>
+                                <p class="wishlist-price">420.000đ</p>
+                                <a href="#" class="btn-add-cart">
+                                    <i class="fa-solid fa-cart-plus"></i>
+                                    Thêm vào giỏ
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Account Info -->
+                <div class="section-container">
+                    <div class="section-header">
+                        <h2>
+                            <i class="fa-solid fa-user-circle"></i>
+                            Thông tin cá nhân
+                        </h2>
+                        <a href="#" class="view-all">Chỉnh sửa <i class="fa-solid fa-pen"></i></a>
+                    </div>
+                    <div class="account-info-grid">
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            <div class="info-details">
+                                <p class="info-label">Họ và tên</p>
+                                <p class="info-value">Nguyễn Văn A</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="info-details">
+                                <p class="info-label">Email</p>
+                                <p class="info-value">nguyenvana@email.com</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div class="info-details">
+                                <p class="info-label">Số điện thoại</p>
+                                <p class="info-value">0123 456 789</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="info-details">
+                                <p class="info-label">Địa chỉ</p>
+                                <p class="info-value">123 Đường ABC, Quận 1, TP.HCM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
