@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/profile.css">
+    <title>Thông Tin Tài Khoản - Website Handmake</title>
+</head>
+<body>
+    <main class="dashboard-main">
+        <div class="dashboard-container">
+            <!-- Sidebar Menu -->
+            <aside class="dashboard-sidebar">
+                <div class="sidebar-header">
+                    <div class="user-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <h3>Nguyễn Văn A</h3>
+                    <p>nguyenvana@email.com</p>
+                </div>
+
+                <nav class="sidebar-menu">
+                    <a href="dashboard.html" class="menu-item">
+                        <i class="fa-solid fa-gauge"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <i class="fa-solid fa-box"></i>
+                        <span>Đơn hàng</span>
+                    </a>
+                    <a href="account-profile.html" class="menu-item active">
+                        <i class="fa-solid fa-user-circle"></i>
+                        <span>Thông tin</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Địa chỉ</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <i class="fa-solid fa-key"></i>
+                        <span>Đổi mật khẩu</span>
+                    </a>
+                    <a href="../index.html" class="menu-item logout">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>Đăng xuất</span>
+                    </a>
+                </nav>
+
+                <!-- Decorative Pattern -->
+                <div class="sidebar-decoration">
+                    <div class="pattern-circle"></div>
+                    <div class="pattern-circle"></div>
+                    <div class="pattern-circle"></div>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <div class="dashboard-content">
+                <!-- Page Header -->
+                <div class="page-header">
+                    <div class="header-content">
+                        <h1>
+                            <i class="fa-solid fa-user-circle"></i>
+                            Thông tin tài khoản
+                        </h1>
+                        <p>Quản lý thông tin cá nhân của bạn</p>
+                    </div>
+                    <div class="header-decoration">
+                        <i class="fa-solid fa-palette"></i>
+                    </div>
+                </div>
+
+                <!-- Profile Form Container -->
+                <div class="profile-container">
+                    <!-- Success Message (hidden by default) -->
+                    <div class="success-message" id="successMessage">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Cập nhật thông tin thành công!</span>
+                    </div>
+
+                    <form class="profile-form" id="profileForm" action="account-profile.html" method="get">
+                        <!-- Avatar Upload Section -->
+                        <div class="avatar-section">
+                            <div class="avatar-upload-wrapper">
+                                <div class="current-avatar">
+                                    <img src="https://i.pinimg.com/736x/df/8d/24/df8d24cf36eb3e03aa91e94c71bbccaf.jpg" alt="Avatar" id="avatarPreview">
+                                    <div class="avatar-overlay">
+                                        <i class="fa-solid fa-camera"></i>
+                                    </div>
+                                </div>
+                                <div class="avatar-upload-info">
+                                    <h3>Ảnh đại diện</h3>
+                                    <p>Chọn ảnh có kích thước tối đa 2MB</p>
+                                    <label for="avatarInput" class="btn-upload">
+                                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                                        Tải ảnh lên
+                                    </label>
+                                    <input type="file" id="avatarInput" name="avatar" accept="image/*" hidden>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Personal Information Section -->
+                        <div class="form-section">
+                            <div class="section-title">
+                                <i class="fa-solid fa-id-card"></i>
+                                <h2>Thông tin cá nhân</h2>
+                            </div>
+
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="fullName">
+                                        <i class="fa-solid fa-user"></i>
+                                        Họ và tên
+                                        <span class="required">*</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="fullName"
+                                        name="fullName"
+                                        value="Nguyễn Văn A"
+                                        placeholder="Nhập họ và tên đầy đủ"
+                                        required
+                                        minlength="3"
+                                    >
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">
+                                        <i class="fa-solid fa-envelope"></i>
+                                        Email
+                                        <span class="info-badge">Không thể sửa</span>
+                                    </label>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        value="nguyenvana@email.com"
+                                        readonly
+                                        disabled
+                                    >
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="phone">
+                                        <i class="fa-solid fa-phone"></i>
+                                        Số điện thoại
+                                        <span class="required">*</span>
+                                    </label>
+                                    <input
+                                        type="tel"
+                                        id="phone"
+                                        name="phone"
+                                        value="0123456789"
+                                        placeholder="Nhập số điện thoại"
+                                        pattern="[0-9]{10,11}"
+                                        required
+                                    >
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="birthdate">
+                                        <i class="fa-solid fa-calendar-days"></i>
+                                        Ngày sinh
+                                    </label>
+                                    <input
+                                        type="date"
+                                        id="birthdate"
+                                        name="birthdate"
+                                        value="1995-01-15"
+                                    >
+                                </div>
+
+                                <div class="form-group">
+                                    <label>
+                                        <i class="fa-solid fa-venus-mars"></i>
+                                        Giới tính
+                                    </label>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="gender" value="male" checked>
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Nam</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="gender" value="female">
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Nữ</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="gender" value="other">
+                                            <span class="radio-custom"></span>
+                                            <span class="radio-text">Khác</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Address Information Section -->
+                        <div class="form-section">
+                            <div class="section-title">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                                <h2>Địa chỉ</h2>
+                            </div>
+
+                            <div class="form-grid">
+                                <div class="form-group full-width">
+                                    <label for="address">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        Địa chỉ chi tiết
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="address"
+                                        name="address"
+                                        value="123 Đường ABC"
+                                        placeholder="Số nhà, tên đường"
+                                    >
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="city">
+                                        <i class="fa-solid fa-city"></i>
+                                        Tỉnh/Thành phố
+                                    </label>
+                                    <select id="city" name="city">
+                                        <option value="">Chọn Tỉnh/Thành phố</option>
+                                        <option value="hanoi">Hà Nội</option>
+                                        <option value="hcm" selected>TP. Hồ Chí Minh</option>
+                                        <option value="danang">Đà Nẵng</option>
+                                        <option value="haiphong">Hải Phòng</option>
+                                        <option value="cantho">Cần Thơ</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="district">
+                                        <i class="fa-solid fa-building"></i>
+                                        Quận/Huyện
+                                    </label>
+                                    <select id="district" name="district">
+                                        <option value="">Chọn Quận/Huyện</option>
+                                        <option value="q1" selected>Quận 1</option>
+                                        <option value="q2">Quận 2</option>
+                                        <option value="q3">Quận 3</option>
+                                        <option value="q4">Quận 4</option>
+                                        <option value="q5">Quận 5</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="ward">
+                                        <i class="fa-solid fa-map-pin"></i>
+                                        Phường/Xã
+                                    </label>
+                                    <select id="ward" name="ward">
+                                        <option value="">Chọn Phường/Xã</option>
+                                        <option value="p1" selected>Phường Bến Nghé</option>
+                                        <option value="p2">Phường Bến Thành</option>
+                                        <option value="p3">Phường Cô Giang</option>
+                                        <option value="p4">Phường Nguyễn Cư Trinh</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Form Actions -->
+                        <div class="form-actions">
+                            <button type="reset" class="btn-cancel">
+                                <i class="fa-solid fa-rotate-left"></i>
+                                Đặt lại
+                            </button>
+                            <button type="submit" class="btn-submit">
+                                <i class="fa-solid fa-floppy-disk"></i>
+                                Cập nhật thông tin
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Account Statistics -->
+                <div class="account-stats">
+                    <div class="stat-item">
+                        <div class="stat-icon stat-icon-member">
+                            <i class="fa-solid fa-crown"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h4>Thành viên</h4>
+                            <p>Từ 15/01/2024</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-item">
+                        <div class="stat-icon stat-icon-orders">
+                            <i class="fa-solid fa-shopping-bag"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h4>12 đơn hàng</h4>
+                            <p>Đã hoàn thành</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-item">
+                        <div class="stat-icon stat-icon-points">
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h4>850 điểm</h4>
+                            <p>Tích lũy hiện tại</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-item">
+                        <div class="stat-icon stat-icon-verified">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h4>Đã xác thực</h4>
+                            <p>Email & Số điện thoại</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
