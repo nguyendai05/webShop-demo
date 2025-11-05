@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/orders.css">
+    <title>Đơn Hàng Của Tôi - Website Handmake</title>
+</head>
+<body>
+    <main class="dashboard-main">
+        <div class="dashboard-container">
+            <!-- Sidebar Menu -->
+            <aside class="dashboard-sidebar">
+                <div class="sidebar-header">
+                    <div class="user-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <h3>Nguyễn Văn A</h3>
+                    <p>nguyenvana@email.com</p>
+                </div>
+
+                <nav class="sidebar-menu">
+                    <a href="dashboard.html" class="menu-item">
+                        <i class="fa-solid fa-gauge"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="order.html" class="menu-item active">
+                        <i class="fa-solid fa-box"></i>
+                        <span>Đơn hàng</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <i class="fa-solid fa-user-circle"></i>
+                        <span>Thông tin</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Địa chỉ</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <i class="fa-solid fa-key"></i>
+                        <span>Đổi mật khẩu</span>
+                    </a>
+                    <a href="../index.html" class="menu-item logout">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>Đăng xuất</span>
+                    </a>
+                </nav>
+
+                <!-- Decorative Pattern -->
+                <div class="sidebar-decoration">
+                    <div class="pattern-circle"></div>
+                    <div class="pattern-circle"></div>
+                    <div class="pattern-circle"></div>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <div class="dashboard-content">
+                <!-- Page Header -->
+                <div class="page-header">
+                    <h1>
+                        <i class="fa-solid fa-box"></i>
+                        Đơn hàng của tôi
+                    </h1>
+                    <p>Quản lý và theo dõi đơn hàng của bạn</p>
+                </div>
+
+                <!-- Filter Section -->
+                <div class="filter-section">
+                    <div class="filter-tabs">
+                        <input type="radio" name="status-filter" id="filter-all" checked>
+                        <label for="filter-all" class="filter-label">
+                            <i class="fa-solid fa-list"></i>
+                            Tất cả
+                        </label>
+
+                        <input type="radio" name="status-filter" id="filter-pending">
+                        <label for="filter-pending" class="filter-label">
+                            <i class="fa-solid fa-clock"></i>
+                            Chờ xác nhận
+                        </label>
+
+                        <input type="radio" name="status-filter" id="filter-shipping">
+                        <label for="filter-shipping" class="filter-label">
+                            <i class="fa-solid fa-truck"></i>
+                            Đang giao
+                        </label>
+
+                        <input type="radio" name="status-filter" id="filter-completed">
+                        <label for="filter-completed" class="filter-label">
+                            <i class="fa-solid fa-check-circle"></i>
+                            Hoàn thành
+                        </label>
+
+                        <input type="radio" name="status-filter" id="filter-cancelled">
+                        <label for="filter-cancelled" class="filter-label">
+                            <i class="fa-solid fa-times-circle"></i>
+                            Đã hủy
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Orders Container -->
+                <div class="orders-container">
+                    <div class="orders-header">
+                        <h2>Danh sách đơn hàng</h2>
+                        <p class="orders-count">Tổng: <strong>8 đơn hàng</strong></p>
+                    </div>
+
+                    <div class="orders-list">
+                        <!-- Order 1: Chờ xác nhận -->
+                        <div class="order-card" data-status="pending">
+                            <div class="order-header">
+                                <div class="order-id-date">
+                                    <p class="order-code">
+                                        <i class="fa-solid fa-hashtag"></i>
+                                        DH001238
+                                    </p>
+                                    <p class="order-date">
+                                        <i class="fa-regular fa-calendar"></i>
+                                        Ngày đặt: 02/11/2024
+                                    </p>
+                                </div>
+                                <span class="status-badge status-pending">Chờ xác nhận</span>
+                            </div>
+
+                            <div class="order-products">
+                                <div class="product-item">
+                                    <div class="product-image">
+                                        <img src="https://i.pinimg.com/736x/5a/92/9e/5a929e8c8c8f8d8f8d8f8d8f8d8f8d8f.jpg" alt="Tranh đá quý">
+                                    </div>
+                                    <div class="product-info">
+                                        <p class="product-name">Tranh đá quý phong cảnh Việt Nam</p>
+                                        <p class="product-quantity">Số lượng: 1</p>
+                                    </div>
+                                    <p class="product-price">2.850.000đ</p>
+                                </div>
+                            </div>
+
+                            <div class="order-footer">
+                                <div class="order-total">
+                                    <span class="total-label">Tổng tiền:</span>
+                                    <span class="total-amount">2.850.000đ</span>
+                                </div>
+                                <div class="order-actions">
+                                    <a href="#" class="btn-action btn-detail">
+                                        <i class="fa-solid fa-eye"></i>
+                                        Xem chi tiết
+                                    </a>
+                                    <a href="#" class="btn-action btn-cancel">
+                                        <i class="fa-solid fa-times"></i>
+                                        Hủy đơn
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Order 2: Đang giao -->
+                        <div class="order-card" data-status="shipping">
+                            <div class="order-header">
+                                <div class="order-id-date">
+                                    <p class="order-code">
+                                        <i class="fa-solid fa-hashtag"></i>
+                                        DH001237
+                                    </p>
+                                    <p class="order-date">
+                                        <i class="fa-regular fa-calendar"></i>
+                                        Ngày đặt: 30/10/2024
+                                    </p>
+                                </div>
+                                <span class="status-badge status-shipping">Đang giao</span>
+                            </div>
+
+                            <div class="order-products">
+                                <div class="product-item">
+                                    <div class="product-image">
+                                        <img src="https://i.pinimg.com/736x/df/8d/24/df8d24cf36eb3e03aa91e94c71bbccaf.jpg" alt="Bình gốm">
+                                    </div>
+                                    <div class="product-info">
+                                        <p class="product-name">Bình gốm hoa sen trắng</p>
+                                        <p class="product-quantity">Số lượng: 1</p>
+                                    </div>
+                                    <p class="product-price">450.000đ</p>
+                                </div>
+                                <div class="product-item">
+                                    <div class="product-image">
+                                        <img src="https://i.pinimg.com/736x/8b/c2/3f/8bc23f9e8c8f8d8f8d8f8d8f8d8f8d8f.jpg" alt="Tách trà">
+                                    </div>
+                                    <div class="product-info">
+                                        <p class="product-name">Bộ tách trà gốm Bát Tràng</p>
+                                        <p class="product-quantity">Số lượng: 1 bộ</p>
+                                    </div>
+                                    <p class="product-price">680.000đ</p>
+                                </div>
+                            </div>
+
+                            <div class="order-footer">
+                                <div class="order-total">
+                                    <span class="total-label">Tổng tiền:</span>
+                                    <span class="total-amount">1.130.000đ</span>
+                                </div>
+                                <div class="order-actions">
+                                    <a href="#" class="btn-action btn-detail">
+                                        <i class="fa-solid fa-eye"></i>
+                                        Xem chi tiết
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Order 3: Đang giao -->
+                        <div class="order-card" data-status="shipping">
+                            <div class="order-header">
+                                <div class="order-id-date">
+                                    <p class="order-code">
+                                        <i class="fa-solid fa-hashtag"></i>
+                                        DH001236
+                                    </p>
+                                    <p class="order-date">
+                                        <i class="fa-regular fa-calendar"></i>
+                                        Ngày đặt: 28/10/2024
+                                    </p>
+                                </div>
+                                <span class="status-badge status-shipping">Đang giao</span>
+                            </div>
+
+                            <div class="order-products">
+                                <div class="product-item">
+                                    <div class="product-image">
+                                        <img src="https://i.pinimg.com/736x/a3/5e/7f/a35e7f8c8f8d8f8d8f8d8f8d8f8d8f8d.jpg" alt="Lọ hoa">
+                                    </div>
+                                    <div class="product-info">
+                                        <p class="product-name">Lọ hoa gốm men rạn cổ</p>
+                                        <p class="product-quantity">Số lượng: 2</p>
+                                    </div>
+                                    <p class="product-price">1.200.000đ</p>
+                                </div>
+                            </div>
+
+                            <div class="order-footer">
+                                <div class="order-total">
+                                    <span class="total-label">Tổng tiền:</span>
+                                    <span class="total-amount">1.200.000đ</span>
+                                </div>
+                                <div class="order-actions">
+                                    <a href="#" class="btn-action btn-detail">
+                                        <i class="fa-solid fa-eye"></i>
+                                        Xem chi tiết
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Order 4: Hoàn thành -->
+                        <div class="order-card" data-status="completed">
+                            <div class="order-header">
+                                <div class="order-id-date">
+                                    <p class="order-code">
+                                        <i class="fa-solid fa-hashtag"></i>
+                                        DH001235
+                                    </p>
+                                    <p class="order-date">
+                                        <i class="fa-regular fa-calendar"></i>
+                                        Ngày đặt: 25/10/2024
+                                    </p>
+                                </div>
+                                <span class="status-badge status-completed">Hoàn thành</span>
+                            </div>
+
+                            <div class="order-products">
+                                <div class="product-item">
+                                    <div class="product-image">
+                                        <img src="https://i.pinimg.com/736x/3b/62/8f/3b628f2e7b3e9e7f8d8f1e8f8d8f8d8f.jpg" alt="Chén sứ">
+                                    </div>
+                                    <div class="product-info">
+                                        <p class="product-name">Chén sứ họa tiết truyền thống</p>
+                                        <p class="product-quantity">Số lượng: 6</p>
+                                    </div>
+                                    <p class="product-price">960.000đ</p>
+                                </div>
+                            </div>
+
+                            <div class="order-footer">
+                                <div class="order-total">
+                                    <span class="total-label">Tổng tiền:</span>
+                                    <span class="total-amount">960.000đ</span>
+                                </div>
+                                <div class="order-actions">
+                                    <a href="#" class="btn-action btn-detail">
+                                        <i class="fa-solid fa-eye"></i>
+                                        Xem chi tiết
+                                    </a>
+                                    <a href="../cart.html" class="btn-action btn-rebuy">
+                                        <i class="fa-solid fa-refresh"></i>
+                                        Mua lại
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Order 5: Hoàn thành -->
+                        <div class="order-card" data-status="completed">
+                            <div class="order-header">
+                                <div class="order-id-date">
+                                    <p class="order-code">
+                                        <i class="fa-solid fa-hashtag"></i>
+                                        DH001234
+                                    </p>
+                                    <p class="order-date">
+                                        <i class="fa-regular fa-calendar"></i>
+                                        Ngày đặt: 20/10/2024
+                                    </p>
+                                </div>
+                                <span class="status-badge status-completed">Hoàn thành</span>
+                            </div>
+
+                            <div class="order-products">
+                                <div class="product-item">
+                                    <div class="product-image">
+                                        <img src="https://i.pinimg.com/736x/f4/f0/cb/f4f0cbc735a15b5e88b80eec0a265860.jpg" alt="Tượng gỗ">
+                                    </div>
+                                    <div class="product-info">
+                                        <p class="product-name">Tượng gỗ điêu khắc thủ công</p>
+                                        <p class="product-quantity">Số lượng: 1</p>
+                                    </div>
+                                    <p class="product-price">1.250.000đ</p>
+                                </div>
+                            </div>
+
+                            <div class="order-footer">
+                                <div class="order-total">
+                                    <span class="total-label">Tổng tiền:</span>
+                                    <span class="total-amount">1.250.000đ</span>
+                                </div>
+                                <div class="order-actions">
+                                    <a href="#" class="btn-action btn-detail">
+                                        <i class="fa-solid fa-eye"></i>
+                                        Xem chi tiết
+                                    </a>
+                                    <a href="../cart.html" class="btn-action btn-rebuy">
+                                        <i class="fa-solid fa-refresh"></i>
+                                        Mua lại
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Order 6: Hoàn thành -->
+                        <div class="order-card" data-status="completed">
+                            <div class="order-header">
+                                <div class="order-id-date">
+                                    <p class="order-code">
+                                        <i class="fa-solid fa-hashtag"></i>
+                                        DH001233
+                                    </p>
+                                    <p class="order-date">
+                                        <i class="fa-regular fa-calendar"></i>
+                                        Ngày đặt: 15/10/2024
+                                    </p>
+                                </div>
+                                <span class="status-badge status-completed">Hoàn thành</span>
+                            </div>
+
+                            <div class="order-products">
+                                <div class="product-item">
+                                    <div class="product-image">
+                                        <img src="https://i.pinimg.com/736x/c7/d4/5e/c7d45e8c8f8d8f8d8f8d8f8d8f8d8f8d.jpg" alt="Đĩa sứ">
+                                    </div>
+                                    <div class="product-info">
+                                        <p class="product-name">Bộ đĩa sứ vẽ tay</p>
+                                        <p class="product-quantity">Số lượng: 1 bộ</p>
+                                    </div>
+                                    <p class="product-price">780.000đ</p>
+                                </div>
+                            </div>
+
+                            <div class="order-footer">
+                                <div class="order-total">
+                                    <span class="total-label">Tổng tiền:</span>
+                                    <span class="total-amount">780.000đ</span>
+                                </div>
+                                <div class="order-actions">
+                                    <a href="#" class="btn-action btn-detail">
+                                        <i class="fa-solid fa-eye"></i>
+                                        Xem chi tiết
+                                    </a>
+                                    <a href="../cart.html" class="btn-action btn-rebuy">
+                                        <i class="fa-solid fa-refresh"></i>
+                                        Mua lại
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Order 7: Đã hủy -->
+                        <div class="order-card" data-status="cancelled">
+                            <div class="order-header">
+                                <div class="order-id-date">
+                                    <p class="order-code">
+                                        <i class="fa-solid fa-hashtag"></i>
+                                        DH001232
+                                    </p>
+                                    <p class="order-date">
+                                        <i class="fa-regular fa-calendar"></i>
+                                        Ngày đặt: 10/10/2024
+                                    </p>
+                                </div>
+                                <span class="status-badge status-cancelled">Đã hủy</span>
+                            </div>
+
+                            <div class="order-products">
+                                <div class="product-item">
+                                    <div class="product-image">
+                                        <img src="https://i.pinimg.com/736x/e2/8f/4a/e28f4a8c8f8d8f8d8f8d8f8d8f8d8f8d.jpg" alt="Khăn lụa">
+                                    </div>
+                                    <div class="product-info">
+                                        <p class="product-name">Khăn lụa thêu tay hoa văn</p>
+                                        <p class="product-quantity">Số lượng: 3</p>
+                                    </div>
+                                    <p class="product-price">1.350.000đ</p>
+                                </div>
+                            </div>
+
+                            <div class="order-footer">
+                                <div class="order-total">
+                                    <span class="total-label">Tổng tiền:</span>
+                                    <span class="total-amount">1.350.000đ</span>
+                                </div>
+                                <div class="order-actions">
+                                    <a href="#" class="btn-action btn-detail">
+                                        <i class="fa-solid fa-eye"></i>
+                                        Xem chi tiết
+                                    </a>
+                                    <a href="../cart.html" class="btn-action btn-rebuy">
+                                        <i class="fa-solid fa-refresh"></i>
+                                        Mua lại
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Order 8: Chờ xác nhận -->
+                        <div class="order-card" data-status="pending">
+                            <div class="order-header">
+                                <div class="order-id-date">
+                                    <p class="order-code">
+                                        <i class="fa-solid fa-hashtag"></i>
+                                        DH001231
+                                    </p>
+                                    <p class="order-date">
+                                        <i class="fa-regular fa-calendar"></i>
+                                        Ngày đặt: 05/10/2024
+                                    </p>
+                                </div>
+                                <span class="status-badge status-pending">Chờ xác nhận</span>
+                            </div>
+
+                            <div class="order-products">
+                                <div class="product-item">
+                                    <div class="product-image">
+                                        <img src="https://i.pinimg.com/736x/b5/3d/9e/b53d9e8c8f8d8f8d8f8d8f8d8f8d8f8d.jpg" alt="Túi đan">
+                                    </div>
+                                    <div class="product-info">
+                                        <p class="product-name">Túi cói đan thủ công</p>
+                                        <p class="product-quantity">Số lượng: 2</p>
+                                    </div>
+                                    <p class="product-price">560.000đ</p>
+                                </div>
+                            </div>
+
+                            <div class="order-footer">
+                                <div class="order-total">
+                                    <span class="total-label">Tổng tiền:</span>
+                                    <span class="total-amount">560.000đ</span>
+                                </div>
+                                <div class="order-actions">
+                                    <a href="#" class="btn-action btn-detail">
+                                        <i class="fa-solid fa-eye"></i>
+                                        Xem chi tiết
+                                    </a>
+                                    <a href="#" class="btn-action btn-cancel">
+                                        <i class="fa-solid fa-times"></i>
+                                        Hủy đơn
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
