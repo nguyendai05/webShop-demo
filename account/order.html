@@ -67,34 +67,36 @@
                     <p>Quản lý và theo dõi đơn hàng của bạn</p>
                 </div>
 
+                <!-- Hidden Radio Inputs for Filter -->
+                <input type="radio" name="status-filter" id="filter-all" checked>
+                <input type="radio" name="status-filter" id="filter-pending">
+                <input type="radio" name="status-filter" id="filter-shipping">
+                <input type="radio" name="status-filter" id="filter-completed">
+                <input type="radio" name="status-filter" id="filter-cancelled">
+
                 <!-- Filter Section -->
                 <div class="filter-section">
                     <div class="filter-tabs">
-                        <input type="radio" name="status-filter" id="filter-all" checked>
                         <label for="filter-all" class="filter-label">
                             <i class="fa-solid fa-list"></i>
                             Tất cả
                         </label>
 
-                        <input type="radio" name="status-filter" id="filter-pending">
                         <label for="filter-pending" class="filter-label">
                             <i class="fa-solid fa-clock"></i>
                             Chờ xác nhận
                         </label>
 
-                        <input type="radio" name="status-filter" id="filter-shipping">
                         <label for="filter-shipping" class="filter-label">
                             <i class="fa-solid fa-truck"></i>
                             Đang giao
                         </label>
 
-                        <input type="radio" name="status-filter" id="filter-completed">
                         <label for="filter-completed" class="filter-label">
                             <i class="fa-solid fa-check-circle"></i>
                             Hoàn thành
                         </label>
 
-                        <input type="radio" name="status-filter" id="filter-cancelled">
                         <label for="filter-cancelled" class="filter-label">
                             <i class="fa-solid fa-times-circle"></i>
                             Đã hủy

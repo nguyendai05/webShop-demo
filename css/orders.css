@@ -336,7 +336,7 @@
 .filter-label {
     padding: 12px 24px;
     background: #fafafa;
-    border: 2px solid transparent;
+    border: 2px solid #e0e0e0;
     border-radius: 12px;
     color: #555;
     font-size: 14px;
@@ -363,19 +363,35 @@
     z-index: -1;
 }
 
+.filter-label i {
+    position: relative;
+    z-index: 1;
+}
+
 .filter-label:hover {
     border-color: #c0392b;
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(192, 57, 43, 0.15);
 }
 
-.filter-tabs input[type="radio"]:checked + .filter-label {
+/* Styles when filter is selected */
+#filter-all:checked ~ .filter-section .filter-label[for="filter-all"],
+#filter-pending:checked ~ .filter-section .filter-label[for="filter-pending"],
+#filter-shipping:checked ~ .filter-section .filter-label[for="filter-shipping"],
+#filter-completed:checked ~ .filter-section .filter-label[for="filter-completed"],
+#filter-cancelled:checked ~ .filter-section .filter-label[for="filter-cancelled"] {
     background: linear-gradient(135deg, #c0392b 0%, #c97a3a 100%);
     color: white;
     border-color: #c0392b;
-    box-shadow: 0 6px 20px rgba(192, 57, 43, 0.3);
+    box-shadow: 0 6px 20px rgba(192, 57, 43, 0.4);
+    transform: translateY(-3px);
 }
 
-.filter-tabs input[type="radio"]:checked + .filter-label::before {
+#filter-all:checked ~ .filter-section .filter-label[for="filter-all"]::before,
+#filter-pending:checked ~ .filter-section .filter-label[for="filter-pending"]::before,
+#filter-shipping:checked ~ .filter-section .filter-label[for="filter-shipping"]::before,
+#filter-completed:checked ~ .filter-section .filter-label[for="filter-completed"]::before,
+#filter-cancelled:checked ~ .filter-section .filter-label[for="filter-cancelled"]::before {
     opacity: 1;
 }
 
@@ -702,24 +718,45 @@
 }
 
 /* Filter logic - Show/Hide orders based on status */
-#filter-all:checked ~ .orders-container .order-card {
+/* Hide the radio inputs */
+.dashboard-content > input[type="radio"] {
+    display: none;
+}
+
+/* Show only pending orders when pending filter is selected */
+#filter-pending:checked ~ .orders-container .order-card {
+    display: none;
+}
+
+#filter-pending:checked ~ .orders-container .order-card[data-status="pending"] {
     display: block;
 }
 
-#filter-pending:checked ~ .orders-container .order-card:not([data-status="pending"]) {
+/* Show only shipping orders when shipping filter is selected */
+#filter-shipping:checked ~ .orders-container .order-card {
     display: none;
 }
 
-#filter-shipping:checked ~ .orders-container .order-card:not([data-status="shipping"]) {
+#filter-shipping:checked ~ .orders-container .order-card[data-status="shipping"] {
+    display: block;
+}
+
+/* Show only completed orders when completed filter is selected */
+#filter-completed:checked ~ .orders-container .order-card {
     display: none;
 }
 
-#filter-completed:checked ~ .orders-container .order-card:not([data-status="completed"]) {
+#filter-completed:checked ~ .orders-container .order-card[data-status="completed"] {
+    display: block;
+}
+
+/* Show only cancelled orders when cancelled filter is selected */
+#filter-cancelled:checked ~ .orders-container .order-card {
     display: none;
 }
 
-#filter-cancelled:checked ~ .orders-container .order-card:not([data-status="cancelled"]) {
-    display: none;
+#filter-cancelled:checked ~ .orders-container .order-card[data-status="cancelled"] {
+    display: block;
 }
 
 /* ============================================
