@@ -329,6 +329,10 @@
 .register-decoration {
     flex: 1;
     background: linear-gradient(135deg, #c97a3a 0%, #d4925f 50%, #c0392b 100%);
+    background-image: url("https://i.pinimg.com/1200x/f4/f0/cb/f4f0cbc735a15b5e88b80eec0a265860.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
     padding: 60px 40px;
     display: flex;
     align-items: center;
@@ -375,58 +379,44 @@
     }
 }
 
-.decoration-content {
-    text-align: center;
-    color: white;
-    position: relative;
-    z-index: 1;
+/* Circular text animation */
+.circular-text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: rotateCircle 30s linear infinite;
 }
 
-.decoration-content h2 {
-    font-size: 34px;
-    font-weight: 700;
-    margin-bottom: 16px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    font-family: "Poppins", sans-serif;
-    line-height: 1.4;
+.circular-text p {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    margin: 0;
+    padding: 0;
 }
 
-.decoration-content p {
+.circular-text p span {
+    position: absolute;
+    left: 50%;
     font-size: 16px;
-    margin-bottom: 40px;
-    opacity: 0.95;
-    font-style: italic;
-    line-height: 1.6;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.9);
+    text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.8),
+                 0 0 10px rgba(255, 255, 255, 0.6);
+    transform-origin: 0 140px;
+    transform: rotate(calc(360deg / 63 * var(--i)));
+    font-family: "Poppins", sans-serif;
 }
 
-.decoration-pattern {
-    display: flex;
-    gap: 35px;
-    justify-content: center;
-    font-size: 45px;
-    opacity: 0.85;
-    margin-bottom: 40px;
-}
-
-.decoration-pattern i {
-    animation: rotatePattern 5s ease-in-out infinite;
-}
-
-.decoration-pattern i:nth-child(2) {
-    animation-delay: 0.7s;
-    font-size: 50px;
-}
-
-.decoration-pattern i:nth-child(3) {
-    animation-delay: 1.4s;
-}
-
-@keyframes rotatePattern {
-    0%, 100% {
-        transform: rotate(0deg) scale(1);
+@keyframes rotateCircle {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
     }
-    50% {
-        transform: rotate(180deg) scale(1.1);
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
     }
 }
 
@@ -664,4 +654,107 @@
 .toggle-password:focus-visible {
     outline: 2px solid #c97a3a;
     outline-offset: 2px;
+}
+
+/* ============================================
+   HIỆU ỨNG NGÔI SAO 5 CÁNH
+   ============================================ */
+
+/* Container cho ảnh ngôi sao ở giữa */
+.star-container {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 280px;
+    height: 280px;
+    animation: starFloat 6s ease-in-out infinite;
+}
+
+/* Tạo hình ngôi sao 5 cánh */
+.star-shape {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(
+        50% 0%,
+        61% 35%,
+        98% 35%,
+        68% 57%,
+        79% 91%,
+        50% 70%,
+        21% 91%,
+        32% 57%,
+        2% 35%,
+        39% 35%
+    );
+    filter: blur(50px);
+    /* animation: starRotate 20s linear infinite, starPulse 3s ease-in-out infinite; */
+    filter: drop-shadow(0 10px 30px rgba(33, 31, 31, 0.4));
+}
+
+/* Ảnh bên trong ngôi sao */
+.star-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Animation xoay ngôi sao */
+@keyframes starRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Animation nhấp nháy */
+@keyframes starPulse {
+    0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 10px 30px rgba(255, 215, 0, 0.4)) brightness(1);
+    }
+    50% {
+        transform: scale(1.1);
+        filter: drop-shadow(0 15px 40px rgba(255, 215, 0, 0.7)) brightness(1.2);
+    }
+}
+
+/* Animation bay lơ lửng */
+@keyframes starFloat {
+    0%, 100% {
+        transform: translate(-50%, -50%) translateY(0);
+    }
+    50% {
+        transform: translate(-50%, -50%) translateY(-20px);
+    }
+}
+
+/* Responsive cho ngôi sao */
+@media (max-width: 968px) {
+    .star-container {
+        width: 200px;
+        height: 200px;
+    }
+
+    .circular-text p span {
+        font-size: 13px;
+        transform-origin: 0 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .star-container {
+        width: 150px;
+        height: 150px;
+    }
+
+    .circular-text p span {
+        font-size: 10px;
+        transform-origin: 0 75px;
+    }
 }
