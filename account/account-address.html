@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/address.css">
+    <title>Địa Chỉ Giao Hàng - Website Handmake</title>
+</head>
+<body>
+    <main class="dashboard-main">
+        <div class="dashboard-container">
+            <!-- Sidebar Menu -->
+            <aside class="dashboard-sidebar">
+                <div class="sidebar-header">
+                    <div class="user-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <h3>Nguyễn Văn A</h3>
+                    <p>nguyenvana@email.com</p>
+                </div>
+
+                <nav class="sidebar-menu">
+                    <a href="dashboard.html" class="menu-item">
+                        <i class="fa-solid fa-gauge"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <i class="fa-solid fa-box"></i>
+                        <span>Đơn hàng</span>
+                    </a>
+                    <a href="account-profile.html" class="menu-item">
+                        <i class="fa-solid fa-user-circle"></i>
+                        <span>Thông tin</span>
+                    </a>
+                    <a href="account-address.html" class="menu-item active">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Địa chỉ</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <i class="fa-solid fa-key"></i>
+                        <span>Đổi mật khẩu</span>
+                    </a>
+                    <a href="../index.html" class="menu-item logout">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>Đăng xuất</span>
+                    </a>
+                </nav>
+
+                <!-- Decorative Pattern -->
+                <div class="sidebar-decoration">
+                    <div class="pattern-circle"></div>
+                    <div class="pattern-circle"></div>
+                    <div class="pattern-circle"></div>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <div class="dashboard-content">
+                <!-- Page Header -->
+                <div class="page-header">
+                    <div class="header-content">
+                        <h1>
+                            <i class="fa-solid fa-map-location-dot"></i>
+                            Địa chỉ giao hàng
+                        </h1>
+                        <p>Quản lý các địa chỉ nhận hàng của bạn</p>
+                    </div>
+                    <a href="#add-address" class="btn-add-address">
+                        <i class="fa-solid fa-plus"></i>
+                        Thêm địa chỉ mới
+                    </a>
+                </div>
+
+                <!-- Success Message (shown when action successful) -->
+                <div class="success-message">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Cập nhật địa chỉ thành công!</span>
+                </div>
+
+                <!-- Address List -->
+                <div class="address-list">
+                    <!-- Address Card 1 - Default -->
+                    <div class="address-card default-address">
+                        <div class="address-badge">
+                            <i class="fa-solid fa-star"></i>
+                            Địa chỉ mặc định
+                        </div>
+
+                        <div class="address-content">
+                            <div class="address-header">
+                                <h3>Nguyễn Văn A</h3>
+                                <span class="address-phone">
+                                    <i class="fa-solid fa-phone"></i>
+                                    0123 456 789
+                                </span>
+                            </div>
+
+                            <div class="address-details">
+                                <p class="address-text">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    123 Đường ABC, Phường Bến Nghé, Quận 1, TP. Hồ Chí Minh
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="address-actions">
+                            <a href="#edit-address-1" class="btn-action btn-edit">
+                                <i class="fa-solid fa-pen"></i>
+                                Chỉnh sửa
+                            </a>
+                            <form action="account-address.html" method="get" style="display: inline;">
+                                <button type="submit" class="btn-action btn-delete" disabled>
+                                    <i class="fa-solid fa-trash"></i>
+                                    Xóa
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Address Card 2 -->
+                    <div class="address-card">
+                        <div class="address-content">
+                            <div class="address-header">
+                                <h3>Nguyễn Văn A</h3>
+                                <span class="address-phone">
+                                    <i class="fa-solid fa-phone"></i>
+                                    0987 654 321
+                                </span>
+                            </div>
+
+                            <div class="address-details">
+                                <p class="address-text">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    456 Đường XYZ, Phường Thảo Điền, Quận 2, TP. Hồ Chí Minh
+                                </p>
+                                <p class="address-note">
+                                    <i class="fa-solid fa-note-sticky"></i>
+                                    Ghi chú: Gọi trước 30 phút khi giao hàng
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="address-actions">
+                            <form action="account-address.html" method="get" style="display: inline;">
+                                <button type="submit" class="btn-action btn-default">
+                                    <i class="fa-solid fa-star"></i>
+                                    Đặt làm mặc định
+                                </button>
+                            </form>
+                            <a href="#edit-address-2" class="btn-action btn-edit">
+                                <i class="fa-solid fa-pen"></i>
+                                Chỉnh sửa
+                            </a>
+                            <form action="account-address.html" method="get" style="display: inline;">
+                                <button type="submit" class="btn-action btn-delete">
+                                    <i class="fa-solid fa-trash"></i>
+                                    Xóa
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Address Card 3 -->
+                    <div class="address-card">
+                        <div class="address-content">
+                            <div class="address-header">
+                                <h3>Công ty ABC</h3>
+                                <span class="address-phone">
+                                    <i class="fa-solid fa-phone"></i>
+                                    0369 258 147
+                                </span>
+                            </div>
+
+                            <div class="address-details">
+                                <p class="address-text">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    789 Đường DEF, Phường Bình An, Quận Bình Thạnh, TP. Hồ Chí Minh
+                                </p>
+                                <p class="address-label">
+                                    <i class="fa-solid fa-briefcase"></i>
+                                    Văn phòng
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="address-actions">
+                            <form action="account-address.html" method="get" style="display: inline;">
+                                <button type="submit" class="btn-action btn-default">
+                                    <i class="fa-solid fa-star"></i>
+                                    Đặt làm mặc định
+                                </button>
+                            </form>
+                            <a href="#edit-address-3" class="btn-action btn-edit">
+                                <i class="fa-solid fa-pen"></i>
+                                Chỉnh sửa
+                            </a>
+                            <form action="account-address.html" method="get" style="display: inline;">
+                                <button type="submit" class="btn-action btn-delete">
+                                    <i class="fa-solid fa-trash"></i>
+                                    Xóa
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Empty State (hidden when addresses exist) -->
+                    <div class="empty-state" style="display: none;">
+                        <div class="empty-icon">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                        </div>
+                        <h3>Chưa có địa chỉ giao hàng</h3>
+                        <p>Thêm địa chỉ để việc mua sắm trở nên thuận tiện hơn</p>
+                        <a href="#add-address" class="btn-add-first">
+                            <i class="fa-solid fa-plus"></i>
+                            Thêm địa chỉ đầu tiên
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Address Tips -->
+                <div class="address-tips">
+                    <div class="tip-header">
+                        <i class="fa-solid fa-lightbulb"></i>
+                        <h3>Mẹo hữu ích</h3>
+                    </div>
+                    <ul class="tip-list">
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Đặt địa chỉ thường xuyên sử dụng làm mặc định để thanh toán nhanh hơn
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Thêm ghi chú để shipper dễ dàng tìm đến địa chỉ của bạn
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Cập nhật số điện thoại để nhận được thông báo giao hàng kịp thời
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal: Add New Address -->
+    <div id="add-address" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>
+                    <i class="fa-solid fa-plus-circle"></i>
+                    Thêm địa chỉ mới
+                </h2>
+                <a href="#" class="modal-close">
+                    <i class="fa-solid fa-xmark"></i>
+                </a>
+            </div>
+
+            <form class="address-form" action="account-address.html" method="get">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fullName">
+                            <i class="fa-solid fa-user"></i>
+                            Họ và tên
+                            <span class="required">*</span>
+                        </label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Nhập họ và tên" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">
+                            <i class="fa-solid fa-phone"></i>
+                            Số điện thoại
+                            <span class="required">*</span>
+                        </label>
+                        <input type="tel" id="phone" name="phone" placeholder="Nhập số điện thoại" pattern="[0-9]{10,11}" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="city">
+                            <i class="fa-solid fa-city"></i>
+                            Tỉnh/Thành phố
+                            <span class="required">*</span>
+                        </label>
+                        <select id="city" name="city" required>
+                            <option value="">Chọn Tỉnh/Thành phố</option>
+                            <option value="hanoi">Hà Nội</option>
+                            <option value="hcm">TP. Hồ Chí Minh</option>
+                            <option value="danang">Đà Nẵng</option>
+                            <option value="haiphong">Hải Phòng</option>
+                            <option value="cantho">Cần Thơ</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="district">
+                            <i class="fa-solid fa-building"></i>
+                            Quận/Huyện
+                            <span class="required">*</span>
+                        </label>
+                        <select id="district" name="district" required>
+                            <option value="">Chọn Quận/Huyện</option>
+                            <option value="q1">Quận 1</option>
+                            <option value="q2">Quận 2</option>
+                            <option value="q3">Quận 3</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="ward">
+                            <i class="fa-solid fa-map-pin"></i>
+                            Phường/Xã
+                            <span class="required">*</span>
+                        </label>
+                        <select id="ward" name="ward" required>
+                            <option value="">Chọn Phường/Xã</option>
+                            <option value="p1">Phường Bến Nghé</option>
+                            <option value="p2">Phường Bến Thành</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">
+                        <i class="fa-solid fa-location-dot"></i>
+                        Địa chỉ chi tiết
+                        <span class="required">*</span>
+                    </label>
+                    <input type="text" id="address" name="address" placeholder="Số nhà, tên đường" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="addressType">
+                        <i class="fa-solid fa-tag"></i>
+                        Loại địa chỉ
+                    </label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="addressType" value="home" checked>
+                            <span class="radio-custom"></span>
+                            <span class="radio-text">
+                                <i class="fa-solid fa-house"></i>
+                                Nhà riêng
+                            </span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="addressType" value="office">
+                            <span class="radio-custom"></span>
+                            <span class="radio-text">
+                                <i class="fa-solid fa-briefcase"></i>
+                                Văn phòng
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="note">
+                        <i class="fa-solid fa-note-sticky"></i>
+                        Ghi chú (Tùy chọn)
+                    </label>
+                    <textarea id="note" name="note" rows="3" placeholder="Ví dụ: Gọi trước 30 phút khi giao hàng"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="setDefault">
+                        <span class="checkbox-custom"></span>
+                        <span>Đặt làm địa chỉ mặc định</span>
+                    </label>
+                </div>
+
+                <div class="form-actions">
+                    <a href="#" class="btn-cancel">Hủy bỏ</a>
+                    <button type="submit" class="btn-submit">
+                        <i class="fa-solid fa-floppy-disk"></i>
+                        Lưu địa chỉ
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal: Edit Address 1 -->
+    <div id="edit-address-1" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>
+                    <i class="fa-solid fa-pen"></i>
+                    Chỉnh sửa địa chỉ
+                </h2>
+                <a href="#" class="modal-close">
+                    <i class="fa-solid fa-xmark"></i>
+                </a>
+            </div>
+
+            <form class="address-form" action="account-address.html" method="get">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="editFullName1">
+                            <i class="fa-solid fa-user"></i>
+                            Họ và tên
+                            <span class="required">*</span>
+                        </label>
+                        <input type="text" id="editFullName1" name="fullName" value="Nguyễn Văn A" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="editPhone1">
+                            <i class="fa-solid fa-phone"></i>
+                            Số điện thoại
+                            <span class="required">*</span>
+                        </label>
+                        <input type="tel" id="editPhone1" name="phone" value="0123456789" pattern="[0-9]{10,11}" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="editCity1">
+                            <i class="fa-solid fa-city"></i>
+                            Tỉnh/Thành phố
+                            <span class="required">*</span>
+                        </label>
+                        <select id="editCity1" name="city" required>
+                            <option value="hcm" selected>TP. Hồ Chí Minh</option>
+                            <option value="hanoi">Hà Nội</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="editDistrict1">
+                            <i class="fa-solid fa-building"></i>
+                            Quận/Huyện
+                            <span class="required">*</span>
+                        </label>
+                        <select id="editDistrict1" name="district" required>
+                            <option value="q1" selected>Quận 1</option>
+                            <option value="q2">Quận 2</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="editWard1">
+                            <i class="fa-solid fa-map-pin"></i>
+                            Phường/Xã
+                            <span class="required">*</span>
+                        </label>
+                        <select id="editWard1" name="ward" required>
+                            <option value="p1" selected>Phường Bến Nghé</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="editAddress1">
+                        <i class="fa-solid fa-location-dot"></i>
+                        Địa chỉ chi tiết
+                        <span class="required">*</span>
+                    </label>
+                    <input type="text" id="editAddress1" name="address" value="123 Đường ABC" required>
+                </div>
+
+                <div class="form-actions">
+                    <a href="#" class="btn-cancel">Hủy bỏ</a>
+                    <button type="submit" class="btn-submit">
+                        <i class="fa-solid fa-floppy-disk"></i>
+                        Cập nhật
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal: Edit Address 2 -->
+    <div id="edit-address-2" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>
+                    <i class="fa-solid fa-pen"></i>
+                    Chỉnh sửa địa chỉ
+                </h2>
+                <a href="#" class="modal-close">
+                    <i class="fa-solid fa-xmark"></i>
+                </a>
+            </div>
+
+            <form class="address-form" action="account-address.html" method="get">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="editFullName2">
+                            <i class="fa-solid fa-user"></i>
+                            Họ và tên
+                            <span class="required">*</span>
+                        </label>
+                        <input type="text" id="editFullName2" name="fullName" value="Nguyễn Văn A" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="editPhone2">
+                            <i class="fa-solid fa-phone"></i>
+                            Số điện thoại
+                            <span class="required">*</span>
+                        </label>
+                        <input type="tel" id="editPhone2" name="phone" value="0987654321" pattern="[0-9]{10,11}" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="editAddress2">
+                        <i class="fa-solid fa-location-dot"></i>
+                        Địa chỉ chi tiết
+                        <span class="required">*</span>
+                        </label>
+                    <input type="text" id="editAddress2" name="address" value="456 Đường XYZ, Phường Thảo Điền, Quận 2, TP. Hồ Chí Minh" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="editNote2">
+                        <i class="fa-solid fa-note-sticky"></i>
+                        Ghi chú
+                    </label>
+                    <textarea id="editNote2" name="note" rows="3">Gọi trước 30 phút khi giao hàng</textarea>
+                </div>
+
+                <div class="form-actions">
+                    <a href="#" class="btn-cancel">Hủy bỏ</a>
+                    <button type="submit" class="btn-submit">
+                        <i class="fa-solid fa-floppy-disk"></i>
+                        Cập nhật
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal: Edit Address 3 -->
+    <div id="edit-address-3" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>
+                    <i class="fa-solid fa-pen"></i>
+                    Chỉnh sửa địa chỉ
+                </h2>
+                <a href="#" class="modal-close">
+                    <i class="fa-solid fa-xmark"></i>
+                </a>
+            </div>
+
+            <form class="address-form" action="account-address.html" method="get">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="editFullName3">
+                            <i class="fa-solid fa-user"></i>
+                            Họ và tên
+                            <span class="required">*</span>
+                        </label>
+                        <input type="text" id="editFullName3" name="fullName" value="Công ty ABC" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="editPhone3">
+                            <i class="fa-solid fa-phone"></i>
+                            Số điện thoại
+                            <span class="required">*</span>
+                        </label>
+                        <input type="tel" id="editPhone3" name="phone" value="0369258147" pattern="[0-9]{10,11}" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="editAddress3">
+                        <i class="fa-solid fa-location-dot"></i>
+                        Địa chỉ chi tiết
+                        <span class="required">*</span>
+                    </label>
+                    <input type="text" id="editAddress3" name="address" value="789 Đường DEF, Phường Bình An, Quận Bình Thạnh, TP. Hồ Chí Minh" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="editAddressType3">
+                        <i class="fa-solid fa-tag"></i>
+                        Loại địa chỉ
+                    </label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="addressType" value="home">
+                            <span class="radio-custom"></span>
+                            <span class="radio-text">
+                                <i class="fa-solid fa-house"></i>
+                                Nhà riêng
+                            </span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="addressType" value="office" checked>
+                            <span class="radio-custom"></span>
+                            <span class="radio-text">
+                                <i class="fa-solid fa-briefcase"></i>
+                                Văn phòng
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <a href="#" class="btn-cancel">Hủy bỏ</a>
+                    <button type="submit" class="btn-submit">
+                        <i class="fa-solid fa-floppy-disk"></i>
+                        Cập nhật
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
