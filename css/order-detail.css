@@ -619,6 +619,9 @@
     background: #e0e0e0;
     color: #999;
 }
+.timeline-content {
+    margin-left: 15px;
+}
 
 .timeline-content h4 {
     font-size: 16px;
