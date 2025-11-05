@@ -76,7 +76,6 @@
     position: sticky;
     top: 30px;
     height: fit-content;
-    position: relative;
     overflow: hidden;
 }
 
@@ -733,8 +732,8 @@
 
     .dashboard-sidebar {
         width: 100%;
-        position: relative;
-        top: 0;
+        position: sticky;
+        top: 20px;
     }
 
     .sidebar-menu {
