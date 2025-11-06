@@ -8,7 +8,7 @@
     background: linear-gradient(135deg, #fff9f0 0%, #fef5e6 50%, #f5f1e6 100%);
     padding: 30px 20px;
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */ /* Đã gỡ bỏ để position: sticky hoạt động */
 }
 
 /* Decorative background patterns */
@@ -71,6 +71,7 @@
     display: flex;
     flex-direction: column;
     gap: 25px;
+    min-width: 0; /* Thêm để ngăn flex item tràn nội dung */
 }
 
 /* Page Header */
@@ -567,7 +568,37 @@
    ============================================ */
 @media (max-width: 1200px) {
     .dashboard-container {
+        /* flex-direction: column; */ /* Giữ lại flex-direction row ở tablet */
+    }
+
+    .dashboard-sidebar {
+        /* width: 100%; */
+        /* position: sticky; */
+        /* top: 20px; */
+    }
+
+    .sidebar-menu {
+        /* flex-direction: row; */
+        /* flex-wrap: wrap; */
+    }
+
+    .menu-item {
+        /* flex: 1 1 calc(33.333% - 8px); */
+        /* min-width: 150px; */
+    }
+}
+
+@media (max-width: 968px) { /* Thêm breakpoint mới cho tablet nhỏ hơn */
+    .dashboard-container {
         flex-direction: column;
+    }
+
+    .dashboard-sidebar {
+        width: 100%;
+        position: sticky;
+        top: 20px;
+        max-height: none; /* Bỏ max-height ở chế độ này */
+        overflow-y: visible; /* Bỏ cuộn nội bộ */
     }
 
     .sidebar-menu {
@@ -578,6 +609,18 @@
     .menu-item {
         flex: 1 1 calc(33.333% - 8px);
         min-width: 150px;
+        justify-content: center;
+    }
+
+    .menu-item span {
+        display: none; /* Ẩn chữ, chỉ hiện icon */
+    }
+     .menu-item.logout {
+        width: 100%;
+        justify-content: center;
+    }
+     .menu-item.logout span {
+        display: inline-block; /* Hiện lại chữ cho logout */
     }
 }
 
@@ -637,7 +680,12 @@
     }
 
     .menu-item {
-        flex: 1 1 100%;
+        flex: 1 1 calc(50% - 4px); /* 2 cột trên mobile */
+        font-size: 12px;
+    }
+
+    .menu-item i {
+        font-size: 16px;
     }
 }
 
@@ -661,6 +709,14 @@
     .product-price {
         width: 100%;
         text-align: center;
+    }
+
+     .menu-item {
+        flex: 1 1 100%; /* 1 cột trên mobile nhỏ */
+    }
+
+    .menu-item span {
+        display: inline-block; /* Hiện lại chữ trên mobile nhỏ */
     }
 }
 
