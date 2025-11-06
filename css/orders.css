@@ -570,12 +570,6 @@
         flex-direction: column;
     }
 
-    .dashboard-sidebar {
-        width: 100%;
-        position: relative;
-        top: 0;
-    }
-
     .sidebar-menu {
         flex-direction: row;
         flex-wrap: wrap;
