@@ -8,7 +8,6 @@
     background: linear-gradient(135deg, #fff9f0 0%, #fef5e6 50%, #f5f1e6 100%);
     padding: 30px 20px;
     position: relative;
-    overflow: hidden;
 }
 
 /* Decorative background patterns */
@@ -75,9 +74,11 @@
     box-shadow: 0 10px 40px rgba(78, 52, 46, 0.1);
     position: sticky;
     top: 30px;
-    height: fit-content;
-    position: relative;
-    overflow: hidden;
+    /* height: fit-content; */ /* Đã thay đổi */
+    max-height: calc(100vh - 60px); /* Thêm: tính toán chiều cao tối đa */
+    overflow-y: auto; /* Thay đổi: cho phép cuộn nội bộ sidebar nếu cần */
+    align-self: flex-start; /* Thêm: để position: sticky hoạt động chính xác trong flex container */
+    flex-shrink: 0; /* Thêm: ngăn sidebar bị co lại */
 }
 
 /* Sidebar Header - User Info */
@@ -271,6 +272,7 @@
     display: flex;
     flex-direction: column;
     gap: 25px;
+    min-width: 0; /* Thêm để ngăn flex item tràn nội dung */
 }
 
 /* Welcome Section */
@@ -727,14 +729,22 @@
    RESPONSIVE DESIGN
    ============================================ */
 @media (max-width: 1200px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 968px) { /* Thêm breakpoint mới cho tablet nhỏ hơn */
     .dashboard-container {
         flex-direction: column;
     }
 
     .dashboard-sidebar {
         width: 100%;
-        position: relative;
-        top: 0;
+        position: sticky;
+        top: 20px;
+        max-height: none; /* Bỏ max-height ở chế độ này */
+        overflow-y: visible; /* Bỏ cuộn nội bộ */
     }
 
     .sidebar-menu {
@@ -745,12 +755,22 @@
     .menu-item {
         flex: 1 1 calc(33.333% - 8px);
         min-width: 150px;
+        justify-content: center;
     }
 
-    .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .menu-item span {
+        display: none; /* Ẩn chữ, chỉ hiện icon */
+    }
+
+    .menu-item.logout {
+        width: 100%;
+        justify-content: center;
+    }
+     .menu-item.logout span {
+        display: inline-block; /* Hiện lại chữ cho logout */
     }
 }
+
 
 @media (max-width: 768px) {
     .dashboard-main {
@@ -803,7 +823,12 @@
     }
 
     .menu-item {
-        flex: 1 1 100%;
+        flex: 1 1 calc(50% - 4px); /* 2 cột trên mobile */
+        font-size: 12px;
+    }
+
+    .menu-item i {
+        font-size: 16px;
     }
 }
 
@@ -833,6 +858,14 @@
     .stat-info h3 {
         font-size: 26px;
     }
+
+    .menu-item {
+        flex: 1 1 100%; /* 1 cột trên mobile nhỏ */
+    }
+
+    .menu-item span {
+        display: inline-block; /* Hiện lại chữ trên mobile nhỏ */
+    }
 }
 
 /* Custom scrollbar */
@@ -846,12 +879,12 @@
     border-radius: 4px;
 }
 
-::-webkit-scrollbar-thumb {
+.dashboard-sidebar::-webkit-scrollbar-thumb {
     background: linear-gradient(180deg, #c0392b 0%, #c97a3a 100%);
     border-radius: 4px;
 }
 
-::-webkit-scrollbar-thumb:hover {
+.dashboard-sidebar::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(180deg, #e74c3c 0%, #d4925f 100%);
 }
 
