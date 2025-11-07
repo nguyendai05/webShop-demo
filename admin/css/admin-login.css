@@ -1,0 +1,238 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    /* Nền màu kem đồng bộ với trang dashboard */
+    background-color: #f5f1e6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Container chính của trang đăng nhập */
+.admin-login-main {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Thẻ chứa 2 cột (branding và form) */
+.login-container {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 16px;
+    /* Đổ bóng tinh tế */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05), 0 5px 10px rgba(0, 0, 0, 0.02);
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+}
+
+/* 1. Cột Branding (bên trái) - CẬP NHẬT MÀU SẮC */
+.login-branding {
+    /* Nền màu cam/đỏ đồng bộ với thương hiệu */
+    background: linear-gradient(135deg, #c0392b 0%, #c97a3a 100%);
+    color: #ffffff;
+    padding: 48px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+}
+
+.branding-logo {
+    font-size: 48px;
+    color: #ffffff;
+    margin-bottom: 24px;
+}
+
+.login-branding h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.login-branding p {
+    font-size: 14px;
+    color: #f5f1e6;
+    line-height: 1.6;
+}
+
+/* 2. Cột Form (bên phải) - CẬP NHẬT MÀU SẮC */
+.login-form-wrapper {
+    padding: 48px 32px;
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 380px;
+    margin: auto;
+}
+
+.login-header {
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.login-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #4e342e;
+    margin-bottom: 8px;
+}
+
+.login-header p {
+    font-size: 15px;
+    color: #777;
+}
+
+/* Nhóm form (label + input) */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: #4e342e;
+    margin-bottom: 8px;
+}
+
+.form-group label i {
+    width: 20px;
+    margin-right: 8px;
+    color: #c0392b;
+}
+
+/* Ô nhập liệu */
+.form-group input[type="text"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background-color: #fafafa;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Hiệu ứng khi focus vào input - CẬP NHẬT MÀU SẮC */
+.form-group input[type="text"]:focus,
+.form-group input[type="password"]:focus {
+    outline: none;
+    border-color: #c0392b;
+    /* CẬP NHẬT: Viền màu đỏ */
+    box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.1);
+    /* CẬP NHẬT: Đổ bóng đỏ */
+    background-color: #ffffff;
+}
+
+/* Các tùy chọn (ghi nhớ, quên mật khẩu) - CẬP NHẬT MÀU SẮC */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #4e342e;
+}
+
+.remember-me input[type="checkbox"] {
+    margin-right: 8px;
+    height: 16px;
+    width: 16px;
+    accent-color: #c0392b;
+    /* CẬP NHẬT: Màu checkbox đỏ */
+}
+
+.forgot-password {
+    font-size: 14px;
+    color: #c0392b;
+    /* CẬP NHẬT: Màu link đỏ */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+    color: #c97a3a;
+}
+
+/* Nút đăng nhập - CẬP NHẬT MÀU SẮC */
+.btn-login {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #c0392b 0%, #c97a3a 100%);
+    /* CẬP NHẬT: Gradient đồng bộ */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(192, 57, 43, 0.3);
+    /* CẬP NHẬT: Đổ bóng đồng bộ */
+}
+
+.btn-login:hover {
+    /* CẬP NHẬT: Hiệu ứng hover đồng bộ */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(192, 57, 43, 0.4);
+}
+
+.btn-login:active {
+    transform: scale(0.98);
+}
+
+/* Quay lại trang chủ - CẬP NHẬT MÀU SẮC */
+.back-to-site {
+    text-align: center;
+    margin-top: 24px;
+}
+
+.back-to-site a {
+    font-size: 14px;
+    color: #777;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.back-to-site a:hover {
+    color: #c0392b;
+    /* CẬP NHẬT: Màu hover đỏ */
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 800px) {
+
+    /* Chuyển sang 1 cột trên màn hình nhỏ */
+    .login-container {
+        flex-direction: column;
+    }
+
+    .login-branding {
+        padding: 40px 24px;
+    }
+
+    .login-form-wrapper {
+        padding: 40px 24px;
+    }
+}
