@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Quản lý Đồ thủ công mỹ nghệ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="css/admin-dashboard.css">
+</head>
+<body>
+    <main class="admin-dashboard-main">
+        <div class="admin-dashboard-container">
+            <!-- Admin Sidebar -->
+            <aside class="admin-sidebar">
+                <div class="sidebar-header">
+                    <div class="admin-logo">
+                        <i class="fa-solid fa-store"></i>
+                    </div>
+                    <h2>Admin Panel</h2>
+                    <p>Quản lý hệ thống</p>
+                </div>
+
+                <nav class="admin-menu">
+                    <a href="dashboard.html" class="admin-menu-item active">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="#" class="admin-menu-item">
+                        <i class="fa-solid fa-box"></i>
+                        <span>Quản lý sản phẩm</span>
+                    </a>
+                    <a href="#" class="admin-menu-item">
+                        <i class="fa-solid fa-shopping-cart"></i>
+                        <span>Quản lý đơn hàng</span>
+                    </a>
+                    <a href="#" class="admin-menu-item">
+                        <i class="fa-solid fa-users"></i>
+                        <span>Quản lý khách hàng</span>
+                    </a>
+                    <a href="#" class="admin-menu-item">
+                        <i class="fa-solid fa-star"></i>
+                        <span>Đánh giá</span>
+                    </a>
+                    <a href="#" class="admin-menu-item">
+                        <i class="fa-solid fa-chart-bar"></i>
+                        <span>Báo cáo</span>
+                    </a>
+                    <a href="#" class="admin-menu-item">
+                        <i class="fa-solid fa-cog"></i>
+                        <span>Cài đặt</span>
+                    </a>
+                    <a href="../index.html" class="admin-menu-item logout">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>Đăng xuất</span>
+                    </a>
+                </nav>
+
+                <!-- Admin Info -->
+                <div class="admin-info">
+                    <div class="admin-avatar">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+                    <p class="admin-name">Admin User</p>
+                    <p class="admin-role">Quản trị viên</p>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <div class="admin-content">
+                <!-- Welcome Header -->
+                <div class="content-header">
+                    <div class="header-left">
+                        <h1>Dashboard Quản lý</h1>
+                        <p>Tổng quan hệ thống đồ thủ công mỹ nghệ Việt Nam</p>
+                    </div>
+                    <div class="header-right">
+                        <div class="quick-actions">
+                            <a href="#" class="quick-action-btn">
+                                <i class="fa-solid fa-plus"></i>
+                                Thêm sản phẩm
+                            </a>
+                            <a href="#" class="quick-action-btn">
+                                <i class="fa-solid fa-file-invoice"></i>
+                                Tạo đơn hàng
+                            </a>
+                            <a href="#" class="quick-action-btn">
+                                <i class="fa-solid fa-download"></i>
+                                Xuất báo cáo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Statistics Overview -->
+                <div class="stats-overview">
+                    <div class="stat-card revenue">
+                        <div class="stat-icon">
+                            <i class="fa-solid fa-dollar-sign"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>125.500.000đ</h3>
+                            <p>Doanh thu tháng này</p>
+                            <span class="stat-change positive">
+                                <i class="fa-solid fa-arrow-up"></i> +15.3%
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card orders">
+                        <div class="stat-icon">
+                            <i class="fa-solid fa-shopping-bag"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>456</h3>
+                            <p>Đơn hàng tháng này</p>
+                            <span class="stat-change positive">
+                                <i class="fa-solid fa-arrow-up"></i> +8.2%
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card customers">
+                        <div class="stat-icon">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>1.234</h3>
+                            <p>Khách hàng</p>
+                            <span class="stat-change positive">
+                                <i class="fa-solid fa-arrow-up"></i> +12.5%
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card products">
+                        <div class="stat-icon">
+                            <i class="fa-solid fa-box"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>348</h3>
+                            <p>Sản phẩm</p>
+                            <span class="stat-change neutral">
+                                <i class="fa-solid fa-minus"></i> 0%
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Revenue Chart & Website Stats -->
+                <div class="chart-stats-section">
+                    <!-- Revenue Chart -->
+                    <div class="revenue-chart-card">
+                        <div class="card-header">
+                            <h2>
+                                <i class="fa-solid fa-chart-line"></i>
+                                Biểu đồ doanh thu
+                            </h2>
+                            <div class="chart-filters">
+                                <button class="filter-btn">Ngày</button>
+                                <button class="filter-btn">Tuần</button>
+                                <button class="filter-btn active">Tháng</button>
+                                <button class="filter-btn">Năm</button>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <div class="chart-bars">
+                                <div class="chart-bar" style="--bar-height: 45%;">
+                                    <div class="bar-value">18M</div>
+                                    <div class="bar-fill"></div>
+                                    <div class="bar-label">T1</div>
+                                </div>
+                                <div class="chart-bar" style="--bar-height: 62%;">
+                                    <div class="bar-value">25M</div>
+                                    <div class="bar-fill"></div>
+                                    <div class="bar-label">T2</div>
+                                </div>
+                                <div class="chart-bar" style="--bar-height: 55%;">
+                                    <div class="bar-value">22M</div>
+                                    <div class="bar-fill"></div>
+                                    <div class="bar-label">T3</div>
+                                </div>
+                                <div class="chart-bar" style="--bar-height: 75%;">
+                                    <div class="bar-value">30M</div>
+                                    <div class="bar-fill"></div>
+                                    <div class="bar-label">T4</div>
+                                </div>
+                                <div class="chart-bar" style="--bar-height: 68%;">
+                                    <div class="bar-value">27M</div>
+                                    <div class="bar-fill"></div>
+                                    <div class="bar-label">T5</div>
+                                </div>
+                                <div class="chart-bar" style="--bar-height: 85%;">
+                                    <div class="bar-value">34M</div>
+                                    <div class="bar-fill"></div>
+                                    <div class="bar-label">T6</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Website Statistics -->
+                    <div class="website-stats-card">
+                        <div class="card-header">
+                            <h2>
+                                <i class="fa-solid fa-globe"></i>
+                                Thống kê truy cập
+                            </h2>
+                        </div>
+                        <div class="stats-list">
+                            <div class="stat-item">
+                                <div class="stat-item-icon">
+                                    <i class="fa-solid fa-eye"></i>
+                                </div>
+                                <div class="stat-item-details">
+                                    <p class="stat-label">Lượt xem hôm nay</p>
+                                    <h4>8.524</h4>
+                                </div>
+                                <div class="stat-trend up">+5.2%</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-item-icon">
+                                    <i class="fa-solid fa-user-check"></i>
+                                </div>
+                                <div class="stat-item-details">
+                                    <p class="stat-label">Người dùng hoạt động</p>
+                                    <h4>1.247</h4>
+                                </div>
+                                <div class="stat-trend up">+8.1%</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-item-icon">
+                                    <i class="fa-solid fa-clock"></i>
+                                </div>
+                                <div class="stat-item-details">
+                                    <p class="stat-label">Thời gian TB</p>
+                                    <h4>5m 32s</h4>
+                                </div>
+                                <div class="stat-trend down">-2.3%</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-item-icon">
+                                    <i class="fa-solid fa-percentage"></i>
+                                </div>
+                                <div class="stat-item-details">
+                                    <p class="stat-label">Tỷ lệ thoát</p>
+                                    <h4>32.5%</h4>
+                                </div>
+                                <div class="stat-trend down">-1.8%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Orders & Best Sellers -->
+                <div class="orders-products-section">
+                    <!-- Recent Orders -->
+                    <div class="recent-orders-card">
+                        <div class="card-header">
+                            <h2>
+                                <i class="fa-solid fa-clock"></i>
+                                Đơn hàng mới nhất
+                            </h2>
+                            <a href="#" class="view-all">Xem tất cả <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                        <div class="orders-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Mã đơn</th>
+                                        <th>Khách hàng</th>
+                                        <th>Tổng tiền</th>
+                                        <th>Trạng thái</th>
+                                        <th>Thao tác</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>#DH2547</td>
+                                        <td>Nguyễn Văn A</td>
+                                        <td>1.250.000đ</td>
+                                        <td><span class="status-badge pending">Chờ xử lý</span></td>
+                                        <td><button class="btn-action">Xem</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#DH2546</td>
+                                        <td>Trần Thị B</td>
+                                        <td>850.000đ</td>
+                                        <td><span class="status-badge pending">Chờ xử lý</span></td>
+                                        <td><button class="btn-action">Xem</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#DH2545</td>
+                                        <td>Lê Văn C</td>
+                                        <td>2.100.000đ</td>
+                                        <td><span class="status-badge processing">Đang xử lý</span></td>
+                                        <td><button class="btn-action">Xem</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#DH2544</td>
+                                        <td>Phạm Thị D</td>
+                                        <td>650.000đ</td>
+                                        <td><span class="status-badge shipping">Đang giao</span></td>
+                                        <td><button class="btn-action">Xem</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#DH2543</td>
+                                        <td>Hoàng Văn E</td>
+                                        <td>1.450.000đ</td>
+                                        <td><span class="status-badge completed">Hoàn thành</span></td>
+                                        <td><button class="btn-action">Xem</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Best Sellers -->
+                    <div class="best-sellers-card">
+                        <div class="card-header">
+                            <h2>
+                                <i class="fa-solid fa-fire"></i>
+                                Sản phẩm bán chạy
+                            </h2>
+                            <a href="#" class="view-all">Xem tất cả <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                        <div class="products-list">
+                            <div class="product-item">
+                                <div class="product-rank">1</div>
+                                <div class="product-image">
+                                    <img src="https://i.pinimg.com/originals/4a/c1/95/4ac195db7fe748fdd2b78f31cb7e4e8e.jpg" alt="Bình gốm">
+                                </div>
+                                <div class="product-info">
+                                    <h4>Bình gốm hoa sen</h4>
+                                    <p>Đã bán: <strong>234</strong></p>
+                                </div>
+                                <div class="product-revenue">8.5M</div>
+                            </div>
+                            <div class="product-item">
+                                <div class="product-rank">2</div>
+                                <div class="product-image">
+                                    <img src="https://i.pinimg.com/1200x/c6/5e/76/c65e76df2dde432225ffcdd5f0602367.jpg" alt="Chén sứ">
+                                </div>
+                                <div class="product-info">
+                                    <h4>Chén sứ truyền thống</h4>
+                                    <p>Đã bán: <strong>198</strong></p>
+                                </div>
+                                <div class="product-revenue">6.3M</div>
+                            </div>
+                            <div class="product-item">
+                                <div class="product-rank">3</div>
+                                <div class="product-image">
+                                    <img src="https://i.pinimg.com/originals/77/43/6b/77436ba6c2d91bebd057c33ad149352e.jpg" alt="Tượng gỗ">
+                                </div>
+                                <div class="product-info">
+                                    <h4>Tượng gỗ điêu khắc</h4>
+                                    <p>Đã bán: <strong>156</strong></p>
+                                </div>
+                                <div class="product-revenue">5.2M</div>
+                            </div>
+                            <div class="product-item">
+                                <div class="product-rank">4</div>
+                                <div class="product-image">
+                                    <img src="https://i.pinimg.com/1200x/79/ab/2a/79ab2a5d22a8e1f818a1ab1c28187169.jpg" alt="Đĩa sứ">
+                                </div>
+                                <div class="product-info">
+                                    <h4>Đĩa sứ họa tiết</h4>
+                                    <p>Đã bán: <strong>142</strong></p>
+                                </div>
+                                <div class="product-revenue">4.8M</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Low Stock & New Customers -->
+                <div class="stock-customers-section">
+                    <!-- Low Stock Products -->
+                    <div class="low-stock-card">
+                        <div class="card-header">
+                            <h2>
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                                Sản phẩm sắp hết hàng
+                            </h2>
+                        </div>
+                        <div class="stock-list">
+                            <div class="stock-item urgent">
+                                <div class="stock-product">
+                                    <i class="fa-solid fa-box"></i>
+                                    <div>
+                                        <h4>Bình gốm hoa mai</h4>
+                                        <p>SKU: BG001</p>
+                                    </div>
+                                </div>
+                                <div class="stock-quantity">
+                                    <span class="qty-badge danger">3</span>
+                                    <p>Còn lại</p>
+                                </div>
+                            </div>
+                            <div class="stock-item warning">
+                                <div class="stock-product">
+                                    <i class="fa-solid fa-box"></i>
+                                    <div>
+                                        <h4>Chén trà Bát Tràng</h4>
+                                        <p>SKU: CT002</p>
+                                    </div>
+                                </div>
+                                <div class="stock-quantity">
+                                    <span class="qty-badge warning">8</span>
+                                    <p>Còn lại</p>
+                                </div>
+                            </div>
+                            <div class="stock-item warning">
+                                <div class="stock-product">
+                                    <i class="fa-solid fa-box"></i>
+                                    <div>
+                                        <h4>Tượng gỗ phật Di Lặc</h4>
+                                        <p>SKU: TG003</p>
+                                    </div>
+                                </div>
+                                <div class="stock-quantity">
+                                    <span class="qty-badge warning">12</span>
+                                    <p>Còn lại</p>
+                                </div>
+                            </div>
+                            <div class="stock-item warning">
+                                <div class="stock-product">
+                                    <i class="fa-solid fa-box"></i>
+                                    <div>
+                                        <h4>Đĩa sứ hoa văn rồng</h4>
+                                        <p>SKU: DS004</p>
+                                    </div>
+                                </div>
+                                <div class="stock-quantity">
+                                    <span class="qty-badge warning">15</span>
+                                    <p>Còn lại</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- New Customers -->
+                    <div class="new-customers-card">
+                        <div class="card-header">
+                            <h2>
+                                <i class="fa-solid fa-user-plus"></i>
+                                Khách hàng mới
+                            </h2>
+                        </div>
+                        <div class="customers-list">
+                            <div class="customer-item">
+                                <div class="customer-avatar">
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                                <div class="customer-info">
+                                    <h4>Nguyễn Thị Mai</h4>
+                                    <p>nguyenthimai@email.com</p>
+                                </div>
+                                <div class="customer-date">
+                                    <small>Hôm nay</small>
+                                </div>
+                            </div>
+                            <div class="customer-item">
+                                <div class="customer-avatar">
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                                <div class="customer-info">
+                                    <h4>Trần Văn Nam</h4>
+                                    <p>tranvannam@email.com</p>
+                                </div>
+                                <div class="customer-date">
+                                    <small>Hôm nay</small>
+                                </div>
+                            </div>
+                            <div class="customer-item">
+                                <div class="customer-avatar">
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                                <div class="customer-info">
+                                    <h4>Lê Hoàng Anh</h4>
+                                    <p>lehoanganh@email.com</p>
+                                </div>
+                                <div class="customer-date">
+                                    <small>Hôm qua</small>
+                                </div>
+                            </div>
+                            <div class="customer-item">
+                                <div class="customer-avatar">
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                                <div class="customer-info">
+                                    <h4>Phạm Minh Tuấn</h4>
+                                    <p>phamminhtuan@email.com</p>
+                                </div>
+                                <div class="customer-date">
+                                    <small>Hôm qua</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pending Reviews -->
+                <div class="pending-reviews-section">
+                    <div class="card-header">
+                        <h2>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                            Đánh giá cần duyệt
+                        </h2>
+                        <a href="#" class="view-all">Xem tất cả <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                    <div class="reviews-grid">
+                        <div class="review-item">
+                            <div class="review-header">
+                                <div class="reviewer-info">
+                                    <div class="reviewer-avatar">
+                                        <i class="fa-solid fa-user"></i>
+                                    </div>
+                                    <div>
+                                        <h4>Nguyễn Văn A</h4>
+                                        <div class="review-rating">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="review-date">2 giờ trước</span>
+                            </div>
+                            <div class="review-product">
+                                <img src="https://i.pinimg.com/originals/4a/c1/95/4ac195db7fe748fdd2b78f31cb7e4e8e.jpg" alt="Product">
+                                <h4>Bình gốm hoa sen trắng</h4>
+                            </div>
+                            <p class="review-content">
+                                Sản phẩm rất đẹp, chất lượng tốt. Đóng gói cẩn thận. Tôi rất hài lòng với sản phẩm này!
+                            </p>
+                            <div class="review-actions">
+                                <button class="btn-approve">
+                                    <i class="fa-solid fa-check"></i> Duyệt
+                                </button>
+                                <button class="btn-reject">
+                                    <i class="fa-solid fa-times"></i> Từ chối
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="review-item">
+                            <div class="review-header">
+                                <div class="reviewer-info">
+                                    <div class="reviewer-avatar">
+                                        <i class="fa-solid fa-user"></i>
+                                    </div>
+                                    <div>
+                                        <h4>Trần Thị B</h4>
+                                        <div class="review-rating">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-regular fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="review-date">5 giờ trước</span>
+                            </div>
+                            <div class="review-product">
+                                <img src="https://i.pinimg.com/1200x/c6/5e/76/c65e76df2dde432225ffcdd5f0602367.jpg" alt="Product">
+                                <h4>Chén sứ họa tiết truyền thống</h4>
+                            </div>
+                            <p class="review-content">
+                                Chén đẹp, họa tiết tinh xảo. Giao hàng nhanh. Giá cả hợp lý.
+                            </p>
+                            <div class="review-actions">
+                                <button class="btn-approve">
+                                    <i class="fa-solid fa-check"></i> Duyệt
+                                </button>
+                                <button class="btn-reject">
+                                    <i class="fa-solid fa-times"></i> Từ chối
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="review-item">
+                            <div class="review-header">
+                                <div class="reviewer-info">
+                                    <div class="reviewer-avatar">
+                                        <i class="fa-solid fa-user"></i>
+                                    </div>
+                                    <div>
+                                        <h4>Lê Văn C</h4>
+                                        <div class="review-rating">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="review-date">1 ngày trước</span>
+                            </div>
+                            <div class="review-product">
+                                <img src="https://i.pinimg.com/originals/77/43/6b/77436ba6c2d91bebd057c33ad149352e.jpg" alt="Product">
+                                <h4>Tượng gỗ điêu khắc thủ công</h4>
+                            </div>
+                            <p class="review-content">
+                                Tác phẩm nghệ thuật tuyệt vời! Chạm khắc rất tinh xảo, gỗ thơm tự nhiên. Rất đáng để sưu tầm!
+                            </p>
+                            <div class="review-actions">
+                                <button class="btn-approve">
+                                    <i class="fa-solid fa-check"></i> Duyệt
+                                </button>
+                                <button class="btn-reject">
+                                    <i class="fa-solid fa-times"></i> Từ chối
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
