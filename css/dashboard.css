@@ -3,6 +3,16 @@
    ============================================ */
 
 /* Main Container */
+html, body,main{
+    margin: 0!important;
+    box-sizing: border-box;
+}
+main{
+    padding: 5px!important;
+}
+.mdl-js{
+    overflow-x: hidden;
+}
 .dashboard-main {
     min-height: 100vh;
     background: linear-gradient(135deg, #fff9f0 0%, #fef5e6 50%, #f5f1e6 100%);
@@ -56,7 +66,7 @@
 /* Dashboard Container */
 .dashboard-container {
     display: flex;
-    max-width: 1400px;
+    max-width: 1220px;
     margin: 0 auto;
     gap: 30px;
     position: relative;
@@ -74,7 +84,6 @@
     box-shadow: 0 10px 40px rgba(78, 52, 46, 0.1);
     position: sticky;
     top: 30px;
-    /* height: fit-content; */ /* Đã thay đổi */
     max-height: calc(100vh - 60px); /* Thêm: tính toán chiều cao tối đa */
     overflow-y: auto; /* Thay đổi: cho phép cuộn nội bộ sidebar nếu cần */
     align-self: flex-start; /* Thêm: để position: sticky hoạt động chính xác trong flex container */

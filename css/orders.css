@@ -8,7 +8,6 @@
     background: linear-gradient(135deg, #fff9f0 0%, #fef5e6 50%, #f5f1e6 100%);
     padding: 30px 20px;
     position: relative;
-    /* overflow: hidden; */ /* Đã gỡ bỏ để position: sticky hoạt động */
 }
 
 /* Decorative background patterns */
@@ -53,26 +52,9 @@
         transform: translateY(30px) translateX(-15px) scale(1.03);
     }
 }
-
-/* Dashboard Container */
-.dashboard-container {
-    display: flex;
-    max-width: 1400px;
-    margin: 0 auto;
-    gap: 30px;
-    position: relative;
-    z-index: 1;
-}
 /* ============================================
    MAIN CONTENT
    ============================================ */
-.dashboard-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    min-width: 0; /* Thêm để ngăn flex item tràn nội dung */
-}
 
 /* Page Header */
 .page-header {
