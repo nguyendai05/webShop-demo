@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý sản phẩm - Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../css/admin-dashboard.css">
+    <link rel="stylesheet" href="../css/products-list.css">
+</head>
+<body>
+    <main class="admin-dashboard-main">
+        <div class="admin-dashboard-container">
+            <!-- Admin Sidebar -->
+            <aside class="admin-sidebar">
+                <div class="sidebar-header">
+                    <div class="admin-logo">
+                        <i class="fa-solid fa-store"></i>
+                    </div>
+                    <h2>Admin Panel</h2>
+                    <p>Quản lý hệ thống</p>
+                </div>
+
+                <nav class="admin-menu">
+                    <a href="../dashboard.html" class="admin-menu-item">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="list.html" class="admin-menu-item active">
+                        <i class="fa-solid fa-box"></i>
+                        <span>Quản lý sản phẩm</span>
+                    </a>
+                    <a href="#" class="admin-menu-item">
+                        <i class="fa-solid fa-shopping-cart"></i>
+                        <span>Quản lý đơn hàng</span>
+                    </a>
+                    <a href="#" class="admin-menu-item">
+                        <i class="fa-solid fa-users"></i>
+                        <span>Quản lý khách hàng</span>
+                    </a>
+                    <a href="#" class="admin-menu-item">
+                        <i class="fa-solid fa-star"></i>
+                        <span>Đánh giá</span>
+                    </a>
+                    <a href="#" class="admin-menu-item">
+                        <i class="fa-solid fa-chart-bar"></i>
+                        <span>Báo cáo</span>
+                    </a>
+                    <a href="#" class="admin-menu-item">
+                        <i class="fa-solid fa-cog"></i>
+                        <span>Cài đặt</span>
+                    </a>
+                    <a href="../../index.html" class="admin-menu-item logout">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>Đăng xuất</span>
+                    </a>
+                </nav>
+
+                <!-- Admin Info -->
+                <div class="admin-info">
+                    <div class="admin-avatar">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+                    <p class="admin-name">Admin User</p>
+                    <p class="admin-role">Quản trị viên</p>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <div class="admin-content">
+                <!-- Page Header -->
+                <div class="page-header">
+                    <div class="header-left">
+                        <h1>Quản lý sản phẩm</h1>
+                        <p>Tổng cộng <strong>348 sản phẩm</strong></p>
+                    </div>
+                    <div class="header-right">
+                        <a href="#" class="btn-add-product">
+                            <i class="fa-solid fa-plus"></i>
+                            Thêm sản phẩm mới
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Search and Filter Section -->
+                <div class="filter-section">
+                    <form action="#" method="get" class="filter-form">
+                        <!-- Search Bar -->
+                        <div class="search-wrapper">
+                            <i class="fa-solid fa-search"></i>
+                            <input type="text" name="search" placeholder="Tìm kiếm theo tên, SKU..." class="search-input">
+                        </div>
+
+                        <!-- Filter Options -->
+                        <div class="filter-options">
+                            <!-- Category Filter -->
+                            <div class="filter-group">
+                                <label for="category">
+                                    <i class="fa-solid fa-layer-group"></i>
+                                    Danh mục
+                                </label>
+                                <select name="category" id="category">
+                                    <option value="">Tất cả danh mục</option>
+                                    <option value="gom">Đồ gốm</option>
+                                    <option value="go">Gỗ điêu khắc</option>
+                                    <option value="su">Sứ nghệ thuật</option>
+                                    <option value="phu-kien">Phụ kiện bàn ăn</option>
+                                    <option value="tranh">Tranh thêu</option>
+                                </select>
+                            </div>
+
+                            <!-- Status Filter -->
+                            <div class="filter-group">
+                                <label for="status">
+                                    <i class="fa-solid fa-toggle-on"></i>
+                                    Trạng thái
+                                </label>
+                                <select name="status" id="status">
+                                    <option value="">Tất cả trạng thái</option>
+                                    <option value="active">Đang bán</option>
+                                    <option value="inactive">Tạm ngưng</option>
+                                    <option value="out-of-stock">Hết hàng</option>
+                                </select>
+                            </div>
+
+                            <!-- Price Range Filter -->
+                            <div class="filter-group">
+                                <label for="price-range">
+                                    <i class="fa-solid fa-dollar-sign"></i>
+                                    Khoảng giá
+                                </label>
+                                <select name="price_range" id="price-range">
+                                    <option value="">Tất cả giá</option>
+                                    <option value="0-500000">Dưới 500K</option>
+                                    <option value="500000-1000000">500K - 1M</option>
+                                    <option value="1000000-2000000">1M - 2M</option>
+                                    <option value="2000000+">Trên 2M</option>
+                                </select>
+                            </div>
+
+                            <!-- Stock Filter -->
+                            <div class="filter-group">
+                                <label for="stock">
+                                    <i class="fa-solid fa-boxes-stacked"></i>
+                                    Tồn kho
+                                </label>
+                                <select name="stock" id="stock">
+                                    <option value="">Tất cả</option>
+                                    <option value="in-stock">Còn hàng</option>
+                                    <option value="low-stock">Sắp hết (&lt;20)</option>
+                                    <option value="out-of-stock">Hết hàng</option>
+                                </select>
+                            </div>
+
+                            <!-- Featured Filter -->
+                            <div class="filter-group">
+                                <label for="featured">
+                                    <i class="fa-solid fa-star"></i>
+                                    Nổi bật
+                                </label>
+                                <select name="featured" id="featured">
+                                    <option value="">Tất cả</option>
+                                    <option value="yes">Nổi bật</option>
+                                    <option value="no">Bình thường</option>
+                                </select>
+                            </div>
+
+                            <!-- Sort By -->
+                            <div class="filter-group">
+                                <label for="sort">
+                                    <i class="fa-solid fa-arrow-down-wide-short"></i>
+                                    Sắp xếp
+                                </label>
+                                <select name="sort" id="sort">
+                                    <option value="name-asc">Tên A-Z</option>
+                                    <option value="name-desc">Tên Z-A</option>
+                                    <option value="price-asc">Giá tăng dần</option>
+                                    <option value="price-desc">Giá giảm dần</option>
+                                    <option value="date-desc">Mới nhất</option>
+                                    <option value="date-asc">Cũ nhất</option>
+                                    <option value="sold-desc">Bán chạy nhất</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Filter Actions -->
+                        <div class="filter-actions">
+                            <button type="submit" class="btn-apply-filter">
+                                <i class="fa-solid fa-filter"></i>
+                                Áp dụng
+                            </button>
+                            <button type="reset" class="btn-reset-filter">
+                                <i class="fa-solid fa-rotate-right"></i>
+                                Đặt lại
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Bulk Actions Bar -->
+                <div class="bulk-actions-bar">
+                    <form action="#" method="post" class="bulk-actions-form">
+                        <div class="bulk-select">
+                            <input type="checkbox" id="select-all" name="select_all">
+                            <label for="select-all">Chọn tất cả</label>
+                        </div>
+
+                        <div class="bulk-actions">
+                            <select name="bulk_action" id="bulk-action">
+                                <option value="">Hành động hàng loạt</option>
+                                <option value="delete">Xóa đã chọn</option>
+                                <option value="activate">Kích hoạt</option>
+                                <option value="deactivate">Tạm ngưng</option>
+                                <option value="set-featured">Đặt nổi bật</option>
+                                <option value="remove-featured">Bỏ nổi bật</option>
+                            </select>
+                            <button type="submit" class="btn-apply-bulk">
+                                <i class="fa-solid fa-check"></i>
+                                Thực hiện
+                            </button>
+                        </div>
+
+                        <div class="bulk-export">
+                            <button type="submit" name="action" value="export" class="btn-export">
+                                <i class="fa-solid fa-file-csv"></i>
+                                Xuất CSV
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Products Table -->
+                <div class="products-table-container">
+                    <table class="products-table">
+                        <thead>
+                            <tr>
+                                <th class="col-checkbox">
+                                    <input type="checkbox" class="checkbox-header">
+                                </th>
+                                <th class="col-image">Ảnh</th>
+                                <th class="col-name">Tên sản phẩm</th>
+                                <th class="col-sku">SKU</th>
+                                <th class="col-category">Danh mục</th>
+                                <th class="col-price">Giá</th>
+                                <th class="col-stock">Tồn kho</th>
+                                <th class="col-sold">Đã bán</th>
+                                <th class="col-status">Trạng thái</th>
+                                <th class="col-actions">Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Product Row 1 -->
+                            <tr class="product-row">
+                                <td class="col-checkbox">
+                                    <input type="checkbox" name="product_ids[]" value="1">
+                                </td>
+                                <td class="col-image">
+                                    <div class="product-thumbnail">
+                                        <img src="https://i.pinimg.com/originals/4a/c1/95/4ac195db7fe748fdd2b78f31cb7e4e8e.jpg" alt="Bình gốm hoa sen">
+                                        <span class="featured-badge"><i class="fa-solid fa-star"></i></span>
+                                    </div>
+                                </td>
+                                <td class="col-name">
+                                    <div class="product-name-wrapper">
+                                        <h4>Bình gốm hoa sen trắng</h4>
+                                        <p class="product-desc">Bình gốm Bát Tràng cao cấp</p>
+                                    </div>
+                                </td>
+                                <td class="col-sku">BG001</td>
+                                <td class="col-category">
+                                    <span class="category-badge">Đồ gốm</span>
+                                </td>
+                                <td class="col-price">
+                                    <div class="price-wrapper">
+                                        <span class="price">450.000đ</span>
+                                        <a href="#" class="quick-edit-link">Sửa nhanh</a>
+                                    </div>
+                                </td>
+                                <td class="col-stock">
+                                    <div class="stock-wrapper">
+                                        <span class="stock-number stock-normal">48</span>
+                                        <a href="#" class="quick-edit-link">Sửa nhanh</a>
+                                    </div>
+                                </td>
+                                <td class="col-sold">234</td>
+                                <td class="col-status">
+                                    <span class="status-badge status-active">Đang bán</span>
+                                </td>
+                                <td class="col-actions">
+                                    <div class="action-buttons">
+                                        <a href="#" class="btn-action btn-edit" title="Chỉnh sửa">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </a>
+                                        <a href="#" class="btn-action btn-view" title="Xem">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </a>
+                                        <a href="#" class="btn-action btn-delete" title="Xóa">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Product Row 2 -->
+                            <tr class="product-row">
+                                <td class="col-checkbox">
+                                    <input type="checkbox" name="product_ids[]" value="2">
+                                </td>
+                                <td class="col-image">
+                                    <div class="product-thumbnail">
+                                        <img src="https://i.pinimg.com/1200x/c6/5e/76/c65e76df2dde432225ffcdd5f0602367.jpg" alt="Chén sứ">
+                                    </div>
+                                </td>
+                                <td class="col-name">
+                                    <div class="product-name-wrapper">
+                                        <h4>Chén sứ họa tiết truyền thống</h4>
+                                        <p class="product-desc">Bộ 6 chén sứ cao cấp</p>
+                                    </div>
+                                </td>
+                                <td class="col-sku">CS002</td>
+                                <td class="col-category">
+                                    <span class="category-badge">Sứ nghệ thuật</span>
+                                </td>
+                                <td class="col-price">
+                                    <div class="price-wrapper">
+                                        <span class="price">320.000đ</span>
+                                        <a href="#" class="quick-edit-link">Sửa nhanh</a>
+                                    </div>
+                                </td>
+                                <td class="col-stock">
+                                    <div class="stock-wrapper">
+                                        <span class="stock-number stock-normal">65</span>
+                                        <a href="#" class="quick-edit-link">Sửa nhanh</a>
+                                    </div>
+                                </td>
+                                <td class="col-sold">198</td>
+                                <td class="col-status">
+                                    <span class="status-badge status-active">Đang bán</span>
+                                </td>
+                                <td class="col-actions">
+                                    <div class="action-buttons">
+                                        <a href="#" class="btn-action btn-edit" title="Chỉnh sửa">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </a>
+                                        <a href="#" class="btn-action btn-view" title="Xem">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </a>
+                                        <a href="#" class="btn-action btn-delete" title="Xóa">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Product Row 3 -->
+                            <tr class="product-row">
+                                <td class="col-checkbox">
+                                    <input type="checkbox" name="product_ids[]" value="3">
+                                </td>
+                                <td class="col-image">
+                                    <div class="product-thumbnail">
+                                        <img src="https://i.pinimg.com/originals/77/43/6b/77436ba6c2d91bebd057c33ad149352e.jpg" alt="Tượng gỗ">
+                                        <span class="featured-badge"><i class="fa-solid fa-star"></i></span>
+                                    </div>
+                                </td>
+                                <td class="col-name">
+                                    <div class="product-name-wrapper">
+                                        <h4>Tượng gỗ điêu khắc thủ công</h4>
+                                        <p class="product-desc">Gỗ hương cao cấp</p>
+                                    </div>
+                                </td>
+                                <td class="col-sku">TG003</td>
+                                <td class="col-category">
+                                    <span class="category-badge">Gỗ điêu khắc</span>
+                                </td>
+                                <td class="col-price">
+                                    <div class="price-wrapper">
+                                        <span class="price">1.250.000đ</span>
+                                        <a href="#" class="quick-edit-link">Sửa nhanh</a>
+                                    </div>
+                                </td>
+                                <td class="col-stock">
+                                    <div class="stock-wrapper">
+                                        <span class="stock-number stock-low">12</span>
+                                        <a href="#" class="quick-edit-link">Sửa nhanh</a>
+                                    </div>
+                                </td>
+                                <td class="col-sold">156</td>
+                                <td class="col-status">
+                                    <span class="status-badge status-active">Đang bán</span>
+                                </td>
+                                <td class="col-actions">
+                                    <div class="action-buttons">
+                                        <a href="#" class="btn-action btn-edit" title="Chỉnh sửa">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </a>
+                                        <a href="#" class="btn-action btn-view" title="Xem">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </a>
+                                        <a href="#" class="btn-action btn-delete" title="Xóa">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Product Row 4 -->
+                            <tr class="product-row">
+                                <td class="col-checkbox">
+                                    <input type="checkbox" name="product_ids[]" value="4">
+                                </td>
+                                <td class="col-image">
+                                    <div class="product-thumbnail">
+                                        <img src="https://i.pinimg.com/1200x/79/ab/2a/79ab2a5d22a8e1f818a1ab1c28187169.jpg" alt="Đĩa sứ">
+                                    </div>
+                                </td>
+                                <td class="col-name">
+                                    <div class="product-name-wrapper">
+                                        <h4>Đĩa sứ họa tiết hoa văn</h4>
+                                        <p class="product-desc">Đĩa trang trí đẹp mắt</p>
+                                    </div>
+                                </td>
+                                <td class="col-sku">DS004</td>
+                                <td class="col-category">
+                                    <span class="category-badge">Phụ kiện bàn ăn</span>
+                                </td>
+                                <td class="col-price">
+                                    <div class="price-wrapper">
+                                        <span class="price">420.000đ</span>
+                                        <a href="#" class="quick-edit-link">Sửa nhanh</a>
+                                    </div>
+                                </td>
+                                <td class="col-stock">
+                                    <div class="stock-wrapper">
+                                        <span class="stock-number stock-normal">38</span>
+                                        <a href="#" class="quick-edit-link">Sửa nhanh</a>
+                                    </div>
+                                </td>
+                                <td class="col-sold">142</td>
+                                <td class="col-status">
+                                    <span class="status-badge status-active">Đang bán</span>
+                                </td>
+                                <td class="col-actions">
+                                    <div class="action-buttons">
+                                        <a href="#" class="btn-action btn-edit" title="Chỉnh sửa">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </a>
+                                        <a href="#" class="btn-action btn-view" title="Xem">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </a>
+                                        <a href="#" class="btn-action btn-delete" title="Xóa">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Product Row 5 - Low Stock -->
+                            <tr class="product-row">
+                                <td class="col-checkbox">
+                                    <input type="checkbox" name="product_ids[]" value="5">
+                                </td>
+                                <td class="col-image">
+                                    <div class="product-thumbnail">
+                                        <img src="https://i.pinimg.com/originals/b6/65/cc/b665cc5db39c3beac5ddebd7af013159.jpg" alt="Bình hoa">
+                                    </div>
+                                </td>
+                                <td class="col-name">
+                                    <div class="product-name-wrapper">
+                                        <h4>Bình hoa gốm sứ cao cấp</h4>
+                                        <p class="product-desc">Phong cách tối giản</p>
+                                    </div>
+                                </td>
+                                <td class="col-sku">BH005</td>
+                                <td class="col-category">
+                                    <span class="category-badge">Đồ gốm</span>
+                                </td>
+                                <td class="col-price">
+                                    <div class="price-wrapper">
+                                        <span class="price">350.000đ</span>
+                                        <a href="#" class="quick-edit-link">Sửa nhanh</a>
+                                    </div>
+                                </td>
+                                <td class="col-stock">
+                                    <div class="stock-wrapper">
+                                        <span class="stock-number stock-critical">3</span>
+                                        <a href="#" class="quick-edit-link">Sửa nhanh</a>
+                                    </div>
+                                </td>
+                                <td class="col-sold">189</td>
+                                <td class="col-status">
+                                    <span class="status-badge status-active">Đang bán</span>
+                                </td>
+                                <td class="col-actions">
+                                    <div class="action-buttons">
+                                        <a href="#" class="btn-action btn-edit" title="Chỉnh sửa">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </a>
+                                        <a href="#" class="btn-action btn-view" title="Xem">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </a>
+                                        <a href="#" class="btn-action btn-delete" title="Xóa">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Product Row 6 - Inactive -->
+                            <tr class="product-row">
+                                <td class="col-checkbox">
+                                    <input type="checkbox" name="product_ids[]" value="6">
+                                </td>
+                                <td class="col-image">
+                                    <div class="product-thumbnail">
+                                        <img src="https://i.pinimg.com/1200x/e9/b1/dc/e9b1dc13cec85791f5b108612c976140.jpg" alt="Tranh thêu">
+                                    </div>
+                                </td>
+                                <td class="col-name">
+                                    <div class="product-name-wrapper">
+                                        <h4>Tranh thêu tay hoa sen</h4>
+                                        <p class="product-desc">Thêu tay thủ công 100%</p>
+                                    </div>
+                                </td>
+                                <td class="col-sku">TT006</td>
+                                <td class="col-category">
+                                    <span class="category-badge">Tranh thêu</span>
+                                </td>
+                                <td class="col-price">
+                                    <div class="price-wrapper">
+                                        <span class="price">2.500.000đ</span>
+                                        <a href="#" class="quick-edit-link">Sửa nhanh</a>
+                                    </div>
+                                </td>
+                                <td class="col-stock">
+                                    <div class="stock-wrapper">
+                                        <span class="stock-number stock-normal">25</span>
+                                        <a href="#" class="quick-edit-link">Sửa nhanh</a>
+                                    </div>
+                                </td>
+                                <td class="col-sold">45</td>
+                                <td class="col-status">
+                                    <span class="status-badge status-inactive">Tạm ngưng</span>
+                                </td>
+                                <td class="col-actions">
+                                    <div class="action-buttons">
+                                        <a href="#" class="btn-action btn-edit" title="Chỉnh sửa">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </a>
+                                        <a href="#" class="btn-action btn-view" title="Xem">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </a>
+                                        <a href="#" class="btn-action btn-delete" title="Xóa">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Product Row 7 - Out of Stock -->
+                            <tr class="product-row">
+                                <td class="col-checkbox">
+                                    <input type="checkbox" name="product_ids[]" value="7">
+                                </td>
+                                <td class="col-image">
+                                    <div class="product-thumbnail">
+                                        <img src="https://i.pinimg.com/1200x/bb/a4/65/bba46539e41f139b84fcc91ecba411be.jpg" alt="Bộ ấm chén">
+                                    </div>
+                                </td>
+                                <td class="col-name">
+                                    <div class="product-name-wrapper">
+                                        <h4>Bộ ấm chén gốm Bát Tràng</h4>
+                                        <p class="product-desc">Bộ pha trà 7 món</p>
+                                    </div>
+                                </td>
+                                <td class="col-sku">BC007</td>
+                                <td class="col-category">
+                                    <span class="category-badge">Phụ kiện bàn ăn</span>
+                                </td>
+                                <td class="col-price">
+                                    <div class="price-wrapper">
+                                        <span class="price">680.000đ</span>
+                                        <a href="#" class="quick-edit-link">Sửa nhanh</a>
+                                    </div>
+                                </td>
+                                <td class="col-stock">
+                                    <div class="stock-wrapper">
+                                        <span class="stock-number stock-out">0</span>
+                                        <a href="#" class="quick-edit-link">Sửa nhanh</a>
+                                    </div>
+                                </td>
+                                <td class="col-sold">95</td>
+                                <td class="col-status">
+                                    <span class="status-badge status-out-stock">Hết hàng</span>
+                                </td>
+                                <td class="col-actions">
+                                    <div class="action-buttons">
+                                        <a href="#" class="btn-action btn-edit" title="Chỉnh sửa">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </a>
+                                        <a href="#" class="btn-action btn-view" title="Xem">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </a>
+                                        <a href="#" class="btn-action btn-delete" title="Xóa">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Product Row 8 -->
+                            <tr class="product-row">
+                                <td class="col-checkbox">
+                                    <input type="checkbox" name="product_ids[]" value="8">
+                                </td>
+                                <td class="col-image">
+                                    <div class="product-thumbnail">
+                                        <img src="https://i.pinimg.com/originals/4a/c1/95/4ac195db7fe748fdd2b78f31cb7e4e8e.jpg" alt="Lọ hoa">
+                                        <span class="featured-badge"><i class="fa-solid fa-star"></i></span>
+                                    </div>
+                                </td>
+                                <td class="col-name">
+                                    <div class="product-name-wrapper">
+                                        <h4>Lọ hoa gốm men rạn cổ điển</h4>
+                                        <p class="product-desc">Kiểu dáng truyền thống</p>
+                                    </div>
+                                </td>
+                                <td class="col-sku">LH008</td>
+                                <td class="col-category">
+                                    <span class="category-badge">Đồ gốm</span>
+                                </td>
+                                <td class="col-price">
+                                    <div class="price-wrapper">
+                                        <span class="price">580.000đ</span>
+                                        <a href="#" class="quick-edit-link">Sửa nhanh</a>
+                                    </div>
+                                </td>
+                                <td class="col-stock">
+                                    <div class="stock-wrapper">
+                                        <span class="stock-number stock-low">18</span>
+                                        <a href="#" class="quick-edit-link">Sửa nhanh</a>
+                                    </div>
+                                </td>
+                                <td class="col-sold">127</td>
+                                <td class="col-status">
+                                    <span class="status-badge status-active">Đang bán</span>
+                                </td>
+                                <td class="col-actions">
+                                    <div class="action-buttons">
+                                        <a href="#" class="btn-action btn-edit" title="Chỉnh sửa">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </a>
+                                        <a href="#" class="btn-action btn-view" title="Xem">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </a>
+                                        <a href="#" class="btn-action btn-delete" title="Xóa">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination-section">
+                    <div class="pagination-info">
+                        Hiển thị <strong>1-8</strong> trong tổng số <strong>348</strong> sản phẩm
+                    </div>
+                    <div class="pagination">
+                        <a href="#" class="page-link disabled">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </a>
+                        <a href="#" class="page-link active">1</a>
+                        <a href="#" class="page-link">2</a>
+                        <a href="#" class="page-link">3</a>
+                        <a href="#" class="page-link">4</a>
+                        <a href="#" class="page-link">5</a>
+                        <span class="page-dots">...</span>
+                        <a href="#" class="page-link">44</a>
+                        <a href="#" class="page-link">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                    </div>
+                    <div class="per-page">
+                        <label for="per-page">Hiển thị:</label>
+                        <select name="per_page" id="per-page">
+                            <option value="8">8</option>
+                            <option value="20">20</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
