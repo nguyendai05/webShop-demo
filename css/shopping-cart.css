@@ -1,0 +1,360 @@
+
+body{
+    font-family: "Poppins", "Segoe UI", sans-serif;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.category {
+    background-color: #f7f3f0;
+    padding: 20px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.category::before {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 250px;
+    height: 100%;
+    background: url('#') no-repeat left bottom;
+}
+
+.category::after {
+    position: absolute;
+    width: 300px;
+    height: 100%;
+    background: url('#') no-repeat right bottom;
+}
+
+.category .container {
+    position: relative;
+}
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #c97a3a;
+    margin: 10px;
+}
+.nameTitle {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 25px auto;
+    padding: 0;
+    list-style: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.nameTitle li:not(:last-child)::after {
+    content: '>';
+    margin: 0 10px;
+    color: #333;
+}
+
+.nameTitle a {
+    color: #777;
+    text-decoration: none;
+}
+.nameTitle a:hover {
+    color: #c97a3a;
+}
+
+.nameTitle .allProduct span {
+    color: #c97a3a;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.category-list-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.category-list {
+    display: flex;
+    overflow-x: auto;
+    gap: 30px;
+    padding: 10px 0;
+    margin: 0 auto;
+    list-style: none;
+}
+
+.category-list::-webkit-scrollbar {
+    display: none;
+}
+
+.category-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 180px;
+    text-decoration: none;
+    color: #333;
+}
+
+.category-item img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.category-item span {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+}
+
+.category-item:hover img {
+    transform: scale(1.05);
+}
+.products-wrapper{
+    margin: 0 100px 0 100px;
+}
+.scroll-btn {
+    position: relative;
+    margin-top: 80px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid #c97a3a;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    cursor: pointer;
+}
+.scroll-btn:hover {
+    background-color: #c97a3a;
+    color: #fff;
+}
+
+.cart-page .container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin: 30px 150px 30px 150px;
+    gap: 30px;
+}
+
+.cart-header {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr 1fr 1fr;
+    gap: 20px;
+    padding-bottom: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333333;
+    margin: 10px 10px 0 10px;
+}
+
+.cart-left{
+    border: 2px solid #eeeeee;
+}
+
+.cart-row {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+    padding: 20px 0;
+    border-top: 1px solid #eeeeee;
+}
+
+.cart-items {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.cart-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.cart-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-item-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333333;
+    text-decoration: none;
+}
+
+.cart-item-name:hover {
+    color: #c97a3a;
+}
+
+.cart-item-delete {
+    font-size: 13px;
+    color: #c97a3a;
+    background: none;
+    border: none;
+    padding: 0;
+    margin-top: 5px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.cart-item-delete:hover {
+    color: #d9534f;
+}
+
+.price span {
+    font-size: 14px;
+    font-weight: 500;
+    color: #c97a3a;
+}
+
+.cart-items-quantity{
+    border: 1px solid #333333;
+    border-radius: 3px;
+}
+
+.cart-items-quantity .quantity {
+    display: flex;
+    border-radius: 5px;
+    width: 120px;
+}
+
+.quantity button,
+.quantity input {
+    background: #fff;
+    border: none;
+    font-size: 16px;
+    text-align: center;
+    padding: 8px;
+}
+
+.quantity button {
+    width: 30%;
+    cursor: pointer;
+}
+
+.quantity button:hover {
+    color: #333333;
+}
+.quantity input {
+    width: 40%;
+}
+
+.price-total span {
+    font-size: 15px;
+    font-weight: 500;
+    color: #c97a3a;
+}
+
+.cart-footer {
+    border: none;
+    padding-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.total-summary {
+    text-align: right;
+    min-width: 300px;
+}
+
+.total-price {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.total-price span:first-child {
+    color: #333333;
+    margin-right: 15px;
+}
+
+.total-price span:last-child {
+    color: #c97a3a;
+}
+
+.total-btn button {
+    width: 100%;
+    padding: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    background-color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.total-btn button:hover {
+    background: #c97a3a;
+}
+
+.cart-right h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.time {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.time select {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.r-bill {
+    margin-top: 30px;
+}
+
+.r-bill label {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 14px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 450;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    resize: vertical; /* Chỉ cho phép kéo dọc */
+}
+
+.form-group ::placeholder {
+    color: #aaaaaa;
+}

@@ -1,248 +1,249 @@
-.container {
-            display: flex;
-            height: 100vh;
-        }
+ .container {
+     display: flex;
+     height: fit-content;
+ }
 
-        /* Sidebar */
-        .sidebar {
-            width: 380px;
-            background: white;
-            overflow-y: auto;
-            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-        }
+ /* Sidebar */
+ .sidebar {
+     width: 380px;
+     background: white;
+     overflow-y: auto;
+     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+ }
 
-        .search-section {
-            position: sticky;
-            top: 0;
-            padding: 20px;
-            background: #f9f9f9;
-            border-bottom: 1px solid #e0e0e0;
-            z-index: 100;
-        }
+ .search-section {
+     position: sticky;
+     top: 0;
+     padding: 20px;
+     background: #f9f9f9;
+     border-bottom: 1px solid #e0e0e0;
+     z-index: 100;
+ }
 
-        .search-box {
-            display: flex;
-            gap: 15px;
-            align-items: stretch;
-        }
+ .search-box {
+     display: flex;
+     gap: 15px;
+     align-items: stretch;
+ }
 
-        .search-input {
-            flex: 1;
-            padding: 14px 20px;
-            border: 2px solid #daa520;
-            border-radius: 8px;
-            font-size: 15px;
-            outline: none;
-            transition: border-color 0.3s;
-        }
+ .search-input {
+     flex: 1;
+     padding: 14px 20px;
+     border: 2px solid #daa520;
+     border-radius: 8px;
+     font-size: 15px;
+     outline: none;
+     transition: border-color 0.3s;
+ }
 
-        .search-input:focus {
-            border-color: #ff8c00;
-        }
+ .search-input:focus {
+     border-color: #ff8c00;
+ }
 
-        .search-input::placeholder {
-            color: #999;
-        }
+ .search-input::placeholder {
+     color: #999;
+ }
 
-        .filter-dropdown {
-            position: relative;
-            min-width: 200px;
-            padding: 14px 20px;
-            border: none;
-            border-radius: 8px;
-            font-size: 15px;
-            background: #ff8c00;
-            color: white;
-            cursor: pointer;
-            font-weight: 500;
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='white' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 15px center;
-            padding-right: 40px;
-        }
+ .filter-dropdown {
+     position: relative;
+     min-width: 200px;
+     padding: 14px 20px;
+     border: none;
+     border-radius: 8px;
+     font-size: 15px;
+     background: #ff8c00;
+     color: white;
+     cursor: pointer;
+     font-weight: 500;
+     appearance: none;
+     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='white' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+     background-repeat: no-repeat;
+     background-position: right 15px center;
+     padding-right: 40px;
+ }
 
-        .filter-dropdown:hover {
-            background: #e67e00;
-        }
+ .filter-dropdown:hover {
+     background: #e67e00;
+ }
 
-        .filter-dropdown option {
-            background: white;
-            color: #333;
-        }
+ .filter-dropdown option {
+     background: white;
+     color: #333;
+ }
 
-        .district-dropdown {
-            min-width: 220px;
-            padding: 14px 20px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-size: 15px;
-            background: white;
-            cursor: pointer;
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 15px center;
-            padding-right: 40px;
-        }
+ .district-dropdown {
+     min-width: 220px;
+     padding: 14px 20px;
+     border: 2px solid #ddd;
+     border-radius: 8px;
+     font-size: 15px;
+     background: white;
+     cursor: pointer;
+     appearance: none;
+     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+     background-repeat: no-repeat;
+     background-position: right 15px center;
+     padding-right: 40px;
+ }
 
-        .district-dropdown:hover {
-            border-color: #ff8c00;
-        }
+ .district-dropdown:hover {
+     border-color: #ff8c00;
+ }
 
-        /* Store List */
-        .store-list {
-            padding: 15px;
-        }
+ /* Store List */
+ .store-list {
+     padding: 15px;
+ }
 
-        .store-card {
-            background: white;
-            border: 2px solid #ff8c00;
-            border-radius: 10px;
-            padding: 18px;
-            margin-bottom: 15px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
+ .store-card {
+     background: white;
+     border: 2px solid #ff8c00;
+     border-radius: 10px;
+     padding: 18px;
+     margin-bottom: 15px;
+     cursor: pointer;
+     transition: all 0.3s;
+ }
 
-        .store-card:hover {
-            box-shadow: 0 4px 12px rgba(255, 140, 0, 0.3);
-            transform: translateY(-2px);
-        }
+ .store-card:hover {
+     box-shadow: 0 4px 12px rgba(255, 140, 0, 0.3);
+     transform: translateY(-2px);
+ }
 
-        .store-card.active {
-            background: #ff8c00;
-            color: white;
-        }
+ .store-card.active {
+     background: #ff8c00;
+     color: white;
+ }
 
-        .store-card.active .store-header,
-        .store-card.active .store-address,
-        .store-card.active .store-hotline {
-            color: white;
-        }
+ .store-card.active .store-header,
+ .store-card.active .store-address,
+ .store-card.active .store-hotline {
+     color: white;
+ }
 
-        .store-header {
-            color: #ff8c00;
-            font-weight: bold;
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
+ .store-header {
+     color: #ff8c00;
+     font-weight: bold;
+     font-size: 16px;
+     margin-bottom: 10px;
+ }
 
-        .store-card.active .store-header {
-            color: white;
-        }
+ .store-card.active .store-header {
+     color: white;
+ }
 
-        .store-address {
-            color: #333;
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 10px;
-        }
+ .store-address {
+     color: #333;
+     font-size: 14px;
+     line-height: 1.6;
+     margin-bottom: 10px;
+ }
 
-        .store-hotline {
-            color: #666;
-            font-size: 14px;
-            font-weight: 500;
-        }
+ .store-hotline {
+     color: #666;
+     font-size: 14px;
+     font-weight: 500;
+ }
 
-        .store-hotline span {
-            color: #ff8c00;
-            font-weight: bold;
-        }
+ .store-hotline span {
+     color: #ff8c00;
+     font-weight: bold;
+ }
 
-        .store-card.active .store-hotline span {
-            color: white;
-        }
+ .store-card.active .store-hotline span {
+     color: white;
+ }
 
-        /* Map Section */
-        .map-section {
-            flex: 1;
-            position: relative;
-            background: #e5e3df;
-        }
+ /* Map Section */
+ .map-section {
+     flex: 1;
+     position: relative;
+     background: #e5e3df;
+ }
 
-        #map {
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600"><rect fill="%23e5e3df" width="800" height="600"/><text x="400" y="300" font-size="20" fill="%23999" text-anchor="middle">Bản đồ sẽ hiển thị ở đây</text></svg>') center/cover;
-        }
-        #map iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
+ #map {
+     width: 100%;
+     height: 100%;
+     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600"><rect fill="%23e5e3df" width="800" height="600"/><text x="400" y="300" font-size="20" fill="%23999" text-anchor="middle">Bản đồ sẽ hiển thị ở đây</text></svg>') center/cover;
+ }
 
-        /* Floating Buttons */
-        .float-buttons {
-            position: absolute;
-            bottom: 30px;
-            right: 30px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
+ #map iframe {
+     width: 100%;
+     height: 100%;
+     border: none;
+ }
 
-        .float-btn {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-            transition: all 0.3s;
-        }
+ /* Floating Buttons */
+ .float-buttons {
+     position: absolute;
+     bottom: 30px;
+     right: 30px;
+     display: flex;
+     flex-direction: column;
+     gap: 10px;
+ }
 
-        .float-btn:hover {
-            transform: scale(1.1);
-        }
+ .float-btn {
+     width: 50px;
+     height: 50px;
+     border-radius: 50%;
+     border: none;
+     cursor: pointer;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 20px;
+     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+     transition: all 0.3s;
+ }
 
-        .btn-top {
-            background: #ff8c00;
-            color: white;
-        }
+ .float-btn:hover {
+     transform: scale(1.1);
+ }
 
-        .btn-location {
-            background: #ff8c00;
-            color: white;
-        }
+ .btn-top {
+     background: #ff8c00;
+     color: white;
+ }
 
-        .btn-messenger {
-            background: #0084ff;
-            color: white;
-        }
+ .btn-location {
+     background: #ff8c00;
+     color: white;
+ }
 
-        /* Play Button */
-        .play-btn {
-            position: absolute;
-            bottom: 30px;
-            left: 30px;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: #ff8c00;
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-size: 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }
+ .btn-messenger {
+     background: #0084ff;
+     color: white;
+ }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-            }
-            
-            .sidebar {
-                width: 100%;
-                height: 50vh;
-            }
-            
-            .map-section {
-                height: 50vh;
-            }
-        }
+ /* Play Button */
+ .play-btn {
+     position: absolute;
+     bottom: 30px;
+     left: 30px;
+     width: 50px;
+     height: 50px;
+     border-radius: 50%;
+     background: #ff8c00;
+     color: white;
+     border: none;
+     cursor: pointer;
+     font-size: 20px;
+     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+ }
+
+ /* Responsive */
+ @media (max-width: 768px) {
+     .container {
+         flex-direction: column;
+     }
+
+     .sidebar {
+         width: 100%;
+         height: 50vh;
+     }
+
+     .map-section {
+         height: 50vh;
+     }
+ }

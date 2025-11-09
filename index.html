@@ -9,6 +9,7 @@
     />
     <link rel="stylesheet" href="./style.css"> 
     <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/footer.css">
     <title>Website Handmake</title>
 </head>
 <body>
@@ -18,36 +19,79 @@
             Nhóm 10
         </div>
         <div class="menu">
-            <li class="nav-item"><a href="#">Trang chủ</a></li>
-            <li class="nav-item"><a href="/project-web/about.html">Giới thiệu</a></li>
+            <li class="nav-item"><a href="./index.html" class="active">Trang chủ</a></li>
+            <li class="nav-item"><a href="./about.html">Giới thiệu</a></li>
+            
             <li class="nav-item list-product">
-                <a href="#" class="caret-down a red">Sản phẩm
-                    <div class="dropdown">
-                        <div class="product-items">
-                            <div class="menu-product-item">
-                                <h2>Đồ gốm</h2>
-                                <!-- <div>
-                                    <a href="">Gốm đất nung</a>
-                                    <a href="">Gốm sành</a>
-                                    <a href="">Sứ</a>
-                                </div> -->
-                            </div>
-                            <div class="menu-product-item">Phụ kiện bàn ăn</div>
-                            <div class="menu-product-item">Sứ nghệ thuật</div>
-                            <div class="menu-product-item">Gỗ điêu khắc</div>
-                            <div class="menu-product-item">Đồ gốm</div>
-                            <div class="menu-product-item">Phụ kiện bàn ăn</div>
-                            <div class="menu-product-item">Sứ nghệ thuật</div>
-                            <div class="menu-product-item">Gỗ điêu khắc</div>
-                        </div>
-                        <img width="414" src="public/logo.png">
-                    </div>
+                <a href="./products.html" class="caret-down a">
+                    Sản phẩm
+                    <i class="fa-solid fa-caret-down"></i>
                 </a>
-                <i class="fa-solid fa-caret-down red"></i>
-            </li>
-            <li class="nav-item"><a href="/project-web/news.html">Tin tức</a></li>
-            <li class="nav-item"><a href="#">Cửa hàng</a></li>
-            <li class="nav-item"><a href="#">Liên hệ</a></li>
+                
+                <div class="dropdown">
+                    <div class="product-items">
+                        
+                        <div class="menu-product-item">
+                            <h4><a href="#">Đồ mây tre đan</a></h4>
+                            <ul>
+                                <li><a href="#">Giỏ</a></li>
+                                <li><a href="#">Đèn tre</a></li>
+                                <li><a href="#">Túi cói</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="menu-product-item">
+                            <h4><a href="#">Gốm sứ</a></h4>
+                            <ul>
+                                <li><a href="#">Bình</a></li>
+                                <li><a href="#">Ấm chén</a></li>
+                                <li><a href="#">Tượng gốm</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="menu-product-item">
+                            <h4><a href="#">Đồ gỗ mỹ nghệ</a></h4>
+                            <ul>
+                                <li><a href="#">Tượng</a></li>
+                                <li><a href="#">Hộp</a></li>
+                                <li><a href="#">Khung ảnh</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="menu-product-item">
+                            <h4><a href="#">Dệt thêu & may mặc thủ công</a></h4>
+                            <ul>
+                                <li><a href="#">Khăn</a></li>
+                                <li><a href="#">Túi</a></li>
+                                <li><a href="#">Áo thổ cẩm</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="menu-product-item">
+                            <h4><a href="#">Trang sức & phụ kiện thủ công</a></h4>
+                            <ul>
+                                <li><a href="#">Vòng</a></li>
+                                <li><a href="#">Dây chuyền</a></li>
+                                <li><a href="#">Nhẫn</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="menu-product-item">
+                            <h4><a href="#">Đồ trang trí & quà tặng nghệ thuật</a></h4>
+                            <ul>
+                                <li><a href="#">Nến</a></li>
+                                <li><a href="#">Thiệp 3D</a></li>
+                                <li><a href="#">Tranh giấy</a></li>
+                            </ul>
+                        </div>
+
+                    </div> <div class="dropdown-image">
+                         <img width="300" src="public/img_products.png" alt="Gốm sứ Bát Tràng">
+                    </div>
+                </div> </li>
+            <li class="nav-item"><a href="./news.html">Tin tức</a></li>
+            <li class="nav-item"><a href="./cart.html">Cửa hàng</a></li>
+            <li class="nav-item"><a href="./contact.html">Liên hệ</a></li>
         </div>
         <div class="others">
             <div class="others">
@@ -68,7 +112,6 @@
             </div>
         </div>
     </div>
-    
 </header>
 <main class="component">
     <section class="intro">
@@ -80,7 +123,172 @@
     </section>
     <section class="section_danhmuc">
         <div class="container">
-            
+            <div class="category-list">
+                <div class="category-item">
+                    <a href="#">
+                        <div class="category-image-wrapper">
+                            <img src="public/maytredan.jpg" alt="Mây tre đan">
+                        </div>
+                        <h3>Mây tre đan</h3>
+                        <p>+ 0 sản phẩm</p>
+                    </a>
+                </div>
+                
+                <div class="category-item">
+                    <a href="#">
+                        <div class="category-image-wrapper">
+                            <img src="public/maytredan.jpg" alt="Gốm sứ">
+                        </div>
+                        <h3>Gốm sứ</h3>
+                        <p>+ 30 sản phẩm</p>
+                    </a>
+                </div>
+
+                <div class="category-item">
+                    <a href="#">
+                        <div class="category-image-wrapper">
+                            <img src="public/maytredan.jpg" alt="Đồ gỗ mỹ nghệ">
+                        </div>
+                        <h3>Đồ gỗ mỹ nghệ</h3>
+                        <p>+ 0 sản phẩm</p>
+                    </a>
+                </div>
+
+                <div class="category-item">
+                    <a href="#">
+                        <div class="category-image-wrapper">
+                            <img src="public/maytredan.jpg" alt="Dệt thêu & may mặc thủ công">
+                        </div>
+                        <h3>Dệt thêu & may mặc thủ công</h3>
+                        <p>+ 21 sản phẩm</p>
+                    </a>
+                </div>
+
+                <div class="category-item">
+                    <a href="#">
+                        <div class="category-image-wrapper">
+                            <img src="public/maytredan.jpg" alt="Trang sức & phụ kiện thủ công">
+                        </div>
+                        <h3>Trang sức & phụ kiện thủ công</h3>
+                        <p>+ 0 sản phẩm</p>
+                    </a>
+                </div>
+
+                <div class="category-item">
+                    <a href="#">
+                        <div class="category-image-wrapper">
+                            <img src="public/maytredan.jpg" alt="Đồ trang trí & quà tặng nghệ thuật">
+                        </div>
+                        <h3>Đồ trang trí & quà tặng nghệ thuật</h3>
+                        <p>+ 0 sản phẩm</p>
+                    </a>
+                </div>
+
+            </div> 
+            <div id="special-promotions-block">
+                <div class="promotions-container">
+                    <div class="section-header">
+                        <h2>Khuyến mãi đặc biệt</h2>
+                        <a href="#" class="view-all">Chương trình đã kết thúc, hẹn gặp lại trong thời gian sớm nhất! →</a>
+                    </div>
+
+                    <div class="product-grid">
+
+                        <div class="product-card">
+                            <span class="discount-badge">Giảm 44%</span>
+                            <div class="product-image">
+                                <img src="https://via.placeholder.com/200x200/f0f0f0/cccccc?text=H%C3%ACnh+S%E1%BA%A3n+Ph%E1%BA%A9m+1" alt="Bộ khay mứt">
+                                <div class="action-buttons">
+                                    <div class="action-button" title="Thêm vào giỏ hàng">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 22a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm11 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm-13.81-8.15l2.76-7.85H21a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H7.88l-.94 2.68A2 2 0 0 0 7 17a2 2 0 0 0 2 2h9a1 1 0 0 1 0 2H9a4 4 0 0 1-3.81-4.85z"/></svg>
+                                    </div>
+                                    <div class="action-button" title="Thêm vào yêu thích">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                                    </div>
+                                    <div class="action-button" title="Xem nhanh">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3 class="product-name">Bộ khay mứt 31.5cm Thiên Kim</h3>
+                            <div class="product-price">
+                                <span class="sale-price">1.688.500₫</span>
+                                <span class="original-price">3.000.000₫</span>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <span class="discount-badge">Giảm 62%</span>
+                            <div class="product-image">
+                                <img src="https://via.placeholder.com/200x200/f0f0f0/cccccc?text=H%C3%ACnh+S%E1%BA%A3n+Ph%E1%BA%A9m+2" alt="Bộ trà">
+                                <div class="action-buttons">
+                                    <div class="action-button" title="Thêm vào giỏ hàng">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 22a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm11 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm-13.81-8.15l2.76-7.85H21a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H7.88l-.94 2.68A2 2 0 0 0 7 17a2 2 0 0 0 2 2h9a1 1 0 0 1 0 2H9a4 4 0 0 1-3.81-4.85z"/></svg>
+                                    </div>
+                                    <div class="action-button" title="Thêm vào yêu thích">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                                    </div>
+                                    <div class="action-button" title="Xem nhanh">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3 class="product-name">Bộ trà 0.35 L - IFP - Chỉ Vàng</h3>
+                            <div class="product-price">
+                                <span class="sale-price">764.500₫</span>
+                                <span class="original-price">2.000.000₫</span>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <span class="discount-badge">Giảm 50%</span>
+                            <div class="product-image">
+                                <img src="https://via.placeholder.com/200x200/f0f0f0/cccccc?text=H%C3%ACnh+S%E1%BA%A3n+Ph%E1%BA%A9m+3" alt="Lọ Bud Vase">
+                                <div class="action-buttons">
+                                    <div class="action-button" title="Thêm vào giỏ hàng">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 22a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm11 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm-13.81-8.15l2.76-7.85H21a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H7.88l-.94 2.68A2 2 0 0 0 7 17a2 2 0 0 0 2 2h9a1 1 0 0 1 0 2H9a4 4 0 0 1-3.81-4.85z"/></svg>
+                                    </div>
+                                    <div class="action-button" title="Thêm vào yêu thích">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                                    </div>
+                                    <div class="action-button" title="Xem nhanh">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3 class="product-name">Lọ Bud Vase trong Silver Spruce</h3>
+                            <div class="product-price">
+                                <span class="sale-price">2.500.000₫</span>
+                                <span class="original-price">5.000.000₫</span>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <span class="discount-badge">Giảm 11%</span>
+                            <div class="product-image">
+                                <img src="https://via.placeholder.com/200x200/f0f0f0/cccccc?text=H%C3%ACnh+S%E1%BA%A3n+Ph%E1%BA%A9m+4" alt="Bát sâu lòng">
+                                <div class="action-buttons">
+                                    <div class="action-button" title="Thêm vào giỏ hàng">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 22a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm11 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm-13.81-8.15l2.76-7.85H21a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H7.88l-.94 2.68A2 2 0 0 0 7 17a2 2 0 0 0 2 2h9a1 1 0 0 1 0 2H9a4 4 0 0 1-3.81-4.85z"/></svg>
+                                    </div>
+                                    <div class="action-button" title="Thêm vào yêu thích">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                                    </div>
+                                    <div class="action-button" title="Xem nhanh">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3 class="product-name">Bát sâu trong Silver Spruce</h3>
+                            <div class="product-price">
+                                <span class="sale-price">1.590.000₫</span>
+                                <span class="original-price">1.790.000₫</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 </main>
@@ -91,38 +299,51 @@
                 <div class="info_details">
                     <h2>Thông tin</h2>
                     <div>
-                        <!--icon location -->
+                        <i class="fa-solid fa-location-dot"></i>
                         <p>Trường Đại học Nông Lâm Tp.Hcm</p>
                     </div>
                     <div>
-                        <!--icon phone -->
-                        0337429995
-                    </div>
+                        <i class="fa-solid fa-phone"></i>
+                        <p>0337429995</p> </div>
                     <div>
-                        <!--icon email -->
-                        23130240@st.hcmuaf.edu.vn
+                        <i class="fa-solid fa-envelope"></i>
+                        <p>23130240@st.hcmuaf.edu.vn</p> </div>
+                </div>
+
+                <div class="info_media">
+                    <h2>Mạng xã hội</h2>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon zalo" aria-label="Zalo">
+                            <strong>Za</strong>
+                        </a>
+                        <a href="#" class="social-icon fb" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon yt" aria-label="YouTube">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                        <a href="#" class="social-icon gg" aria-label="Google">
+                            <i class="fa-brands fa-google"></i>
+                        </a>
                     </div>
                 </div>
-                <div class="info_media">
-                    <!--icon zalo -->
-                    <!--icon fb -->
-                    <!--icon youtube -->
-                </div>
             </div>
-            <div class="policy guide">
+
+            <div class="policy-guide-wrapper">
                 <div class="component policy">
-                    <li><a href="#" class="hover color">Chính sách bảo mật</a></li>
-                    <li><a href="#" class="hover color">Chính sách vận chuyển</a></li>
-                    <li><a href="#" class="hover color">Chính sách đổi trả</a></li>
-                    <li><a href="#" class="hover color">Quy định sử dụng</a></li>
-                </div>
+                    <h2>Chính sách</h2> <ul> <li><a href="#" class="hover color">Chính sách bảo mật</a></li>
+                        <li><a href="#" class="hover color">Chính sách vận chuyển</a></li>
+                        <li><a href="#" class="hover color">Chính sách đổi trả</a></li>
+                        <li><a href="#" class="hover color">Quy định sử dụng</a></li>
+                    </ul> </div>
                 <div class="component guide">
-                    <li><a href="#" class="hover color">Hướng dẫn mua hàng</a></li>
-                    <li><a href="#" class="hover color">Hướng dẫn thanh toán</a></li>
-                    <li><a href="#" class="hover color">Hướng dẫn giao nhận</a></li>
-                    <li><a href="#" class="hover color">Điều khoản sử dụng</a></li>
-                </div>
+                    <h2>Hướng dẫn</h2> <ul> <li><a href="#" class="hover color">Hướng dẫn mua hàng</a></li>
+                        <li><a href="#" class="hover color">Hướng dẫn thanh toán</a></li>
+                        <li><a href="#" class="hover color">Hướng dẫn giao nhận</a></li>
+                        <li><a href="#" class="hover color">Điều khoản sử dụng</a></li>
+                    </ul> </div>
             </div>
+
             <div class="others">
                 <h2>Đăng ký nhận tin</h2>
                 <p>Đăng ký ngay! Để nhận nhiều ưu đãi</p>
@@ -130,7 +351,7 @@
                     <input type="text" name="Email" id="email" placeholder="Nhập địa chỉ email">
                     <button>Đăng ký</button>
                 </div>
-            </div>
+                </div>
         </div>
     </div>
 </footer>
