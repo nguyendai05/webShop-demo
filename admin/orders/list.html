@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý đơn hàng - Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../css/admin-dashboard.css">
+    <link rel="stylesheet" href="../css/orders-list.css">
+</head>
+<body>
+    <main class="admin-dashboard-main">
+        <div class="admin-dashboard-container">
+            <!-- Admin Sidebar -->
+            <aside class="admin-sidebar">
+                <div class="sidebar-header">
+                    <div class="admin-logo">
+                        <i class="fa-solid fa-store"></i>
+                    </div>
+                    <h2>Admin Panel</h2>
+                    <p>Quản lý hệ thống</p>
+                </div>
+
+                <nav class="admin-menu">
+                    <a href="../dashboard.html" class="admin-menu-item">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="../products/list.html" class="admin-menu-item">
+                        <i class="fa-solid fa-box"></i>
+                        <span>Quản lý sản phẩm</span>
+                    </a>
+                    <a href="list.html" class="admin-menu-item active">
+                        <i class="fa-solid fa-shopping-cart"></i>
+                        <span>Quản lý đơn hàng</span>
+                    </a>
+                    <a href="#" class="admin-menu-item">
+                        <i class="fa-solid fa-users"></i>
+                        <span>Quản lý khách hàng</span>
+                    </a>
+                    <a href="#" class="admin-menu-item">
+                        <i class="fa-solid fa-star"></i>
+                        <span>Đánh giá</span>
+                    </a>
+                    <a href="#" class="admin-menu-item">
+                        <i class="fa-solid fa-chart-bar"></i>
+                        <span>Báo cáo</span>
+                    </a>
+                    <a href="#" class="admin-menu-item">
+                        <i class="fa-solid fa-cog"></i>
+                        <span>Cài đặt</span>
+                    </a>
+                    <a href="../../index.html" class="admin-menu-item logout">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>Đăng xuất</span>
+                    </a>
+                </nav>
+
+                <!-- Admin Info -->
+                <div class="admin-info">
+                    <div class="admin-avatar">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+                    <p class="admin-name">Admin User</p>
+                    <p class="admin-role">Quản trị viên</p>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <div class="admin-content">
+                <!-- Page Header -->
+                <div class="page-header">
+                    <div class="header-left">
+                        <h1>Quản lý đơn hàng</h1>
+                        <p>Tổng cộng <strong>456 đơn hàng</strong></p>
+                    </div>
+                    <div class="header-right">
+                        <button class="btn-export-excel">
+                            <i class="fa-solid fa-file-excel"></i>
+                            Xuất Excel
+                        </button>
+                        <button class="btn-export-pdf">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            Xuất PDF
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Status Tabs -->
+                <div class="status-tabs">
+                    <a href="#" class="tab-item active">
+                        <span class="tab-label">Tất cả</span>
+                        <span class="tab-count">456</span>
+                    </a>
+                    <a href="#" class="tab-item pending">
+                        <span class="tab-label">Chờ xác nhận</span>
+                        <span class="tab-count">28</span>
+                    </a>
+                    <a href="#" class="tab-item confirmed">
+                        <span class="tab-label">Đã xác nhận</span>
+                        <span class="tab-count">45</span>
+                    </a>
+                    <a href="#" class="tab-item shipping">
+                        <span class="tab-label">Đang giao</span>
+                        <span class="tab-count">67</span>
+                    </a>
+                    <a href="#" class="tab-item completed">
+                        <span class="tab-label">Hoàn thành</span>
+                        <span class="tab-count">298</span>
+                    </a>
+                    <a href="#" class="tab-item cancelled">
+                        <span class="tab-label">Đã hủy</span>
+                        <span class="tab-count">15</span>
+                    </a>
+                    <a href="#" class="tab-item returned">
+                        <span class="tab-label">Hoàn trả</span>
+                        <span class="tab-count">3</span>
+                    </a>
+                </div>
+
+                <!-- Search and Filter Section -->
+                <div class="filter-section">
+                    <form action="#" method="get" class="filter-form">
+                        <!-- Search Bar -->
+                        <div class="search-wrapper">
+                            <i class="fa-solid fa-search"></i>
+                            <input type="text" name="search" placeholder="Tìm kiếm theo mã đơn hàng, tên khách hàng, SĐT, email..." class="search-input">
+                        </div>
+
+                        <!-- Filter Options -->
+                        <div class="filter-options">
+                            <!-- Date Range Filter -->
+                            <div class="filter-group">
+                                <label for="date-from">
+                                    <i class="fa-solid fa-calendar"></i>
+                                    Từ ngày
+                                </label>
+                                <input type="date" id="date-from" name="date_from">
+                            </div>
+
+                            <div class="filter-group">
+                                <label for="date-to">
+                                    <i class="fa-solid fa-calendar"></i>
+                                    Đến ngày
+                                </label>
+                                <input type="date" id="date-to" name="date_to">
+                            </div>
+
+                            <!-- Order Value Filter -->
+                            <div class="filter-group">
+                                <label for="order-value">
+                                    <i class="fa-solid fa-dollar-sign"></i>
+                                    Giá trị đơn hàng
+                                </label>
+                                <select name="order_value" id="order-value">
+                                    <option value="">Tất cả</option>
+                                    <option value="0-500000">Dưới 500K</option>
+                                    <option value="500000-1000000">500K - 1M</option>
+                                    <option value="1000000-2000000">1M - 2M</option>
+                                    <option value="2000000-5000000">2M - 5M</option>
+                                    <option value="5000000+">Trên 5M</option>
+                                </select>
+                            </div>
+
+                            <!-- Payment Method Filter -->
+                            <div class="filter-group">
+                                <label for="payment-method">
+                                    <i class="fa-solid fa-credit-card"></i>
+                                    Phương thức thanh toán
+                                </label>
+                                <select name="payment_method" id="payment-method">
+                                    <option value="">Tất cả</option>
+                                    <option value="cod">COD</option>
+                                    <option value="banking">Chuyển khoản</option>
+                                    <option value="momo">Ví MoMo</option>
+                                    <option value="vnpay">VNPay</option>
+                                    <option value="zalopay">ZaloPay</option>
+                                </select>
+                            </div>
+
+                            <!-- Payment Status Filter -->
+                            <div class="filter-group">
+                                <label for="payment-status">
+                                    <i class="fa-solid fa-money-check"></i>
+                                    Trạng thái thanh toán
+                                </label>
+                                <select name="payment_status" id="payment-status">
+                                    <option value="">Tất cả</option>
+                                    <option value="paid">Đã thanh toán</option>
+                                    <option value="unpaid">Chưa thanh toán</option>
+                                    <option value="refunded">Đã hoàn tiền</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Filter Actions -->
+                        <div class="filter-actions">
+                            <button type="submit" class="btn-apply-filter">
+                                <i class="fa-solid fa-filter"></i>
+                                Áp dụng
+                            </button>
+                            <button type="reset" class="btn-reset-filter">
+                                <i class="fa-solid fa-rotate-right"></i>
+                                Đặt lại
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Orders Table -->
+                <div class="orders-table-container">
+                    <table class="orders-table">
+                        <thead>
+                            <tr>
+                                <th class="col-order-id">Mã đơn hàng</th>
+                                <th class="col-customer">Khách hàng</th>
+                                <th class="col-contact">Liên hệ</th>
+                                <th class="col-total">Tổng tiền</th>
+                                <th class="col-payment-method">Thanh toán</th>
+                                <th class="col-payment-status">TT Thanh toán</th>
+                                <th class="col-date">Ngày đặt</th>
+                                <th class="col-status">Trạng thái</th>
+                                <th class="col-actions">Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Order Row 1 - Chờ xác nhận -->
+                            <tr class="order-row">
+                                <td class="col-order-id">
+                                    <a href="#" class="order-id-link">#DH2547</a>
+                                </td>
+                                <td class="col-customer">
+                                    <div class="customer-info">
+                                        <div class="customer-avatar">
+                                            <i class="fa-solid fa-user"></i>
+                                        </div>
+                                        <div class="customer-details">
+                                            <h4>Nguyễn Văn A</h4>
+                                            <p>Khách hàng VIP</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="col-contact">
+                                    <div class="contact-info">
+                                        <p><i class="fa-solid fa-phone"></i> 0123 456 789</p>
+                                        <p><i class="fa-solid fa-envelope"></i> nguyenvana@email.com</p>
+                                    </div>
+                                </td>
+                                <td class="col-total">
+                                    <span class="total-amount">1.250.000đ</span>
+                                </td>
+                                <td class="col-payment-method">
+                                    <span class="payment-badge cod">COD</span>
+                                </td>
+                                <td class="col-payment-status">
+                                    <span class="payment-status unpaid">Chưa TT</span>
+                                </td>
+                                <td class="col-date">
+                                    <div class="date-info">
+                                        <p>10/11/2025</p>
+                                        <small>14:30</small>
+                                    </div>
+                                </td>
+                                <td class="col-status">
+                                    <span class="status-badge status-pending">Chờ xác nhận</span>
+                                </td>
+                                <td class="col-actions">
+                                    <div class="action-buttons">
+                                        <a href="#" class="btn-action btn-view" title="Xem chi tiết">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </a>
+                                        <button class="btn-action btn-print" title="In hóa đơn">
+                                            <i class="fa-solid fa-print"></i>
+                                        </button>
+                                        <button class="btn-action btn-update" title="Cập nhật trạng thái">
+                                            <i class="fa-solid fa-rotate"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Order Row 2 - Đã xác nhận -->
+                            <tr class="order-row">
+                                <td class="col-order-id">
+                                    <a href="#" class="order-id-link">#DH2546</a>
+                                </td>
+                                <td class="col-customer">
+                                    <div class="customer-info">
+                                        <div class="customer-avatar">
+                                            <i class="fa-solid fa-user"></i>
+                                        </div>
+                                        <div class="customer-details">
+                                            <h4>Trần Thị B</h4>
+                                            <p>Khách hàng mới</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="col-contact">
+                                    <div class="contact-info">
+                                        <p><i class="fa-solid fa-phone"></i> 0987 654 321</p>
+                                        <p><i class="fa-solid fa-envelope"></i> tranthib@email.com</p>
+                                    </div>
+                                </td>
+                                <td class="col-total">
+                                    <span class="total-amount">850.000đ</span>
+                                </td>
+                                <td class="col-payment-method">
+                                    <span class="payment-badge banking">Chuyển khoản</span>
+                                </td>
+                                <td class="col-payment-status">
+                                    <span class="payment-status paid">Đã TT</span>
+                                </td>
+                                <td class="col-date">
+                                    <div class="date-info">
+                                        <p>10/11/2025</p>
+                                        <small>10:15</small>
+                                    </div>
+                                </td>
+                                <td class="col-status">
+                                    <span class="status-badge status-confirmed">Đã xác nhận</span>
+                                </td>
+                                <td class="col-actions">
+                                    <div class="action-buttons">
+                                        <a href="#" class="btn-action btn-view" title="Xem chi tiết">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </a>
+                                        <button class="btn-action btn-print" title="In hóa đơn">
+                                            <i class="fa-solid fa-print"></i>
+                                        </button>
+                                        <button class="btn-action btn-update" title="Cập nhật trạng thái">
+                                            <i class="fa-solid fa-rotate"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Order Row 3 - Đang giao -->
+                            <tr class="order-row">
+                                <td class="col-order-id">
+                                    <a href="#" class="order-id-link">#DH2545</a>
+                                </td>
+                                <td class="col-customer">
+                                    <div class="customer-info">
+                                        <div class="customer-avatar">
+                                            <i class="fa-solid fa-user"></i>
+                                        </div>
+                                        <div class="customer-details">
+                                            <h4>Lê Văn C</h4>
+                                            <p>Khách hàng thường xuyên</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="col-contact">
+                                    <div class="contact-info">
+                                        <p><i class="fa-solid fa-phone"></i> 0912 345 678</p>
+                                        <p><i class="fa-solid fa-envelope"></i> levanc@email.com</p>
+                                    </div>
+                                </td>
+                                <td class="col-total">
+                                    <span class="total-amount">2.100.000đ</span>
+                                </td>
+                                <td class="col-payment-method">
+                                    <span class="payment-badge momo">MoMo</span>
+                                </td>
+                                <td class="col-payment-status">
+                                    <span class="payment-status paid">Đã TT</span>
+                                </td>
+                                <td class="col-date">
+                                    <div class="date-info">
+                                        <p>09/11/2025</p>
+                                        <small>16:45</small>
+                                    </div>
+                                </td>
+                                <td class="col-status">
+                                    <span class="status-badge status-shipping">Đang giao</span>
+                                </td>
+                                <td class="col-actions">
+                                    <div class="action-buttons">
+                                        <a href="#" class="btn-action btn-view" title="Xem chi tiết">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </a>
+                                        <button class="btn-action btn-print" title="In hóa đơn">
+                                            <i class="fa-solid fa-print"></i>
+                                        </button>
+                                        <button class="btn-action btn-update" title="Cập nhật trạng thái">
+                                            <i class="fa-solid fa-rotate"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Order Row 4 - Hoàn thành -->
+                            <tr class="order-row">
+                                <td class="col-order-id">
+                                    <a href="#" class="order-id-link">#DH2544</a>
+                                </td>
+                                <td class="col-customer">
+                                    <div class="customer-info">
+                                        <div class="customer-avatar">
+                                            <i class="fa-solid fa-user"></i>
+                                        </div>
+                                        <div class="customer-details">
+                                            <h4>Phạm Thị D</h4>
+                                            <p>Khách hàng VIP</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="col-contact">
+                                    <div class="contact-info">
+                                        <p><i class="fa-solid fa-phone"></i> 0909 876 543</p>
+                                        <p><i class="fa-solid fa-envelope"></i> phamthid@email.com</p>
+                                    </div>
+                                </td>
+                                <td class="col-total">
+                                    <span class="total-amount">650.000đ</span>
+                                </td>
+                                <td class="col-payment-method">
+                                    <span class="payment-badge vnpay">VNPay</span>
+                                </td>
+                                <td class="col-payment-status">
+                                    <span class="payment-status paid">Đã TT</span>
+                                </td>
+                                <td class="col-date">
+                                    <div class="date-info">
+                                        <p>08/11/2025</p>
+                                        <small>09:20</small>
+                                    </div>
+                                </td>
+                                <td class="col-status">
+                                    <span class="status-badge status-completed">Hoàn thành</span>
+                                </td>
+                                <td class="col-actions">
+                                    <div class="action-buttons">
+                                        <a href="#" class="btn-action btn-view" title="Xem chi tiết">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </a>
+                                        <button class="btn-action btn-print" title="In hóa đơn">
+                                            <i class="fa-solid fa-print"></i>
+                                        </button>
+                                        <button class="btn-action btn-update" title="Cập nhật trạng thái">
+                                            <i class="fa-solid fa-rotate"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Order Row 5 - Đã hủy -->
+                            <tr class="order-row">
+                                <td class="col-order-id">
+                                    <a href="#" class="order-id-link">#DH2543</a>
+                                </td>
+                                <td class="col-customer">
+                                    <div class="customer-info">
+                                        <div class="customer-avatar">
+                                            <i class="fa-solid fa-user"></i>
+                                        </div>
+                                        <div class="customer-details">
+                                            <h4>Hoàng Văn E</h4>
+                                            <p>Khách hàng mới</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="col-contact">
+                                    <div class="contact-info">
+                                        <p><i class="fa-solid fa-phone"></i> 0938 765 432</p>
+                                        <p><i class="fa-solid fa-envelope"></i> hoangvane@email.com</p>
+                                    </div>
+                                </td>
+                                <td class="col-total">
+                                    <span class="total-amount">450.000đ</span>
+                                </td>
+                                <td class="col-payment-method">
+                                    <span class="payment-badge cod">COD</span>
+                                </td>
+                                <td class="col-payment-status">
+                                    <span class="payment-status unpaid">Chưa TT</span>
+                                </td>
+                                <td class="col-date">
+                                    <div class="date-info">
+                                        <p>07/11/2025</p>
+                                        <small>11:00</small>
+                                    </div>
+                                </td>
+                                <td class="col-status">
+                                    <span class="status-badge status-cancelled">Đã hủy</span>
+                                </td>
+                                <td class="col-actions">
+                                    <div class="action-buttons">
+                                        <a href="#" class="btn-action btn-view" title="Xem chi tiết">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </a>
+                                        <button class="btn-action btn-print" title="In hóa đơn">
+                                            <i class="fa-solid fa-print"></i>
+                                        </button>
+                                        <button class="btn-action btn-update" title="Cập nhật trạng thái">
+                                            <i class="fa-solid fa-rotate"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Order Row 6 - Hoàn trả -->
+                            <tr class="order-row">
+                                <td class="col-order-id">
+                                    <a href="#" class="order-id-link">#DH2542</a>
+                                </td>
+                                <td class="col-customer">
+                                    <div class="customer-info">
+                                        <div class="customer-avatar">
+                                            <i class="fa-solid fa-user"></i>
+                                        </div>
+                                        <div class="customer-details">
+                                            <h4>Đỗ Thị F</h4>
+                                            <p>Khách hàng thường xuyên</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="col-contact">
+                                    <div class="contact-info">
+                                        <p><i class="fa-solid fa-phone"></i> 0945 123 789</p>
+                                        <p><i class="fa-solid fa-envelope"></i> dothif@email.com</p>
+                                    </div>
+                                </td>
+                                <td class="col-total">
+                                    <span class="total-amount">1.500.000đ</span>
+                                </td>
+                                <td class="col-payment-method">
+                                    <span class="payment-badge zalopay">ZaloPay</span>
+                                </td>
+                                <td class="col-payment-status">
+                                    <span class="payment-status refunded">Đã hoàn</span>
+                                </td>
+                                <td class="col-date">
+                                    <div class="date-info">
+                                        <p>05/11/2025</p>
+                                        <small>15:30</small>
+                                    </div>
+                                </td>
+                                <td class="col-status">
+                                    <span class="status-badge status-returned">Hoàn trả</span>
+                                </td>
+                                <td class="col-actions">
+                                    <div class="action-buttons">
+                                        <a href="#" class="btn-action btn-view" title="Xem chi tiết">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </a>
+                                        <button class="btn-action btn-print" title="In hóa đơn">
+                                            <i class="fa-solid fa-print"></i>
+                                        </button>
+                                        <button class="btn-action btn-update" title="Cập nhật trạng thái">
+                                            <i class="fa-solid fa-rotate"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Order Row 7 - Chờ xác nhận -->
+                            <tr class="order-row">
+                                <td class="col-order-id">
+                                    <a href="#" class="order-id-link">#DH2541</a>
+                                </td>
+                                <td class="col-customer">
+                                    <div class="customer-info">
+                                        <div class="customer-avatar">
+                                            <i class="fa-solid fa-user"></i>
+                                        </div>
+                                        <div class="customer-details">
+                                            <h4>Vũ Văn G</h4>
+                                            <p>Khách hàng VIP</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="col-contact">
+                                    <div class="contact-info">
+                                        <p><i class="fa-solid fa-phone"></i> 0976 543 210</p>
+                                        <p><i class="fa-solid fa-envelope"></i> vuvang@email.com</p>
+                                    </div>
+                                </td>
+                                <td class="col-total">
+                                    <span class="total-amount">3.250.000đ</span>
+                                </td>
+                                <td class="col-payment-method">
+                                    <span class="payment-badge banking">Chuyển khoản</span>
+                                </td>
+                                <td class="col-payment-status">
+                                    <span class="payment-status paid">Đã TT</span>
+                                </td>
+                                <td class="col-date">
+                                    <div class="date-info">
+                                        <p>10/11/2025</p>
+                                        <small>08:45</small>
+                                    </div>
+                                </td>
+                                <td class="col-status">
+                                    <span class="status-badge status-pending">Chờ xác nhận</span>
+                                </td>
+                                <td class="col-actions">
+                                    <div class="action-buttons">
+                                        <a href="#" class="btn-action btn-view" title="Xem chi tiết">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </a>
+                                        <button class="btn-action btn-print" title="In hóa đơn">
+                                            <i class="fa-solid fa-print"></i>
+                                        </button>
+                                        <button class="btn-action btn-update" title="Cập nhật trạng thái">
+                                            <i class="fa-solid fa-rotate"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Order Row 8 - Đang giao -->
+                            <tr class="order-row">
+                                <td class="col-order-id">
+                                    <a href="#" class="order-id-link">#DH2540</a>
+                                </td>
+                                <td class="col-customer">
+                                    <div class="customer-info">
+                                        <div class="customer-avatar">
+                                            <i class="fa-solid fa-user"></i>
+                                        </div>
+                                        <div class="customer-details">
+                                            <h4>Bùi Thị H</h4>
+                                            <p>Khách hàng mới</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="col-contact">
+                                    <div class="contact-info">
+                                        <p><i class="fa-solid fa-phone"></i> 0967 890 123</p>
+                                        <p><i class="fa-solid fa-envelope"></i> buithih@email.com</p>
+                                    </div>
+                                </td>
+                                <td class="col-total">
+                                    <span class="total-amount">980.000đ</span>
+                                </td>
+                                <td class="col-payment-method">
+                                    <span class="payment-badge momo">MoMo</span>
+                                </td>
+                                <td class="col-payment-status">
+                                    <span class="payment-status paid">Đã TT</span>
+                                </td>
+                                <td class="col-date">
+                                    <div class="date-info">
+                                        <p>09/11/2025</p>
+                                        <small>13:15</small>
+                                    </div>
+                                </td>
+                                <td class="col-status">
+                                    <span class="status-badge status-shipping">Đang giao</span>
+                                </td>
+                                <td class="col-actions">
+                                    <div class="action-buttons">
+                                        <a href="#" class="btn-action btn-view" title="Xem chi tiết">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </a>
+                                        <button class="btn-action btn-print" title="In hóa đơn">
+                                            <i class="fa-solid fa-print"></i>
+                                        </button>
+                                        <button class="btn-action btn-update" title="Cập nhật trạng thái">
+                                            <i class="fa-solid fa-rotate"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination-section">
+                    <div class="pagination-info">
+                        Hiển thị <strong>1-8</strong> trong tổng số <strong>456</strong> đơn hàng
+                    </div>
+                    <div class="pagination">
+                        <a href="#" class="page-link disabled">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </a>
+                        <a href="#" class="page-link active">1</a>
+                        <a href="#" class="page-link">2</a>
+                        <a href="#" class="page-link">3</a>
+                        <a href="#" class="page-link">4</a>
+                        <a href="#" class="page-link">5</a>
+                        <span class="page-dots">...</span>
+                        <a href="#" class="page-link">58</a>
+                        <a href="#" class="page-link">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                    </div>
+                    <div class="per-page">
+                        <label for="per-page">Hiển thị:</label>
+                        <select name="per_page" id="per-page">
+                            <option value="8">8</option>
+                            <option value="20">20</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

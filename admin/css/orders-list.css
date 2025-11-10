@@ -1,0 +1,834 @@
+/* ============================================
+   ORDERS LIST - ADMIN PANEL
+   ============================================ */
+
+/* Page Header */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    gap: 20px;
+}
+
+.page-header .header-left h1 {
+    font-size: 28px;
+    color: #4e342e;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.page-header .header-left p {
+    font-size: 14px;
+    color: #777;
+}
+
+.header-right {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-export-excel,
+.btn-export-pdf {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-export-excel {
+    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.2);
+}
+
+.btn-export-excel:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(39, 174, 96, 0.3);
+}
+
+.btn-export-pdf {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.2);
+}
+
+.btn-export-pdf:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(231, 76, 60, 0.3);
+}
+
+/* ============================================
+   STATUS TABS
+   ============================================ */
+.status-tabs {
+    display: flex;
+    gap: 8px;
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(78, 52, 46, 0.08);
+    margin-bottom: 20px;
+    overflow-x: auto;
+}
+
+.tab-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 14px 20px;
+    background: #fafafa;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    min-width: 120px;
+}
+
+.tab-item:hover {
+    background: rgba(192, 57, 43, 0.05);
+    border-color: rgba(192, 57, 43, 0.2);
+}
+
+.tab-item.active {
+    background: linear-gradient(135deg, #c0392b 0%, #c97a3a 100%);
+    border-color: #c0392b;
+    box-shadow: 0 4px 15px rgba(192, 57, 43, 0.3);
+}
+
+.tab-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #555;
+}
+
+.tab-item.active .tab-label {
+    color: white;
+}
+
+.tab-count {
+    font-size: 20px;
+    font-weight: 700;
+    color: #c0392b;
+}
+
+.tab-item.active .tab-count {
+    color: white;
+}
+
+/* Tab status colors */
+.tab-item.pending:not(.active):hover {
+    background: rgba(243, 156, 18, 0.05);
+    border-color: rgba(243, 156, 18, 0.2);
+}
+
+.tab-item.confirmed:not(.active):hover {
+    background: rgba(52, 152, 219, 0.05);
+    border-color: rgba(52, 152, 219, 0.2);
+}
+
+.tab-item.shipping:not(.active):hover {
+    background: rgba(155, 89, 182, 0.05);
+    border-color: rgba(155, 89, 182, 0.2);
+}
+
+.tab-item.completed:not(.active):hover {
+    background: rgba(39, 174, 96, 0.05);
+    border-color: rgba(39, 174, 96, 0.2);
+}
+
+.tab-item.cancelled:not(.active):hover {
+    background: rgba(231, 76, 60, 0.05);
+    border-color: rgba(231, 76, 60, 0.2);
+}
+
+.tab-item.returned:not(.active):hover {
+    background: rgba(149, 165, 166, 0.05);
+    border-color: rgba(149, 165, 166, 0.2);
+}
+
+/* ============================================
+   FILTER SECTION
+   ============================================ */
+.filter-section {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 8px 30px rgba(78, 52, 46, 0.08);
+    margin-bottom: 20px;
+}
+
+.filter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Search Bar */
+.search-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.search-wrapper i {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #c0392b;
+    font-size: 16px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 14px 18px 14px 48px;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background: #fafafa;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #c0392b;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.1);
+}
+
+/* Filter Options */
+.filter-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.filter-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #4e342e;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.filter-group label i {
+    color: #c0392b;
+    font-size: 14px;
+}
+
+.filter-group input[type="date"],
+.filter-group select {
+    padding: 10px 14px;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #555;
+    background: #fafafa;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-group input[type="date"]:focus,
+.filter-group select:focus {
+    outline: none;
+    border-color: #c0392b;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.1);
+}
+
+/* Filter Actions */
+.filter-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-apply-filter,
+.btn-reset-filter {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-apply-filter {
+    background: linear-gradient(135deg, #c0392b 0%, #c97a3a 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(192, 57, 43, 0.2);
+}
+
+.btn-apply-filter:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(192, 57, 43, 0.3);
+}
+
+.btn-reset-filter {
+    background: #f5f1e6;
+    color: #4e342e;
+}
+
+.btn-reset-filter:hover {
+    background: #ede7d9;
+}
+
+/* ============================================
+   ORDERS TABLE
+   ============================================ */
+.orders-table-container {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 8px 30px rgba(78, 52, 46, 0.08);
+    margin-bottom: 20px;
+    overflow-x: auto;
+}
+
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 1400px;
+}
+
+.orders-table thead {
+    background: linear-gradient(135deg, rgba(192, 57, 43, 0.05) 0%, rgba(201, 122, 58, 0.05) 100%);
+}
+
+.orders-table th {
+    padding: 15px 12px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 700;
+    color: #4e342e;
+    text-transform: uppercase;
+    border-bottom: 2px solid #f5f1e6;
+}
+
+.orders-table td {
+    padding: 18px 12px;
+    font-size: 14px;
+    color: #555;
+    border-bottom: 1px solid #f5f1e6;
+    vertical-align: middle;
+}
+
+.order-row {
+    transition: all 0.3s ease;
+}
+
+.order-row:hover {
+    background: #fafafa;
+}
+
+/* Column Widths */
+.col-order-id {
+    width: 120px;
+}
+
+.col-customer {
+    min-width: 200px;
+}
+
+.col-contact {
+    min-width: 220px;
+}
+
+.col-total {
+    width: 130px;
+}
+
+.col-payment-method {
+    width: 140px;
+}
+
+.col-payment-status {
+    width: 130px;
+}
+
+.col-date {
+    width: 120px;
+}
+
+.col-status {
+    width: 150px;
+}
+
+.col-actions {
+    width: 140px;
+}
+
+/* Order ID Link */
+.order-id-link {
+    color: #c0392b;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.order-id-link:hover {
+    color: #c97a3a;
+    text-decoration: underline;
+}
+
+/* Customer Info */
+.customer-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.customer-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #c0392b 0%, #c97a3a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.customer-details h4 {
+    font-size: 14px;
+    color: #4e342e;
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.customer-details p {
+    font-size: 12px;
+    color: #777;
+}
+
+/* Contact Info */
+.contact-info p {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.contact-info p:last-child {
+    margin-bottom: 0;
+}
+
+.contact-info i {
+    color: #c0392b;
+    font-size: 12px;
+}
+
+/* Total Amount */
+.total-amount {
+    font-size: 16px;
+    font-weight: 700;
+    color: #c0392b;
+}
+
+/* Payment Badge */
+.payment-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.payment-badge.cod {
+    background: linear-gradient(135deg, rgba(243, 156, 18, 0.1) 0%, rgba(241, 196, 15, 0.1) 100%);
+    color: #f39c12;
+}
+
+.payment-badge.banking {
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(93, 173, 226, 0.1) 100%);
+    color: #3498db;
+}
+
+.payment-badge.momo {
+    background: linear-gradient(135deg, rgba(168, 50, 119, 0.1) 0%, rgba(193, 84, 151, 0.1) 100%);
+    color: #a83277;
+}
+
+.payment-badge.vnpay {
+    background: linear-gradient(135deg, rgba(0, 103, 182, 0.1) 0%, rgba(0, 132, 232, 0.1) 100%);
+    color: #0067b6;
+}
+
+.payment-badge.zalopay {
+    background: linear-gradient(135deg, rgba(0, 163, 215, 0.1) 0%, rgba(43, 193, 237, 0.1) 100%);
+    color: #00a3d7;
+}
+
+/* Payment Status */
+.payment-status {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.payment-status.paid {
+    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+    color: white;
+}
+
+.payment-status.unpaid {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    color: white;
+}
+
+.payment-status.refunded {
+    background: linear-gradient(135deg, #95a5a6 0%, #bdc3c7 100%);
+    color: white;
+}
+
+/* Date Info */
+.date-info p {
+    font-size: 14px;
+    color: #4e342e;
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.date-info small {
+    font-size: 12px;
+    color: #777;
+}
+
+/* Status Badges */
+.status-badge {
+    display: inline-block;
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.status-badge.status-pending {
+    background: linear-gradient(135deg, #f39c12 0%, #f1c40f 100%);
+    color: white;
+}
+
+.status-badge.status-confirmed {
+    background: linear-gradient(135deg, #3498db 0%, #5dade2 100%);
+    color: white;
+}
+
+.status-badge.status-shipping {
+    background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+    color: white;
+}
+
+.status-badge.status-completed {
+    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+    color: white;
+}
+
+.status-badge.status-cancelled {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    color: white;
+}
+
+.status-badge.status-returned {
+    background: linear-gradient(135deg, #95a5a6 0%, #bdc3c7 100%);
+    color: white;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-action {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 13px;
+}
+
+.btn-action.btn-view {
+    background: linear-gradient(135deg, rgba(192, 57, 43, 0.1) 0%, rgba(201, 122, 58, 0.1) 100%);
+    color: #c0392b;
+}
+
+.btn-action.btn-view:hover {
+    background: linear-gradient(135deg, #c0392b 0%, #c97a3a 100%);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(192, 57, 43, 0.3);
+}
+
+.btn-action.btn-print {
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(93, 173, 226, 0.1) 100%);
+    color: #3498db;
+}
+
+.btn-action.btn-print:hover {
+    background: linear-gradient(135deg, #3498db 0%, #5dade2 100%);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+.btn-action.btn-update {
+    background: linear-gradient(135deg, rgba(39, 174, 96, 0.1) 0%, rgba(46, 204, 113, 0.1) 100%);
+    color: #27ae60;
+}
+
+.btn-action.btn-update:hover {
+    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+}
+
+/* ============================================
+   PAGINATION
+   ============================================ */
+.pagination-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    border-radius: 16px;
+    padding: 20px 25px;
+    box-shadow: 0 8px 30px rgba(78, 52, 46, 0.08);
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.pagination-info {
+    font-size: 14px;
+    color: #555;
+}
+
+.pagination-info strong {
+    color: #c0392b;
+    font-weight: 700;
+}
+
+.pagination {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.page-link {
+    min-width: 36px;
+    height: 36px;
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+    background: #fafafa;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.page-link:hover:not(.disabled):not(.active) {
+    background: rgba(192, 57, 43, 0.1);
+    color: #c0392b;
+    border-color: rgba(192, 57, 43, 0.2);
+}
+
+.page-link.active {
+    background: linear-gradient(135deg, #c0392b 0%, #c97a3a 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(192, 57, 43, 0.3);
+}
+
+.page-link.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.page-dots {
+    color: #555;
+    font-weight: 600;
+}
+
+.per-page {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.per-page label {
+    font-size: 14px;
+    color: #555;
+    font-weight: 500;
+}
+
+.per-page select {
+    padding: 8px 14px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #555;
+    background: #fafafa;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.per-page select:focus {
+    outline: none;
+    border-color: #c0392b;
+    background: white;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 1400px) {
+    .status-tabs {
+        overflow-x: auto;
+    }
+
+    .filter-options {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 1024px) {
+    .filter-options {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .header-right {
+        width: 100%;
+    }
+
+    .btn-export-excel,
+    .btn-export-pdf {
+        flex: 1;
+        justify-content: center;
+    }
+
+    .status-tabs {
+        padding: 15px;
+    }
+
+    .tab-item {
+        min-width: 100px;
+        padding: 12px 16px;
+    }
+
+    .filter-section {
+        padding: 20px;
+    }
+
+    .filter-actions {
+        flex-direction: column;
+    }
+
+    .btn-apply-filter,
+    .btn-reset-filter {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .orders-table-container {
+        padding: 15px;
+    }
+
+    .pagination-section {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .pagination {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .per-page {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .tab-item {
+        min-width: 90px;
+        padding: 10px 12px;
+    }
+
+    .tab-label {
+        font-size: 12px;
+    }
+
+    .tab-count {
+        font-size: 18px;
+    }
+
+    .pagination {
+        gap: 4px;
+    }
+
+    .page-link {
+        min-width: 32px;
+        height: 32px;
+        font-size: 13px;
+        padding: 0 8px;
+    }
+}
+
+/* Focus Styles for Accessibility */
+.search-input:focus-visible,
+.filter-group input:focus-visible,
+.filter-group select:focus-visible,
+.btn-apply-filter:focus-visible,
+.btn-reset-filter:focus-visible,
+.btn-export-excel:focus-visible,
+.btn-export-pdf:focus-visible,
+.btn-action:focus-visible,
+.page-link:focus-visible,
+.tab-item:focus-visible {
+    outline: 2px solid #c0392b;
+    outline-offset: 2px;
+}
