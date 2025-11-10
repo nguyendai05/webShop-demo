@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm/Sửa sản phẩm - Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../css/admin-dashboard.css">
+    <link rel="stylesheet" href="../css/products-edit.css">
+</head>
+<body>
+    <main class="admin-dashboard-main">
+        <div class="admin-dashboard-container">
+            <!-- Admin Sidebar -->
+            <aside class="admin-sidebar">
+                <div class="sidebar-header">
+                    <div class="admin-logo">
+                        <i class="fa-solid fa-store"></i>
+                    </div>
+                    <h2>Admin Panel</h2>
+                    <p>Quản lý hệ thống</p>
+                </div>
+
+                <nav class="admin-menu">
+                    <a href="../dashboard.html" class="admin-menu-item">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="list.html" class="admin-menu-item active">
+                        <i class="fa-solid fa-box"></i>
+                        <span>Quản lý sản phẩm</span>
+                    </a>
+                    <a href="#" class="admin-menu-item">
+                        <i class="fa-solid fa-shopping-cart"></i>
+                        <span>Quản lý đơn hàng</span>
+                    </a>
+                    <a href="#" class="admin-menu-item">
+                        <i class="fa-solid fa-users"></i>
+                        <span>Quản lý khách hàng</span>
+                    </a>
+                    <a href="#" class="admin-menu-item">
+                        <i class="fa-solid fa-star"></i>
+                        <span>Đánh giá</span>
+                    </a>
+                    <a href="#" class="admin-menu-item">
+                        <i class="fa-solid fa-chart-bar"></i>
+                        <span>Báo cáo</span>
+                    </a>
+                    <a href="#" class="admin-menu-item">
+                        <i class="fa-solid fa-cog"></i>
+                        <span>Cài đặt</span>
+                    </a>
+                    <a href="../../index.html" class="admin-menu-item logout">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>Đăng xuất</span>
+                    </a>
+                </nav>
+
+                <!-- Admin Info -->
+                <div class="admin-info">
+                    <div class="admin-avatar">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+                    <p class="admin-name">Admin User</p>
+                    <p class="admin-role">Quản trị viên</p>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <div class="admin-content">
+                <!-- Page Header -->
+                <div class="page-header-edit">
+                    <div class="header-left">
+                        <a href="list.html" class="back-link">
+                            <i class="fa-solid fa-arrow-left"></i>
+                            Quay lại danh sách
+                        </a>
+                        <h1>Thêm sản phẩm mới</h1>
+                        <p>Điền đầy đủ thông tin sản phẩm</p>
+                    </div>
+                    <div class="header-actions">
+                        <button type="button" class="btn-preview">
+                            <i class="fa-solid fa-eye"></i>
+                            Xem trước
+                        </button>
+                        <button type="submit" form="product-form" class="btn-save">
+                            <i class="fa-solid fa-check"></i>
+                            Lưu sản phẩm
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Form -->
+                <form id="product-form" action="#" method="post" enctype="multipart/form-data">
+                    <div class="form-layout">
+                        <!-- Main Column -->
+                        <div class="form-main-column">
+
+                            <!-- Basic Information -->
+                            <div class="form-section">
+                                <div class="section-header">
+                                    <h2>
+                                        <i class="fa-solid fa-info-circle"></i>
+                                        Thông tin cơ bản
+                                    </h2>
+                                </div>
+                                <div class="section-content">
+                                    <div class="form-row">
+                                        <div class="form-group full-width">
+                                            <label for="product-name" class="required">
+                                                Tên sản phẩm
+                                            </label>
+                                            <input type="text" id="product-name" name="product_name" placeholder="VD: Bình gốm hoa sen trắng" required>
+                                            <small class="form-hint">Tên sản phẩm sẽ hiển thị cho khách hàng</small>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row two-cols">
+                                        <div class="form-group">
+                                            <label for="product-slug">
+                                                Slug (URL)
+                                            </label>
+                                            <input type="text" id="product-slug" name="slug" placeholder="binh-gom-hoa-sen-trang">
+                                            <small class="form-hint">Tự động tạo từ tên sản phẩm</small>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="product-sku" class="required">
+                                                SKU
+                                            </label>
+                                            <input type="text" id="product-sku" name="sku" placeholder="BG001" required>
+                                            <small class="form-hint">Mã sản phẩm duy nhất</small>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row three-cols">
+                                        <div class="form-group">
+                                            <label for="product-price" class="required">
+                                                Giá bán (VNĐ)
+                                            </label>
+                                            <input type="number" id="product-price" name="price" placeholder="450000" min="0" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="product-sale-price">
+                                                Giá khuyến mãi (VNĐ)
+                                            </label>
+                                            <input type="number" id="product-sale-price" name="sale_price" placeholder="400000" min="0">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="product-stock" class="required">
+                                                Tồn kho
+                                            </label>
+                                            <input type="number" id="product-stock" name="stock" placeholder="50" min="0" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Description -->
+                            <div class="form-section">
+                                <div class="section-header">
+                                    <h2>
+                                        <i class="fa-solid fa-align-left"></i>
+                                        Mô tả sản phẩm
+                                    </h2>
+                                </div>
+                                <div class="section-content">
+                                    <div class="form-group">
+                                        <label for="short-description">
+                                            Mô tả ngắn
+                                        </label>
+                                        <textarea id="short-description" name="short_description" rows="3" placeholder="Mô tả ngắn gọn về sản phẩm..."></textarea>
+                                        <small class="form-hint">Tối đa 200 ký tự</small>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="full-description">
+                                            Mô tả chi tiết
+                                        </label>
+                                        <div class="editor-toolbar">
+                                            <div class="toolbar-group">
+                                                <button type="button" class="toolbar-btn" title="Bold">
+                                                    <i class="fa-solid fa-bold"></i>
+                                                </button>
+                                                <button type="button" class="toolbar-btn" title="Italic">
+                                                    <i class="fa-solid fa-italic"></i>
+                                                </button>
+                                                <button type="button" class="toolbar-btn" title="Underline">
+                                                    <i class="fa-solid fa-underline"></i>
+                                                </button>
+                                            </div>
+                                            <div class="toolbar-group">
+                                                <button type="button" class="toolbar-btn" title="Bullet List">
+                                                    <i class="fa-solid fa-list-ul"></i>
+                                                </button>
+                                                <button type="button" class="toolbar-btn" title="Numbered List">
+                                                    <i class="fa-solid fa-list-ol"></i>
+                                                </button>
+                                            </div>
+                                            <div class="toolbar-group">
+                                                <button type="button" class="toolbar-btn" title="Link">
+                                                    <i class="fa-solid fa-link"></i>
+                                                </button>
+                                                <button type="button" class="toolbar-btn" title="Image">
+                                                    <i class="fa-solid fa-image"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <textarea id="full-description" name="full_description" rows="8" placeholder="Mô tả chi tiết về sản phẩm, vật liệu, quy trình sản xuất..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product Images -->
+                            <div class="form-section">
+                                <div class="section-header">
+                                    <h2>
+                                        <i class="fa-solid fa-images"></i>
+                                        Hình ảnh sản phẩm
+                                    </h2>
+                                </div>
+                                <div class="section-content">
+                                    <div class="upload-area">
+                                        <input type="file" id="product-images" name="product_images[]" multiple accept="image/*">
+                                        <label for="product-images" class="upload-label">
+                                            <div class="upload-icon">
+                                                <i class="fa-solid fa-cloud-arrow-up"></i>
+                                            </div>
+                                            <h3>Kéo thả ảnh vào đây hoặc click để chọn</h3>
+                                            <p>Hỗ trợ: JPG, PNG, GIF. Tối đa 5MB mỗi ảnh</p>
+                                        </label>
+                                    </div>
+
+                                    <div class="images-preview">
+                                        <div class="preview-item">
+                                            <img src="https://i.pinimg.com/originals/4a/c1/95/4ac195db7fe748fdd2b78f31cb7e4e8e.jpg" alt="Preview">
+                                            <div class="preview-overlay">
+                                                <button type="button" class="btn-preview-action" title="Xóa">
+                                                    <i class="fa-solid fa-trash"></i>
+                                                </button>
+                                                <button type="button" class="btn-preview-action" title="Đặt làm ảnh chính">
+                                                    <i class="fa-solid fa-star"></i>
+                                                </button>
+                                            </div>
+                                            <span class="main-badge">Ảnh chính</span>
+                                        </div>
+                                        <div class="preview-item">
+                                            <img src="https://i.pinimg.com/1200x/c6/5e/76/c65e76df2dde432225ffcdd5f0602367.jpg" alt="Preview">
+                                            <div class="preview-overlay">
+                                                <button type="button" class="btn-preview-action" title="Xóa">
+                                                    <i class="fa-solid fa-trash"></i>
+                                                </button>
+                                                <button type="button" class="btn-preview-action" title="Đặt làm ảnh chính">
+                                                    <i class="fa-solid fa-star"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="preview-item">
+                                            <img src="https://i.pinimg.com/originals/77/43/6b/77436ba6c2d91bebd057c33ad149352e.jpg" alt="Preview">
+                                            <div class="preview-overlay">
+                                                <button type="button" class="btn-preview-action" title="Xóa">
+                                                    <i class="fa-solid fa-trash"></i>
+                                                </button>
+                                                <button type="button" class="btn-preview-action" title="Đặt làm ảnh chính">
+                                                    <i class="fa-solid fa-star"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product Variants -->
+                            <div class="form-section">
+                                <div class="section-header">
+                                    <h2>
+                                        <i class="fa-solid fa-layer-group"></i>
+                                        Biến thể sản phẩm
+                                    </h2>
+                                    <button type="button" class="btn-add-variant">
+                                        <i class="fa-solid fa-plus"></i>
+                                        Thêm biến thể
+                                    </button>
+                                </div>
+                                <div class="section-content">
+                                    <div class="variants-list">
+                                        <div class="variant-item">
+                                            <div class="variant-header">
+                                                <h4>Biến thể #1</h4>
+                                                <button type="button" class="btn-remove-variant">
+                                                    <i class="fa-solid fa-times"></i>
+                                                </button>
+                                            </div>
+                                            <div class="variant-fields">
+                                                <div class="form-row two-cols">
+                                                    <div class="form-group">
+                                                        <label>Màu sắc</label>
+                                                        <input type="text" name="variant_color[]" placeholder="VD: Trắng">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Kích thước</label>
+                                                        <input type="text" name="variant_size[]" placeholder="VD: 20cm">
+                                                    </div>
+                                                </div>
+                                                <div class="form-row three-cols">
+                                                    <div class="form-group">
+                                                        <label>SKU</label>
+                                                        <input type="text" name="variant_sku[]" placeholder="BG001-W-20">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Giá</label>
+                                                        <input type="number" name="variant_price[]" placeholder="450000" min="0">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Tồn kho</label>
+                                                        <input type="number" name="variant_stock[]" placeholder="20" min="0">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product Attributes -->
+                            <div class="form-section">
+                                <div class="section-header">
+                                    <h2>
+                                        <i class="fa-solid fa-list-check"></i>
+                                        Thuộc tính sản phẩm
+                                    </h2>
+                                </div>
+                                <div class="section-content">
+                                    <div class="form-row two-cols">
+                                        <div class="form-group">
+                                            <label for="material">Chất liệu</label>
+                                            <input type="text" id="material" name="material" placeholder="VD: Gốm sứ Bát Tràng">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="origin">Xuất xứ</label>
+                                            <input type="text" id="origin" name="origin" placeholder="VD: Việt Nam">
+                                        </div>
+                                    </div>
+                                    <div class="form-row three-cols">
+                                        <div class="form-group">
+                                            <label for="dimensions">Kích thước (DxRxC)</label>
+                                            <input type="text" id="dimensions" name="dimensions" placeholder="VD: 20x20x30 cm">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="weight">Trọng lượng</label>
+                                            <input type="text" id="weight" name="weight" placeholder="VD: 1.5 kg">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="manufacturer">Nhà sản xuất</label>
+                                            <input type="text" id="manufacturer" name="manufacturer" placeholder="VD: Làng gốm Bát Tràng">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- SEO Section -->
+                            <div class="form-section">
+                                <div class="section-header">
+                                    <h2>
+                                        <i class="fa-solid fa-search"></i>
+                                        Tối ưu SEO
+                                    </h2>
+                                </div>
+                                <div class="section-content">
+                                    <div class="form-group">
+                                        <label for="meta-title">Meta Title</label>
+                                        <input type="text" id="meta-title" name="meta_title" placeholder="Tiêu đề SEO (tối đa 60 ký tự)">
+                                        <small class="form-hint">0/60 ký tự</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="meta-description">Meta Description</label>
+                                        <textarea id="meta-description" name="meta_description" rows="3" placeholder="Mô tả SEO (tối đa 160 ký tự)"></textarea>
+                                        <small class="form-hint">0/160 ký tự</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="meta-keywords">Meta Keywords</label>
+                                        <input type="text" id="meta-keywords" name="meta_keywords" placeholder="Từ khóa SEO (phân cách bằng dấu phẩy)">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Sidebar Column -->
+                        <div class="form-sidebar-column">
+
+                            <!-- Status & Visibility -->
+                            <div class="form-section">
+                                <div class="section-header">
+                                    <h2>
+                                        <i class="fa-solid fa-toggle-on"></i>
+                                        Trạng thái
+                                    </h2>
+                                </div>
+                                <div class="section-content">
+                                    <div class="form-group">
+                                        <label for="status">Trạng thái sản phẩm</label>
+                                        <select id="status" name="status">
+                                            <option value="active">Đang bán</option>
+                                            <option value="inactive">Tạm ngưng</option>
+                                            <option value="out-of-stock">Hết hàng</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Product Configuration -->
+                            <div class="form-section">
+                                <div class="section-header">
+                                    <h2>
+                                        <i class="fa-solid fa-sliders"></i>
+                                        Cấu hình
+                                    </h2>
+                                </div>
+                                <div class="section-content">
+                                    <div class="checkbox-group">
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="featured" value="1">
+                                            <span class="checkbox-custom"></span>
+                                            <span class="checkbox-text">
+                                                <i class="fa-solid fa-star"></i>
+                                                Sản phẩm nổi bật
+                                            </span>
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="new" value="1">
+                                            <span class="checkbox-custom"></span>
+                                            <span class="checkbox-text">
+                                                <i class="fa-solid fa-certificate"></i>
+                                                Sản phẩm mới
+                                            </span>
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="bestseller" value="1">
+                                            <span class="checkbox-custom"></span>
+                                            <span class="checkbox-text">
+                                                <i class="fa-solid fa-fire"></i>
+                                                Bán chạy
+                                            </span>
+                                        </label>
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="hot" value="1">
+                                            <span class="checkbox-custom"></span>
+                                            <span class="checkbox-text">
+                                                <i class="fa-solid fa-bolt"></i>
+                                                Hot deal
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Categories -->
+                            <div class="form-section">
+                                <div class="section-header">
+                                    <h2>
+                                        <i class="fa-solid fa-folder-tree"></i>
+                                        Danh mục
+                                    </h2>
+                                </div>
+                                <div class="section-content">
+                                    <div class="category-tree">
+                                        <div class="category-item">
+                                            <label class="checkbox-label">
+                                                <input type="checkbox" name="categories[]" value="gom">
+                                                <span class="checkbox-custom"></span>
+                                                <span class="checkbox-text">Đồ gốm</span>
+                                            </label>
+                                            <div class="category-children">
+                                                <label class="checkbox-label">
+                                                    <input type="checkbox" name="categories[]" value="gom-bat-trang">
+                                                    <span class="checkbox-custom"></span>
+                                                    <span class="checkbox-text">Gốm Bát Tràng</span>
+                                                </label>
+                                                <label class="checkbox-label">
+                                                    <input type="checkbox" name="categories[]" value="gom-chu-dau">
+                                                    <span class="checkbox-custom"></span>
+                                                    <span class="checkbox-text">Gốm Chu Đậu</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="category-item">
+                                            <label class="checkbox-label">
+                                                <input type="checkbox" name="categories[]" value="go">
+                                                <span class="checkbox-custom"></span>
+                                                <span class="checkbox-text">Gỗ điêu khắc</span>
+                                            </label>
+                                        </div>
+                                        <div class="category-item">
+                                            <label class="checkbox-label">
+                                                <input type="checkbox" name="categories[]" value="su">
+                                                <span class="checkbox-custom"></span>
+                                                <span class="checkbox-text">Sứ nghệ thuật</span>
+                                            </label>
+                                        </div>
+                                        <div class="category-item">
+                                            <label class="checkbox-label">
+                                                <input type="checkbox" name="categories[]" value="phu-kien">
+                                                <span class="checkbox-custom"></span>
+                                                <span class="checkbox-text">Phụ kiện bàn ăn</span>
+                                            </label>
+                                        </div>
+                                        <div class="category-item">
+                                            <label class="checkbox-label">
+                                                <input type="checkbox" name="categories[]" value="tranh">
+                                                <span class="checkbox-custom"></span>
+                                                <span class="checkbox-text">Tranh thêu</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Tags -->
+                            <div class="form-section">
+                                <div class="section-header">
+                                    <h2>
+                                        <i class="fa-solid fa-tags"></i>
+                                        Tags
+                                    </h2>
+                                </div>
+                                <div class="section-content">
+                                    <div class="form-group">
+                                        <label for="tags">Nhập tags</label>
+                                        <input type="text" id="tags" name="tags" placeholder="Nhập tag và nhấn Enter">
+                                        <small class="form-hint">Phân cách bằng dấu phẩy</small>
+                                    </div>
+                                    <div class="tags-list">
+                                        <span class="tag-item">
+                                            Gốm sứ
+                                            <button type="button" class="tag-remove">×</button>
+                                        </span>
+                                        <span class="tag-item">
+                                            Handmade
+                                            <button type="button" class="tag-remove">×</button>
+                                        </span>
+                                        <span class="tag-item">
+                                            Bát Tràng
+                                            <button type="button" class="tag-remove">×</button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Related Products -->
+                            <div class="form-section">
+                                <div class="section-header">
+                                    <h2>
+                                        <i class="fa-solid fa-link"></i>
+                                        Sản phẩm liên quan
+                                    </h2>
+                                </div>
+                                <div class="section-content">
+                                    <div class="form-group">
+                                        <label for="related-products">Tìm kiếm sản phẩm</label>
+                                        <input type="text" id="related-products" placeholder="Nhập tên sản phẩm...">
+                                    </div>
+                                    <div class="related-products-list">
+                                        <div class="related-product-item">
+                                            <img src="https://i.pinimg.com/1200x/c6/5e/76/c65e76df2dde432225ffcdd5f0602367.jpg" alt="Product">
+                                            <div class="related-product-info">
+                                                <h5>Chén sứ họa tiết truyền thống</h5>
+                                                <p>320.000đ</p>
+                                            </div>
+                                            <button type="button" class="btn-remove-related">
+                                                <i class="fa-solid fa-times"></i>
+                                            </button>
+                                        </div>
+                                        <div class="related-product-item">
+                                            <img src="https://i.pinimg.com/originals/77/43/6b/77436ba6c2d91bebd057c33ad149352e.jpg" alt="Product">
+                                            <div class="related-product-info">
+                                                <h5>Tượng gỗ điêu khắc</h5>
+                                                <p>1.250.000đ</p>
+                                            </div>
+                                            <button type="button" class="btn-remove-related">
+                                                <i class="fa-solid fa-times"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Form Actions -->
+                    <div class="form-actions">
+                        <a href="list.html" class="btn-cancel">
+                            <i class="fa-solid fa-times"></i>
+                            Hủy bỏ
+                        </a>
+                        <button type="submit" class="btn-save-main">
+                            <i class="fa-solid fa-check"></i>
+                            Lưu sản phẩm
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
