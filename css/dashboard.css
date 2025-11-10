@@ -20,31 +20,6 @@ main{
     position: relative;
 }
 
-/* Decorative background patterns */
-.dashboard-main::before {
-    content: '';
-    position: absolute;
-    top: -10%;
-    left: -5%;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(201, 122, 58, 0.05) 0%, transparent 70%);
-    border-radius: 50%;
-    animation: floatReverse 8s ease-in-out infinite;
-}
-
-.dashboard-main::after {
-    content: '';
-    position: absolute;
-    bottom: -10%;
-    right: -5%;
-    width: 450px;
-    height: 450px;
-    background: radial-gradient(circle, rgba(192, 57, 43, 0.05) 0%, transparent 70%);
-    border-radius: 50%;
-    animation: float 10s ease-in-out infinite;
-}
-
 @keyframes float {
     0%, 100% {
         transform: translateY(0) translateX(0) scale(1);
@@ -84,10 +59,11 @@ main{
     box-shadow: 0 10px 40px rgba(78, 52, 46, 0.1);
     position: sticky;
     top: 30px;
-    max-height: calc(100vh - 60px); /* Thêm: tính toán chiều cao tối đa */
-    overflow-y: auto; /* Thay đổi: cho phép cuộn nội bộ sidebar nếu cần */
-    align-self: flex-start; /* Thêm: để position: sticky hoạt động chính xác trong flex container */
-    flex-shrink: 0; /* Thêm: ngăn sidebar bị co lại */
+    max-height: calc(100vh - 60px); 
+    flex-shrink: 0; 
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden; 
 }
 
 /* Sidebar Header - User Info */
@@ -96,6 +72,8 @@ main{
     padding-bottom: 25px;
     border-bottom: 2px solid #f5f1e6;
     margin-bottom: 25px;
+    /* 3. Đảm bảo header không bị co lại */
+    flex-shrink: 0;
 }
 
 .user-avatar {
@@ -154,6 +132,15 @@ main{
     display: flex;
     flex-direction: column;
     gap: 8px;
+
+    /* === THAY ĐỔI === */
+    /* 4. Cho phép menu co giãn để lấp đầy không gian còn lại */
+    flex: 1;
+    /* 5. Thêm cuộn dọc tự động CHỈ cho menu */
+    overflow-y: auto;
+    /* 6. Thêm một chút đệm bên phải để thanh cuộn không che nội dung */
+    padding-right: 5px;
+    margin-right: -5px;
 }
 
 .menu-item {
@@ -169,6 +156,8 @@ main{
     font-weight: 500;
     position: relative;
     overflow: hidden;
+    /* Thêm flex-shrink để đảm bảo các item không bị co lại một cách không mong muốn */
+    flex-shrink: 0; 
 }
 
 .menu-item::before {
@@ -281,7 +270,7 @@ main{
     display: flex;
     flex-direction: column;
     gap: 25px;
-    min-width: 0; /* Thêm để ngăn flex item tràn nội dung */
+    min-width: 0; 
 }
 
 /* Welcome Section */
@@ -752,13 +741,16 @@ main{
         width: 100%;
         position: sticky;
         top: 20px;
-        max-height: none; /* Bỏ max-height ở chế độ này */
-        overflow-y: visible; /* Bỏ cuộn nội bộ */
+        max-height: none; 
+        overflow-y: visible; 
+        flex-direction: column;
     }
 
     .sidebar-menu {
         flex-direction: row;
         flex-wrap: wrap;
+        flex: 0 1 auto; 
+        overflow-y: visible;
     }
 
     .menu-item {
@@ -888,13 +880,21 @@ main{
     border-radius: 4px;
 }
 
-.dashboard-sidebar::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #c0392b 0%, #c97a3a 100%);
+::-webkit-scrollbar-thumb {
+    /* background: linear-gradient(180deg, #c0392b 0%, #c97a3a 100%); */
     border-radius: 4px;
 }
 
-.dashboard-sidebar::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(180deg, #e74c3c 0%, #d4925f 100%);
+}
+
+.sidebar-menu::-webkit-scrollbar {
+    width: 8px;
+}
+
+.sidebar-menu::-webkit-scrollbar-track {
+    background: transparent; 
 }
 
 /* Focus styles for accessibility */
