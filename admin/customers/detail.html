@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết khách hàng - Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../css/admin-dashboard.css">
+    <link rel="stylesheet" href="../css/customers-detail.css">
+</head>
+<body>
+    <main class="admin-dashboard-main">
+        <div class="admin-dashboard-container">
+            <!-- Admin Sidebar -->
+            <aside class="admin-sidebar">
+                <div class="sidebar-header">
+                    <div class="admin-logo">
+                        <i class="fa-solid fa-store"></i>
+                    </div>
+                    <h2>Admin Panel</h2>
+                    <p>Quản lý hệ thống</p>
+                </div>
+
+                <nav class="admin-menu">
+                    <a href="../dashboard.html" class="admin-menu-item">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="../products/list.html" class="admin-menu-item">
+                        <i class="fa-solid fa-box"></i>
+                        <span>Quản lý sản phẩm</span>
+                    </a>
+                    <a href="../orders/list.html" class="admin-menu-item">
+                        <i class="fa-solid fa-shopping-cart"></i>
+                        <span>Quản lý đơn hàng</span>
+                    </a>
+                    <a href="list.html" class="admin-menu-item active">
+                        <i class="fa-solid fa-users"></i>
+                        <span>Quản lý khách hàng</span>
+                    </a>
+                    <a href="#" class="admin-menu-item">
+                        <i class="fa-solid fa-star"></i>
+                        <span>Đánh giá</span>
+                    </a>
+                    <a href="#" class="admin-menu-item">
+                        <i class="fa-solid fa-chart-bar"></i>
+                        <span>Báo cáo</span>
+                    </a>
+                    <a href="#" class="admin-menu-item">
+                        <i class="fa-solid fa-cog"></i>
+                        <span>Cài đặt</span>
+                    </a>
+                    <a href="../../index.html" class="admin-menu-item logout">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>Đăng xuất</span>
+                    </a>
+                </nav>
+
+                <!-- Admin Info -->
+                <div class="admin-info">
+                    <div class="admin-avatar">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+                    <p class="admin-name">Admin User</p>
+                    <p class="admin-role">Quản trị viên</p>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <div class="admin-content">
+                <!-- Page Header -->
+                <div class="page-header-detail">
+                    <div class="header-left">
+                        <a href="list.html" class="back-link">
+                            <i class="fa-solid fa-arrow-left"></i>
+                            Quay lại danh sách
+                        </a>
+                        <div class="customer-header-info">
+                            <h1>Nguyễn Văn A</h1>
+                            <span class="customer-badge vip">
+                                <i class="fa-solid fa-crown"></i>
+                                VIP
+                            </span>
+                            <span class="status-badge active">Hoạt động</span>
+                        </div>
+                        <p class="customer-id">Mã khách hàng: #KH0001 | Đăng ký: 15/03/2023</p>
+                    </div>
+                    <div class="header-actions">
+                        <button class="btn-action-header btn-send-email">
+                            <i class="fa-solid fa-envelope"></i>
+                            Gửi Email
+                        </button>
+                        <button class="btn-action-header btn-deactivate">
+                            <i class="fa-solid fa-ban"></i>
+                            Vô hiệu hóa
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Customer Detail Layout -->
+                <div class="customer-detail-layout">
+                    <!-- Main Column -->
+                    <div class="customer-main-column">
+                        <!-- Personal Information -->
+                        <div class="detail-card">
+                            <div class="card-header">
+                                <h3>
+                                    <i class="fa-solid fa-user"></i>
+                                    Thông tin cá nhân
+                                </h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="info-grid">
+                                    <div class="info-item">
+                                        <label>
+                                            <i class="fa-solid fa-user"></i>
+                                            Họ và tên
+                                        </label>
+                                        <p>Nguyễn Văn A</p>
+                                    </div>
+                                    <div class="info-item">
+                                        <label>
+                                            <i class="fa-solid fa-envelope"></i>
+                                            Email
+                                        </label>
+                                        <p><a href="mailto:nguyenvana@email.com">nguyenvana@email.com</a></p>
+                                    </div>
+                                    <div class="info-item">
+                                        <label>
+                                            <i class="fa-solid fa-phone"></i>
+                                            Số điện thoại
+                                        </label>
+                                        <p><a href="tel:0123456789">0123 456 789</a></p>
+                                    </div>
+                                    <div class="info-item">
+                                        <label>
+                                            <i class="fa-solid fa-calendar"></i>
+                                            Ngày sinh
+                                        </label>
+                                        <p>15/05/1990</p>
+                                    </div>
+                                    <div class="info-item">
+                                        <label>
+                                            <i class="fa-solid fa-venus-mars"></i>
+                                            Giới tính
+                                        </label>
+                                        <p>Nam</p>
+                                    </div>
+                                    <div class="info-item">
+                                        <label>
+                                            <i class="fa-solid fa-calendar-plus"></i>
+                                            Ngày đăng ký
+                                        </label>
+                                        <p>15/03/2023</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Order History -->
+                        <div class="detail-card">
+                            <div class="card-header">
+                                <h3>
+                                    <i class="fa-solid fa-shopping-cart"></i>
+                                    Lịch sử đơn hàng
+                                </h3>
+                                <span class="card-badge">87 đơn hàng</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="orders-list">
+                                    <!-- Order Item 1 -->
+                                    <div class="order-item">
+                                        <div class="order-item-header">
+                                            <div class="order-item-info">
+                                                <a href="../orders/detail.html" class="order-id">#DH2547</a>
+                                                <span class="order-date">10/11/2025 14:30</span>
+                                            </div>
+                                            <span class="status-badge status-pending">Chờ xác nhận</span>
+                                        </div>
+                                        <div class="order-item-body">
+                                            <div class="order-products">
+                                                <p>3 sản phẩm</p>
+                                            </div>
+                                            <div class="order-total">
+                                                <span class="total-label">Tổng tiền:</span>
+                                                <span class="total-amount">1.250.000đ</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Order Item 2 -->
+                                    <div class="order-item">
+                                        <div class="order-item-header">
+                                            <div class="order-item-info">
+                                                <a href="../orders/detail.html" class="order-id">#DH2541</a>
+                                                <span class="order-date">09/11/2025 16:45</span>
+                                            </div>
+                                            <span class="status-badge status-shipping">Đang giao</span>
+                                        </div>
+                                        <div class="order-item-body">
+                                            <div class="order-products">
+                                                <p>5 sản phẩm</p>
+                                            </div>
+                                            <div class="order-total">
+                                                <span class="total-label">Tổng tiền:</span>
+                                                <span class="total-amount">2.100.000đ</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Order Item 3 -->
+                                    <div class="order-item">
+                                        <div class="order-item-header">
+                                            <div class="order-item-info">
+                                                <a href="../orders/detail.html" class="order-id">#DH2535</a>
+                                                <span class="order-date">05/11/2025 09:20</span>
+                                            </div>
+                                            <span class="status-badge status-completed">Hoàn thành</span>
+                                        </div>
+                                        <div class="order-item-body">
+                                            <div class="order-products">
+                                                <p>2 sản phẩm</p>
+                                            </div>
+                                            <div class="order-total">
+                                                <span class="total-label">Tổng tiền:</span>
+                                                <span class="total-amount">850.000đ</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Order Item 4 -->
+                                    <div class="order-item">
+                                        <div class="order-item-header">
+                                            <div class="order-item-info">
+                                                <a href="../orders/detail.html" class="order-id">#DH2528</a>
+                                                <span class="order-date">01/11/2025 11:15</span>
+                                            </div>
+                                            <span class="status-badge status-completed">Hoàn thành</span>
+                                        </div>
+                                        <div class="order-item-body">
+                                            <div class="order-products">
+                                                <p>4 sản phẩm</p>
+                                            </div>
+                                            <div class="order-total">
+                                                <span class="total-label">Tổng tiền:</span>
+                                                <span class="total-amount">1.680.000đ</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Order Item 5 -->
+                                    <div class="order-item">
+                                        <div class="order-item-header">
+                                            <div class="order-item-info">
+                                                <a href="../orders/detail.html" class="order-id">#DH2515</a>
+                                                <span class="order-date">28/10/2025 15:40</span>
+                                            </div>
+                                            <span class="status-badge status-completed">Hoàn thành</span>
+                                        </div>
+                                        <div class="order-item-body">
+                                            <div class="order-products">
+                                                <p>1 sản phẩm</p>
+                                            </div>
+                                            <div class="order-total">
+                                                <span class="total-label">Tổng tiền:</span>
+                                                <span class="total-amount">450.000đ</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="../orders/list.html" class="btn-view-all">
+                                        Xem tất cả đơn hàng
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Saved Addresses -->
+                        <div class="detail-card">
+                            <div class="card-header">
+                                <h3>
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    Địa chỉ giao hàng
+                                </h3>
+                                <span class="card-badge">3 địa chỉ</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="addresses-list">
+                                    <!-- Address Item 1 (Default) -->
+                                    <div class="address-item default-address">
+                                        <div class="address-header">
+                                            <span class="address-label">
+                                                <i class="fa-solid fa-home"></i>
+                                                Địa chỉ mặc định
+                                            </span>
+                                            <span class="default-badge">Mặc định</span>
+                                        </div>
+                                        <div class="address-body">
+                                            <p class="address-name">Nguyễn Văn A</p>
+                                            <p class="address-phone">0123 456 789</p>
+                                            <p class="address-text">123 Nguyễn Huệ, Phường Bến Nghé, Quận 1, TP. Hồ Chí Minh</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Address Item 2 -->
+                                    <div class="address-item">
+                                        <div class="address-header">
+                                            <span class="address-label">
+                                                <i class="fa-solid fa-building"></i>
+                                                Văn phòng
+                                            </span>
+                                        </div>
+                                        <div class="address-body">
+                                            <p class="address-name">Nguyễn Văn A</p>
+                                            <p class="address-phone">0123 456 789</p>
+                                            <p class="address-text">456 Lê Lợi, Phường Bến Thành, Quận 1, TP. Hồ Chí Minh</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Address Item 3 -->
+                                    <div class="address-item">
+                                        <div class="address-header">
+                                            <span class="address-label">
+                                                <i class="fa-solid fa-house-user"></i>
+                                                Nhà riêng
+                                            </span>
+                                        </div>
+                                        <div class="address-body">
+                                            <p class="address-name">Nguyễn Văn A</p>
+                                            <p class="address-phone">0123 456 789</p>
+                                            <p class="address-text">789 Pasteur, Phường Võ Thị Sáu, Quận 3, TP. Hồ Chí Minh</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Wishlist -->
+                        <div class="detail-card">
+                            <div class="card-header">
+                                <h3>
+                                    <i class="fa-solid fa-heart"></i>
+                                    Sản phẩm yêu thích
+                                </h3>
+                                <span class="card-badge">12 sản phẩm</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="wishlist-grid">
+                                    <!-- Wishlist Item 1 -->
+                                    <div class="wishlist-item">
+                                        <div class="wishlist-image">
+                                            <img src="../../images/products/product1.jpg" alt="Áo thun nam">
+                                        </div>
+                                        <div class="wishlist-info">
+                                            <h4>Áo thun nam basic</h4>
+                                            <p class="wishlist-price">250.000đ</p>
+                                            <span class="wishlist-date">Thêm: 08/11/2025</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Wishlist Item 2 -->
+                                    <div class="wishlist-item">
+                                        <div class="wishlist-image">
+                                            <img src="../../images/products/product2.jpg" alt="Quần jean">
+                                        </div>
+                                        <div class="wishlist-info">
+                                            <h4>Quần jean nam slim fit</h4>
+                                            <p class="wishlist-price">450.000đ</p>
+                                            <span class="wishlist-date">Thêm: 07/11/2025</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Wishlist Item 3 -->
+                                    <div class="wishlist-item">
+                                        <div class="wishlist-image">
+                                            <img src="../../images/products/product3.jpg" alt="Áo sơ mi">
+                                        </div>
+                                        <div class="wishlist-info">
+                                            <h4>Áo sơ mi nam công sở</h4>
+                                            <p class="wishlist-price">320.000đ</p>
+                                            <span class="wishlist-date">Thêm: 05/11/2025</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Wishlist Item 4 -->
+                                    <div class="wishlist-item">
+                                        <div class="wishlist-image">
+                                            <img src="../../images/products/product4.jpg" alt="Giày thể thao">
+                                        </div>
+                                        <div class="wishlist-info">
+                                            <h4>Giày thể thao nam</h4>
+                                            <p class="wishlist-price">680.000đ</p>
+                                            <span class="wishlist-date">Thêm: 03/11/2025</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="#" class="btn-view-all">
+                                        Xem tất cả sản phẩm yêu thích
+                                        <i class="fa-solid fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar Column -->
+                    <div class="customer-sidebar-column">
+                        <!-- Statistics Card -->
+                        <div class="detail-card stats-card">
+                            <div class="card-header">
+                                <h3>
+                                    <i class="fa-solid fa-chart-simple"></i>
+                                    Thống kê
+                                </h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="stat-item">
+                                    <div class="stat-icon orders">
+                                        <i class="fa-solid fa-shopping-cart"></i>
+                                    </div>
+                                    <div class="stat-info">
+                                        <p class="stat-label">Tổng đơn hàng</p>
+                                        <p class="stat-value">87 đơn</p>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-icon revenue">
+                                        <i class="fa-solid fa-dollar-sign"></i>
+                                    </div>
+                                    <div class="stat-info">
+                                        <p class="stat-label">Tổng chi tiêu</p>
+                                        <p class="stat-value">45.250.000đ</p>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-icon avg">
+                                        <i class="fa-solid fa-receipt"></i>
+                                    </div>
+                                    <div class="stat-info">
+                                        <p class="stat-label">Giá trị TB/đơn</p>
+                                        <p class="stat-value">520.000đ</p>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-icon wishlist">
+                                        <i class="fa-solid fa-heart"></i>
+                                    </div>
+                                    <div class="stat-info">
+                                        <p class="stat-label">Yêu thích</p>
+                                        <p class="stat-value">12 sản phẩm</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Customer Notes -->
+                        <div class="detail-card notes-card">
+                            <div class="card-header">
+                                <h3>
+                                    <i class="fa-solid fa-note-sticky"></i>
+                                    Ghi chú nội bộ
+                                </h3>
+                            </div>
+                            <div class="card-body">
+                                <form action="#" method="post" class="note-form">
+                                    <textarea name="note" placeholder="Thêm ghi chú về khách hàng này..." rows="4"></textarea>
+                                    <button type="submit" class="btn-add-note">
+                                        <i class="fa-solid fa-plus"></i>
+                                        Thêm ghi chú
+                                    </button>
+                                </form>
+
+                                <div class="notes-list">
+                                    <!-- Note Item 1 -->
+                                    <div class="note-item">
+                                        <div class="note-header">
+                                            <div class="note-author">
+                                                <i class="fa-solid fa-user-shield"></i>
+                                                Admin User
+                                            </div>
+                                            <div class="note-date">10/11/2025 10:30</div>
+                                        </div>
+                                        <div class="note-body">
+                                            <p>Khách hàng VIP, ưu tiên xử lý đơn hàng và hỗ trợ tốt nhất.</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Note Item 2 -->
+                                    <div class="note-item">
+                                        <div class="note-header">
+                                            <div class="note-author">
+                                                <i class="fa-solid fa-user-shield"></i>
+                                                Admin User
+                                            </div>
+                                            <div class="note-date">05/11/2025 14:15</div>
+                                        </div>
+                                        <div class="note-body">
+                                            <p>Khách hàng thường mua sản phẩm size L, màu đen/xám.</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Note Item 3 -->
+                                    <div class="note-item">
+                                        <div class="note-header">
+                                            <div class="note-author">
+                                                <i class="fa-solid fa-user-shield"></i>
+                                                Admin User
+                                            </div>
+                                            <div class="note-date">01/11/2025 09:20</div>
+                                        </div>
+                                        <div class="note-body">
+                                            <p>Yêu cầu giao hàng trong giờ hành chính (8h-17h).</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Account Actions -->
+                        <div class="detail-card actions-card">
+                            <div class="card-header">
+                                <h3>
+                                    <i class="fa-solid fa-sliders"></i>
+                                    Hành động
+                                </h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="action-buttons-list">
+                                    <button class="action-btn btn-activate">
+                                        <i class="fa-solid fa-check-circle"></i>
+                                        <span>Kích hoạt tài khoản</span>
+                                    </button>
+                                    <button class="action-btn btn-deactivate">
+                                        <i class="fa-solid fa-ban"></i>
+                                        <span>Vô hiệu hóa tài khoản</span>
+                                    </button>
+                                    <button class="action-btn btn-reset-password">
+                                        <i class="fa-solid fa-key"></i>
+                                        <span>Đặt lại mật khẩu</span>
+                                    </button>
+                                    <button class="action-btn btn-send-notification">
+                                        <i class="fa-solid fa-bell"></i>
+                                        <span>Gửi thông báo</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
