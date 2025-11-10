@@ -10,18 +10,6 @@
     margin-bottom: 25px;
 }
 
-.page-header .header-left h1 {
-    font-size: 28px;
-    color: #4e342e;
-    margin-bottom: 5px;
-    font-weight: 700;
-}
-
-.page-header .header-left p {
-    font-size: 14px;
-    color: #777;
-}
-
 .btn-add-product {
     padding: 12px 24px;
     background: linear-gradient(135deg, #c0392b 0%, #c97a3a 100%);
