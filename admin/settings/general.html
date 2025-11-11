@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cấu hình chung - Admin Dashboard</title>
+    <link rel="stylesheet" href="../css/admin-dashboard.css">
+    <link rel="stylesheet" href="../css/settings-general.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <div class="admin-logo">
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+                <h2>Bảng quản lý Website</h2>
+            </div>
+
+            <nav class="admin-menu">
+                <a href="../dashboard.html" class="admin-menu-item">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Bảng điều khiển</span>
+                </a>
+
+                <a href="../products/list.html" class="admin-menu-item">
+                    <i class="fa-solid fa-box"></i>
+                    <span>Sản phẩm</span>
+                </a>
+
+                <a href="../categories/list.html" class="admin-menu-item">
+                    <i class="fa-solid fa-folder"></i>
+                    <span>Danh mục sản phẩm</span>
+                </a>
+
+                <a href="../orders/list.html" class="admin-menu-item">
+                    <i class="fa-solid fa-shopping-cart"></i>
+                    <span>Đơn hàng</span>
+                </a>
+
+                <a href="../customers/list.html" class="admin-menu-item">
+                    <i class="fa-solid fa-users"></i>
+                    <span>Khách hàng</span>
+                </a>
+
+                <a href="../blog/posts.html" class="admin-menu-item">
+                    <i class="fa-solid fa-newspaper"></i>
+                    <span>Bài viết</span>
+                </a>
+
+                <a href="../blog/categories.html" class="admin-menu-item">
+                    <i class="fa-solid fa-tags"></i>
+                    <span>Danh mục bài viết</span>
+                </a>
+
+                <a href="../reviews/list.html" class="admin-menu-item">
+                    <i class="fa-solid fa-star"></i>
+                    <span>Đánh giá</span>
+                </a>
+
+                <a href="general.html" class="admin-menu-item active">
+                    <i class="fa-solid fa-cog"></i>
+                    <span>Cấu hình</span>
+                </a>
+
+                <a href="../admin-login.html" class="admin-menu-item logout">
+                    <i class="fa-solid fa-sign-out-alt"></i>
+                    <span>Đăng xuất</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-content">
+            <!-- Page Header -->
+            <div class="page-header">
+                <div class="header-left">
+                    <h1><i class="fa-solid fa-cog"></i> Cấu hình chung</h1>
+                    <p>Quản lý các thông tin cơ bản và mã theo dõi của website</p>
+                </div>
+                <div class="header-right">
+                    <button type="submit" form="settings-form" class="btn btn-primary">
+                        <i class="fa-solid fa-save"></i>
+                        Lưu thay đổi
+                    </button>
+                </div>
+            </div>
+
+            <!-- Settings Form -->
+            <form id="settings-form" action="#" method="post" enctype="multipart/form-data">
+
+                <!-- Website Information Section -->
+                <div class="form-section">
+                    <h2><i class="fa-solid fa-globe"></i> Thông tin website</h2>
+
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label for="website-name">
+                                Tên website <span class="required">*</span>
+                            </label>
+                            <input
+                                type="text"
+                                id="website-name"
+                                name="website_name"
+                                placeholder="Nhập tên website"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Logo Upload -->
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label>Logo website</label>
+                            <div class="upload-area logo-upload">
+                                <input type="file" id="logo" name="logo" accept="image/*">
+                                <label for="logo" class="upload-label">
+                                    <div class="upload-icon">
+                                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                                    </div>
+                                    <h3>Tải lên logo website</h3>
+                                    <p>Hỗ trợ: PNG, SVG, JPG. Tối đa 2MB. Khuyến nghị: PNG trong suốt, 200x60px</p>
+                                </label>
+                            </div>
+                            <div class="logo-preview" style="display: none;">
+                                <img src="" alt="Logo Preview">
+                                <button type="button" class="btn-remove-image" title="Xóa logo">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Favicon Upload -->
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label>Favicon</label>
+                            <div class="upload-area favicon-upload">
+                                <input type="file" id="favicon" name="favicon" accept="image/x-icon,image/png">
+                                <label for="favicon" class="upload-label">
+                                    <div class="upload-icon">
+                                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                                    </div>
+                                    <h3>Tải lên favicon</h3>
+                                    <p>Hỗ trợ: ICO, PNG. Tối đa 1MB. Khuyến nghị: 32x32px hoặc 16x16px</p>
+                                </label>
+                            </div>
+                            <div class="favicon-preview" style="display: none;">
+                                <img src="" alt="Favicon Preview">
+                                <button type="button" class="btn-remove-image" title="Xóa favicon">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Information Section -->
+                <div class="form-section">
+                    <h2><i class="fa-solid fa-address-book"></i> Thông tin liên hệ</h2>
+
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label for="address">Địa chỉ</label>
+                            <textarea
+                                id="address"
+                                name="address"
+                                rows="3"
+                                placeholder="Nhập địa chỉ đầy đủ"
+                            ></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-row two-cols">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="contact@example.com"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Số điện thoại</label>
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="0123 456 789"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="hotline">Hotline</label>
+                            <input
+                                type="tel"
+                                id="hotline"
+                                name="hotline"
+                                placeholder="1900 xxxx"
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Media Section -->
+                <div class="form-section">
+                    <h2><i class="fa-solid fa-share-nodes"></i> Mạng xã hội</h2>
+
+                    <div class="form-row two-cols">
+                        <div class="form-group">
+                            <label for="facebook">
+                                <i class="fa-brands fa-facebook"></i> Facebook
+                            </label>
+                            <input
+                                type="url"
+                                id="facebook"
+                                name="facebook"
+                                placeholder="https://facebook.com/your-page"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="instagram">
+                                <i class="fa-brands fa-instagram"></i> Instagram
+                            </label>
+                            <input
+                                type="url"
+                                id="instagram"
+                                name="instagram"
+                                placeholder="https://instagram.com/your-account"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form-row two-cols">
+                        <div class="form-group">
+                            <label for="youtube">
+                                <i class="fa-brands fa-youtube"></i> YouTube
+                            </label>
+                            <input
+                                type="url"
+                                id="youtube"
+                                name="youtube"
+                                placeholder="https://youtube.com/@your-channel"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="zalo">
+                                <i class="fa-solid fa-phone"></i> Zalo
+                            </label>
+                            <input
+                                type="text"
+                                id="zalo"
+                                name="zalo"
+                                placeholder="Số điện thoại Zalo hoặc link OA"
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tracking Codes Section -->
+                <div class="form-section">
+                    <h2><i class="fa-solid fa-chart-simple"></i> Mã theo dõi (Tracking)</h2>
+                    <p class="section-description">Cấu hình các mã theo dõi để phân tích lưu lượng truy cập và hành vi người dùng</p>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="google-analytics">
+                                <i class="fa-brands fa-google"></i> Google Analytics ID
+                            </label>
+                            <input
+                                type="text"
+                                id="google-analytics"
+                                name="google_analytics_id"
+                                placeholder="G-XXXXXXXXXX hoặc UA-XXXXXXXXX-X"
+                            >
+                            <small class="form-help">Ví dụ: G-1234567890 (GA4) hoặc UA-123456789-1 (Universal Analytics)</small>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="facebook-pixel">
+                                <i class="fa-brands fa-facebook"></i> Facebook Pixel ID
+                            </label>
+                            <input
+                                type="text"
+                                id="facebook-pixel"
+                                name="facebook_pixel_id"
+                                placeholder="123456789012345"
+                            >
+                            <small class="form-help">Mã Pixel gồm 15-16 chữ số, tìm trong Facebook Business Manager</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Default SEO Section -->
+                <div class="form-section">
+                    <h2><i class="fa-solid fa-magnifying-glass"></i> SEO mặc định</h2>
+                    <p class="section-description">Thiết lập thông tin SEO mặc định cho trang chủ. Các trang khác có thể ghi đè cấu hình này.</p>
+
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label for="meta-title">
+                                Meta Title (Tiêu đề SEO)
+                            </label>
+                            <input
+                                type="text"
+                                id="meta-title"
+                                name="meta_title"
+                                placeholder="Tiêu đề trang web xuất hiện trên Google"
+                                maxlength="60"
+                            >
+                            <small class="form-help">Khuyến nghị: 50-60 ký tự. <span id="title-count">0</span>/60</small>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label for="meta-description">
+                                Meta Description (Mô tả SEO)
+                            </label>
+                            <textarea
+                                id="meta-description"
+                                name="meta_description"
+                                rows="4"
+                                placeholder="Mô tả ngắn gọn về website, xuất hiện dưới tiêu đề trên kết quả tìm kiếm"
+                                maxlength="160"
+                            ></textarea>
+                            <small class="form-help">Khuyến nghị: 120-160 ký tự. <span id="description-count">0</span>/160</small>
+                        </div>
+                    </div>
+
+                    <!-- SEO Preview -->
+                    <div class="seo-preview">
+                        <h3><i class="fa-solid fa-eye"></i> Xem trước kết quả tìm kiếm</h3>
+                        <div class="google-preview">
+                            <div class="preview-url">https://yourwebsite.com</div>
+                            <div class="preview-title">Tên website của bạn - Tiêu đề trang chủ</div>
+                            <div class="preview-description">Mô tả trang web sẽ hiển thị ở đây. Hãy viết mô tả hấp dẫn để thu hút người dùng click vào website của bạn.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Actions -->
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fa-solid fa-save"></i>
+                        Lưu cấu hình
+                    </button>
+                    <button type="button" class="btn btn-secondary">
+                        <i class="fa-solid fa-rotate-left"></i>
+                        Khôi phục mặc định
+                    </button>
+                </div>
+            </form>
+        </main>
+    </div>
+</body>
+</html>
