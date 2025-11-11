@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý danh mục - Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../css/admin-dashboard.css">
+    <link rel="stylesheet" href="../css/categories-list.css">
+</head>
+<body>
+    <main class="admin-dashboard-main">
+        <div class="admin-dashboard-container">
+            <!-- Admin Sidebar -->
+            <aside class="admin-sidebar">
+                <div class="sidebar-header">
+                    <div class="admin-logo">
+                        <i class="fa-solid fa-store"></i>
+                    </div>
+                    <h2>Admin Panel</h2>
+                    <p>Quản lý hệ thống</p>
+                </div>
+
+                <nav class="admin-menu">
+                    <a href="../dashboard.html" class="admin-menu-item">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="../products/list.html" class="admin-menu-item">
+                        <i class="fa-solid fa-box"></i>
+                        <span>Quản lý sản phẩm</span>
+                    </a>
+                    <a href="../orders/list.html" class="admin-menu-item">
+                        <i class="fa-solid fa-shopping-cart"></i>
+                        <span>Quản lý đơn hàng</span>
+                    </a>
+                    <a href="../customers/list.html" class="admin-menu-item">
+                        <i class="fa-solid fa-users"></i>
+                        <span>Quản lý khách hàng</span>
+                    </a>
+                    <a href="list.html" class="admin-menu-item active">
+                        <i class="fa-solid fa-folder-tree"></i>
+                        <span>Quản lý danh mục</span>
+                    </a>
+                    <a href="#" class="admin-menu-item">
+                        <i class="fa-solid fa-star"></i>
+                        <span>Đánh giá</span>
+                    </a>
+                    <a href="#" class="admin-menu-item">
+                        <i class="fa-solid fa-chart-bar"></i>
+                        <span>Báo cáo</span>
+                    </a>
+                    <a href="#" class="admin-menu-item">
+                        <i class="fa-solid fa-cog"></i>
+                        <span>Cài đặt</span>
+                    </a>
+                    <a href="../../index.html" class="admin-menu-item logout">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>Đăng xuất</span>
+                    </a>
+                </nav>
+
+                <!-- Admin Info -->
+                <div class="admin-info">
+                    <div class="admin-avatar">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+                    <p class="admin-name">Admin User</p>
+                    <p class="admin-role">Quản trị viên</p>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <div class="admin-content">
+                <!-- Page Header -->
+                <div class="page-header">
+                    <div class="header-left">
+                        <h1>Quản lý danh mục</h1>
+                        <p>Tổng cộng <strong>24 danh mục</strong></p>
+                    </div>
+                    <div class="header-right">
+                        <a href="#add-category-form" class="btn-add-category">
+                            <i class="fa-solid fa-plus"></i>
+                            Thêm danh mục
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Add/Edit Category Form -->
+                <div class="category-form-section" id="add-category-form">
+                    <div class="form-card">
+                        <div class="form-header">
+                            <h3>
+                                <i class="fa-solid fa-plus-circle"></i>
+                                Thêm danh mục mới
+                            </h3>
+                            <a href="#" class="btn-close-form">
+                                <i class="fa-solid fa-times"></i>
+                            </a>
+                        </div>
+                        <form action="#" method="post" class="category-form">
+                            <!-- Basic Information -->
+                            <div class="form-section">
+                                <h4 class="section-title">
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    Thông tin cơ bản
+                                </h4>
+                                <div class="form-grid">
+                                    <div class="form-group full-width">
+                                        <label for="category-name">
+                                            Tên danh mục <span class="required">*</span>
+                                        </label>
+                                        <input type="text" id="category-name" name="category_name" placeholder="Nhập tên danh mục" required>
+                                    </div>
+
+                                    <div class="form-group full-width">
+                                        <label for="category-slug">
+                                            Slug (Đường dẫn) <span class="required">*</span>
+                                        </label>
+                                        <input type="text" id="category-slug" name="category_slug" placeholder="vi-du: gom-su-cao-cap" required>
+                                        <small class="form-hint">URL thân thiện cho danh mục (tự động tạo từ tên)</small>
+                                    </div>
+
+                                    <div class="form-group full-width">
+                                        <label for="parent-category">
+                                            Danh mục cha
+                                        </label>
+                                        <select id="parent-category" name="parent_category">
+                                            <option value="">-- Không có (Danh mục gốc) --</option>
+                                            <option value="1">Sản phẩm gốm sứ</option>
+                                            <option value="2">└─ Bát đĩa</option>
+                                            <option value="3">└─ Ly tách</option>
+                                            <option value="4">└─ Bình hoa</option>
+                                            <option value="5">Đồ trang trí nội thất</option>
+                                            <option value="6">└─ Tranh gốm</option>
+                                            <option value="7">└─ Tượng trang trí</option>
+                                            <option value="8">Quà tặng cao cấp</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group full-width">
+                                        <label for="category-description">
+                                            Mô tả
+                                        </label>
+                                        <textarea id="category-description" name="category_description" rows="4" placeholder="Nhập mô tả về danh mục này..."></textarea>
+                                    </div>
+
+                                    <div class="form-group full-width">
+                                        <label for="category-image">
+                                            Ảnh đại diện
+                                        </label>
+                                        <input type="file" id="category-image" name="category_image" accept="image/*">
+                                        <small class="form-hint">Kích thước đề xuất: 800x600px</small>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="display-order">
+                                            Thứ tự hiển thị
+                                        </label>
+                                        <input type="number" id="display-order" name="display_order" value="0" min="0">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="category-status">
+                                            Trạng thái
+                                        </label>
+                                        <select id="category-status" name="category_status">
+                                            <option value="visible" selected>Hiển thị</option>
+                                            <option value="hidden">Ẩn</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- SEO Configuration -->
+                            <div class="form-section">
+                                <h4 class="section-title">
+                                    <i class="fa-solid fa-search"></i>
+                                    Cấu hình SEO
+                                </h4>
+                                <div class="form-grid">
+                                    <div class="form-group full-width">
+                                        <label for="meta-title">
+                                            Meta Title
+                                        </label>
+                                        <input type="text" id="meta-title" name="meta_title" placeholder="Tiêu đề SEO cho danh mục">
+                                        <small class="form-hint">Độ dài khuyến nghị: 50-60 ký tự</small>
+                                    </div>
+
+                                    <div class="form-group full-width">
+                                        <label for="meta-description">
+                                            Meta Description
+                                        </label>
+                                        <textarea id="meta-description" name="meta_description" rows="3" placeholder="Mô tả SEO cho danh mục"></textarea>
+                                        <small class="form-hint">Độ dài khuyến nghị: 150-160 ký tự</small>
+                                    </div>
+
+                                    <div class="form-group full-width">
+                                        <label for="meta-keywords">
+                                            Meta Keywords
+                                        </label>
+                                        <input type="text" id="meta-keywords" name="meta_keywords" placeholder="từ khóa 1, từ khóa 2, từ khóa 3">
+                                        <small class="form-hint">Các từ khóa cách nhau bởi dấu phẩy</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Form Actions -->
+                            <div class="form-actions">
+                                <button type="submit" class="btn-submit">
+                                    <i class="fa-solid fa-check"></i>
+                                    Lưu danh mục
+                                </button>
+                                <button type="reset" class="btn-reset">
+                                    <i class="fa-solid fa-rotate-right"></i>
+                                    Đặt lại
+                                </button>
+                                <a href="#" class="btn-cancel">
+                                    <i class="fa-solid fa-times"></i>
+                                    Hủy
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Categories Tree View -->
+                <div class="categories-tree-section">
+                    <div class="tree-card">
+                        <div class="tree-header">
+                            <h3>
+                                <i class="fa-solid fa-sitemap"></i>
+                                Cây danh mục
+                            </h3>
+                            <div class="tree-actions">
+                                <button class="btn-expand-all">
+                                    <i class="fa-solid fa-expand"></i>
+                                    Mở rộng tất cả
+                                </button>
+                                <button class="btn-collapse-all">
+                                    <i class="fa-solid fa-compress"></i>
+                                    Thu gọn tất cả
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="tree-body">
+                            <!-- Categories Tree List -->
+                            <ul class="category-tree">
+                                <!-- Level 1: Sản phẩm gốm sứ -->
+                                <li class="category-item level-1">
+                                    <div class="category-row">
+                                        <div class="category-info">
+                                            <button class="toggle-btn">
+                                                <i class="fa-solid fa-chevron-down"></i>
+                                            </button>
+                                            <div class="category-icon">
+                                                <i class="fa-solid fa-folder"></i>
+                                            </div>
+                                            <div class="category-details">
+                                                <h4>Sản phẩm gốm sứ</h4>
+                                                <span class="category-slug">san-pham-gom-su</span>
+                                            </div>
+                                        </div>
+                                        <div class="category-meta">
+                                            <span class="product-count">
+                                                <i class="fa-solid fa-box"></i>
+                                                156 sản phẩm
+                                            </span>
+                                            <span class="status-badge visible">Hiển thị</span>
+                                        </div>
+                                        <div class="category-actions">
+                                            <button class="btn-move-up" title="Di chuyển lên" disabled>
+                                                <i class="fa-solid fa-arrow-up"></i>
+                                            </button>
+                                            <button class="btn-move-down" title="Di chuyển xuống">
+                                                <i class="fa-solid fa-arrow-down"></i>
+                                            </button>
+                                            <a href="#edit-category-1" class="btn-edit" title="Sửa">
+                                                <i class="fa-solid fa-edit"></i>
+                                            </a>
+                                            <button class="btn-delete" title="Xóa">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Level 2: Child categories -->
+                                    <ul class="category-children">
+                                        <!-- Bát đĩa -->
+                                        <li class="category-item level-2">
+                                            <div class="category-row">
+                                                <div class="category-info">
+                                                    <button class="toggle-btn">
+                                                        <i class="fa-solid fa-chevron-down"></i>
+                                                    </button>
+                                                    <div class="category-icon">
+                                                        <i class="fa-solid fa-folder"></i>
+                                                    </div>
+                                                    <div class="category-details">
+                                                        <h4>Bát đĩa</h4>
+                                                        <span class="category-slug">bat-dia</span>
+                                                    </div>
+                                                </div>
+                                                <div class="category-meta">
+                                                    <span class="product-count">
+                                                        <i class="fa-solid fa-box"></i>
+                                                        45 sản phẩm
+                                                    </span>
+                                                    <span class="status-badge visible">Hiển thị</span>
+                                                </div>
+                                                <div class="category-actions">
+                                                    <button class="btn-move-up" title="Di chuyển lên" disabled>
+                                                        <i class="fa-solid fa-arrow-up"></i>
+                                                    </button>
+                                                    <button class="btn-move-down" title="Di chuyển xuống">
+                                                        <i class="fa-solid fa-arrow-down"></i>
+                                                    </button>
+                                                    <a href="#edit-category-2" class="btn-edit" title="Sửa">
+                                                        <i class="fa-solid fa-edit"></i>
+                                                    </a>
+                                                    <button class="btn-delete" title="Xóa">
+                                                        <i class="fa-solid fa-trash"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                            <!-- Level 3: Sub-categories -->
+                                            <ul class="category-children">
+                                                <li class="category-item level-3">
+                                                    <div class="category-row">
+                                                        <div class="category-info">
+                                                            <div class="category-icon">
+                                                                <i class="fa-regular fa-folder"></i>
+                                                            </div>
+                                                            <div class="category-details">
+                                                                <h4>Bát cơm</h4>
+                                                                <span class="category-slug">bat-com</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="category-meta">
+                                                            <span class="product-count">
+                                                                <i class="fa-solid fa-box"></i>
+                                                                18 sản phẩm
+                                                            </span>
+                                                            <span class="status-badge visible">Hiển thị</span>
+                                                        </div>
+                                                        <div class="category-actions">
+                                                            <button class="btn-move-up" title="Di chuyển lên" disabled>
+                                                                <i class="fa-solid fa-arrow-up"></i>
+                                                            </button>
+                                                            <button class="btn-move-down" title="Di chuyển xuống">
+                                                                <i class="fa-solid fa-arrow-down"></i>
+                                                            </button>
+                                                            <a href="#edit-category-3" class="btn-edit" title="Sửa">
+                                                                <i class="fa-solid fa-edit"></i>
+                                                            </a>
+                                                            <button class="btn-delete" title="Xóa">
+                                                                <i class="fa-solid fa-trash"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </li>
+
+                                                <li class="category-item level-3">
+                                                    <div class="category-row">
+                                                        <div class="category-info">
+                                                            <div class="category-icon">
+                                                                <i class="fa-regular fa-folder"></i>
+                                                            </div>
+                                                            <div class="category-details">
+                                                                <h4>Đĩa</h4>
+                                                                <span class="category-slug">dia</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="category-meta">
+                                                            <span class="product-count">
+                                                                <i class="fa-solid fa-box"></i>
+                                                                27 sản phẩm
+                                                            </span>
+                                                            <span class="status-badge visible">Hiển thị</span>
+                                                        </div>
+                                                        <div class="category-actions">
+                                                            <button class="btn-move-up" title="Di chuyển lên">
+                                                                <i class="fa-solid fa-arrow-up"></i>
+                                                            </button>
+                                                            <button class="btn-move-down" title="Di chuyển xuống" disabled>
+                                                                <i class="fa-solid fa-arrow-down"></i>
+                                                            </button>
+                                                            <a href="#edit-category-4" class="btn-edit" title="Sửa">
+                                                                <i class="fa-solid fa-edit"></i>
+                                                            </a>
+                                                            <button class="btn-delete" title="Xóa">
+                                                                <i class="fa-solid fa-trash"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <!-- Ly tách -->
+                                        <li class="category-item level-2">
+                                            <div class="category-row">
+                                                <div class="category-info">
+                                                    <button class="toggle-btn">
+                                                        <i class="fa-solid fa-chevron-down"></i>
+                                                    </button>
+                                                    <div class="category-icon">
+                                                        <i class="fa-solid fa-folder"></i>
+                                                    </div>
+                                                    <div class="category-details">
+                                                        <h4>Ly tách</h4>
+                                                        <span class="category-slug">ly-tach</span>
+                                                    </div>
+                                                </div>
+                                                <div class="category-meta">
+                                                    <span class="product-count">
+                                                        <i class="fa-solid fa-box"></i>
+                                                        38 sản phẩm
+                                                    </span>
+                                                    <span class="status-badge visible">Hiển thị</span>
+                                                </div>
+                                                <div class="category-actions">
+                                                    <button class="btn-move-up" title="Di chuyển lên">
+                                                        <i class="fa-solid fa-arrow-up"></i>
+                                                    </button>
+                                                    <button class="btn-move-down" title="Di chuyển xuống">
+                                                        <i class="fa-solid fa-arrow-down"></i>
+                                                    </button>
+                                                    <a href="#edit-category-5" class="btn-edit" title="Sửa">
+                                                        <i class="fa-solid fa-edit"></i>
+                                                    </a>
+                                                    <button class="btn-delete" title="Xóa">
+                                                        <i class="fa-solid fa-trash"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                            <ul class="category-children">
+                                                <li class="category-item level-3">
+                                                    <div class="category-row">
+                                                        <div class="category-info">
+                                                            <div class="category-icon">
+                                                                <i class="fa-regular fa-folder"></i>
+                                                            </div>
+                                                            <div class="category-details">
+                                                                <h4>Ly uống nước</h4>
+                                                                <span class="category-slug">ly-uong-nuoc</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="category-meta">
+                                                            <span class="product-count">
+                                                                <i class="fa-solid fa-box"></i>
+                                                                22 sản phẩm
+                                                            </span>
+                                                            <span class="status-badge visible">Hiển thị</span>
+                                                        </div>
+                                                        <div class="category-actions">
+                                                            <button class="btn-move-up" title="Di chuyển lên" disabled>
+                                                                <i class="fa-solid fa-arrow-up"></i>
+                                                            </button>
+                                                            <button class="btn-move-down" title="Di chuyển xuống">
+                                                                <i class="fa-solid fa-arrow-down"></i>
+                                                            </button>
+                                                            <a href="#edit-category-6" class="btn-edit" title="Sửa">
+                                                                <i class="fa-solid fa-edit"></i>
+                                                            </a>
+                                                            <button class="btn-delete" title="Xóa">
+                                                                <i class="fa-solid fa-trash"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </li>
+
+                                                <li class="category-item level-3">
+                                                    <div class="category-row">
+                                                        <div class="category-info">
+                                                            <div class="category-icon">
+                                                                <i class="fa-regular fa-folder"></i>
+                                                            </div>
+                                                            <div class="category-details">
+                                                                <h4>Tách trà, cà phê</h4>
+                                                                <span class="category-slug">tach-tra-ca-phe</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="category-meta">
+                                                            <span class="product-count">
+                                                                <i class="fa-solid fa-box"></i>
+                                                                16 sản phẩm
+                                                            </span>
+                                                            <span class="status-badge visible">Hiển thị</span>
+                                                        </div>
+                                                        <div class="category-actions">
+                                                            <button class="btn-move-up" title="Di chuyển lên">
+                                                                <i class="fa-solid fa-arrow-up"></i>
+                                                            </button>
+                                                            <button class="btn-move-down" title="Di chuyển xuống" disabled>
+                                                                <i class="fa-solid fa-arrow-down"></i>
+                                                            </button>
+                                                            <a href="#edit-category-7" class="btn-edit" title="Sửa">
+                                                                <i class="fa-solid fa-edit"></i>
+                                                            </a>
+                                                            <button class="btn-delete" title="Xóa">
+                                                                <i class="fa-solid fa-trash"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <!-- Bình hoa -->
+                                        <li class="category-item level-2">
+                                            <div class="category-row">
+                                                <div class="category-info">
+                                                    <div class="category-icon">
+                                                        <i class="fa-regular fa-folder"></i>
+                                                    </div>
+                                                    <div class="category-details">
+                                                        <h4>Bình hoa</h4>
+                                                        <span class="category-slug">binh-hoa</span>
+                                                    </div>
+                                                </div>
+                                                <div class="category-meta">
+                                                    <span class="product-count">
+                                                        <i class="fa-solid fa-box"></i>
+                                                        28 sản phẩm
+                                                    </span>
+                                                    <span class="status-badge visible">Hiển thị</span>
+                                                </div>
+                                                <div class="category-actions">
+                                                    <button class="btn-move-up" title="Di chuyển lên">
+                                                        <i class="fa-solid fa-arrow-up"></i>
+                                                    </button>
+                                                    <button class="btn-move-down" title="Di chuyển xuống">
+                                                        <i class="fa-solid fa-arrow-down"></i>
+                                                    </button>
+                                                    <a href="#edit-category-8" class="btn-edit" title="Sửa">
+                                                        <i class="fa-solid fa-edit"></i>
+                                                    </a>
+                                                    <button class="btn-delete" title="Xóa">
+                                                        <i class="fa-solid fa-trash"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <!-- Bộ ấm chén -->
+                                        <li class="category-item level-2">
+                                            <div class="category-row">
+                                                <div class="category-info">
+                                                    <div class="category-icon">
+                                                        <i class="fa-regular fa-folder"></i>
+                                                    </div>
+                                                    <div class="category-details">
+                                                        <h4>Bộ ấm chén</h4>
+                                                        <span class="category-slug">bo-am-chen</span>
+                                                    </div>
+                                                </div>
+                                                <div class="category-meta">
+                                                    <span class="product-count">
+                                                        <i class="fa-solid fa-box"></i>
+                                                        45 sản phẩm
+                                                    </span>
+                                                    <span class="status-badge visible">Hiển thị</span>
+                                                </div>
+                                                <div class="category-actions">
+                                                    <button class="btn-move-up" title="Di chuyển lên">
+                                                        <i class="fa-solid fa-arrow-up"></i>
+                                                    </button>
+                                                    <button class="btn-move-down" title="Di chuyển xuống" disabled>
+                                                        <i class="fa-solid fa-arrow-down"></i>
+                                                    </button>
+                                                    <a href="#edit-category-9" class="btn-edit" title="Sửa">
+                                                        <i class="fa-solid fa-edit"></i>
+                                                    </a>
+                                                    <button class="btn-delete" title="Xóa">
+                                                        <i class="fa-solid fa-trash"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <!-- Level 1: Đồ trang trí nội thất -->
+                                <li class="category-item level-1">
+                                    <div class="category-row">
+                                        <div class="category-info">
+                                            <button class="toggle-btn">
+                                                <i class="fa-solid fa-chevron-down"></i>
+                                            </button>
+                                            <div class="category-icon">
+                                                <i class="fa-solid fa-folder"></i>
+                                            </div>
+                                            <div class="category-details">
+                                                <h4>Đồ trang trí nội thất</h4>
+                                                <span class="category-slug">do-trang-tri-noi-that</span>
+                                            </div>
+                                        </div>
+                                        <div class="category-meta">
+                                            <span class="product-count">
+                                                <i class="fa-solid fa-box"></i>
+                                                89 sản phẩm
+                                            </span>
+                                            <span class="status-badge visible">Hiển thị</span>
+                                        </div>
+                                        <div class="category-actions">
+                                            <button class="btn-move-up" title="Di chuyển lên">
+                                                <i class="fa-solid fa-arrow-up"></i>
+                                            </button>
+                                            <button class="btn-move-down" title="Di chuyển xuống">
+                                                <i class="fa-solid fa-arrow-down"></i>
+                                            </button>
+                                            <a href="#edit-category-10" class="btn-edit" title="Sửa">
+                                                <i class="fa-solid fa-edit"></i>
+                                            </a>
+                                            <button class="btn-delete" title="Xóa">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <ul class="category-children">
+                                        <li class="category-item level-2">
+                                            <div class="category-row">
+                                                <div class="category-info">
+                                                    <div class="category-icon">
+                                                        <i class="fa-regular fa-folder"></i>
+                                                    </div>
+                                                    <div class="category-details">
+                                                        <h4>Tranh gốm</h4>
+                                                        <span class="category-slug">tranh-gom</span>
+                                                    </div>
+                                                </div>
+                                                <div class="category-meta">
+                                                    <span class="product-count">
+                                                        <i class="fa-solid fa-box"></i>
+                                                        34 sản phẩm
+                                                    </span>
+                                                    <span class="status-badge visible">Hiển thị</span>
+                                                </div>
+                                                <div class="category-actions">
+                                                    <button class="btn-move-up" title="Di chuyển lên" disabled>
+                                                        <i class="fa-solid fa-arrow-up"></i>
+                                                    </button>
+                                                    <button class="btn-move-down" title="Di chuyển xuống">
+                                                        <i class="fa-solid fa-arrow-down"></i>
+                                                    </button>
+                                                    <a href="#edit-category-11" class="btn-edit" title="Sửa">
+                                                        <i class="fa-solid fa-edit"></i>
+                                                    </a>
+                                                    <button class="btn-delete" title="Xóa">
+                                                        <i class="fa-solid fa-trash"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <li class="category-item level-2">
+                                            <div class="category-row">
+                                                <div class="category-info">
+                                                    <div class="category-icon">
+                                                        <i class="fa-regular fa-folder"></i>
+                                                    </div>
+                                                    <div class="category-details">
+                                                        <h4>Tượng trang trí</h4>
+                                                        <span class="category-slug">tuong-trang-tri</span>
+                                                    </div>
+                                                </div>
+                                                <div class="category-meta">
+                                                    <span class="product-count">
+                                                        <i class="fa-solid fa-box"></i>
+                                                        55 sản phẩm
+                                                    </span>
+                                                    <span class="status-badge visible">Hiển thị</span>
+                                                </div>
+                                                <div class="category-actions">
+                                                    <button class="btn-move-up" title="Di chuyển lên">
+                                                        <i class="fa-solid fa-arrow-up"></i>
+                                                    </button>
+                                                    <button class="btn-move-down" title="Di chuyển xuống" disabled>
+                                                        <i class="fa-solid fa-arrow-down"></i>
+                                                    </button>
+                                                    <a href="#edit-category-12" class="btn-edit" title="Sửa">
+                                                        <i class="fa-solid fa-edit"></i>
+                                                    </a>
+                                                    <button class="btn-delete" title="Xóa">
+                                                        <i class="fa-solid fa-trash"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <!-- Level 1: Quà tặng cao cấp -->
+                                <li class="category-item level-1">
+                                    <div class="category-row">
+                                        <div class="category-info">
+                                            <div class="category-icon">
+                                                <i class="fa-regular fa-folder"></i>
+                                            </div>
+                                            <div class="category-details">
+                                                <h4>Quà tặng cao cấp</h4>
+                                                <span class="category-slug">qua-tang-cao-cap</span>
+                                            </div>
+                                        </div>
+                                        <div class="category-meta">
+                                            <span class="product-count">
+                                                <i class="fa-solid fa-box"></i>
+                                                67 sản phẩm
+                                            </span>
+                                            <span class="status-badge hidden">Ẩn</span>
+                                        </div>
+                                        <div class="category-actions">
+                                            <button class="btn-move-up" title="Di chuyển lên">
+                                                <i class="fa-solid fa-arrow-up"></i>
+                                            </button>
+                                            <button class="btn-move-down" title="Di chuyển xuống" disabled>
+                                                <i class="fa-solid fa-arrow-down"></i>
+                                            </button>
+                                            <a href="#edit-category-13" class="btn-edit" title="Sửa">
+                                                <i class="fa-solid fa-edit"></i>
+                                            </a>
+                                            <button class="btn-delete" title="Xóa">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
