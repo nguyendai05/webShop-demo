@@ -198,40 +198,6 @@ body {
     background: transparent; 
 }
 
-/* Admin Info */
-.admin-info {
-    padding: 20px;
-    border-top: 2px solid #f5f1e6;
-    text-align: center;
-    background: linear-gradient(135deg, rgba(192, 57, 43, 0.03) 0%, rgba(201, 122, 58, 0.03) 100%);
-    flex-shrink: 0;
-}
-
-.admin-avatar {
-    width: 50px;
-    height: 50px;
-    margin: 0 auto 10px;
-    background: linear-gradient(135deg, #c0392b 0%, #c97a3a 100%);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 22px;
-}
-
-.admin-name {
-    font-size: 14px;
-    font-weight: 600;
-    color: #4e342e;
-    margin-bottom: 3px;
-}
-
-.admin-role {
-    font-size: 12px;
-    color: #777;
-}
-
 /* ============================================
    ADMIN CONTENT
    ============================================ */
