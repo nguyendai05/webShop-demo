@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cấu hình email - Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../css/admin-dashboard.css">
+    <link rel="stylesheet" href="../css/settings-general.css">
+    <link rel="stylesheet" href="../css/settings-payment.css">
+    <link rel="stylesheet" href="../css/settings-email.css">
+</head>
+<body>
+    <main class="admin-dashboard-main">
+        <div class="admin-dashboard-container">
+            <!-- Admin Sidebar -->
+            <aside class="admin-sidebar">
+                <div class="sidebar-header">
+                    <div class="admin-logo">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+                    <h2>Bảng quản lý Website</h2>
+                    <p>Quản trị viên</p>
+                </div>
+
+                <nav class="admin-menu">
+                    <a href="../dashboard.html" class="admin-menu-item">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Bảng điều khiển</span>
+                    </a>
+                    <a href="../products/list.html" class="admin-menu-item">
+                        <i class="fa-solid fa-box"></i>
+                        <span>Quản lý sản phẩm</span>
+                    </a>
+                    <a href="../orders/list.html" class="admin-menu-item">
+                        <i class="fa-solid fa-shopping-cart"></i>
+                        <span>Quản lý đơn hàng</span>
+                    </a>
+                    <a href="../customers/list.html" class="admin-menu-item">
+                        <i class="fa-solid fa-users"></i>
+                        <span>Quản lý khách hàng</span>
+                    </a>
+                    <a href="../categories/list.html" class="admin-menu-item">
+                        <i class="fa-solid fa-folder-tree"></i>
+                        <span>Quản lý danh mục</span>
+                    </a>
+                    <a href="../reviews/list.html" class="admin-menu-item">
+                        <i class="fa-solid fa-star"></i>
+                        <span>Đánh giá</span>
+                    </a>
+                    <a href="../blog/posts.html" class="admin-menu-item">
+                        <i class="fa-solid fa-blog"></i>
+                        <span>Blog</span>
+                    </a>
+                    <a href="#" class="admin-menu-item">
+                        <i class="fa-solid fa-chart-bar"></i>
+                        <span>Báo cáo</span>
+                    </a>
+                    <a href="../../index.html" class="admin-menu-item">
+                        <i class="fa-solid fa-globe"></i>
+                        <span>Website</span>
+                    </a>
+                    <a href="general.html" class="admin-menu-item active">
+                        <i class="fa-solid fa-cog"></i>
+                        <span>Cài đặt</span>
+                    </a>
+                    <a href="../../index.html" class="admin-menu-item logout">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>Đăng xuất</span>
+                    </a>
+                </nav>
+            </aside>
+
+            <!-- Main Content -->
+            <div class="admin-content">
+                <!-- Page Header -->
+                <div class="page-header-settings">
+                    <div class="header-left">
+                        <h1><i class="fa-solid fa-envelope"></i> Cấu hình email</h1>
+                        <p>Quản lý máy chủ email và mẫu email tự động</p>
+                    </div>
+                    <div class="header-actions">
+                        <button type="submit" form="email-form" class="btn-save">
+                            <i class="fa-solid fa-floppy-disk"></i>
+                            Lưu cài đặt
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Settings Navigation -->
+                <div class="settings-nav">
+                    <a href="general.html" class="settings-nav-item">
+                        <i class="fa-solid fa-globe"></i>
+                        Cấu hình chung
+                    </a>
+                    <a href="payment.html" class="settings-nav-item">
+                        <i class="fa-solid fa-credit-card"></i>
+                        Thanh toán
+                    </a>
+                    <a href="shipping.html" class="settings-nav-item">
+                        <i class="fa-solid fa-truck-fast"></i>
+                        Vận chuyển
+                    </a>
+                    <a href="email.html" class="settings-nav-item active">
+                        <i class="fa-solid fa-envelope"></i>
+                        Email
+                    </a>
+                </div>
+
+                <!-- Email Form -->
+                <form id="email-form" action="#" method="post">
+                    <div class="settings-container">
+
+                        <!-- SMTP Server Settings Section -->
+                        <section class="settings-section">
+                            <div class="section-header">
+                                <h2><i class="fa-solid fa-server"></i> Cấu hình máy chủ SMTP</h2>
+                                <p>Thiết lập kết nối để gửi email tự động</p>
+                            </div>
+                            <div class="section-content">
+                                <div class="alert-info">
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <div>
+                                        <strong>Hướng dẫn:</strong> Bạn có thể sử dụng Gmail, Outlook, hoặc các dịch vụ SMTP chuyên nghiệp như SendGrid, Mailgun, Amazon SES.
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="smtp-host">
+                                        SMTP Host <span class="required">*</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="smtp-host"
+                                        name="smtp_host"
+                                        placeholder="Ví dụ: smtp.gmail.com"
+                                        required
+                                    >
+                                    <small class="form-hint">Địa chỉ máy chủ SMTP</small>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="smtp-port">
+                                            Port <span class="required">*</span>
+                                        </label>
+                                        <input
+                                            type="number"
+                                            id="smtp-port"
+                                            name="smtp_port"
+                                            placeholder="587"
+                                            min="1"
+                                            max="65535"
+                                            value="587"
+                                            required
+                                        >
+                                        <small class="form-hint">Port phổ biến: 587 (TLS), 465 (SSL), 25</small>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="smtp-encryption">
+                                            Mã hóa
+                                        </label>
+                                        <select id="smtp-encryption" name="smtp_encryption">
+                                            <option value="">Không mã hóa</option>
+                                            <option value="tls" selected>TLS</option>
+                                            <option value="ssl">SSL</option>
+                                        </select>
+                                        <small class="form-hint">Khuyến nghị: TLS</small>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="smtp-username">
+                                            Username (Email) <span class="required">*</span>
+                                        </label>
+                                        <input
+                                            type="email"
+                                            id="smtp-username"
+                                            name="smtp_username"
+                                            placeholder="your-email@example.com"
+                                            required
+                                        >
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="smtp-password">
+                                            Password <span class="required">*</span>
+                                        </label>
+                                        <input
+                                            type="password"
+                                            id="smtp-password"
+                                            name="smtp_password"
+                                            placeholder="Mật khẩu email hoặc App Password"
+                                            required
+                                        >
+                                        <small class="form-hint">Gmail: Sử dụng App Password thay vì mật khẩu thường</small>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="from-email">
+                                            Email gửi đi <span class="required">*</span>
+                                        </label>
+                                        <input
+                                            type="email"
+                                            id="from-email"
+                                            name="from_email"
+                                            placeholder="noreply@yourstore.com"
+                                            required
+                                        >
+                                        <small class="form-hint">Địa chỉ email hiển thị khi gửi</small>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="from-name">
+                                            Tên người gửi
+                                        </label>
+                                        <input
+                                            type="text"
+                                            id="from-name"
+                                            name="from_name"
+                                            placeholder="Đồ thủ công mỹ nghệ Việt Nam"
+                                        >
+                                        <small class="form-hint">Tên hiển thị khi khách hàng nhận email</small>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <button type="button" class="btn-test-email">
+                                        <i class="fa-solid fa-paper-plane"></i>
+                                        Gửi email thử nghiệm
+                                    </button>
+                                    <small class="form-hint">Kiểm tra kết nối SMTP bằng cách gửi email thử</small>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Email Templates Section -->
+                        <section class="settings-section">
+                            <div class="section-header">
+                                <h2><i class="fa-solid fa-file-lines"></i> Mẫu email tự động</h2>
+                                <p>Chỉnh sửa nội dung các email gửi tự động cho khách hàng</p>
+                            </div>
+                            <div class="section-content">
+                                <!-- Order Confirmation Email -->
+                                <div class="email-template-card">
+                                    <div class="template-header">
+                                        <div class="template-info">
+                                            <h3>
+                                                <i class="fa-solid fa-check-circle"></i>
+                                                Email xác nhận đơn hàng
+                                            </h3>
+                                            <p>Gửi khi khách hàng đặt hàng thành công</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" name="email_order_confirmation_enabled" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                    <div class="template-content">
+                                        <div class="form-group">
+                                            <label for="order-confirmation-subject">Tiêu đề email</label>
+                                            <input
+                                                type="text"
+                                                id="order-confirmation-subject"
+                                                name="order_confirmation_subject"
+                                                placeholder="Đơn hàng #{{order_number}} đã được xác nhận"
+                                                value="Xác nhận đơn hàng #{{order_number}}"
+                                            >
+                                            <small class="form-hint">Biến khả dụng: {{order_number}}, {{customer_name}}, {{total}}</small>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="order-confirmation-body">Nội dung email</label>
+                                            <textarea
+                                                id="order-confirmation-body"
+                                                name="order_confirmation_body"
+                                                rows="6"
+                                                placeholder="Nhập nội dung email..."
+                                            >Xin chào {{customer_name}},
+
+Cảm ơn bạn đã đặt hàng tại cửa hàng của chúng tôi!
+
+Mã đơn hàng: #{{order_number}}
+Tổng tiền: {{total}}đ
+Trạng thái: Đang xử lý
+
+Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất.
+
+Trân trọng,
+Đồ thủ công mỹ nghệ Việt Nam</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Shipping Notification Email -->
+                                <div class="email-template-card">
+                                    <div class="template-header">
+                                        <div class="template-info">
+                                            <h3>
+                                                <i class="fa-solid fa-truck"></i>
+                                                Email thông báo giao hàng
+                                            </h3>
+                                            <p>Gửi khi đơn hàng đang được giao</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" name="email_shipping_enabled" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                    <div class="template-content">
+                                        <div class="form-group">
+                                            <label for="shipping-subject">Tiêu đề email</label>
+                                            <input
+                                                type="text"
+                                                id="shipping-subject"
+                                                name="shipping_subject"
+                                                value="Đơn hàng #{{order_number}} đang được giao"
+                                            >
+                                            <small class="form-hint">Biến: {{order_number}}, {{tracking_code}}, {{carrier}}</small>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="shipping-body">Nội dung email</label>
+                                            <textarea
+                                                id="shipping-body"
+                                                name="shipping_body"
+                                                rows="6"
+                                            >Xin chào {{customer_name}},
+
+Đơn hàng #{{order_number}} của bạn đang được giao.
+
+Đơn vị vận chuyển: {{carrier}}
+Mã vận đơn: {{tracking_code}}
+Dự kiến giao: {{estimated_delivery}}
+
+Vui lòng theo dõi đơn hàng của bạn.
+
+Trân trọng!</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Order Completed Email -->
+                                <div class="email-template-card">
+                                    <div class="template-header">
+                                        <div class="template-info">
+                                            <h3>
+                                                <i class="fa-solid fa-circle-check"></i>
+                                                Email hoàn thành đơn hàng
+                                            </h3>
+                                            <p>Gửi khi đơn hàng đã giao thành công</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" name="email_completed_enabled" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                    <div class="template-content">
+                                        <div class="form-group">
+                                            <label for="completed-subject">Tiêu đề email</label>
+                                            <input
+                                                type="text"
+                                                id="completed-subject"
+                                                name="completed_subject"
+                                                value="Đơn hàng #{{order_number}} đã hoàn thành"
+                                            >
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="completed-body">Nội dung email</label>
+                                            <textarea
+                                                id="completed-body"
+                                                name="completed_body"
+                                                rows="6"
+                                            >Xin chào {{customer_name}},
+
+Đơn hàng #{{order_number}} đã được giao thành công!
+
+Cảm ơn bạn đã mua sắm tại cửa hàng chúng tôi.
+Nếu có bất kỳ vấn đề nào, vui lòng liên hệ với chúng tôi.
+
+Đánh giá sản phẩm: {{review_link}}
+
+Trân trọng!</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Password Reset Email -->
+                                <div class="email-template-card">
+                                    <div class="template-header">
+                                        <div class="template-info">
+                                            <h3>
+                                                <i class="fa-solid fa-key"></i>
+                                                Email đặt lại mật khẩu
+                                            </h3>
+                                            <p>Gửi khi khách hàng yêu cầu reset password</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" name="email_password_reset_enabled" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                    <div class="template-content">
+                                        <div class="form-group">
+                                            <label for="password-reset-subject">Tiêu đề email</label>
+                                            <input
+                                                type="text"
+                                                id="password-reset-subject"
+                                                name="password_reset_subject"
+                                                value="Yêu cầu đặt lại mật khẩu"
+                                            >
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password-reset-body">Nội dung email</label>
+                                            <textarea
+                                                id="password-reset-body"
+                                                name="password_reset_body"
+                                                rows="6"
+                                            >Xin chào {{customer_name}},
+
+Chúng tôi nhận được yêu cầu đặt lại mật khẩu cho tài khoản của bạn.
+
+Nhấn vào link sau để đặt lại mật khẩu:
+{{reset_link}}
+
+Link này có hiệu lực trong 24 giờ.
+
+Nếu bạn không yêu cầu đặt lại mật khẩu, vui lòng bỏ qua email này.
+
+Trân trọng!</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Email Marketing Settings Section -->
+                        <section class="settings-section">
+                            <div class="section-header">
+                                <h2><i class="fa-solid fa-bullhorn"></i> Email Marketing</h2>
+                                <p>Tích hợp với các dịch vụ email marketing</p>
+                            </div>
+                            <div class="section-content">
+                                <!-- Mailchimp Integration -->
+                                <div class="email-template-card">
+                                    <div class="template-header">
+                                        <div class="template-info">
+                                            <h3>
+                                                <i class="fa-brands fa-mailchimp"></i>
+                                                Mailchimp
+                                            </h3>
+                                            <p>Tích hợp với Mailchimp để gửi email marketing</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" name="mailchimp_enabled">
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                    <div class="template-content">
+                                        <div class="alert-info">
+                                            <i class="fa-solid fa-circle-info"></i>
+                                            <div>
+                                                <strong>Hướng dẫn:</strong> Đăng ký tài khoản tại
+                                                <a href="https://mailchimp.com" target="_blank">mailchimp.com</a> để nhận API Key
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="mailchimp-api-key">API Key</label>
+                                            <input
+                                                type="password"
+                                                id="mailchimp-api-key"
+                                                name="mailchimp_api_key"
+                                                placeholder="Nhập API Key từ Mailchimp"
+                                            >
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="mailchimp-list-id">List ID (Audience ID)</label>
+                                            <input
+                                                type="text"
+                                                id="mailchimp-list-id"
+                                                name="mailchimp_list_id"
+                                                placeholder="Mã danh sách subscriber"
+                                            >
+                                            <small class="form-hint">Tìm trong Mailchimp > Audience > Settings > Audience name and defaults</small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- SendGrid Integration -->
+                                <div class="email-template-card">
+                                    <div class="template-header">
+                                        <div class="template-info">
+                                            <h3>
+                                                <i class="fa-solid fa-paper-plane"></i>
+                                                SendGrid
+                                            </h3>
+                                            <p>Sử dụng SendGrid cho email transactional và marketing</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" name="sendgrid_enabled">
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                    <div class="template-content">
+                                        <div class="alert-info">
+                                            <i class="fa-solid fa-circle-info"></i>
+                                            <div>
+                                                <strong>Hướng dẫn:</strong> Tạo API Key tại
+                                                <a href="https://sendgrid.com" target="_blank">sendgrid.com</a> > Settings > API Keys
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="sendgrid-api-key">API Key</label>
+                                            <input
+                                                type="password"
+                                                id="sendgrid-api-key"
+                                                name="sendgrid_api_key"
+                                                placeholder="SG.xxxxxx..."
+                                            >
+                                            <small class="form-hint">API Key bắt đầu bằng SG.</small>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="checkbox-label">
+                                                <input type="checkbox" name="sendgrid_use_for_transactional">
+                                                <span>Sử dụng SendGrid cho email giao dịch</span>
+                                            </label>
+                                            <small class="form-hint">Thay thế SMTP bằng SendGrid API cho hiệu suất tốt hơn</small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Newsletter Subscription -->
+                                <div class="email-template-card">
+                                    <div class="template-header">
+                                        <div class="template-info">
+                                            <h3>
+                                                <i class="fa-solid fa-newspaper"></i>
+                                                Newsletter
+                                            </h3>
+                                            <p>Cấu hình đăng ký nhận bản tin</p>
+                                        </div>
+                                        <label class="toggle-switch">
+                                            <input type="checkbox" name="newsletter_enabled" checked>
+                                            <span class="toggle-slider"></span>
+                                        </label>
+                                    </div>
+                                    <div class="template-content">
+                                        <div class="form-group">
+                                            <label class="checkbox-label">
+                                                <input type="checkbox" name="newsletter_double_optin" checked>
+                                                <span>Yêu cầu xác nhận email (Double Opt-in)</span>
+                                            </label>
+                                            <small class="form-hint">Gửi email xác nhận trước khi thêm vào danh sách</small>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="newsletter-welcome-subject">Email chào mừng - Tiêu đề</label>
+                                            <input
+                                                type="text"
+                                                id="newsletter-welcome-subject"
+                                                name="newsletter_welcome_subject"
+                                                value="Chào mừng bạn đến với bản tin của chúng tôi!"
+                                            >
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="newsletter-welcome-body">Email chào mừng - Nội dung</label>
+                                            <textarea
+                                                id="newsletter-welcome-body"
+                                                name="newsletter_welcome_body"
+                                                rows="5"
+                                            >Xin chào {{customer_name}},
+
+Cảm ơn bạn đã đăng ký nhận bản tin từ chúng tôi!
+
+Bạn sẽ nhận được các thông tin mới nhất về sản phẩm, khuyến mãi đặc biệt và nhiều hơn nữa.
+
+Trân trọng!</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Save Button -->
+                        <div class="form-actions">
+                            <button type="submit" class="btn-save-primary">
+                                <i class="fa-solid fa-floppy-disk"></i>
+                                Lưu tất cả cài đặt
+                            </button>
+                            <button type="reset" class="btn-reset">
+                                <i class="fa-solid fa-rotate-left"></i>
+                                Đặt lại
+                            </button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
