@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cấu hình vận chuyển - Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../css/admin-dashboard.css">
+    <link rel="stylesheet" href="../css/settings-general.css">
+    <link rel="stylesheet" href="../css/settings-payment.css">
+    <link rel="stylesheet" href="../css/settings-shipping.css">
+</head>
+<body>
+    <main class="admin-dashboard-main">
+        <div class="admin-dashboard-container">
+            <!-- Admin Sidebar -->
+            <aside class="admin-sidebar">
+                <div class="sidebar-header">
+                    <div class="admin-logo">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+                    <h2>Bảng quản lý Website</h2>
+                    <p>Quản trị viên</p>
+                </div>
+
+                <nav class="admin-menu">
+                    <a href="../dashboard.html" class="admin-menu-item">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Bảng điều khiển</span>
+                    </a>
+                    <a href="../products/list.html" class="admin-menu-item">
+                        <i class="fa-solid fa-box"></i>
+                        <span>Quản lý sản phẩm</span>
+                    </a>
+                    <a href="../orders/list.html" class="admin-menu-item">
+                        <i class="fa-solid fa-shopping-cart"></i>
+                        <span>Quản lý đơn hàng</span>
+                    </a>
+                    <a href="../customers/list.html" class="admin-menu-item">
+                        <i class="fa-solid fa-users"></i>
+                        <span>Quản lý khách hàng</span>
+                    </a>
+                    <a href="../categories/list.html" class="admin-menu-item">
+                        <i class="fa-solid fa-folder-tree"></i>
+                        <span>Quản lý danh mục</span>
+                    </a>
+                    <a href="../reviews/list.html" class="admin-menu-item">
+                        <i class="fa-solid fa-star"></i>
+                        <span>Đánh giá</span>
+                    </a>
+                    <a href="../blog/posts.html" class="admin-menu-item">
+                        <i class="fa-solid fa-blog"></i>
+                        <span>Blog</span>
+                    </a>
+                    <a href="#" class="admin-menu-item">
+                        <i class="fa-solid fa-chart-bar"></i>
+                        <span>Báo cáo</span>
+                    </a>
+                    <a href="../../index.html" class="admin-menu-item">
+                        <i class="fa-solid fa-globe"></i>
+                        <span>Website</span>
+                    </a>
+                    <a href="general.html" class="admin-menu-item active">
+                        <i class="fa-solid fa-cog"></i>
+                        <span>Cài đặt</span>
+                    </a>
+                    <a href="../../index.html" class="admin-menu-item logout">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>Đăng xuất</span>
+                    </a>
+                </nav>
+            </aside>
+
+            <!-- Main Content -->
+            <div class="admin-content">
+                <!-- Page Header -->
+                <div class="page-header-settings">
+                    <div class="header-left">
+                        <h1><i class="fa-solid fa-truck-fast"></i> Cấu hình vận chuyển</h1>
+                        <p>Quản lý phí ship và đối tác vận chuyển</p>
+                    </div>
+                    <div class="header-actions">
+                        <button type="submit" form="shipping-form" class="btn-save">
+                            <i class="fa-solid fa-floppy-disk"></i>
+                            Lưu cài đặt
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Settings Navigation -->
+                <div class="settings-nav">
+                    <a href="general.html" class="settings-nav-item">
+                        <i class="fa-solid fa-globe"></i>
+                        Cấu hình chung
+                    </a>
+                    <a href="payment.html" class="settings-nav-item">
+                        <i class="fa-solid fa-credit-card"></i>
+                        Thanh toán
+                    </a>
+                    <a href="shipping.html" class="settings-nav-item active">
+                        <i class="fa-solid fa-truck-fast"></i>
+                        Vận chuyển
+                    </a>
+                </div>
+
+                <!-- Shipping Form -->
+                <form id="shipping-form" action="#" method="post">
+                    <div class="settings-container">
+
+                        <!-- Default Shipping Fee Section -->
+                        <section class="settings-section">
+                            <div class="section-header">
+                                <h2><i class="fa-solid fa-coins"></i> Phí vận chuyển mặc định</h2>
+                                <p>Mức phí cố định áp dụng chung cho tất cả đơn hàng</p>
+                            </div>
+                            <div class="section-content">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="default-shipping-fee">
+                                            Phí ship mặc định (VNĐ) <span class="required">*</span>
+                                        </label>
+                                        <input
+                                            type="number"
+                                            id="default-shipping-fee"
+                                            name="default_shipping_fee"
+                                            placeholder="30000"
+                                            min="0"
+                                            step="1000"
+                                            value="30000"
+                                            required
+                                        >
+                                        <small class="form-hint">Phí vận chuyển cơ bản cho mọi đơn hàng</small>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" name="enable_default_fee" checked>
+                                            <span>Áp dụng phí mặc định</span>
+                                        </label>
+                                        <small class="form-hint">Tắt nếu muốn tính phí theo khu vực hoặc đơn vị vận chuyển</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Free Shipping Section -->
+                        <section class="settings-section">
+                            <div class="section-header">
+                                <div class="header-title">
+                                    <h2><i class="fa-solid fa-gift"></i> Miễn phí vận chuyển</h2>
+                                    <p>Thiết lập điều kiện để được freeship</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" name="free_shipping_enabled" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="section-content">
+                                <div class="form-group">
+                                    <label for="free-shipping-threshold">
+                                        Giá trị đơn hàng tối thiểu (VNĐ) <span class="required">*</span>
+                                    </label>
+                                    <input
+                                        type="number"
+                                        id="free-shipping-threshold"
+                                        name="free_shipping_threshold"
+                                        placeholder="500000"
+                                        min="0"
+                                        step="10000"
+                                        value="500000"
+                                    >
+                                    <small class="form-hint">Đơn hàng từ giá trị này trở lên sẽ được miễn phí ship</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="free-shipping-message">
+                                        Thông báo freeship cho khách hàng
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="free-shipping-message"
+                                        name="free_shipping_message"
+                                        placeholder="Ví dụ: Miễn phí vận chuyển cho đơn hàng từ 500.000đ"
+                                        value="Miễn phí vận chuyển cho đơn hàng từ 500.000đ"
+                                    >
+                                    <small class="form-hint">Hiển thị ở trang giỏ hàng và checkout</small>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Regional Shipping Rates Section -->
+                        <section class="settings-section">
+                            <div class="section-header">
+                                <div class="header-title">
+                                    <h2><i class="fa-solid fa-map-location-dot"></i> Phí ship theo khu vực</h2>
+                                    <p>Thiết lập phí khác nhau cho các tỉnh/thành phố</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" name="regional_shipping_enabled">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="section-content">
+                                <div class="alert-info">
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <div>
+                                        <strong>Hướng dẫn:</strong> Thiết lập phí ship riêng cho từng khu vực. Nếu không thiết lập, sẽ áp dụng phí mặc định.
+                                    </div>
+                                </div>
+
+                                <!-- Inner Cities -->
+                                <div class="shipping-zone">
+                                    <h3 class="zone-title">
+                                        <i class="fa-solid fa-city"></i> Nội thành các thành phố lớn
+                                    </h3>
+                                    <div class="zone-description">Hà Nội, TP.HCM, Đà Nẵng, Cần Thơ, Hải Phòng</div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="inner-city-fee">Phí ship (VNĐ)</label>
+                                            <input
+                                                type="number"
+                                                id="inner-city-fee"
+                                                name="inner_city_fee"
+                                                placeholder="25000"
+                                                min="0"
+                                                step="1000"
+                                                value="25000"
+                                            >
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inner-city-time">Thời gian giao hàng (ngày)</label>
+                                            <input
+                                                type="text"
+                                                id="inner-city-time"
+                                                name="inner_city_time"
+                                                placeholder="1-2"
+                                                value="1-2"
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Provincial Cities -->
+                                <div class="shipping-zone">
+                                    <h3 class="zone-title">
+                                        <i class="fa-solid fa-building"></i> Thành phố tỉnh lẻ
+                                    </h3>
+                                    <div class="zone-description">Các thành phố/tỉnh khác trên toàn quốc</div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="provincial-fee">Phí ship (VNĐ)</label>
+                                            <input
+                                                type="number"
+                                                id="provincial-fee"
+                                                name="provincial_fee"
+                                                placeholder="35000"
+                                                min="0"
+                                                step="1000"
+                                                value="35000"
+                                            >
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="provincial-time">Thời gian giao hàng (ngày)</label>
+                                            <input
+                                                type="text"
+                                                id="provincial-time"
+                                                name="provincial_time"
+                                                placeholder="2-3"
+                                                value="2-3"
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Rural Areas -->
+                                <div class="shipping-zone">
+                                    <h3 class="zone-title">
+                                        <i class="fa-solid fa-mountain"></i> Vùng xa, vùng sâu
+                                    </h3>
+                                    <div class="zone-description">Các huyện, xã, thị trấn vùng núi, hải đảo</div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="rural-fee">Phí ship (VNĐ)</label>
+                                            <input
+                                                type="number"
+                                                id="rural-fee"
+                                                name="rural_fee"
+                                                placeholder="50000"
+                                                min="0"
+                                                step="1000"
+                                                value="50000"
+                                            >
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="rural-time">Thời gian giao hàng (ngày)</label>
+                                            <input
+                                                type="text"
+                                                id="rural-time"
+                                                name="rural_time"
+                                                placeholder="4-7"
+                                                value="4-7"
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- GHN Integration Section -->
+                        <section class="settings-section payment-method-section">
+                            <div class="section-header">
+                                <div class="header-title">
+                                    <h2><i class="fa-solid fa-box-open"></i> Giao Hàng Nhanh (GHN)</h2>
+                                    <p>Tích hợp API Giao Hàng Nhanh</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" name="ghn_enabled">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="section-content">
+                                <div class="alert-info">
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <div>
+                                        <strong>Hướng dẫn:</strong> Đăng ký tài khoản GHN tại
+                                        <a href="https://ghn.vn" target="_blank">ghn.vn</a> để nhận API Token
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="ghn-token">
+                                        API Token <span class="required">*</span>
+                                    </label>
+                                    <input
+                                        type="password"
+                                        id="ghn-token"
+                                        name="ghn_token"
+                                        placeholder="Nhập Token từ GHN"
+                                    >
+                                    <small class="form-hint">Token xác thực API từ trang quản lý GHN</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="ghn-shop-id">
+                                        Shop ID <span class="required">*</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="ghn-shop-id"
+                                        name="ghn_shop_id"
+                                        placeholder="Nhập Shop ID"
+                                    >
+                                    <small class="form-hint">Mã định danh của shop trên hệ thống GHN</small>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="ghn-from-district">
+                                            Quận/Huyện lấy hàng <span class="required">*</span>
+                                        </label>
+                                        <input
+                                            type="text"
+                                            id="ghn-from-district"
+                                            name="ghn_from_district"
+                                            placeholder="Ví dụ: Quận 1"
+                                        >
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="ghn-from-ward">
+                                            Phường/Xã lấy hàng <span class="required">*</span>
+                                        </label>
+                                        <input
+                                            type="text"
+                                            id="ghn-from-ward"
+                                            name="ghn_from_ward"
+                                            placeholder="Ví dụ: Phường Bến Nghé"
+                                        >
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="ghn_auto_calculate" checked>
+                                        <span>Tự động tính phí ship từ GHN</span>
+                                    </label>
+                                    <small class="form-hint">Phí ship sẽ được tính theo API GHN thay vì phí cố định</small>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- GHTK Integration Section -->
+                        <section class="settings-section payment-method-section">
+                            <div class="section-header">
+                                <div class="header-title">
+                                    <h2><i class="fa-solid fa-truck"></i> Giao Hàng Tiết Kiệm (GHTK)</h2>
+                                    <p>Tích hợp API Giao Hàng Tiết Kiệm</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" name="ghtk_enabled">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="section-content">
+                                <div class="alert-info">
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <div>
+                                        <strong>Hướng dẫn:</strong> Đăng ký tài khoản GHTK tại
+                                        <a href="https://giaohangtietkiem.vn" target="_blank">giaohangtietkiem.vn</a>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="ghtk-token">
+                                        API Token <span class="required">*</span>
+                                    </label>
+                                    <input
+                                        type="password"
+                                        id="ghtk-token"
+                                        name="ghtk_token"
+                                        placeholder="Nhập Token từ GHTK"
+                                    >
+                                    <small class="form-hint">Token xác thực API từ bảng điều khiển GHTK</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="ghtk-pickup-address">
+                                        Địa chỉ lấy hàng <span class="required">*</span>
+                                    </label>
+                                    <textarea
+                                        id="ghtk-pickup-address"
+                                        name="ghtk_pickup_address"
+                                        rows="3"
+                                        placeholder="Nhập địa chỉ đầy đủ"
+                                    ></textarea>
+                                    <small class="form-hint">Địa chỉ kho/cửa hàng để GHTK lấy hàng</small>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="ghtk-contact-name">
+                                            Tên người liên hệ
+                                        </label>
+                                        <input
+                                            type="text"
+                                            id="ghtk-contact-name"
+                                            name="ghtk_contact_name"
+                                            placeholder="Họ và tên"
+                                        >
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="ghtk-contact-phone">
+                                            Số điện thoại liên hệ
+                                        </label>
+                                        <input
+                                            type="tel"
+                                            id="ghtk-contact-phone"
+                                            name="ghtk_contact_phone"
+                                            placeholder="0123456789"
+                                        >
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="ghtk_auto_calculate" checked>
+                                        <span>Tự động tính phí ship từ GHTK</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Viettel Post Integration Section -->
+                        <section class="settings-section payment-method-section">
+                            <div class="section-header">
+                                <div class="header-title">
+                                    <h2><i class="fa-solid fa-envelope-open-text"></i> Viettel Post</h2>
+                                    <p>Tích hợp API Viettel Post</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" name="viettelpost_enabled">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="section-content">
+                                <div class="alert-info">
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <div>
+                                        <strong>Hướng dẫn:</strong> Đăng ký dịch vụ Viettel Post tại
+                                        <a href="https://viettelpost.com.vn" target="_blank">viettelpost.com.vn</a>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="viettelpost-username">
+                                        Username <span class="required">*</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="viettelpost-username"
+                                        name="viettelpost_username"
+                                        placeholder="Nhập username API"
+                                    >
+                                    <small class="form-hint">Tên đăng nhập tài khoản API Viettel Post</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="viettelpost-password">
+                                        Password <span class="required">*</span>
+                                    </label>
+                                    <input
+                                        type="password"
+                                        id="viettelpost-password"
+                                        name="viettelpost_password"
+                                        placeholder="Nhập password API"
+                                    >
+                                    <small class="form-hint">Mật khẩu tài khoản API</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="viettelpost-customer-id">
+                                        Customer ID
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="viettelpost-customer-id"
+                                        name="viettelpost_customer_id"
+                                        placeholder="Mã khách hàng"
+                                    >
+                                    <small class="form-hint">Mã khách hàng doanh nghiệp (nếu có)</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="viettelpost-endpoint">
+                                        API Endpoint
+                                    </label>
+                                    <input
+                                        type="url"
+                                        id="viettelpost-endpoint"
+                                        name="viettelpost_endpoint"
+                                        placeholder="https://partner.viettelpost.vn/v2"
+                                        value="https://partner.viettelpost.vn/v2"
+                                    >
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="viettelpost_auto_calculate" checked>
+                                        <span>Tự động tính phí ship từ Viettel Post</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Save Button -->
+                        <div class="form-actions">
+                            <button type="submit" class="btn-save-primary">
+                                <i class="fa-solid fa-floppy-disk"></i>
+                                Lưu tất cả cài đặt
+                            </button>
+                            <button type="reset" class="btn-reset">
+                                <i class="fa-solid fa-rotate-left"></i>
+                                Đặt lại
+                            </button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

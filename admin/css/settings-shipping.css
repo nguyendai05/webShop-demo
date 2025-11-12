@@ -1,0 +1,107 @@
+/* ============================================
+   SETTINGS SHIPPING - ADMIN PANEL
+   ============================================ */
+
+/* Shipping Zones */
+.shipping-zone {
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(192, 57, 43, 0.02) 0%, rgba(201, 122, 58, 0.02) 100%);
+    border: 2px solid #f5f1e6;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.shipping-zone:hover {
+    border-color: #c0392b;
+    box-shadow: 0 4px 15px rgba(192, 57, 43, 0.1);
+}
+
+.shipping-zone:last-child {
+    margin-bottom: 0;
+}
+
+.zone-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #4e342e;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.zone-title i {
+    color: #c0392b;
+    font-size: 18px;
+}
+
+.zone-description {
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 15px;
+    padding-left: 28px;
+}
+
+/* Zone specific styling */
+.shipping-zone .form-row {
+    margin-bottom: 0;
+}
+
+.shipping-zone .form-group {
+    margin-bottom: 0;
+}
+
+/* Number inputs for shipping fees */
+input[type="number"].shipping-fee {
+    font-size: 16px;
+    font-weight: 600;
+    color: #27ae60;
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+@media (max-width: 768px) {
+    .shipping-zone {
+        padding: 15px;
+    }
+
+    .zone-title {
+        font-size: 15px;
+    }
+
+    .zone-description {
+        font-size: 12px;
+        padding-left: 0;
+        margin-top: 5px;
+    }
+}
+
+/* ============================================
+   ADDITIONAL STYLING
+   ============================================ */
+
+/* Highlight for enabled shipping methods */
+.settings-section.shipping-enabled {
+    border-left: 4px solid #27ae60;
+}
+
+/* Info badge for shipping zones */
+.zone-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    background: rgba(192, 57, 43, 0.1);
+    color: #c0392b;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+/* Shipping time indicator */
+input[name$="_time"] {
+    text-align: center;
+    font-weight: 600;
+    color: #3498db;
+}
