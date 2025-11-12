@@ -79,100 +79,237 @@
                 <!-- Page Header -->
                 <div class="page-header">
                     <div class="header-left">
-                        <h1><i class="fa-solid fa-images"></i> Quản lý Banner & Slider</h1>
-                        <p>Tổng cộng <strong id="total-banners">12 banner</strong></p>
+                        <h1>Quản lý Banner & Slider</h1>
+                        <p>Tổng cộng <strong>12 banner</strong></p>
                     </div>
                     <div class="header-right">
-                        <button class="btn-add-banner" onclick="openBannerModal('add')">
+                        <a href="#add-banner-form" class="btn-add-banner">
                             <i class="fa-solid fa-plus"></i>
                             Thêm banner mới
-                        </button>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Add/Edit Banner Form -->
+                <div class="banner-form-section" id="add-banner-form">
+                    <div class="form-card">
+                        <div class="form-header">
+                            <h3>
+                                <i class="fa-solid fa-plus-circle"></i>
+                                Thêm banner mới
+                            </h3>
+                            <a href="#" class="btn-close-form">
+                                <i class="fa-solid fa-times"></i>
+                            </a>
+                        </div>
+                        <form action="#" method="post" enctype="multipart/form-data" class="banner-form">
+                            <!-- Basic Information -->
+                            <div class="form-section">
+                                <h4 class="section-title">
+                                    <i class="fa-solid fa-image"></i>
+                                    Hình ảnh & Thông tin
+                                </h4>
+                                <div class="form-grid">
+                                    <div class="form-group full-width">
+                                        <label for="banner-image">
+                                            Upload ảnh <span class="required">*</span>
+                                        </label>
+                                        <input type="file" id="banner-image" name="banner_image" accept="image/*" required>
+                                        <small class="form-hint">
+                                            Kích thước khuyến nghị: 1920x600px cho slider, 800x400px cho banner, 400x400px cho sidebar
+                                        </small>
+                                    </div>
+
+                                    <div class="form-group full-width">
+                                        <label for="banner-title">
+                                            Tiêu đề <span class="required">*</span>
+                                        </label>
+                                        <input type="text" id="banner-title" name="banner_title" placeholder="Nhập tiêu đề banner" required>
+                                    </div>
+
+                                    <div class="form-group full-width">
+                                        <label for="banner-link">
+                                            Link đích (URL)
+                                        </label>
+                                        <input type="url" id="banner-link" name="banner_link" placeholder="https://example.com/page hoặc /page">
+                                        <small class="form-hint">URL khi người dùng click vào banner</small>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="banner-position">
+                                            Vị trí hiển thị <span class="required">*</span>
+                                        </label>
+                                        <select id="banner-position" name="banner_position" required>
+                                            <option value="">Chọn vị trí</option>
+                                            <option value="home_slider">Slider trang chủ</option>
+                                            <option value="home_banner">Banner trang chủ</option>
+                                            <option value="sidebar">Sidebar</option>
+                                            <option value="category_banner">Banner danh mục</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="banner-status">
+                                            Trạng thái
+                                        </label>
+                                        <select id="banner-status" name="banner_status">
+                                            <option value="active" selected>Kích hoạt</option>
+                                            <option value="inactive">Vô hiệu hóa</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="banner-season">
+                                            Mùa (tùy chọn)
+                                        </label>
+                                        <select id="banner-season" name="banner_season">
+                                            <option value="">Không phân loại</option>
+                                            <option value="spring">Mùa xuân</option>
+                                            <option value="summer">Mùa hạ</option>
+                                            <option value="fall">Mùa thu</option>
+                                            <option value="winter">Mùa đông</option>
+                                            <option value="tet">Tết Nguyên Đán</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="display-order">
+                                            Thứ tự hiển thị
+                                        </label>
+                                        <input type="number" id="display-order" name="display_order" value="0" min="0">
+                                        <small class="form-hint">Số càng nhỏ hiển thị càng trước</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Schedule Settings -->
+                            <div class="form-section">
+                                <h4 class="section-title">
+                                    <i class="fa-solid fa-clock"></i>
+                                    Lên lịch hiển thị (tùy chọn)
+                                </h4>
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label for="start-date">
+                                            Ngày bắt đầu
+                                        </label>
+                                        <input type="datetime-local" id="start-date" name="start_date">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="end-date">
+                                            Ngày kết thúc
+                                        </label>
+                                        <input type="datetime-local" id="end-date" name="end_date">
+                                    </div>
+                                </div>
+                                <small class="form-hint">Banner sẽ tự động kích hoạt/vô hiệu hóa theo thời gian đã đặt</small>
+                            </div>
+
+                            <!-- Form Actions -->
+                            <div class="form-actions">
+                                <button type="submit" class="btn-submit">
+                                    <i class="fa-solid fa-check"></i>
+                                    Lưu banner
+                                </button>
+                                <button type="reset" class="btn-reset">
+                                    <i class="fa-solid fa-rotate-right"></i>
+                                    Đặt lại
+                                </button>
+                                <a href="#" class="btn-cancel">
+                                    <i class="fa-solid fa-times"></i>
+                                    Hủy
+                                </a>
+                            </div>
+                        </form>
                     </div>
                 </div>
 
                 <!-- Filter Section -->
                 <div class="filter-section">
-                    <div class="filter-options">
-                        <!-- Position Filter -->
-                        <div class="filter-group">
-                            <label for="filter-position">
-                                <i class="fa-solid fa-location-dot"></i>
-                                Vị trí hiển thị
-                            </label>
-                            <select id="filter-position" onchange="filterBanners()">
-                                <option value="">Tất cả vị trí</option>
-                                <option value="home_slider">Slider trang chủ</option>
-                                <option value="home_banner">Banner trang chủ</option>
-                                <option value="sidebar">Sidebar</option>
-                                <option value="category_banner">Banner danh mục</option>
-                            </select>
+                    <form action="#" method="get" class="filter-form">
+                        <!-- Filter Options -->
+                        <div class="filter-options">
+                            <!-- Position Filter -->
+                            <div class="filter-group">
+                                <label for="filter-position">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    Vị trí hiển thị
+                                </label>
+                                <select name="position" id="filter-position">
+                                    <option value="">Tất cả vị trí</option>
+                                    <option value="home_slider">Slider trang chủ</option>
+                                    <option value="home_banner">Banner trang chủ</option>
+                                    <option value="sidebar">Sidebar</option>
+                                    <option value="category_banner">Banner danh mục</option>
+                                </select>
+                            </div>
+
+                            <!-- Status Filter -->
+                            <div class="filter-group">
+                                <label for="filter-status">
+                                    <i class="fa-solid fa-toggle-on"></i>
+                                    Trạng thái
+                                </label>
+                                <select name="status" id="filter-status">
+                                    <option value="">Tất cả trạng thái</option>
+                                    <option value="active">Đang kích hoạt</option>
+                                    <option value="inactive">Vô hiệu hóa</option>
+                                    <option value="scheduled">Đã lên lịch</option>
+                                </select>
+                            </div>
+
+                            <!-- Season Filter -->
+                            <div class="filter-group">
+                                <label for="filter-season">
+                                    <i class="fa-solid fa-calendar"></i>
+                                    Mùa
+                                </label>
+                                <select name="season" id="filter-season">
+                                    <option value="">Tất cả mùa</option>
+                                    <option value="spring">Mùa xuân</option>
+                                    <option value="summer">Mùa hạ</option>
+                                    <option value="fall">Mùa thu</option>
+                                    <option value="winter">Mùa đông</option>
+                                    <option value="tet">Tết Nguyên Đán</option>
+                                </select>
+                            </div>
                         </div>
 
-                        <!-- Status Filter -->
-                        <div class="filter-group">
-                            <label for="filter-status">
-                                <i class="fa-solid fa-toggle-on"></i>
-                                Trạng thái
-                            </label>
-                            <select id="filter-status" onchange="filterBanners()">
-                                <option value="">Tất cả trạng thái</option>
-                                <option value="active">Đang kích hoạt</option>
-                                <option value="inactive">Vô hiệu hóa</option>
-                                <option value="scheduled">Đã lên lịch</option>
-                                <option value="expired">Đã hết hạn</option>
-                            </select>
+                        <!-- Filter Actions -->
+                        <div class="filter-actions">
+                            <button type="submit" class="btn-apply-filter">
+                                <i class="fa-solid fa-filter"></i>
+                                Áp dụng
+                            </button>
+                            <button type="reset" class="btn-reset-filter">
+                                <i class="fa-solid fa-rotate-right"></i>
+                                Đặt lại
+                            </button>
                         </div>
-
-                        <!-- Season Filter -->
-                        <div class="filter-group">
-                            <label for="filter-season">
-                                <i class="fa-solid fa-calendar"></i>
-                                Mùa
-                            </label>
-                            <select id="filter-season" onchange="filterBanners()">
-                                <option value="">Tất cả mùa</option>
-                                <option value="spring">Mùa xuân</option>
-                                <option value="summer">Mùa hạ</option>
-                                <option value="fall">Mùa thu</option>
-                                <option value="winter">Mùa đông</option>
-                                <option value="tet">Tết Nguyên Đán</option>
-                            </select>
-                        </div>
-                    </div>
+                    </form>
                 </div>
 
-                <!-- Banner List Container -->
-                <div class="banners-container">
+                <!-- Banners List Section -->
+                <div class="banners-list-section">
                     <!-- Home Slider Section -->
-                    <section class="banner-section">
-                        <div class="section-header">
-                            <h2><i class="fa-solid fa-sliders"></i> Slider trang chủ</h2>
-                            <span class="badge">4 banner</span>
+                    <div class="banner-category-section">
+                        <div class="category-header">
+                            <h2>
+                                <i class="fa-solid fa-sliders"></i>
+                                Slider trang chủ
+                            </h2>
+                            <span class="banner-count">4 banner</span>
                         </div>
-                        <div class="banners-grid sortable" data-position="home_slider">
-                            <!-- Banner Item 1 -->
-                            <div class="banner-item" data-id="1" data-status="active" draggable="true">
-                                <div class="banner-drag-handle">
-                                    <i class="fa-solid fa-grip-vertical"></i>
-                                </div>
-                                <div class="banner-preview">
-                                    <img src="https://images.unsplash.com/photo-1578632292335-df3abbb0d586?w=800" alt="Banner Tết">
-                                    <div class="banner-overlay">
-                                        <button class="btn-preview" onclick="previewBanner(1)" title="Xem trước">
-                                            <i class="fa-solid fa-eye"></i>
-                                        </button>
-                                    </div>
-                                </div>
+
+                        <!-- Banner Item 1 -->
+                        <div class="banner-item">
+                            <div class="banner-image">
+                                <img src="https://images.unsplash.com/photo-1578632292335-df3abbb0d586?w=800" alt="Banner Tết">
+                            </div>
+                            <div class="banner-details">
                                 <div class="banner-info">
-                                    <div class="banner-header">
-                                        <h3>Banner Tết Nguyên Đán 2025</h3>
-                                        <div class="banner-status">
-                                            <label class="toggle-switch">
-                                                <input type="checkbox" checked onchange="toggleBannerStatus(1)">
-                                                <span class="toggle-slider"></span>
-                                            </label>
-                                        </div>
-                                    </div>
+                                    <h3>Banner Tết Nguyên Đán 2025</h3>
                                     <div class="banner-meta">
                                         <span class="meta-item">
                                             <i class="fa-solid fa-link"></i>
@@ -182,54 +319,48 @@
                                             <i class="fa-solid fa-calendar"></i>
                                             01/01/2025 - 28/02/2025
                                         </span>
-                                        <span class="meta-item season-badge season-tet">
+                                        <span class="season-badge season-tet">
                                             <i class="fa-solid fa-tree"></i>
                                             Tết
                                         </span>
                                     </div>
-                                    <div class="banner-schedule">
-                                        <span class="schedule-status status-scheduled">
-                                            <i class="fa-solid fa-clock"></i>
-                                            Đã lên lịch
-                                        </span>
+                                    <div class="banner-status-info">
+                                        <span class="status-badge status-scheduled">Đã lên lịch</span>
+                                        <span class="order-badge">Thứ tự: 1</span>
                                     </div>
                                 </div>
                                 <div class="banner-actions">
-                                    <button class="btn-action btn-edit" onclick="openBannerModal('edit', 1)" title="Chỉnh sửa">
-                                        <i class="fa-solid fa-pen"></i>
+                                    <button class="btn-action btn-move-up" title="Di chuyển lên" disabled>
+                                        <i class="fa-solid fa-arrow-up"></i>
                                     </button>
-                                    <button class="btn-action btn-duplicate" onclick="duplicateBanner(1)" title="Nhân bản">
-                                        <i class="fa-solid fa-copy"></i>
+                                    <button class="btn-action btn-move-down" title="Di chuyển xuống">
+                                        <i class="fa-solid fa-arrow-down"></i>
                                     </button>
-                                    <button class="btn-action btn-delete" onclick="deleteBanner(1)" title="Xóa">
+                                    <a href="#edit-banner-1" class="btn-action btn-edit" title="Sửa">
+                                        <i class="fa-solid fa-edit"></i>
+                                    </a>
+                                    <form action="#" method="post" style="display: inline;">
+                                        <input type="hidden" name="banner_id" value="1">
+                                        <input type="hidden" name="action" value="toggle_status">
+                                        <button type="submit" class="btn-action btn-toggle active" title="Vô hiệu hóa">
+                                            <i class="fa-solid fa-toggle-on"></i>
+                                        </button>
+                                    </form>
+                                    <button class="btn-action btn-delete" title="Xóa">
                                         <i class="fa-solid fa-trash"></i>
                                     </button>
                                 </div>
                             </div>
+                        </div>
 
-                            <!-- Banner Item 2 -->
-                            <div class="banner-item" data-id="2" data-status="active" draggable="true">
-                                <div class="banner-drag-handle">
-                                    <i class="fa-solid fa-grip-vertical"></i>
-                                </div>
-                                <div class="banner-preview">
-                                    <img src="https://images.unsplash.com/photo-1490367532201-b9bc1dc483f6?w=800" alt="Banner Xuân">
-                                    <div class="banner-overlay">
-                                        <button class="btn-preview" onclick="previewBanner(2)" title="Xem trước">
-                                            <i class="fa-solid fa-eye"></i>
-                                        </button>
-                                    </div>
-                                </div>
+                        <!-- Banner Item 2 -->
+                        <div class="banner-item">
+                            <div class="banner-image">
+                                <img src="https://images.unsplash.com/photo-1490367532201-b9bc1dc483f6?w=800" alt="Banner Xuân">
+                            </div>
+                            <div class="banner-details">
                                 <div class="banner-info">
-                                    <div class="banner-header">
-                                        <h3>Khuyến mãi mùa xuân</h3>
-                                        <div class="banner-status">
-                                            <label class="toggle-switch">
-                                                <input type="checkbox" checked onchange="toggleBannerStatus(2)">
-                                                <span class="toggle-slider"></span>
-                                            </label>
-                                        </div>
-                                    </div>
+                                    <h3>Khuyến mãi mùa xuân</h3>
                                     <div class="banner-meta">
                                         <span class="meta-item">
                                             <i class="fa-solid fa-link"></i>
@@ -239,54 +370,48 @@
                                             <i class="fa-solid fa-calendar"></i>
                                             01/03/2025 - 31/05/2025
                                         </span>
-                                        <span class="meta-item season-badge season-spring">
+                                        <span class="season-badge season-spring">
                                             <i class="fa-solid fa-seedling"></i>
                                             Mùa xuân
                                         </span>
                                     </div>
-                                    <div class="banner-schedule">
-                                        <span class="schedule-status status-active">
-                                            <i class="fa-solid fa-circle-check"></i>
-                                            Đang kích hoạt
-                                        </span>
+                                    <div class="banner-status-info">
+                                        <span class="status-badge status-active">Đang kích hoạt</span>
+                                        <span class="order-badge">Thứ tự: 2</span>
                                     </div>
                                 </div>
                                 <div class="banner-actions">
-                                    <button class="btn-action btn-edit" onclick="openBannerModal('edit', 2)" title="Chỉnh sửa">
-                                        <i class="fa-solid fa-pen"></i>
+                                    <button class="btn-action btn-move-up" title="Di chuyển lên">
+                                        <i class="fa-solid fa-arrow-up"></i>
                                     </button>
-                                    <button class="btn-action btn-duplicate" onclick="duplicateBanner(2)" title="Nhân bản">
-                                        <i class="fa-solid fa-copy"></i>
+                                    <button class="btn-action btn-move-down" title="Di chuyển xuống">
+                                        <i class="fa-solid fa-arrow-down"></i>
                                     </button>
-                                    <button class="btn-action btn-delete" onclick="deleteBanner(2)" title="Xóa">
+                                    <a href="#edit-banner-2" class="btn-action btn-edit" title="Sửa">
+                                        <i class="fa-solid fa-edit"></i>
+                                    </a>
+                                    <form action="#" method="post" style="display: inline;">
+                                        <input type="hidden" name="banner_id" value="2">
+                                        <input type="hidden" name="action" value="toggle_status">
+                                        <button type="submit" class="btn-action btn-toggle active" title="Vô hiệu hóa">
+                                            <i class="fa-solid fa-toggle-on"></i>
+                                        </button>
+                                    </form>
+                                    <button class="btn-action btn-delete" title="Xóa">
                                         <i class="fa-solid fa-trash"></i>
                                     </button>
                                 </div>
                             </div>
+                        </div>
 
-                            <!-- Banner Item 3 -->
-                            <div class="banner-item" data-id="3" data-status="inactive" draggable="true">
-                                <div class="banner-drag-handle">
-                                    <i class="fa-solid fa-grip-vertical"></i>
-                                </div>
-                                <div class="banner-preview">
-                                    <img src="https://images.unsplash.com/photo-1529310399831-ed472b81d589?w=800" alt="Banner Hè">
-                                    <div class="banner-overlay">
-                                        <button class="btn-preview" onclick="previewBanner(3)" title="Xem trước">
-                                            <i class="fa-solid fa-eye"></i>
-                                        </button>
-                                    </div>
-                                </div>
+                        <!-- Banner Item 3 -->
+                        <div class="banner-item">
+                            <div class="banner-image">
+                                <img src="https://images.unsplash.com/photo-1529310399831-ed472b81d589?w=800" alt="Banner Hè">
+                            </div>
+                            <div class="banner-details">
                                 <div class="banner-info">
-                                    <div class="banner-header">
-                                        <h3>Khuyến mãi mùa hè</h3>
-                                        <div class="banner-status">
-                                            <label class="toggle-switch">
-                                                <input type="checkbox" onchange="toggleBannerStatus(3)">
-                                                <span class="toggle-slider"></span>
-                                            </label>
-                                        </div>
-                                    </div>
+                                    <h3>Khuyến mãi mùa hè</h3>
                                     <div class="banner-meta">
                                         <span class="meta-item">
                                             <i class="fa-solid fa-link"></i>
@@ -296,54 +421,48 @@
                                             <i class="fa-solid fa-calendar"></i>
                                             01/06/2025 - 31/08/2025
                                         </span>
-                                        <span class="meta-item season-badge season-summer">
+                                        <span class="season-badge season-summer">
                                             <i class="fa-solid fa-sun"></i>
                                             Mùa hạ
                                         </span>
                                     </div>
-                                    <div class="banner-schedule">
-                                        <span class="schedule-status status-inactive">
-                                            <i class="fa-solid fa-circle-xmark"></i>
-                                            Vô hiệu hóa
-                                        </span>
+                                    <div class="banner-status-info">
+                                        <span class="status-badge status-inactive">Vô hiệu hóa</span>
+                                        <span class="order-badge">Thứ tự: 3</span>
                                     </div>
                                 </div>
                                 <div class="banner-actions">
-                                    <button class="btn-action btn-edit" onclick="openBannerModal('edit', 3)" title="Chỉnh sửa">
-                                        <i class="fa-solid fa-pen"></i>
+                                    <button class="btn-action btn-move-up" title="Di chuyển lên">
+                                        <i class="fa-solid fa-arrow-up"></i>
                                     </button>
-                                    <button class="btn-action btn-duplicate" onclick="duplicateBanner(3)" title="Nhân bản">
-                                        <i class="fa-solid fa-copy"></i>
+                                    <button class="btn-action btn-move-down" title="Di chuyển xuống">
+                                        <i class="fa-solid fa-arrow-down"></i>
                                     </button>
-                                    <button class="btn-action btn-delete" onclick="deleteBanner(3)" title="Xóa">
+                                    <a href="#edit-banner-3" class="btn-action btn-edit" title="Sửa">
+                                        <i class="fa-solid fa-edit"></i>
+                                    </a>
+                                    <form action="#" method="post" style="display: inline;">
+                                        <input type="hidden" name="banner_id" value="3">
+                                        <input type="hidden" name="action" value="toggle_status">
+                                        <button type="submit" class="btn-action btn-toggle" title="Kích hoạt">
+                                            <i class="fa-solid fa-toggle-off"></i>
+                                        </button>
+                                    </form>
+                                    <button class="btn-action btn-delete" title="Xóa">
                                         <i class="fa-solid fa-trash"></i>
                                     </button>
                                 </div>
                             </div>
+                        </div>
 
-                            <!-- Banner Item 4 -->
-                            <div class="banner-item" data-id="4" data-status="inactive" draggable="true">
-                                <div class="banner-drag-handle">
-                                    <i class="fa-solid fa-grip-vertical"></i>
-                                </div>
-                                <div class="banner-preview">
-                                    <img src="https://images.unsplash.com/photo-1542973748-658653fb3d12?w=800" alt="Banner Thu">
-                                    <div class="banner-overlay">
-                                        <button class="btn-preview" onclick="previewBanner(4)" title="Xem trước">
-                                            <i class="fa-solid fa-eye"></i>
-                                        </button>
-                                    </div>
-                                </div>
+                        <!-- Banner Item 4 -->
+                        <div class="banner-item">
+                            <div class="banner-image">
+                                <img src="https://images.unsplash.com/photo-1542973748-658653fb3d12?w=800" alt="Banner Thu">
+                            </div>
+                            <div class="banner-details">
                                 <div class="banner-info">
-                                    <div class="banner-header">
-                                        <h3>Khuyến mãi mùa thu</h3>
-                                        <div class="banner-status">
-                                            <label class="toggle-switch">
-                                                <input type="checkbox" onchange="toggleBannerStatus(4)">
-                                                <span class="toggle-slider"></span>
-                                            </label>
-                                        </div>
-                                    </div>
+                                    <h3>Khuyến mãi mùa thu</h3>
                                     <div class="banner-meta">
                                         <span class="meta-item">
                                             <i class="fa-solid fa-link"></i>
@@ -353,63 +472,59 @@
                                             <i class="fa-solid fa-calendar"></i>
                                             01/09/2025 - 30/11/2025
                                         </span>
-                                        <span class="meta-item season-badge season-fall">
+                                        <span class="season-badge season-fall">
                                             <i class="fa-solid fa-leaf"></i>
                                             Mùa thu
                                         </span>
                                     </div>
-                                    <div class="banner-schedule">
-                                        <span class="schedule-status status-inactive">
-                                            <i class="fa-solid fa-circle-xmark"></i>
-                                            Vô hiệu hóa
-                                        </span>
+                                    <div class="banner-status-info">
+                                        <span class="status-badge status-inactive">Vô hiệu hóa</span>
+                                        <span class="order-badge">Thứ tự: 4</span>
                                     </div>
                                 </div>
                                 <div class="banner-actions">
-                                    <button class="btn-action btn-edit" onclick="openBannerModal('edit', 4)" title="Chỉnh sửa">
-                                        <i class="fa-solid fa-pen"></i>
+                                    <button class="btn-action btn-move-up" title="Di chuyển lên">
+                                        <i class="fa-solid fa-arrow-up"></i>
                                     </button>
-                                    <button class="btn-action btn-duplicate" onclick="duplicateBanner(4)" title="Nhân bản">
-                                        <i class="fa-solid fa-copy"></i>
+                                    <button class="btn-action btn-move-down" title="Di chuyển xuống" disabled>
+                                        <i class="fa-solid fa-arrow-down"></i>
                                     </button>
-                                    <button class="btn-action btn-delete" onclick="deleteBanner(4)" title="Xóa">
+                                    <a href="#edit-banner-4" class="btn-action btn-edit" title="Sửa">
+                                        <i class="fa-solid fa-edit"></i>
+                                    </a>
+                                    <form action="#" method="post" style="display: inline;">
+                                        <input type="hidden" name="banner_id" value="4">
+                                        <input type="hidden" name="action" value="toggle_status">
+                                        <button type="submit" class="btn-action btn-toggle" title="Kích hoạt">
+                                            <i class="fa-solid fa-toggle-off"></i>
+                                        </button>
+                                    </form>
+                                    <button class="btn-action btn-delete" title="Xóa">
                                         <i class="fa-solid fa-trash"></i>
                                     </button>
                                 </div>
                             </div>
                         </div>
-                    </section>
+                    </div>
 
                     <!-- Home Banner Section -->
-                    <section class="banner-section">
-                        <div class="section-header">
-                            <h2><i class="fa-solid fa-rectangle-ad"></i> Banner trang chủ</h2>
-                            <span class="badge">3 banner</span>
+                    <div class="banner-category-section">
+                        <div class="category-header">
+                            <h2>
+                                <i class="fa-solid fa-rectangle-ad"></i>
+                                Banner trang chủ
+                            </h2>
+                            <span class="banner-count">3 banner</span>
                         </div>
-                        <div class="banners-grid sortable" data-position="home_banner">
-                            <!-- Banner Item 5 -->
-                            <div class="banner-item" data-id="5" data-status="active" draggable="true">
-                                <div class="banner-drag-handle">
-                                    <i class="fa-solid fa-grip-vertical"></i>
-                                </div>
-                                <div class="banner-preview">
-                                    <img src="https://images.unsplash.com/photo-1555529861-5f823f61f30f?w=800" alt="Banner Gốm sứ">
-                                    <div class="banner-overlay">
-                                        <button class="btn-preview" onclick="previewBanner(5)" title="Xem trước">
-                                            <i class="fa-solid fa-eye"></i>
-                                        </button>
-                                    </div>
-                                </div>
+
+                        <!-- Banner Item 5 -->
+                        <div class="banner-item">
+                            <div class="banner-image">
+                                <img src="https://images.unsplash.com/photo-1555529861-5f823f61f30f?w=800" alt="Banner Gốm sứ">
+                            </div>
+                            <div class="banner-details">
                                 <div class="banner-info">
-                                    <div class="banner-header">
-                                        <h3>Gốm sứ Bát Tràng</h3>
-                                        <div class="banner-status">
-                                            <label class="toggle-switch">
-                                                <input type="checkbox" checked onchange="toggleBannerStatus(5)">
-                                                <span class="toggle-slider"></span>
-                                            </label>
-                                        </div>
-                                    </div>
+                                    <h3>Gốm sứ Bát Tràng</h3>
                                     <div class="banner-meta">
                                         <span class="meta-item">
                                             <i class="fa-solid fa-link"></i>
@@ -420,49 +535,43 @@
                                             Không giới hạn
                                         </span>
                                     </div>
-                                    <div class="banner-schedule">
-                                        <span class="schedule-status status-active">
-                                            <i class="fa-solid fa-circle-check"></i>
-                                            Đang kích hoạt
-                                        </span>
+                                    <div class="banner-status-info">
+                                        <span class="status-badge status-active">Đang kích hoạt</span>
+                                        <span class="order-badge">Thứ tự: 1</span>
                                     </div>
                                 </div>
                                 <div class="banner-actions">
-                                    <button class="btn-action btn-edit" onclick="openBannerModal('edit', 5)" title="Chỉnh sửa">
-                                        <i class="fa-solid fa-pen"></i>
+                                    <button class="btn-action btn-move-up" title="Di chuyển lên" disabled>
+                                        <i class="fa-solid fa-arrow-up"></i>
                                     </button>
-                                    <button class="btn-action btn-duplicate" onclick="duplicateBanner(5)" title="Nhân bản">
-                                        <i class="fa-solid fa-copy"></i>
+                                    <button class="btn-action btn-move-down" title="Di chuyển xuống">
+                                        <i class="fa-solid fa-arrow-down"></i>
                                     </button>
-                                    <button class="btn-action btn-delete" onclick="deleteBanner(5)" title="Xóa">
+                                    <a href="#edit-banner-5" class="btn-action btn-edit" title="Sửa">
+                                        <i class="fa-solid fa-edit"></i>
+                                    </a>
+                                    <form action="#" method="post" style="display: inline;">
+                                        <input type="hidden" name="banner_id" value="5">
+                                        <input type="hidden" name="action" value="toggle_status">
+                                        <button type="submit" class="btn-action btn-toggle active" title="Vô hiệu hóa">
+                                            <i class="fa-solid fa-toggle-on"></i>
+                                        </button>
+                                    </form>
+                                    <button class="btn-action btn-delete" title="Xóa">
                                         <i class="fa-solid fa-trash"></i>
                                     </button>
                                 </div>
                             </div>
+                        </div>
 
-                            <!-- Banner Item 6 -->
-                            <div class="banner-item" data-id="6" data-status="active" draggable="true">
-                                <div class="banner-drag-handle">
-                                    <i class="fa-solid fa-grip-vertical"></i>
-                                </div>
-                                <div class="banner-preview">
-                                    <img src="https://images.unsplash.com/photo-1516906736502-c1b97de9f05b?w=800" alt="Banner Gỗ">
-                                    <div class="banner-overlay">
-                                        <button class="btn-preview" onclick="previewBanner(6)" title="Xem trước">
-                                            <i class="fa-solid fa-eye"></i>
-                                        </button>
-                                    </div>
-                                </div>
+                        <!-- Banner Item 6 -->
+                        <div class="banner-item">
+                            <div class="banner-image">
+                                <img src="https://images.unsplash.com/photo-1516906736502-c1b97de9f05b?w=800" alt="Banner Gỗ">
+                            </div>
+                            <div class="banner-details">
                                 <div class="banner-info">
-                                    <div class="banner-header">
-                                        <h3>Gỗ điêu khắc thủ công</h3>
-                                        <div class="banner-status">
-                                            <label class="toggle-switch">
-                                                <input type="checkbox" checked onchange="toggleBannerStatus(6)">
-                                                <span class="toggle-slider"></span>
-                                            </label>
-                                        </div>
-                                    </div>
+                                    <h3>Gỗ điêu khắc thủ công</h3>
                                     <div class="banner-meta">
                                         <span class="meta-item">
                                             <i class="fa-solid fa-link"></i>
@@ -473,49 +582,43 @@
                                             Không giới hạn
                                         </span>
                                     </div>
-                                    <div class="banner-schedule">
-                                        <span class="schedule-status status-active">
-                                            <i class="fa-solid fa-circle-check"></i>
-                                            Đang kích hoạt
-                                        </span>
+                                    <div class="banner-status-info">
+                                        <span class="status-badge status-active">Đang kích hoạt</span>
+                                        <span class="order-badge">Thứ tự: 2</span>
                                     </div>
                                 </div>
                                 <div class="banner-actions">
-                                    <button class="btn-action btn-edit" onclick="openBannerModal('edit', 6)" title="Chỉnh sửa">
-                                        <i class="fa-solid fa-pen"></i>
+                                    <button class="btn-action btn-move-up" title="Di chuyển lên">
+                                        <i class="fa-solid fa-arrow-up"></i>
                                     </button>
-                                    <button class="btn-action btn-duplicate" onclick="duplicateBanner(6)" title="Nhân bản">
-                                        <i class="fa-solid fa-copy"></i>
+                                    <button class="btn-action btn-move-down" title="Di chuyển xuống">
+                                        <i class="fa-solid fa-arrow-down"></i>
                                     </button>
-                                    <button class="btn-action btn-delete" onclick="deleteBanner(6)" title="Xóa">
+                                    <a href="#edit-banner-6" class="btn-action btn-edit" title="Sửa">
+                                        <i class="fa-solid fa-edit"></i>
+                                    </a>
+                                    <form action="#" method="post" style="display: inline;">
+                                        <input type="hidden" name="banner_id" value="6">
+                                        <input type="hidden" name="action" value="toggle_status">
+                                        <button type="submit" class="btn-action btn-toggle active" title="Vô hiệu hóa">
+                                            <i class="fa-solid fa-toggle-on"></i>
+                                        </button>
+                                    </form>
+                                    <button class="btn-action btn-delete" title="Xóa">
                                         <i class="fa-solid fa-trash"></i>
                                     </button>
                                 </div>
                             </div>
+                        </div>
 
-                            <!-- Banner Item 7 -->
-                            <div class="banner-item" data-id="7" data-status="active" draggable="true">
-                                <div class="banner-drag-handle">
-                                    <i class="fa-solid fa-grip-vertical"></i>
-                                </div>
-                                <div class="banner-preview">
-                                    <img src="https://images.unsplash.com/photo-1580982172477-3b0c820b9aae?w=800" alt="Banner Tranh thêu">
-                                    <div class="banner-overlay">
-                                        <button class="btn-preview" onclick="previewBanner(7)" title="Xem trước">
-                                            <i class="fa-solid fa-eye"></i>
-                                        </button>
-                                    </div>
-                                </div>
+                        <!-- Banner Item 7 -->
+                        <div class="banner-item">
+                            <div class="banner-image">
+                                <img src="https://images.unsplash.com/photo-1580982172477-3b0c820b9aae?w=800" alt="Banner Tranh thêu">
+                            </div>
+                            <div class="banner-details">
                                 <div class="banner-info">
-                                    <div class="banner-header">
-                                        <h3>Tranh thêu tay truyền thống</h3>
-                                        <div class="banner-status">
-                                            <label class="toggle-switch">
-                                                <input type="checkbox" checked onchange="toggleBannerStatus(7)">
-                                                <span class="toggle-slider"></span>
-                                            </label>
-                                        </div>
-                                    </div>
+                                    <h3>Tranh thêu tay truyền thống</h3>
                                     <div class="banner-meta">
                                         <span class="meta-item">
                                             <i class="fa-solid fa-link"></i>
@@ -526,58 +629,54 @@
                                             Không giới hạn
                                         </span>
                                     </div>
-                                    <div class="banner-schedule">
-                                        <span class="schedule-status status-active">
-                                            <i class="fa-solid fa-circle-check"></i>
-                                            Đang kích hoạt
-                                        </span>
+                                    <div class="banner-status-info">
+                                        <span class="status-badge status-active">Đang kích hoạt</span>
+                                        <span class="order-badge">Thứ tự: 3</span>
                                     </div>
                                 </div>
                                 <div class="banner-actions">
-                                    <button class="btn-action btn-edit" onclick="openBannerModal('edit', 7)" title="Chỉnh sửa">
-                                        <i class="fa-solid fa-pen"></i>
+                                    <button class="btn-action btn-move-up" title="Di chuyển lên">
+                                        <i class="fa-solid fa-arrow-up"></i>
                                     </button>
-                                    <button class="btn-action btn-duplicate" onclick="duplicateBanner(7)" title="Nhân bản">
-                                        <i class="fa-solid fa-copy"></i>
+                                    <button class="btn-action btn-move-down" title="Di chuyển xuống" disabled>
+                                        <i class="fa-solid fa-arrow-down"></i>
                                     </button>
-                                    <button class="btn-action btn-delete" onclick="deleteBanner(7)" title="Xóa">
+                                    <a href="#edit-banner-7" class="btn-action btn-edit" title="Sửa">
+                                        <i class="fa-solid fa-edit"></i>
+                                    </a>
+                                    <form action="#" method="post" style="display: inline;">
+                                        <input type="hidden" name="banner_id" value="7">
+                                        <input type="hidden" name="action" value="toggle_status">
+                                        <button type="submit" class="btn-action btn-toggle active" title="Vô hiệu hóa">
+                                            <i class="fa-solid fa-toggle-on"></i>
+                                        </button>
+                                    </form>
+                                    <button class="btn-action btn-delete" title="Xóa">
                                         <i class="fa-solid fa-trash"></i>
                                     </button>
                                 </div>
                             </div>
                         </div>
-                    </section>
+                    </div>
 
                     <!-- Sidebar Banner Section -->
-                    <section class="banner-section">
-                        <div class="section-header">
-                            <h2><i class="fa-solid fa-sidebar"></i> Banner Sidebar</h2>
-                            <span class="badge">2 banner</span>
+                    <div class="banner-category-section">
+                        <div class="category-header">
+                            <h2>
+                                <i class="fa-solid fa-sidebar"></i>
+                                Banner Sidebar
+                            </h2>
+                            <span class="banner-count">2 banner</span>
                         </div>
-                        <div class="banners-grid sortable" data-position="sidebar">
-                            <!-- Banner Item 8 -->
-                            <div class="banner-item" data-id="8" data-status="active" draggable="true">
-                                <div class="banner-drag-handle">
-                                    <i class="fa-solid fa-grip-vertical"></i>
-                                </div>
-                                <div class="banner-preview banner-preview-sidebar">
-                                    <img src="https://images.unsplash.com/photo-1590736969955-71cc94901144?w=400" alt="Banner Flash Sale">
-                                    <div class="banner-overlay">
-                                        <button class="btn-preview" onclick="previewBanner(8)" title="Xem trước">
-                                            <i class="fa-solid fa-eye"></i>
-                                        </button>
-                                    </div>
-                                </div>
+
+                        <!-- Banner Item 8 -->
+                        <div class="banner-item">
+                            <div class="banner-image banner-image-sidebar">
+                                <img src="https://images.unsplash.com/photo-1590736969955-71cc94901144?w=400" alt="Banner Flash Sale">
+                            </div>
+                            <div class="banner-details">
                                 <div class="banner-info">
-                                    <div class="banner-header">
-                                        <h3>Flash Sale cuối tuần</h3>
-                                        <div class="banner-status">
-                                            <label class="toggle-switch">
-                                                <input type="checkbox" checked onchange="toggleBannerStatus(8)">
-                                                <span class="toggle-slider"></span>
-                                            </label>
-                                        </div>
-                                    </div>
+                                    <h3>Flash Sale cuối tuần</h3>
                                     <div class="banner-meta">
                                         <span class="meta-item">
                                             <i class="fa-solid fa-link"></i>
@@ -588,49 +687,43 @@
                                             Mỗi cuối tuần
                                         </span>
                                     </div>
-                                    <div class="banner-schedule">
-                                        <span class="schedule-status status-active">
-                                            <i class="fa-solid fa-circle-check"></i>
-                                            Đang kích hoạt
-                                        </span>
+                                    <div class="banner-status-info">
+                                        <span class="status-badge status-active">Đang kích hoạt</span>
+                                        <span class="order-badge">Thứ tự: 1</span>
                                     </div>
                                 </div>
                                 <div class="banner-actions">
-                                    <button class="btn-action btn-edit" onclick="openBannerModal('edit', 8)" title="Chỉnh sửa">
-                                        <i class="fa-solid fa-pen"></i>
+                                    <button class="btn-action btn-move-up" title="Di chuyển lên" disabled>
+                                        <i class="fa-solid fa-arrow-up"></i>
                                     </button>
-                                    <button class="btn-action btn-duplicate" onclick="duplicateBanner(8)" title="Nhân bản">
-                                        <i class="fa-solid fa-copy"></i>
+                                    <button class="btn-action btn-move-down" title="Di chuyển xuống">
+                                        <i class="fa-solid fa-arrow-down"></i>
                                     </button>
-                                    <button class="btn-action btn-delete" onclick="deleteBanner(8)" title="Xóa">
+                                    <a href="#edit-banner-8" class="btn-action btn-edit" title="Sửa">
+                                        <i class="fa-solid fa-edit"></i>
+                                    </a>
+                                    <form action="#" method="post" style="display: inline;">
+                                        <input type="hidden" name="banner_id" value="8">
+                                        <input type="hidden" name="action" value="toggle_status">
+                                        <button type="submit" class="btn-action btn-toggle active" title="Vô hiệu hóa">
+                                            <i class="fa-solid fa-toggle-on"></i>
+                                        </button>
+                                    </form>
+                                    <button class="btn-action btn-delete" title="Xóa">
                                         <i class="fa-solid fa-trash"></i>
                                     </button>
                                 </div>
                             </div>
+                        </div>
 
-                            <!-- Banner Item 9 -->
-                            <div class="banner-item" data-id="9" data-status="active" draggable="true">
-                                <div class="banner-drag-handle">
-                                    <i class="fa-solid fa-grip-vertical"></i>
-                                </div>
-                                <div class="banner-preview banner-preview-sidebar">
-                                    <img src="https://images.unsplash.com/photo-1607083206968-13611e3d76db?w=400" alt="Banner Free Ship">
-                                    <div class="banner-overlay">
-                                        <button class="btn-preview" onclick="previewBanner(9)" title="Xem trước">
-                                            <i class="fa-solid fa-eye"></i>
-                                        </button>
-                                    </div>
-                                </div>
+                        <!-- Banner Item 9 -->
+                        <div class="banner-item">
+                            <div class="banner-image banner-image-sidebar">
+                                <img src="https://images.unsplash.com/photo-1607083206968-13611e3d76db?w=400" alt="Banner Free Ship">
+                            </div>
+                            <div class="banner-details">
                                 <div class="banner-info">
-                                    <div class="banner-header">
-                                        <h3>Miễn phí vận chuyển</h3>
-                                        <div class="banner-status">
-                                            <label class="toggle-switch">
-                                                <input type="checkbox" checked onchange="toggleBannerStatus(9)">
-                                                <span class="toggle-slider"></span>
-                                            </label>
-                                        </div>
-                                    </div>
+                                    <h3>Miễn phí vận chuyển</h3>
                                     <div class="banner-meta">
                                         <span class="meta-item">
                                             <i class="fa-solid fa-link"></i>
@@ -641,58 +734,54 @@
                                             Không giới hạn
                                         </span>
                                     </div>
-                                    <div class="banner-schedule">
-                                        <span class="schedule-status status-active">
-                                            <i class="fa-solid fa-circle-check"></i>
-                                            Đang kích hoạt
-                                        </span>
+                                    <div class="banner-status-info">
+                                        <span class="status-badge status-active">Đang kích hoạt</span>
+                                        <span class="order-badge">Thứ tự: 2</span>
                                     </div>
                                 </div>
                                 <div class="banner-actions">
-                                    <button class="btn-action btn-edit" onclick="openBannerModal('edit', 9)" title="Chỉnh sửa">
-                                        <i class="fa-solid fa-pen"></i>
+                                    <button class="btn-action btn-move-up" title="Di chuyển lên">
+                                        <i class="fa-solid fa-arrow-up"></i>
                                     </button>
-                                    <button class="btn-action btn-duplicate" onclick="duplicateBanner(9)" title="Nhân bản">
-                                        <i class="fa-solid fa-copy"></i>
+                                    <button class="btn-action btn-move-down" title="Di chuyển xuống" disabled>
+                                        <i class="fa-solid fa-arrow-down"></i>
                                     </button>
-                                    <button class="btn-action btn-delete" onclick="deleteBanner(9)" title="Xóa">
+                                    <a href="#edit-banner-9" class="btn-action btn-edit" title="Sửa">
+                                        <i class="fa-solid fa-edit"></i>
+                                    </a>
+                                    <form action="#" method="post" style="display: inline;">
+                                        <input type="hidden" name="banner_id" value="9">
+                                        <input type="hidden" name="action" value="toggle_status">
+                                        <button type="submit" class="btn-action btn-toggle active" title="Vô hiệu hóa">
+                                            <i class="fa-solid fa-toggle-on"></i>
+                                        </button>
+                                    </form>
+                                    <button class="btn-action btn-delete" title="Xóa">
                                         <i class="fa-solid fa-trash"></i>
                                     </button>
                                 </div>
                             </div>
                         </div>
-                    </section>
+                    </div>
 
                     <!-- Category Banner Section -->
-                    <section class="banner-section">
-                        <div class="section-header">
-                            <h2><i class="fa-solid fa-grid-2"></i> Banner danh mục</h2>
-                            <span class="badge">3 banner</span>
+                    <div class="banner-category-section">
+                        <div class="category-header">
+                            <h2>
+                                <i class="fa-solid fa-grid-2"></i>
+                                Banner danh mục
+                            </h2>
+                            <span class="banner-count">3 banner</span>
                         </div>
-                        <div class="banners-grid sortable" data-position="category_banner">
-                            <!-- Banner Item 10 -->
-                            <div class="banner-item" data-id="10" data-status="active" draggable="true">
-                                <div class="banner-drag-handle">
-                                    <i class="fa-solid fa-grip-vertical"></i>
-                                </div>
-                                <div class="banner-preview">
-                                    <img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=800" alt="Banner Đồ gốm">
-                                    <div class="banner-overlay">
-                                        <button class="btn-preview" onclick="previewBanner(10)" title="Xem trước">
-                                            <i class="fa-solid fa-eye"></i>
-                                        </button>
-                                    </div>
-                                </div>
+
+                        <!-- Banner Item 10 -->
+                        <div class="banner-item">
+                            <div class="banner-image">
+                                <img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=800" alt="Banner Đồ gốm">
+                            </div>
+                            <div class="banner-details">
                                 <div class="banner-info">
-                                    <div class="banner-header">
-                                        <h3>Danh mục Đồ gốm</h3>
-                                        <div class="banner-status">
-                                            <label class="toggle-switch">
-                                                <input type="checkbox" checked onchange="toggleBannerStatus(10)">
-                                                <span class="toggle-slider"></span>
-                                            </label>
-                                        </div>
-                                    </div>
+                                    <h3>Danh mục Đồ gốm</h3>
                                     <div class="banner-meta">
                                         <span class="meta-item">
                                             <i class="fa-solid fa-link"></i>
@@ -703,49 +792,43 @@
                                             Không giới hạn
                                         </span>
                                     </div>
-                                    <div class="banner-schedule">
-                                        <span class="schedule-status status-active">
-                                            <i class="fa-solid fa-circle-check"></i>
-                                            Đang kích hoạt
-                                        </span>
+                                    <div class="banner-status-info">
+                                        <span class="status-badge status-active">Đang kích hoạt</span>
+                                        <span class="order-badge">Thứ tự: 1</span>
                                     </div>
                                 </div>
                                 <div class="banner-actions">
-                                    <button class="btn-action btn-edit" onclick="openBannerModal('edit', 10)" title="Chỉnh sửa">
-                                        <i class="fa-solid fa-pen"></i>
+                                    <button class="btn-action btn-move-up" title="Di chuyển lên" disabled>
+                                        <i class="fa-solid fa-arrow-up"></i>
                                     </button>
-                                    <button class="btn-action btn-duplicate" onclick="duplicateBanner(10)" title="Nhân bản">
-                                        <i class="fa-solid fa-copy"></i>
+                                    <button class="btn-action btn-move-down" title="Di chuyển xuống">
+                                        <i class="fa-solid fa-arrow-down"></i>
                                     </button>
-                                    <button class="btn-action btn-delete" onclick="deleteBanner(10)" title="Xóa">
+                                    <a href="#edit-banner-10" class="btn-action btn-edit" title="Sửa">
+                                        <i class="fa-solid fa-edit"></i>
+                                    </a>
+                                    <form action="#" method="post" style="display: inline;">
+                                        <input type="hidden" name="banner_id" value="10">
+                                        <input type="hidden" name="action" value="toggle_status">
+                                        <button type="submit" class="btn-action btn-toggle active" title="Vô hiệu hóa">
+                                            <i class="fa-solid fa-toggle-on"></i>
+                                        </button>
+                                    </form>
+                                    <button class="btn-action btn-delete" title="Xóa">
                                         <i class="fa-solid fa-trash"></i>
                                     </button>
                                 </div>
                             </div>
+                        </div>
 
-                            <!-- Banner Item 11 -->
-                            <div class="banner-item" data-id="11" data-status="active" draggable="true">
-                                <div class="banner-drag-handle">
-                                    <i class="fa-solid fa-grip-vertical"></i>
-                                </div>
-                                <div class="banner-preview">
-                                    <img src="https://images.unsplash.com/photo-1600166898405-da9535204843?w=800" alt="Banner Sứ">
-                                    <div class="banner-overlay">
-                                        <button class="btn-preview" onclick="previewBanner(11)" title="Xem trước">
-                                            <i class="fa-solid fa-eye"></i>
-                                        </button>
-                                    </div>
-                                </div>
+                        <!-- Banner Item 11 -->
+                        <div class="banner-item">
+                            <div class="banner-image">
+                                <img src="https://images.unsplash.com/photo-1600166898405-da9535204843?w=800" alt="Banner Sứ">
+                            </div>
+                            <div class="banner-details">
                                 <div class="banner-info">
-                                    <div class="banner-header">
-                                        <h3>Danh mục Sứ nghệ thuật</h3>
-                                        <div class="banner-status">
-                                            <label class="toggle-switch">
-                                                <input type="checkbox" checked onchange="toggleBannerStatus(11)">
-                                                <span class="toggle-slider"></span>
-                                            </label>
-                                        </div>
-                                    </div>
+                                    <h3>Danh mục Sứ nghệ thuật</h3>
                                     <div class="banner-meta">
                                         <span class="meta-item">
                                             <i class="fa-solid fa-link"></i>
@@ -756,49 +839,43 @@
                                             Không giới hạn
                                         </span>
                                     </div>
-                                    <div class="banner-schedule">
-                                        <span class="schedule-status status-active">
-                                            <i class="fa-solid fa-circle-check"></i>
-                                            Đang kích hoạt
-                                        </span>
+                                    <div class="banner-status-info">
+                                        <span class="status-badge status-active">Đang kích hoạt</span>
+                                        <span class="order-badge">Thứ tự: 2</span>
                                     </div>
                                 </div>
                                 <div class="banner-actions">
-                                    <button class="btn-action btn-edit" onclick="openBannerModal('edit', 11)" title="Chỉnh sửa">
-                                        <i class="fa-solid fa-pen"></i>
+                                    <button class="btn-action btn-move-up" title="Di chuyển lên">
+                                        <i class="fa-solid fa-arrow-up"></i>
                                     </button>
-                                    <button class="btn-action btn-duplicate" onclick="duplicateBanner(11)" title="Nhân bản">
-                                        <i class="fa-solid fa-copy"></i>
+                                    <button class="btn-action btn-move-down" title="Di chuyển xuống">
+                                        <i class="fa-solid fa-arrow-down"></i>
                                     </button>
-                                    <button class="btn-action btn-delete" onclick="deleteBanner(11)" title="Xóa">
+                                    <a href="#edit-banner-11" class="btn-action btn-edit" title="Sửa">
+                                        <i class="fa-solid fa-edit"></i>
+                                    </a>
+                                    <form action="#" method="post" style="display: inline;">
+                                        <input type="hidden" name="banner_id" value="11">
+                                        <input type="hidden" name="action" value="toggle_status">
+                                        <button type="submit" class="btn-action btn-toggle active" title="Vô hiệu hóa">
+                                            <i class="fa-solid fa-toggle-on"></i>
+                                        </button>
+                                    </form>
+                                    <button class="btn-action btn-delete" title="Xóa">
                                         <i class="fa-solid fa-trash"></i>
                                     </button>
                                 </div>
                             </div>
+                        </div>
 
-                            <!-- Banner Item 12 -->
-                            <div class="banner-item" data-id="12" data-status="inactive" draggable="true">
-                                <div class="banner-drag-handle">
-                                    <i class="fa-solid fa-grip-vertical"></i>
-                                </div>
-                                <div class="banner-preview">
-                                    <img src="https://images.unsplash.com/photo-1512632578888-169bbbc64f33?w=800" alt="Banner Đông">
-                                    <div class="banner-overlay">
-                                        <button class="btn-preview" onclick="previewBanner(12)" title="Xem trước">
-                                            <i class="fa-solid fa-eye"></i>
-                                        </button>
-                                    </div>
-                                </div>
+                        <!-- Banner Item 12 -->
+                        <div class="banner-item">
+                            <div class="banner-image">
+                                <img src="https://images.unsplash.com/photo-1512632578888-169bbbc64f33?w=800" alt="Banner Đông">
+                            </div>
+                            <div class="banner-details">
                                 <div class="banner-info">
-                                    <div class="banner-header">
-                                        <h3>Khuyến mãi mùa đông</h3>
-                                        <div class="banner-status">
-                                            <label class="toggle-switch">
-                                                <input type="checkbox" onchange="toggleBannerStatus(12)">
-                                                <span class="toggle-slider"></span>
-                                            </label>
-                                        </div>
-                                    </div>
+                                    <h3>Khuyến mãi mùa đông</h3>
                                     <div class="banner-meta">
                                         <span class="meta-item">
                                             <i class="fa-solid fa-link"></i>
@@ -808,213 +885,43 @@
                                             <i class="fa-solid fa-calendar"></i>
                                             01/12/2025 - 28/02/2026
                                         </span>
-                                        <span class="meta-item season-badge season-winter">
+                                        <span class="season-badge season-winter">
                                             <i class="fa-solid fa-snowflake"></i>
                                             Mùa đông
                                         </span>
                                     </div>
-                                    <div class="banner-schedule">
-                                        <span class="schedule-status status-inactive">
-                                            <i class="fa-solid fa-circle-xmark"></i>
-                                            Vô hiệu hóa
-                                        </span>
+                                    <div class="banner-status-info">
+                                        <span class="status-badge status-inactive">Vô hiệu hóa</span>
+                                        <span class="order-badge">Thứ tự: 3</span>
                                     </div>
                                 </div>
                                 <div class="banner-actions">
-                                    <button class="btn-action btn-edit" onclick="openBannerModal('edit', 12)" title="Chỉnh sửa">
-                                        <i class="fa-solid fa-pen"></i>
+                                    <button class="btn-action btn-move-up" title="Di chuyển lên">
+                                        <i class="fa-solid fa-arrow-up"></i>
                                     </button>
-                                    <button class="btn-action btn-duplicate" onclick="duplicateBanner(12)" title="Nhân bản">
-                                        <i class="fa-solid fa-copy"></i>
+                                    <button class="btn-action btn-move-down" title="Di chuyển xuống" disabled>
+                                        <i class="fa-solid fa-arrow-down"></i>
                                     </button>
-                                    <button class="btn-action btn-delete" onclick="deleteBanner(12)" title="Xóa">
+                                    <a href="#edit-banner-12" class="btn-action btn-edit" title="Sửa">
+                                        <i class="fa-solid fa-edit"></i>
+                                    </a>
+                                    <form action="#" method="post" style="display: inline;">
+                                        <input type="hidden" name="banner_id" value="12">
+                                        <input type="hidden" name="action" value="toggle_status">
+                                        <button type="submit" class="btn-action btn-toggle" title="Kích hoạt">
+                                            <i class="fa-solid fa-toggle-off"></i>
+                                        </button>
+                                    </form>
+                                    <button class="btn-action btn-delete" title="Xóa">
                                         <i class="fa-solid fa-trash"></i>
                                     </button>
                                 </div>
                             </div>
                         </div>
-                    </section>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
-
-    <!-- Add/Edit Banner Modal -->
-    <div id="bannerModal" class="modal">
-        <div class="modal-content modal-large">
-            <div class="modal-header">
-                <h2 id="modalTitle"><i class="fa-solid fa-plus"></i> Thêm banner mới</h2>
-                <button class="modal-close" onclick="closeBannerModal()">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form id="bannerForm" enctype="multipart/form-data">
-                    <input type="hidden" id="bannerId" name="banner_id">
-
-                    <!-- Image Upload Section -->
-                    <div class="form-section">
-                        <h3><i class="fa-solid fa-image"></i> Hình ảnh banner</h3>
-                        <div class="form-group">
-                            <label for="bannerImage">
-                                Upload ảnh <span class="required">*</span>
-                            </label>
-                            <div class="image-upload-area" id="imageUploadArea">
-                                <input type="file" id="bannerImage" name="banner_image" accept="image/*" onchange="previewImage(this)">
-                                <div class="upload-placeholder">
-                                    <i class="fa-solid fa-cloud-arrow-up"></i>
-                                    <p>Kéo thả ảnh hoặc click để chọn</p>
-                                    <small>Kích thước khuyến nghị: 1920x600px cho slider, 400x400px cho sidebar</small>
-                                </div>
-                                <img id="imagePreview" class="image-preview" style="display: none;">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Basic Information -->
-                    <div class="form-section">
-                        <h3><i class="fa-solid fa-circle-info"></i> Thông tin cơ bản</h3>
-                        <div class="form-group">
-                            <label for="bannerTitle">
-                                Tiêu đề <span class="required">*</span>
-                            </label>
-                            <input type="text" id="bannerTitle" name="banner_title" placeholder="Nhập tiêu đề banner" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="bannerLink">
-                                Link đích (URL)
-                            </label>
-                            <input type="url" id="bannerLink" name="banner_link" placeholder="https://example.com/page hoặc /page">
-                            <small class="form-hint">URL khi người dùng click vào banner</small>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="bannerPosition">
-                                    Vị trí hiển thị <span class="required">*</span>
-                                </label>
-                                <select id="bannerPosition" name="banner_position" required>
-                                    <option value="">Chọn vị trí</option>
-                                    <option value="home_slider">Slider trang chủ</option>
-                                    <option value="home_banner">Banner trang chủ</option>
-                                    <option value="sidebar">Sidebar</option>
-                                    <option value="category_banner">Banner danh mục</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="bannerSeason">
-                                    Mùa (tùy chọn)
-                                </label>
-                                <select id="bannerSeason" name="banner_season">
-                                    <option value="">Không phân loại</option>
-                                    <option value="spring">Mùa xuân</option>
-                                    <option value="summer">Mùa hạ</option>
-                                    <option value="fall">Mùa thu</option>
-                                    <option value="winter">Mùa đông</option>
-                                    <option value="tet">Tết Nguyên Đán</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Schedule Settings -->
-                    <div class="form-section">
-                        <h3><i class="fa-solid fa-clock"></i> Lên lịch hiển thị</h3>
-                        <div class="form-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="enableSchedule" name="enable_schedule" onchange="toggleScheduleFields()">
-                                <span>Bật lên lịch tự động</span>
-                            </label>
-                            <small class="form-hint">Banner sẽ tự động kích hoạt/vô hiệu hóa theo thời gian đã đặt</small>
-                        </div>
-
-                        <div id="scheduleFields" style="display: none;">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="startDate">
-                                        Ngày bắt đầu
-                                    </label>
-                                    <input type="datetime-local" id="startDate" name="start_date">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="endDate">
-                                        Ngày kết thúc
-                                    </label>
-                                    <input type="datetime-local" id="endDate" name="end_date">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Additional Settings -->
-                    <div class="form-section">
-                        <h3><i class="fa-solid fa-sliders"></i> Cài đặt bổ sung</h3>
-                        <div class="form-group">
-                            <label for="bannerOrder">
-                                Thứ tự hiển thị
-                            </label>
-                            <input type="number" id="bannerOrder" name="banner_order" min="0" value="0">
-                            <small class="form-hint">Số càng nhỏ sẽ hiển thị càng trước (hoặc kéo thả để sắp xếp)</small>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="bannerActive" name="banner_active" checked>
-                                <span>Kích hoạt banner ngay sau khi lưu</span>
-                            </label>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="openNewTab" name="open_new_tab">
-                                <span>Mở link ở tab mới</span>
-                            </label>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn-secondary" onclick="closeBannerModal()">
-                    <i class="fa-solid fa-xmark"></i>
-                    Hủy
-                </button>
-                <button type="button" class="btn-preview-modal" onclick="previewBannerFromModal()">
-                    <i class="fa-solid fa-eye"></i>
-                    Xem trước
-                </button>
-                <button type="submit" form="bannerForm" class="btn-primary">
-                    <i class="fa-solid fa-floppy-disk"></i>
-                    Lưu banner
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Preview Modal -->
-    <div id="previewModal" class="modal">
-        <div class="modal-content modal-preview">
-            <div class="modal-header">
-                <h2><i class="fa-solid fa-eye"></i> Xem trước banner</h2>
-                <button class="modal-close" onclick="closePreviewModal()">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="preview-container">
-                    <img id="previewImage" src="" alt="Preview">
-                    <div class="preview-info">
-                        <h3 id="previewTitle"></h3>
-                        <p id="previewLink"></p>
-                        <p id="previewSchedule"></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="../js/banners-list.js"></script>
 </body>
 </html>
