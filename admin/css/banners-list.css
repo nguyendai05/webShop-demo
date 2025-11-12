@@ -1,5 +1,6 @@
 /* ===================================
-   Banner Management Styles (No JS)
+   Banner Management Styles
+   Đã đồng bộ màu sắc với theme admin
    =================================== */
 
 /* Page Header */
@@ -7,60 +8,60 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 2px solid #e5e7eb;
+    margin-bottom: 25px; /* Đồng bộ từ admin-dashboard.css */
 }
 
 .page-header h1 {
-    font-size: 1.875rem;
+    font-size: 28px; /* Cỡ chữ từ products-edit.css */
     font-weight: 700;
-    color: #1f2937;
+    color: #4e342e;
     margin-bottom: 0.5rem;
 }
 
 .page-header p {
-    color: #6b7280;
-    font-size: 0.95rem;
+    color: #777;
+    font-size: 15px;
 }
 
+/* Cập nhật nút "Thêm banner" để đồng bộ màu */
 .btn-add-banner {
-    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+    background: linear-gradient(135deg, #c0392b 0%, #c97a3a 100%);
     color: white;
-    padding: 0.875rem 1.75rem;
-    border-radius: 0.5rem;
-    font-size: 0.95rem;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 14px;
     font-weight: 600;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 8px;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 6px -1px rgba(139, 92, 246, 0.3);
+    box-shadow: 0 4px 15px rgba(192, 57, 43, 0.2);
 }
 
 .btn-add-banner:hover {
-    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
-    box-shadow: 0 10px 15px -3px rgba(139, 92, 246, 0.4);
+    background: linear-gradient(135deg, #a93226 0%, #b06a2e 100%); /* Màu hover tối hơn */
+    box-shadow: 0 6px 20px rgba(192, 57, 43, 0.35);
     transform: translateY(-2px);
 }
 
 /* Banner Form Section */
 .banner-form-section {
     display: none;
-    margin-bottom: 2rem;
+    margin-bottom: 25px;
 }
 
 .banner-form-section:target {
     display: block;
 }
 
+/* Cập nhật thẻ form */
 .form-card {
     background: white;
-    border-radius: 0.75rem;
-    padding: 2rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    border: 2px solid #8b5cf6;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(78, 52, 46, 0.08);
+    border: 2px solid #c0392b; /* Màu viền thương hiệu */
+    overflow: hidden;
 }
 
 .form-header {
@@ -68,47 +69,48 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2rem;
-    padding-bottom: 1rem;
-    border-bottom: 2px solid #e5e7eb;
+    padding: 20px 25px;
+    background: linear-gradient(135deg, rgba(192, 57, 43, 0.03) 0%, rgba(201, 122, 58, 0.03) 100%);
+    border-bottom: 2px solid #f5f1e6;
 }
 
 .form-header h3 {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #1f2937;
+    color: #4e342e;
     display: flex;
     align-items: center;
     gap: 0.75rem;
 }
 
 .form-header h3 i {
-    color: #8b5cf6;
+    color: #c0392b; /* Cập nhật màu icon */
 }
 
 .btn-close-form {
-    background: #f3f4f6;
+    background: #f5f1e6;
     width: 2.5rem;
     height: 2.5rem;
-    border-radius: 0.5rem;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.25rem;
-    color: #6b7280;
+    color: #4e342e;
     text-decoration: none;
     transition: all 0.2s ease;
 }
 
 .btn-close-form:hover {
-    background: #e5e7eb;
-    color: #1f2937;
+    background: #c0392b;
+    color: white;
 }
 
 /* Form Sections */
 .form-section {
     margin-bottom: 2rem;
     padding-bottom: 2rem;
-    border-bottom: 1px solid #e5e7eb;
+    border-bottom: 1px solid #f5f1e6;
 }
 
 .form-section:last-child {
@@ -120,7 +122,7 @@
 .section-title {
     font-size: 1.125rem;
     font-weight: 600;
-    color: #1f2937;
+    color: #4e342e;
     margin-bottom: 1.25rem;
     display: flex;
     align-items: center;
@@ -128,7 +130,7 @@
 }
 
 .section-title i {
-    color: #8b5cf6;
+    color: #c0392b; /* Cập nhật màu icon */
 }
 
 .form-grid {
@@ -150,12 +152,12 @@
     display: block;
     font-size: 0.9rem;
     font-weight: 600;
-    color: #374151;
+    color: #4e342e;
     margin-bottom: 0.5rem;
 }
 
 .required {
-    color: #dc2626;
+    color: #c0392b; /* Cập nhật màu required */
 }
 
 .form-group input[type="text"],
@@ -165,19 +167,24 @@
 .form-group input[type="datetime-local"],
 .form-group select {
     width: 100%;
-    padding: 0.75rem;
-    border: 1.5px solid #e5e7eb;
-    border-radius: 0.5rem;
-    font-size: 0.95rem;
-    color: #1f2937;
-    transition: all 0.2s ease;
+    padding: 12px 16px;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #555;
+    background: #fafafa;
+    transition: all 0.3s ease;
+    font-family: inherit;
 }
 
+/* Cập nhật :focus */
 .form-group input:focus,
-.form-group select:focus {
+.form-group select:focus,
+.form-group textarea:focus {
     outline: none;
-    border-color: #8b5cf6;
-    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+    border-color: #c0392b;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.1);
 }
 
 .form-hint {
@@ -194,34 +201,37 @@
     padding-top: 1.5rem;
 }
 
+/* Cập nhật nút submit */
 .btn-submit {
-    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+    background: linear-gradient(135deg, #c0392b 0%, #c97a3a 100%);
     color: white;
-    padding: 0.75rem 1.75rem;
+    padding: 12px 24px;
     border: none;
-    border-radius: 0.5rem;
-    font-size: 0.95rem;
+    border-radius: 10px;
+    font-size: 14px;
     font-weight: 600;
     cursor: pointer;
     display: flex;
     align-items: center;
     gap: 0.5rem;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(192, 57, 43, 0.2);
 }
 
 .btn-submit:hover {
-    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
-    box-shadow: 0 4px 6px rgba(139, 92, 246, 0.3);
+    background: linear-gradient(135deg, #a93226 0%, #b06a2e 100%);
+    box-shadow: 0 6px 20px rgba(192, 57, 43, 0.35);
     transform: translateY(-2px);
 }
 
+/* Cập nhật nút reset */
 .btn-reset {
-    background: #f3f4f6;
-    color: #6b7280;
-    padding: 0.75rem 1.75rem;
-    border: 1.5px solid #e5e7eb;
-    border-radius: 0.5rem;
-    font-size: 0.95rem;
+    background: #f5f1e6;
+    color: #4e342e;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
     font-weight: 600;
     cursor: pointer;
     display: flex;
@@ -231,17 +241,17 @@
 }
 
 .btn-reset:hover {
-    background: #e5e7eb;
-    border-color: #cbd5e1;
+    background: #ede7d9;
 }
 
+/* Cập nhật nút cancel */
 .btn-cancel {
     background: white;
     color: #6b7280;
-    padding: 0.75rem 1.75rem;
-    border: 1.5px solid #e5e7eb;
-    border-radius: 0.5rem;
-    font-size: 0.95rem;
+    padding: 12px 24px;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 14px;
     font-weight: 600;
     text-decoration: none;
     display: flex;
@@ -251,17 +261,18 @@
 }
 
 .btn-cancel:hover {
-    background: #f3f4f6;
-    border-color: #cbd5e1;
+    background: #fafafa;
+    border-color: #c0392b;
+    color: #c0392b;
 }
 
 /* Filter Section */
 .filter-section {
     background: white;
     padding: 1.5rem;
-    border-radius: 0.75rem;
+    border-radius: 16px;
     margin-bottom: 2rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 30px rgba(78, 52, 46, 0.08);
 }
 
 .filter-options {
@@ -279,7 +290,7 @@
 .filter-group label {
     font-size: 0.875rem;
     font-weight: 600;
-    color: #374151;
+    color: #4e342e;
     margin-bottom: 0.5rem;
     display: flex;
     align-items: center;
@@ -287,24 +298,24 @@
 }
 
 .filter-group label i {
-    color: #8b5cf6;
+    color: #c0392b; /* Cập nhật màu icon */
 }
 
 .filter-group select {
-    padding: 0.625rem 0.875rem;
-    border: 1.5px solid #e5e7eb;
-    border-radius: 0.5rem;
-    font-size: 0.9rem;
-    color: #374151;
-    background: white;
+    padding: 10px 14px;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #555;
+    background: #fafafa;
     transition: all 0.2s ease;
     cursor: pointer;
 }
 
 .filter-group select:focus {
     outline: none;
-    border-color: #8b5cf6;
-    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+    border-color: #c0392b; /* Cập nhật màu focus */
+    box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.1);
 }
 
 .filter-actions {
@@ -312,33 +323,36 @@
     gap: 0.75rem;
 }
 
+/* Cập nhật nút filter */
 .btn-apply-filter {
-    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+    background: linear-gradient(135deg, #c0392b 0%, #c97a3a 100%);
     color: white;
-    padding: 0.75rem 1.5rem;
+    padding: 12px 24px;
     border: none;
-    border-radius: 0.5rem;
-    font-size: 0.9rem;
+    border-radius: 10px;
+    font-size: 14px;
     font-weight: 600;
     cursor: pointer;
     display: flex;
     align-items: center;
     gap: 0.5rem;
     transition: all 0.2s ease;
+    box-shadow: 0 4px 15px rgba(192, 57, 43, 0.2);
 }
 
 .btn-apply-filter:hover {
-    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+    background: linear-gradient(135deg, #a93226 0%, #b06a2e 100%);
     transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(192, 57, 43, 0.35);
 }
 
 .btn-reset-filter {
-    background: white;
-    color: #6b7280;
-    padding: 0.75rem 1.5rem;
-    border: 1.5px solid #e5e7eb;
-    border-radius: 0.5rem;
-    font-size: 0.9rem;
+    background: #f5f1e6;
+    color: #4e342e;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
     font-weight: 600;
     cursor: pointer;
     display: flex;
@@ -348,7 +362,7 @@
 }
 
 .btn-reset-filter:hover {
-    background: #f3f4f6;
+    background: #ede7d9;
 }
 
 /* Banners List Section */
@@ -361,9 +375,9 @@
 /* Banner Category Section */
 .banner-category-section {
     background: white;
-    border-radius: 0.75rem;
+    border-radius: 16px;
     padding: 1.5rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 30px rgba(78, 52, 46, 0.08);
 }
 
 .category-header {
@@ -372,24 +386,25 @@
     align-items: center;
     margin-bottom: 1.5rem;
     padding-bottom: 1rem;
-    border-bottom: 2px solid #f3f4f6;
+    border-bottom: 2px solid #f5f1e6;
 }
 
 .category-header h2 {
     font-size: 1.25rem;
     font-weight: 700;
-    color: #1f2937;
+    color: #4e342e;
     display: flex;
     align-items: center;
     gap: 0.625rem;
 }
 
 .category-header h2 i {
-    color: #8b5cf6;
+    color: #c0392b; /* Cập nhật màu icon */
 }
 
+/* Cập nhật banner count */
 .banner-count {
-    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+    background: linear-gradient(135deg, #c0392b 0%, #c97a3a 100%);
     color: white;
     padding: 0.375rem 0.875rem;
     border-radius: 1rem;
@@ -399,13 +414,13 @@
 
 /* Banner Item */
 .banner-item {
-    background: #f9fafb;
-    border: 2px solid #e5e7eb;
-    border-radius: 0.75rem;
+    background: #fafafa;
+    border: 2px solid #f5f1e6;
+    border-radius: 12px;
     padding: 1rem;
     margin-bottom: 1rem;
     display: flex;
-    gap: 1.5rem;
+    gap: 1rem; /* Giảm gap */
     transition: all 0.3s ease;
 }
 
@@ -414,14 +429,15 @@
 }
 
 .banner-item:hover {
-    border-color: #8b5cf6;
-    box-shadow: 0 4px 6px rgba(139, 92, 246, 0.1);
+    border-color: #c0392b; /* Cập nhật màu hover */
+    box-shadow: 0 4px 15px rgba(192, 57, 43, 0.1);
 }
 
+/* Cải thiện thẩm mỹ: Điều chỉnh kích thước ảnh */
 .banner-image {
-    width: 200px;
-    height: 120px;
-    border-radius: 0.5rem;
+    width: 180px;
+    height: 100px;
+    border-radius: 8px;
     overflow: hidden;
     flex-shrink: 0;
     background: #e5e7eb;
@@ -434,15 +450,16 @@
 }
 
 .banner-image-sidebar {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
 }
 
 .banner-details {
     flex: 1;
     display: flex;
     justify-content: space-between;
-    gap: 1.5rem;
+    align-items: center; /* Căn giữa theo chiều dọc */
+    gap: 1rem;
 }
 
 .banner-info {
@@ -452,15 +469,15 @@
 .banner-info h3 {
     font-size: 1.125rem;
     font-weight: 600;
-    color: #1f2937;
-    margin-bottom: 0.75rem;
+    color: #4e342e;
+    margin-bottom: 0.5rem; /* Giảm margin */
 }
 
 .banner-meta {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem; /* Giảm margin */
 }
 
 .meta-item {
@@ -472,11 +489,11 @@
 }
 
 .meta-item i {
-    color: #8b5cf6;
+    color: #c0392b; /* Cập nhật màu icon */
     width: 14px;
 }
 
-/* Season Badges */
+/* Season Badges (Giữ nguyên, màu sắc theo mùa là hợp lý) */
 .season-badge {
     display: inline-flex;
     align-items: center;
@@ -514,61 +531,63 @@
     align-items: center;
 }
 
-/* Status Badges */
+/* Status Badges (Đồng bộ với các trang khác) */
 .status-badge {
     display: inline-flex;
     align-items: center;
     gap: 0.375rem;
-    padding: 0.375rem 0.75rem;
-    border-radius: 0.375rem;
-    font-size: 0.8125rem;
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-size: 12px;
     font-weight: 600;
 }
 
 .status-active {
-    background: #d1fae5;
-    color: #065f46;
+    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+    color: white;
 }
 
 .status-inactive {
-    background: #fee2e2;
-    color: #991b1b;
+    background: linear-gradient(135deg, #95a5a6 0%, #bdc3c7 100%);
+    color: white;
 }
 
 .status-scheduled {
-    background: #dbeafe;
-    color: #1e40af;
+    background: linear-gradient(135deg, #3498db 0%, #5dade2 100%);
+    color: white;
 }
 
+/* Cập nhật order-badge */
 .order-badge {
-    background: #f3f4f6;
-    color: #6b7280;
-    padding: 0.375rem 0.75rem;
-    border-radius: 0.375rem;
-    font-size: 0.8125rem;
+    background: #f5f1e6;
+    color: #4e342e;
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-size: 12px;
     font-weight: 600;
 }
 
-/* Banner Actions */
+/* Banner Actions (Cải thiện thẩm mỹ: chuyển sang hàng ngang) */
 .banner-actions {
     display: flex;
-    flex-direction: column;
+    flex-direction: row; /* Thay đổi từ column sang row */
     gap: 0.5rem;
-    align-items: flex-end;
+    align-items: center; /* Căn giữa */
 }
 
 .btn-action {
     background: white;
     border: 1.5px solid #e5e7eb;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 0.5rem;
+    width: 32px; /* Giảm kích thước */
+    height: 32px;
+    border-radius: 8px; /* Đồng bộ */
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
+    font-size: 13px; /* Đồng bộ */
     transition: all 0.2s ease;
+    text-decoration: none;
 }
 
 .btn-action:disabled {
@@ -581,47 +600,68 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Cập nhật màu nút action */
 .btn-move-up,
 .btn-move-down {
-    color: #6b7280;
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(93, 173, 226, 0.1) 100%);
+    color: #3498db;
 }
 
 .btn-move-up:not(:disabled):hover,
 .btn-move-down:not(:disabled):hover {
-    background: #f3f4f6;
-    border-color: #8b5cf6;
-    color: #8b5cf6;
+    background: linear-gradient(135deg, #3498db 0%, #5dade2 100%);
+    color: white;
+    border-color: #3498db;
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
 }
 
 .btn-edit {
-    color: #2563eb;
-    text-decoration: none;
+    background: linear-gradient(135deg, rgba(243, 156, 18, 0.1) 0%, rgba(241, 196, 15, 0.1) 100%);
+    color: #f39c12;
 }
 
 .btn-edit:hover {
-    background: #dbeafe;
-    border-color: #2563eb;
+    background: linear-gradient(135deg, #f39c12 0%, #f1c40f 100%);
+    color: white;
+    border-color: #f39c12;
+    box-shadow: 0 4px 12px rgba(243, 156, 18, 0.3);
 }
 
 .btn-toggle {
-    color: #6b7280;
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.1) 0%, rgba(192, 57, 43, 0.1) 100%);
+    color: #e74c3c;
 }
 
 .btn-toggle.active {
-    color: #059669;
+    background: linear-gradient(135deg, rgba(39, 174, 96, 0.1) 0%, rgba(46, 204, 113, 0.1) 100%);
+    color: #27ae60;
 }
 
-.btn-toggle:hover {
-    background: #f3f4f6;
+.btn-toggle:not(.active):hover {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    color: white;
+    border-color: #e74c3c;
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
 }
+
+.btn-toggle.active:hover {
+    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+    color: white;
+    border-color: #27ae60;
+    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+}
+
 
 .btn-delete {
-    color: #dc2626;
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.1) 0%, rgba(192, 57, 43, 0.1) 100%);
+    color: #e74c3c;
 }
 
 .btn-delete:hover {
-    background: #fee2e2;
-    border-color: #dc2626;
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    color: white;
+    border-color: #e74c3c;
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
 }
 
 /* Responsive Design */
@@ -641,16 +681,18 @@
     .banner-image,
     .banner-image-sidebar {
         width: 100%;
-        height: 200px;
+        height: 200px; /* Cho ảnh responsive đẹp hơn */
     }
 
     .banner-details {
         flex-direction: column;
+        align-items: flex-start; /* Căn trái khi sang cột */
     }
 
     .banner-actions {
         flex-direction: row;
         justify-content: flex-start;
+        width: 100%;
     }
 }
 
