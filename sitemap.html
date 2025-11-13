@@ -5,169 +5,350 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Sơ đồ trang web - Danh sách đầy đủ các trang của website thủ công mỹ nghệ">
     <meta name="keywords" content="sitemap, sơ đồ trang web, thủ công mỹ nghệ">
+    <!-- Thêm Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Thêm Google Font (Poppins và Roboto) để đồng bộ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Liên kết đến các tệp CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/sitemap.css">
     <title>Sơ đồ trang web | Nhóm 10</title>
 </head>
 <body>
-    <div class="sitemap-container">
-        <header class="sitemap-header">
-            <h1>Sơ đồ trang web</h1>
-            <p>Danh sách đầy đủ các trang của website</p>
-        </header>
+    <!-- Header chung của website -->
+    <header id="header">
+        <div class="container">
+            <div class="logo">
+                Nhóm 10
+            </div>
+            <div class="menu">
+                <li class="nav-item"><a href="./index.html">Trang chủ</a></li>
+                <li class="nav-item"><a href="./about.html">Giới thiệu</a></li>
 
-        <div class="sitemap-content">
-            <!-- Trang chính -->
-            <section class="sitemap-section">
-                <h2><i class="fas fa-home"></i> Trang chính</h2>
-                <ul class="sitemap-list">
-                    <li><a href="index.html">Trang chủ</a></li>
-                    <li><a href="about.html" class="coming-soon">Giới thiệu <span class="badge">Sắp ra mắt</span></a></li>
-                    <li><a href="contact.html">Liên hệ</a></li>
-                    <li><a href="news.html" class="coming-soon">Tin tức <span class="badge">Sắp ra mắt</span></a></li>
-                </ul>
-            </section>
+                <li class="nav-item list-product">
+                    <a href="./products.html" class="caret-down a">
+                        Sản phẩm
+                        <i class="fa-solid fa-caret-down"></i>
+                    </a>
 
-            <!-- Danh mục sản phẩm -->
-            <section class="sitemap-section">
-                <h2><i class="fas fa-shopping-bag"></i> Danh mục sản phẩm</h2>
-                <div class="sitemap-subsection">
-                    <h3>Trang sản phẩm</h3>
-                    <ul class="sitemap-list">
-                        <li><a href="products.html">Tất cả sản phẩm</a></li>
-                        <li><a href="productdetail.html">Chi tiết sản phẩm</a></li>
-                    </ul>
+                    <div class="dropdown">
+                        <div class="product-items">
+
+                            <div class="menu-product-item">
+                                <h4><a href="#">Đồ mây tre đan</a></h4>
+                                <ul>
+                                    <li><a href="#">Giỏ</a></li>
+                                    <li><a href="#">Đèn tre</a></li>
+                                    <li><a href="#">Túi cói</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="menu-product-item">
+                                <h4><a href="#">Gốm sứ</a></h4>
+                                <ul>
+                                    <li><a href="#">Bình</a></li>
+                                    <li><a href="#">Ấm chén</a></li>
+                                    <li><a href="#">Tượng gốm</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="menu-product-item">
+                                <h4><a href="#">Đồ gỗ mỹ nghệ</a></h4>
+                                <ul>
+                                    <li><a href="#">Tượng</a></li>
+                                    <li><a href="#">Hộp</a></li>
+                                    <li><a href="#">Khung ảnh</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="menu-product-item">
+                                <h4><a href="#">Dệt thêu & may mặc thủ công</a></h4>
+                                <ul>
+                                    <li><a href="#">Khăn</a></li>
+                                    <li><a href="#">Túi</a></li>
+                                    <li><a href="#">Áo thổ cẩm</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="menu-product-item">
+                                <h4><a href="#">Trang sức & phụ kiện thủ công</a></h4>
+                                <ul>
+                                    <li><a href="#">Vòng</a></li>
+                                    <li><a href="#">Dây chuyền</a></li>
+                                    <li><a href="#">Nhẫn</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="menu-product-item">
+                                <h4><a href="#">Đồ trang trí & quà tặng nghệ thuật</a></h4>
+                                <ul>
+                                    <li><a href="#">Nến</a></li>
+                                    <li><a href="#">Thiệp 3D</a></li>
+                                    <li><a href="#">Tranh giấy</a></li>
+                                </ul>
+                            </div>
+
+                        </div> <div class="dropdown-image">
+                             <img width="300" src="public/img_products.png" alt="Gốm sứ Bát Tràng">
+                        </div>
+                    </div> </li>
+                <li class="nav-item"><a href="./news.html">Tin tức</a></li>
+                <li class="nav-item"><a href="./cart.html">Cửa hàng</a></li>
+                <li class="nav-item"><a href="./contact.html">Liên hệ</a></li>
+            </div>
+            <div class="others">
+                <div class="others">
+                    <div class="icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <div class="icon">
+                        <i class="fa-regular fa-user"></i>
+                    </div>
+                    <div class="icon badge" >
+                        <i class="fa-regular fa-heart"></i>
+                        <span>0</span>
+                    </div>
+                    <div class="icon badge">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span>0</span>
+                    </div>
                 </div>
-
-                <div class="sitemap-subsection">
-                    <h3>Danh mục theo loại</h3>
-                    <ul class="sitemap-list category-list">
-                        <li>
-                            <strong>Đồ mây tre đan</strong>
-                            <ul class="subcategory-list">
-                                <li><a href="products.html?category=gio">Giỏ</a></li>
-                                <li><a href="products.html?category=den-tre">Đèn tre</a></li>
-                                <li><a href="products.html?category=tui-coi">Túi cói</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <strong>Gốm sứ</strong>
-                            <ul class="subcategory-list">
-                                <li><a href="products.html?category=binh">Bình</a></li>
-                                <li><a href="products.html?category=am-chen">Ấm chén</a></li>
-                                <li><a href="products.html?category=tuong-gom">Tượng gốm</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <strong>Đồ gỗ mỹ nghệ</strong>
-                            <ul class="subcategory-list">
-                                <li><a href="products.html?category=tuong-go">Tượng</a></li>
-                                <li><a href="products.html?category=hop-go">Hộp</a></li>
-                                <li><a href="products.html?category=khung-anh">Khung ảnh</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <strong>Dệt thêu & may mặc thủ công</strong>
-                            <ul class="subcategory-list">
-                                <li><a href="products.html?category=khan">Khăn</a></li>
-                                <li><a href="products.html?category=tui">Túi</a></li>
-                                <li><a href="products.html?category=ao-tho-cam">Áo thổ cẩm</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <strong>Trang sức & phụ kiện thủ công</strong>
-                            <ul class="subcategory-list">
-                                <li><a href="products.html?category=vong">Vòng</a></li>
-                                <li><a href="products.html?category=day-chuyen">Dây chuyền</a></li>
-                                <li><a href="products.html?category=nhan">Nhẫn</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <strong>Đồ trang trí & quà tặng nghệ thuật</strong>
-                            <ul class="subcategory-list">
-                                <li><a href="products.html?category=nen">Nến</a></li>
-                                <li><a href="products.html?category=thiep-3d">Thiệp 3D</a></li>
-                                <li><a href="products.html?category=tranh-giay">Tranh giấy</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Mua sắm -->
-            <section class="sitemap-section">
-                <h2><i class="fas fa-cart-shopping"></i> Mua sắm</h2>
-                <ul class="sitemap-list">
-                    <li><a href="shopping-cart.html">Giỏ hàng</a></li>
-                    <li><a href="wishlist.html">Danh sách yêu thích</a></li>
-                    <li><a href="checkout.html" class="coming-soon">Thanh toán <span class="badge">Sắp ra mắt</span></a></li>
-                </ul>
-            </section>
-
-            <!-- Tài khoản -->
-            <section class="sitemap-section">
-                <h2><i class="fas fa-user"></i> Tài khoản</h2>
-                <div class="sitemap-subsection">
-                    <h3>Xác thực</h3>
-                    <ul class="sitemap-list">
-                        <li><a href="login.html">Đăng nhập</a></li>
-                        <li><a href="register.html">Đăng ký</a></li>
-                        <li><a href="account/forgot-password.html">Quên mật khẩu</a></li>
-                    </ul>
-                </div>
-
-                <div class="sitemap-subsection">
-                    <h3>Quản lý tài khoản</h3>
-                    <ul class="sitemap-list">
-                        <li><a href="account/dashboard.html">Bảng điều khiển</a></li>
-                        <li><a href="account/account-profile.html">Thông tin cá nhân</a></li>
-                        <li><a href="account/account-address.html">Địa chỉ giao hàng</a></li>
-                        <li><a href="account/account-change-password.html">Đổi mật khẩu</a></li>
-                        <li><a href="account/order.html">Đơn hàng của tôi</a></li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Thông tin & Hỗ trợ -->
-            <section class="sitemap-section">
-                <h2><i class="fas fa-info-circle"></i> Thông tin & Hỗ trợ</h2>
-                <div class="sitemap-subsection">
-                    <h3>Hướng dẫn</h3>
-                    <ul class="sitemap-list">
-                        <li><a href="guide-shopping.html" class="coming-soon">Hướng dẫn mua hàng <span class="badge">Sắp ra mắt</span></a></li>
-                        <li><a href="guide-payment.html" class="coming-soon">Hướng dẫn thanh toán <span class="badge">Sắp ra mắt</span></a></li>
-                        <li><a href="guide-delivery.html" class="coming-soon">Hướng dẫn giao nhận <span class="badge">Sắp ra mắt</span></a></li>
-                        <li><a href="faq.html" class="coming-soon">Câu hỏi thường gặp (FAQ) <span class="badge">Sắp ra mắt</span></a></li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Chính sách -->
-            <section class="sitemap-section">
-                <h2><i class="fas fa-file-contract"></i> Chính sách</h2>
-                <ul class="sitemap-list">
-                    <li><a href="policy-privacy.html" class="coming-soon">Chính sách bảo mật <span class="badge">Sắp ra mắt</span></a></li>
-                    <li><a href="policy-shipping.html" class="coming-soon">Chính sách vận chuyển <span class="badge">Sắp ra mắt</span></a></li>
-                    <li><a href="policy-return.html" class="coming-soon">Chính sách đổi trả <span class="badge">Sắp ra mắt</span></a></li>
-                    <li><a href="terms-of-use.html" class="coming-soon">Quy định sử dụng <span class="badge">Sắp ra mắt</span></a></li>
-                    <li><a href="terms-of-service.html" class="coming-soon">Điều khoản sử dụng <span class="badge">Sắp ra mắt</span></a></li>
-                </ul>
-            </section>
-
-            <!-- Liên kết hữu ích -->
-            <section class="sitemap-section">
-                <h2><i class="fas fa-link"></i> Liên kết hữu ích</h2>
-                <ul class="sitemap-list">
-                    <li><a href="sitemap.html">Sơ đồ trang web</a></li>
-                    <li><a href="contact.html">Liên hệ với chúng tôi</a></li>
-                </ul>
-            </section>
+            </div>
         </div>
+    </header>
 
-        <footer class="sitemap-footer">
-            <p><a href="index.html"><i class="fas fa-arrow-left"></i> Quay về trang chủ</a></p>
-            <p>&copy; 2024 Nhóm 10 - Thủ công mỹ nghệ Việt Nam</p>
-        </footer>
+    <div class="sitemap-wrapper">
+        <div class="sitemap-container">
+            <!-- Tiêu đề của trang sitemap -->
+            <div class="sitemap-page-header">
+                <div class="header-content">
+                    <h1>
+                        <i class="fas fa-sitemap"></i>
+                        Sơ đồ trang web
+                    </h1>
+                    <p>Khám phá toàn bộ cấu trúc website của chúng tôi</p>
+                </div>
+                <a href="index.html" class="btn-back-home">
+                    <i class="fas fa-arrow-left"></i>
+                    Quay về trang chủ
+                </a>
+            </div>
+
+            <!-- 
+              Nội dung chính của sitemap
+              Giữ nguyên cấu trúc HTML gốc của bạn vì nó rất tốt cho SEO
+              và đã được phân loại rõ ràng.
+              Tệp CSS mới sẽ định dạng lại toàn bộ phần này.
+            -->
+            <div class="sitemap-content">
+                <!-- Trang chính -->
+                <section class="sitemap-section">
+                    <h2><i class="fas fa-home"></i> Trang chính</h2>
+                    <ul class="sitemap-list">
+                        <li><a href="index.html">Trang chủ</a></li>
+                        <li><a href="about.html" class="coming-soon">Giới thiệu <span class="badge">Sắp ra mắt</span></a></li>
+                        <li><a href="contact.html">Liên hệ</a></li>
+                        <li><a href="news.html" class="coming-soon">Tin tức <span class="badge">Sắp ra mắt</span></a></li>
+                    </ul>
+                </section>
+
+                <!-- Mua sắm -->
+                <section class="sitemap-section">
+                    <h2><i class="fas fa-cart-shopping"></i> Mua sắm</h2>
+                    <ul class="sitemap-list">
+                        <li><a href="shopping-cart.html">Giỏ hàng</a></li>
+                        <li><a href="wishlist.html">Danh sách yêu thích</a></li>
+                        <li><a href="checkout.html" class="coming-soon">Thanh toán <span class="badge">Sắp ra mắt</span></a></li>
+                    </ul>
+                </section>
+
+                <!-- Tài khoản -->
+                <section class="sitemap-section">
+                    <h2><i class="fas fa-user"></i> Tài khoản</h2>
+                    <div class="sitemap-subsection">
+                        <h3>Xác thực</h3>
+                        <ul class="sitemap-list">
+                            <li><a href="login.html">Đăng nhập</a></li>
+                            <li><a href="register.html">Đăng ký</a></li>
+                            <li><a href="account/forgot-password.html">Quên mật khẩu</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="sitemap-subsection">
+                        <h3>Quản lý tài khoản</h3>
+                        <ul class="sitemap-list">
+                            <li><a href="account/dashboard.html">Bảng điều khiển</a></li>
+                            <li><a href="account/account-profile.html">Thông tin cá nhân</a></li>
+                            <li><a href="account/account-address.html">Địa chỉ giao hàng</a></li>
+                            <li><a href="account/account-change-password.html">Đổi mật khẩu</a></li>
+                            <li><a href="account/order.html">Đơn hàng của tôi</a></li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Danh mục sản phẩm -->
+                <section class="sitemap-section section-full-width">
+                    <h2><i class="fas fa-shopping-bag"></i> Danh mục sản phẩm</h2>
+                    <div class="sitemap-subsection">
+                        <h3>Trang sản phẩm</h3>
+                        <ul class="sitemap-list">
+                            <li><a href="products.html">Tất cả sản phẩm</a></li>
+                            <li><a href="productdetail.html">Chi tiết sản phẩm</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="sitemap-subsection">
+                        <h3>Danh mục theo loại</h3>
+                        <ul class="sitemap-list category-list">
+                            <li>
+                                <strong>Đồ mây tre đan</strong>
+                                <ul class="subcategory-list">
+                                    <li><a href="products.html?category=gio">Giỏ</a></li>
+                                    <li><a href="products.html?category=den-tre">Đèn tre</a></li>
+                                    <li><a href="products.html?category=tui-coi">Túi cói</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Gốm sứ</strong>
+                                <ul class="subcategory-list">
+                                    <li><a href="products.html?category=binh">Bình</a></li>
+                                    <li><a href="products.html?category=am-chen">Ấm chén</a></li>
+                                    <li><a href="products.html?category=tuong-gom">Tượng gốm</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Đồ gỗ mỹ nghệ</strong>
+                                <ul class="subcategory-list">
+                                    <li><a href="products.html?category=tuong-go">Tượng</a></li>
+                                    <li><a href="products.html?category=hop-go">Hộp</a></li>
+                                    <li><a href="products.html?category=khung-anh">Khung ảnh</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Dệt thêu & may mặc thủ công</strong>
+                                <ul class="subcategory-list">
+                                    <li><a href="products.html?category=khan">Khăn</a></li>
+                                    <li><a href="products.html?category=tui">Túi</a></li>
+                                    <li><a href="products.html?category=ao-tho-cam">Áo thổ cẩm</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Trang sức & phụ kiện thủ công</strong>
+                                <ul class="subcategory-list">
+                                    <li><a href="products.html?category=vong">Vòng</a></li>
+                                    <li><a href="products.html?category=day-chuyen">Dây chuyền</a></li>
+                                    <li><a href="products.html?category=nhan">Nhẫn</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Đồ trang trí & quà tặng nghệ thuật</strong>
+                                <ul class="subcategory-list">
+                                    <li><a href="products.html?category=nen">Nến</a></li>
+                                    <li><a href="products.html?category=thiep-3d">Thiệp 3D</a></li>
+                                    <li><a href="products.html?category=tranh-giay">Tranh giấy</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Thông tin & Hỗ trợ -->
+                <section class="sitemap-section">
+                    <h2><i class="fas fa-info-circle"></i> Thông tin & Hỗ trợ</h2>
+                    <div class="sitemap-subsection">
+                        <h3>Hướng dẫn</h3>
+                        <ul class="sitemap-list">
+                            <li><a href="guide-shopping.html" class="coming-soon">Hướng dẫn mua hàng <span class="badge">Sắp ra mắt</span></a></li>
+                            <li><a href="guide-payment.html" class="coming-soon">Hướng dẫn thanh toán <span class="badge">Sắp ra mắt</span></a></li>
+                            <li><a href="guide-delivery.html" class="coming-soon">Hướng dẫn giao nhận <span class="badge">Sắp ra mắt</span></a></li>
+                            <li><a href="faq.html" class="coming-soon">Câu hỏi thường gặp (FAQ) <span class="badge">Sắp ra mắt</span></a></li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Chính sách -->
+                <section class="sitemap-section">
+                    <h2><i class="fas fa-file-contract"></i> Chính sách</h2>
+                    <ul class="sitemap-list">
+                        <li><a href="policy-privacy.html" class="coming-soon">Chính sách bảo mật <span class="badge">Sắp ra mắt</span></a></li>
+                        <li><a href="policy-shipping.html" class="coming-soon">Chính sách vận chuyển <span class="badge">Sắp ra mắt</span></a></li>
+                        <li><a href="policy-return.html" class="coming-soon">Chính sách đổi trả <span class="badge">Sắp ra mắt</span></a></li>
+                        <li><a href="terms-of-use.html" class="coming-soon">Quy định sử dụng <span class="badge">Sắp ra mắt</span></a></li>
+                        <li><a href="terms-of-service.html" class="coming-soon">Điều khoản sử dụng <span class="badge">Sắp ra mắt</span></a></li>
+                    </ul>
+                </section>
+
+            </div>
+        </div>
     </div>
+
+    <!-- Footer chung của website -->
+    <footer id="footer">
+        <div class="container">
+            <div class="content">
+                <div class="info">
+                    <div class="info_details">
+                        <h2>Thông tin</h2>
+                        <div>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <p>Trường Đại học Nông Lâm Tp.Hcm</p>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-phone"></i>
+                            <p>0337429995</p> </div>
+                        <div>
+                            <i class="fa-solid fa-envelope"></i>
+                            <p>23130240@st.hcmuaf.edu.vn</p> </div>
+                    </div>
+
+                    <div class="info_media">
+                        <h2>Mạng xã hội</h2>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon zalo" aria-label="Zalo">
+                                <strong>Za</strong>
+                            </a>
+                            <a href="#" class="social-icon fb" aria-label="Facebook">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-icon yt" aria-label="YouTube">
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
+                            <a href="#" class="social-icon gg" aria-label="Google">
+                                <i class="fa-brands fa-google"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="policy-guide-wrapper">
+                    <div class="component policy">
+                        <h2>Chính sách</h2> <ul> <li><a href="#" class="hover color">Chính sách bảo mật</a></li>
+                            <li><a href="#" class="hover color">Chính sách vận chuyển</a></li>
+                            <li><a href="#" class="hover color">Chính sách đổi trả</a></li>
+                            <li><a href="#" class="hover color">Quy định sử dụng</a></li>
+                        </ul> </div>
+                    <div class="component guide">
+                        <h2>Hướng dẫn</h2> <ul> <li><a href="#" class="hover color">Hướng dẫn mua hàng</a></li>
+                            <li><a href="#" class="hover color">Hướng dẫn thanh toán</a></li>
+                            <li><a href="#" class="hover color">Hướng dẫn giao nhận</a></li>
+                            <li><a href="#" class="hover color">Điều khoản sử dụng</a></li>
+                        </ul> </div>
+                </div>
+
+                <div class="others">
+                    <h2>Đăng ký nhận tin</h2>
+                    <p>Đăng ký ngay! Để nhận nhiều ưu đãi</p>
+                    <div class="input">
+                        <input type="text" name="Email" id="email" placeholder="Nhập địa chỉ email">
+                        <button>Đăng ký</button>
+                    </div>
+                    </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

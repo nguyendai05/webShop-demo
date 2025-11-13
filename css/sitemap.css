@@ -1,104 +1,239 @@
-/* General Reset & Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Roboto", Helvetica Neue, Helvetica, Arial, sans-serif;
-}
-
-body {
-    background-color: #f5f1e6;
-    color: #333;
-    line-height: 1.6;
-}
-
+/* ============================================
+   SITEMAP PAGE - ĐỒ THỦ CÔNG MỸ NGHỆ VIỆT NAM
+   ============================================ */
 a {
     text-decoration: none;
-    color: #4e342e;
-    transition: color 0.3s ease;
+    color: #555;
+    transition: all 0.3s ease;
 }
 
 a:hover {
-    color: #8b5e3c;
+    color: #c0392b;
 }
 
-/* Container */
-.sitemap-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+/* Main Wrapper */
+.sitemap-wrapper {
+    margin-top: 20px;
+    position: relative;
+    z-index: 1;
 }
 
-/* Header */
-.sitemap-header {
-    text-align: center;
-    padding: 40px 20px;
-    border-bottom: 3px solid #4e342e;
-    margin-bottom: 40px;
+
+/* Page Header của trang sitemap - Đồng bộ style với .page-header */
+.sitemap-page-header {
+    padding: 35px 40px;
+    border-bottom: 2px solid #f5f1e6;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
 }
 
-.sitemap-header h1 {
-    font-size: 2.5rem;
+.sitemap-page-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(201, 122, 58, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.header-content h1 {
+    font-size: 28px;
+    /* Đồng bộ màu chữ */
     color: #4e342e;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
-.sitemap-header p {
-    font-size: 1.1rem;
-    color: #666;
-    font-weight: 300;
+.header-content h1 i {
+    color: #c0392b; /* Màu nhấn */
 }
 
-/* Content */
+.header-content p {
+    font-size: 15px;
+    color: #777;
+}
+
+/* Nút quay về trang chủ - Style giống .btn-add-address */
+.btn-back-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    background: #fafafa;
+    color: #555;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    border: 2px solid #e0e0e0;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.btn-back-home:hover {
+    background: white;
+    border-color: #c0392b;
+    color: #c0392b;
+    transform: translateX(-5px);
+    box-shadow: 0 4px 15px rgba(192, 57, 43, 0.1);
+}
+
+/* Container chính - Giống style của dashboard/profile */
+.sitemap-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: #fff;
+    /* Đồng bộ shadow */
+    box-shadow: 0 10px 40px rgba(78, 52, 46, 0.08);
+    /* Đồng bộ bo góc */
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* Header của trang sitemap - Đồng bộ style với .page-header */
+.sitemap-header {
+    padding: 35px 40px;
+    border-bottom: 2px solid #f5f1e6;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.sitemap-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(201, 122, 58, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.header-content h1 {
+    font-size: 28px;
+    /* Đồng bộ màu chữ */
+    color: #4e342e;
+    margin-bottom: 8px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-content h1 i {
+    color: #c0392b; /* Màu nhấn */
+}
+
+.header-content p {
+    font-size: 15px;
+    color: #777;
+}
+
+/* Nút quay về trang chủ - Style giống .btn-add-address */
+.btn-back-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    background: #fafafa;
+    color: #555;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    border: 2px solid #e0e0e0;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.btn-back-home:hover {
+    background: white;
+    border-color: #c0392b;
+    color: #c0392b;
+    transform: translateX(-5px);
+    box-shadow: 0 4px 15px rgba(192, 57, 43, 0.1);
+}
+
+
+/* Content - Sử dụng Grid cho layout chuyên nghiệp */
 .sitemap-content {
-    padding: 0 20px;
+    padding: 30px 40px;
+    display: grid;
+    /* Dàn layout tự động, mỗi cột tối thiểu 300px */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
 }
 
 /* Section */
 .sitemap-section {
-    margin-bottom: 50px;
+    background: #fafafa;
+    border: 2px solid #f5f1e6;
+    border-radius: 16px;
+    padding: 25px;
+    transition: all 0.3s ease;
+}
+
+.sitemap-section:hover {
+    border-color: rgba(192, 57, 43, 0.2);
+    box-shadow: 0 8px 30px rgba(78, 52, 46, 0.08);
+}
+
+/* Mục sản phẩm chiếm full chiều rộng */
+.sitemap-section.section-full-width {
+    grid-column: 1 / -1;
 }
 
 .sitemap-section h2 {
-    font-size: 1.8rem;
-    color: #4e342e;
+    font-size: 1.25rem; /* ~20px */
+    color: #c0392b; /* Màu nhấn thương hiệu */
     margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #d4c5a9;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f5f1e6;
     display: flex;
     align-items: center;
     gap: 12px;
+    font-weight: 600;
 }
 
 .sitemap-section h2 i {
-    color: #8b5e3c;
-    font-size: 1.6rem;
+    font-size: 1.1rem;
 }
 
 /* Subsection */
 .sitemap-subsection {
     margin-top: 25px;
-    margin-bottom: 25px;
+}
+
+.sitemap-subsection:first-child {
+    margin-top: 0;
 }
 
 .sitemap-subsection h3 {
-    font-size: 1.3rem;
-    color: #5d4037;
+    font-size: 1rem; /* 16px */
+    color: #4e342e; /* Màu nâu đậm */
     margin-bottom: 15px;
     padding-left: 10px;
-    border-left: 4px solid #8b5e3c;
+    border-left: 4px solid #c97a3a; /* Màu cam đất */
+    font-weight: 600;
 }
 
-/* List Styles */
+/* List Styles - Thiết kế lại */
 .sitemap-list {
     list-style: none;
-    padding-left: 20px;
+    padding-left: 5px; /* Giảm padding trái */
 }
 
 .sitemap-list li {
@@ -108,217 +243,199 @@ a:hover {
 }
 
 .sitemap-list li:before {
-    content: "▸";
+    /* Sử dụng icon Font Awesome */
+    content: "\f105"; 
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
     position: absolute;
     left: 0;
-    color: #8b5e3c;
-    font-size: 1.2rem;
+    top: 3px;
+    color: #c97a3a; /* Màu cam đất */
+    font-size: 1rem;
+    transition: all 0.3s ease;
 }
 
 .sitemap-list li a {
-    font-size: 1rem;
+    font-size: 0.95rem; /* 15px */
+    font-weight: 500;
     display: inline-block;
-    padding: 5px 10px;
-    border-radius: 4px;
+    padding: 2px 0;
     transition: all 0.3s ease;
 }
 
 .sitemap-list li a:hover {
-    background-color: #f5f1e6;
-    padding-left: 15px;
+    transform: translateX(5px);
+    color: #c0392b;
 }
 
-/* Category List */
+.sitemap-list li:hover:before {
+    transform: translateX(3px);
+    color: #c0392b;
+}
+
+/* Category List (Sản phẩm) - *** ĐÃ CẬP NHẬT BỐ CỤC *** */
+.category-list {
+    /* Chuyển sang layout grid */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Tạo các cột tự động */
+    gap: 25px; /* Khoảng cách giữa các cột */
+    padding-left: 0; /* Bỏ padding cũ */
+}
+
 .category-list > li {
-    margin-bottom: 20px;
+    margin-bottom: 0; /* Bỏ margin bottom cũ */
+    padding: 20px; /* Thêm padding cho mỗi item */
+    background: #fff; /* Nền trắng cho mỗi card */
+    border-radius: 12px; /* Bo góc */
+    border: 2px solid #f5f1e6;
+    transition: all 0.3s ease;
+    padding-left: 20px; /* Ghi đè padding-left từ .sitemap-list li */
+}
+
+.category-list > li:before {
+    display: none; /* Ẩn icon :before của .sitemap-list li */
+}
+
+.category-list > li:hover {
+    border-color: rgba(192, 57, 43, 0.1);
+    box-shadow: 0 4px 15px rgba(78, 52, 46, 0.05);
+    transform: translateY(-3px);
 }
 
 .category-list > li > strong {
-    font-size: 1.1rem;
+    font-size: 1.05rem; /* 17px */
     color: #4e342e;
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 15px; /* Tăng khoảng cách */
+    padding-bottom: 10px; /* Tạo gạch chân */
+    border-bottom: 2px solid #f5f1e6; /* Gạch chân mới */
+    padding-top: 0; /* Bỏ padding top cũ */
+    border-top: none; /* Bỏ border top cũ */
 }
 
 /* Subcategory List */
 .subcategory-list {
     list-style: none;
-    padding-left: 20px;
+    padding-left: 15px;
     margin-top: 10px;
 }
 
 .subcategory-list li {
     margin-bottom: 8px;
-    position: relative;
-    padding-left: 20px;
+    padding-left: 22px;
 }
 
 .subcategory-list li:before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: #a1887f;
-    font-size: 1.2rem;
+    content: "\f0da"; /* Icon khác */
+    top: 4px;
+    font-size: 0.9rem;
+    color: #c97a3a;
 }
 
 .subcategory-list li a {
-    font-size: 0.95rem;
-    color: #5d4037;
+    font-size: 0.9rem; /* 14px */
+    font-weight: 400;
+    color: #777;
 }
 
 .subcategory-list li a:hover {
-    color: #8b5e3c;
+    color: #c0392b;
+    transform: translateX(4px);
 }
 
-/* Coming Soon Badge */
+.subcategory-list li:hover:before {
+    transform: translateX(2px);
+    color: #c0392b;
+}
+
+
+/* Coming Soon Badge - Đồng bộ style */
 .coming-soon {
     color: #999 !important;
     cursor: not-allowed;
+    position: relative;
+}
+
+.coming-soon:hover {
+    transform: none !important;
 }
 
 .badge {
     display: inline-block;
-    background-color: #ffc107;
-    color: #fff;
-    font-size: 0.7rem;
-    padding: 3px 8px;
-    border-radius: 12px;
+    /* Đồng bộ màu với admin */
+    background: linear-gradient(135deg, #f39c12 0%, #f1c40f 100%);
+    color: white;
+    font-size: 10px;
+    padding: 3px 10px;
+    border-radius: 20px;
     margin-left: 8px;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    vertical-align: middle;
 }
 
-/* Footer */
+/* Footer - Đồng bộ style */
 .sitemap-footer {
     text-align: center;
-    padding: 30px 20px;
-    margin-top: 50px;
-    border-top: 2px solid #d4c5a9;
+    padding: 30px 40px;
+    margin-top: 0;
+    border-top: 2px solid #f5f1e6;
 }
 
 .sitemap-footer p {
     margin-bottom: 10px;
-    color: #666;
+    color: #777;
+    font-size: 0.9rem;
 }
 
-.sitemap-footer a {
-    color: #4e342e;
+.sitemap-footer p a {
+    color: #c0392b;
     font-weight: 600;
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    transition: all 0.3s ease;
 }
 
-.sitemap-footer a:hover {
-    color: #8b5e3c;
-    transform: translateX(-5px);
-}
-
-.sitemap-footer a i {
-    transition: transform 0.3s ease;
-}
-
-.sitemap-footer a:hover i {
-    transform: translateX(-3px);
+.sitemap-footer p a:hover {
+    color: #c97a3a;
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 968px) {
+    body {
+        padding: 20px 10px;
+    }
     .sitemap-container {
-        margin: 10px;
-        padding: 15px;
+        margin: 0;
     }
-
-    .sitemap-header h1 {
-        font-size: 2rem;
+    .sitemap-header {
+        flex-direction: column;
+        align-items: stretch;
     }
-
-    .sitemap-header p {
-        font-size: 1rem;
+    .btn-back-home {
+        width: 100%;
+        justify-content: center;
     }
-
-    .sitemap-section h2 {
-        font-size: 1.5rem;
-    }
-
-    .sitemap-section h2 i {
-        font-size: 1.3rem;
-    }
-
-    .sitemap-subsection h3 {
-        font-size: 1.1rem;
-    }
-
-    .sitemap-list {
-        padding-left: 10px;
-    }
-
-    .sitemap-list li {
-        padding-left: 20px;
-    }
-
-    .category-list > li > strong {
-        font-size: 1rem;
-    }
-
-    .subcategory-list {
-        padding-left: 15px;
+    .sitemap-content {
+        grid-template-columns: 1fr;
+        padding: 20px;
     }
 }
 
 @media (max-width: 480px) {
-    .sitemap-header {
-        padding: 20px 10px;
-    }
-
-    .sitemap-header h1 {
-        font-size: 1.6rem;
-    }
-
-    .sitemap-header p {
-        font-size: 0.9rem;
-    }
-
-    .sitemap-section h2 {
-        font-size: 1.3rem;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-    }
-
-    .sitemap-list li a {
-        font-size: 0.9rem;
-    }
-
-    .badge {
-        font-size: 0.6rem;
-        padding: 2px 6px;
-    }
-}
-
-/* Print Styles */
-@media print {
     body {
-        background-color: #fff;
+        padding: 10px;
     }
-
-    .sitemap-container {
-        box-shadow: none;
-        margin: 0;
-        padding: 0;
+    .sitemap-header {
+        padding: 25px 20px;
     }
-
+    .header-content h1 {
+        font-size: 1.5rem; /* 24px */
+    }
+    .sitemap-content {
+        padding: 20px 15px;
+    }
     .sitemap-section {
-        page-break-inside: avoid;
-    }
-
-    .coming-soon {
-        color: #666 !important;
-    }
-
-    .badge {
-        display: none;
+        padding: 20px;
     }
 }
