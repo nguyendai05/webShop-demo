@@ -1,7 +1,9 @@
+*{
+    font-family: "Roboto", Helvetica Neue, Helvetica, Arial, sans-serif;
+}
 .hero-section-container {
     text-align: center;
     color: white;
-    border: 1px solid #333;
   background-color: #f0f0f0;
   background-image: url('https://bizweb.dktcdn.net/100/485/241/themes/911577/assets/breadcrumb.jpg?1758008990171');
   background-repeat: no-repeat;
@@ -10,7 +12,7 @@
 }
 .hero {
     background: transparent;
-    padding: 60px 20px 40px;
+    padding: 40px 20px 40px;
 }
 
 .hero-content {
@@ -37,79 +39,35 @@
     text-decoration: none;
 }
 
-/* Categories Carousel Wrapper */
+/* Categories */
 .categories-wrapper {
-    position: relative;
     max-width: 1200px;
-    margin: -30px auto 40px;
-    padding: 0 60px;
+    margin: -30px auto 0;
+    padding: 10px 20px;
+    position: relative;
 }
 
-/* Categories */
 .categories {
     display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    padding: 20px 0;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE and Edge */
-}
-
-/* Hide scrollbar for Chrome, Safari and Opera */
-.categories::-webkit-scrollbar {
-    display: none;
-}
-
-/* Navigation Buttons */
-.nav-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: #ff8c00;
-    color: white;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    z-index: 10;
-    transition: all 300ms ease;
-}
-
-.nav-button:hover {
-    background: #e67e00;
-    transform: translateY(-50%) scale(1.1);
-}
-
-.nav-button:active {
-    transform: translateY(-50%) scale(0.95);
-}
-
-.prev-button {
-    left: 10px;
-}
-
-.next-button {
-    right: 10px;
+    gap: 20px;
 }
 
 .category-item {
     text-align: center;
     cursor: pointer;
+    transition: transform 0.3s ease-out;
     flex-shrink: 0;
-    /* Remove default hover transform as it will be handled by JavaScript */
-    transition: transform 300ms ease, box-shadow 300ms ease;
+}
+
+.category-item:hover {
+    transform: translateY(-5px); 
 }
 
 .category-circle {
-    width: 100px;
-    height: 100px;
+    /* ĐÃ TĂNG KÍCH THƯỚC: từ 130px lên 160px */
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
     background: white;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -118,44 +76,81 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    transition: box-shadow 0.3s ease-out;
+}
+
+.category-item:hover .category-circle {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .category-circle img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.3s ease-out;
+}
+
+.category-item:hover .category-circle img {
+    transform: scale(1.05);
 }
 
 .category-name {
-    font-size: 13px;
+    font-size: 14px;
     color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease-out;
 }
 
-/* Ripple Effect Animation */
-.ripple {
+.category-item:hover .category-name {
+    color: #d84315; 
+}
+
+.nav-button {
     position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    background: white;
+    border: 2px solid #d84315;
+    color: #d84315;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    background: rgba(216, 67, 21, 0.3);
-    transform: scale(0);
-    animation: ripple-animation 0.6s ease-out;
-    pointer-events: none;
-    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s;
+    z-index: 9;
 }
 
-@keyframes ripple-animation {
-    to {
-        transform: scale(2);
-        opacity: 0;
-    }
+.nav-button:hover {
+    background: #d84315;
+    color: white;
+    box-shadow: 0 4px 12px rgba(216, 67, 21, 0.3);
 }
 
-/* Category Item Enhanced Interactions */
-.category-item {
-    transition: transform 150ms ease;
+.nav-button:active {
+    transform: translateY(-50%) scale(0.95);
 }
 
-.category-circle {
-    position: relative;
-    overflow: hidden;
-    transition: box-shadow 300ms ease;
+.prev-button {
+    left: 17%;
+}
+
+.next-button {
+    right: 17%;
+}
+
+.nav-button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.nav-button:disabled:hover {
+    background: white;
+    color: #d84315;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }

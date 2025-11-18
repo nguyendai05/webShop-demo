@@ -1,0 +1,248 @@
+
+#about-us-page {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #fff;
+    color: #555;
+    line-height: 1.6;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+#about-us-page .about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+#about-us-page .section-title-center {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#about-us-page .section-title-center h2 {
+    font-size: 32px;
+    color: #A92C2C; /* Màu đỏ sậm */
+    font-weight: 600;
+    margin: 0 0 10px 0;
+}
+
+/* Gạch chân màu vàng đồng */
+#about-us-page .section-title-center h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #c5a47e; /* Màu vàng đồng */
+    margin: 10px auto 0;
+}
+
+#about-us-page .section-title-center p {
+    font-size: 16px;
+    color: #777;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+#about-us-page .story-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+#about-us-page .story-content h3 {
+    font-size: 28px;
+    color: #A92C2C;
+    font-weight: 600;
+    margin: 0 0 15px 0;
+    position: relative;
+    padding-bottom: 10px;
+}
+#about-us-page .story-content h3::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #c5a47e;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+#about-us-page .story-content p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+#about-us-page .story-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#about-us-page .products-section {
+    padding: 60px 0;
+    background-color: #fcfaf8; 
+}
+
+#about-us-page .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+#about-us-page .product-card {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#about-us-page .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+#about-us-page .product-card .product-image {
+    width: 100%;
+    height: 250px; 
+}
+
+#about-us-page .product-card .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+#about-us-page .product-card .product-info {
+    padding: 20px;
+}
+
+#about-us-page .product-card .product-info h4 {
+    font-size: 20px;
+    color: #A92C2C;
+    margin: 0;
+}
+
+#about-us-page .vision-mission-section {
+    padding: 60px 0;
+}
+
+#about-us-page .vision-mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+#about-us-page .vision-mission-item {
+    padding: 20px;
+    text-align: left;
+}
+
+#about-us-page .vision-mission-item .icon {
+    width: 40px;
+    height: 40px;
+    color: #3A8DCD; 
+    margin-bottom: 15px;
+}
+
+#about-us-page .vision-mission-item h4 {
+    font-size: 24px;
+    color: #A92C2C;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+}
+
+#about-us-page .vision-mission-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#about-us-page .core-values-section {
+    padding: 60px 0;
+    background-color: #fcfaf8;
+}
+
+#about-us-page .values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+#about-us-page .value-item {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+#about-us-page .value-item .icon {
+    width: 40px;
+    height: 40px;
+    color: #3A8DCD;
+    margin-bottom: 15px;
+}
+
+#about-us-page .value-item h4 {
+    font-size: 18px;
+    color: #A92C2C;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+}
+
+/* ----------------------------------
+   RESPONSIVE DESIGN
+-----------------------------------*/
+
+/* Máy tính bảng */
+@media (max-width: 992px) {
+    #about-us-page .story-section {
+        grid-template-columns: 1fr;
+    }
+
+    #about-us-page .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #about-us-page .vision-mission-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #about-us-page .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Điện thoại */
+@media (max-width: 600px) {
+    #about-us-page .section-title-center h2 {
+        font-size: 26px;
+    }
+    
+    #about-us-page .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #about-us-page .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #about-us-page .vision-mission-item {
+        text-align: center;
+    }
+
+    #about-us-page .vision-mission-item .icon {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

@@ -186,3 +186,178 @@ header .others .badge span {
   line-height: 1;
 }
 
+.hidden-checkbox {
+  display: none;
+}
+
+/* 2. Style cho label icon kính lúp trong header */
+.search-toggle-label {
+  cursor: pointer;
+  display: inline-block; /* Đảm bảo label nhận click */
+}
+
+/* 3. Lớp phủ (overlay) làm mờ nền */
+.search-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Nền mờ */
+  z-index: 998; /* Nằm dưới panel, trên nội dung */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  cursor: pointer;
+}
+
+/* 4. Style cho Search Panel chính */
+#search-panel {
+  position: fixed;
+  top: 0;
+  right: -100%; /* Ẩn ban đầu, cho trượt ra từ bên phải */
+  width: 370px; /* Chiều rộng panel, bạn có thể điều chỉnh */
+  max-width: 90%; /* Đảm bảo trên mobile không bị tràn */
+  height: 100vh; /* Cao 100% màn hình */
+  background: #fff;
+  box-shadow: -6px 0 20px rgba(0, 0, 0, 0.15);
+  z-index: 999; /* Nằm trên cùng */
+  transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Hiệu ứng trượt */
+  display: flex;
+  flex-direction: column;
+}
+
+/* 5. Logic HIỆN panel và overlay khi checkbox được check */
+#search-toggle:checked ~ #search-panel {
+  right: 0; /* Hiện panel ra */
+}
+
+#search-toggle:checked ~ .search-overlay {
+  opacity: 1; /* Hiện lớp phủ */
+  visibility: visible;
+}
+
+/* 6. Style cho nội dung bên trong Panel */
+.search-panel-header {
+  padding: 15px 25px;
+  text-align: right;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.search-panel-header .close-search-label {
+  font-size: 24px;
+  color: #555;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.search-panel-header .close-search-label:hover {
+    color: #000;
+    transform: rotate(90deg); /* Hiệu ứng xoay nút X */
+}
+
+.search-panel-content {
+  padding: 25px;
+  overflow-y: auto; /* Cho phép cuộn nếu nội dung dài */
+  flex-grow: 1; /* Tự động co giãn */
+}
+
+/* 7. Style cho Form tìm kiếm */
+.search-form {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.search-form input {
+  width: 100%;
+  height: 48px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding-left: 15px;
+  padding-right: 45px; /* Chừa chỗ cho icon */
+  font-size: 15px;
+  box-sizing: border-box; /* Quan trọng */
+}
+
+.search-form input:focus {
+    border-color: #aaa;
+    outline: none;
+}
+
+.search-form .search-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* 8. Style cho Tiêu đề kết quả */
+.search-panel-content h3 {
+  font-size: 15px;
+  font-weight: 600; /* Chữ đậm vừa */
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  color: #222;
+  letter-spacing: 0.5px;
+}
+
+/* 9. Style cho Danh sách kết quả */
+.search-results-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Khoảng cách giữa các item */
+}
+
+.search-result-item {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Khoảng cách giữa ảnh và thông tin */
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.2s ease;
+}
+
+.search-result-item:hover {
+    opacity: 0.8;
+}
+
+.search-item-image {
+  flex-shrink: 0; /* Không co ảnh */
+  width: 65px;
+  height: 65px;
+  background: #f7f7f7;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.search-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.search-item-info {
+  flex-grow: 1;
+  min-width: 0; /* Fix lỗi text tràn */
+}
+
+.search-item-info .product-name {
+  font-size: 14px;
+  color: #333;
+  margin: 0 0 6px 0;
+  line-height: 1.4;
+
+  height: 39px; 
+  overflow: hidden; 
+}
+
+.search-item-info .product-price {
+  font-size: 15px;
+  font-weight: 600;
+  color: #c90000; /* Màu đỏ cho giá */
+  margin: 0;
+}

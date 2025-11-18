@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh toán</title>
+    <link rel="stylesheet" href="css/checkout.css">
+</head>
+<body>
+<main class="checkout-layout">
+    <div class="checkout-main">
+        <header class="header">
+            <div class="logo">
+                <a href="./index.html">
+                    <div class="logo">
+                        Nhóm 10
+                    </div>
+                </a>
+            </div>
+        </header>
+        <div class="container">
+            <div class="checkout-info-left">
+                <div class="checkout-info">
+                    <div class="section-header">
+                        <h3>Thông tin nhận hàng</h3>
+                        <a href="#" class="login-link">
+                            <i class="fa " aria-hidden="true"></i>
+                            <span>Đăng nhập</span>
+                        </a>
+                    </div>
+                    <form class="info-form">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" placeholder="Email" id="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="full-name">Name</label>
+                            <input type="text" placeholder="Họ và tên" id="full-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <div class="phone-input-group">
+                                <input type="tel" id="phone" placeholder="Số điện thoại (tùy chọn)">
+                                <select class="country-code">
+                                    <option>🇻🇳</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <input type="text" placeholder="Địa chỉ" id="address">
+                        </div>
+                        <div class="form-group">
+                            <label for="province">Province</label>
+                            <select id="province">
+                                <option value="" selected disabled>Tỉnh (tùy chọn)</option>
+                                <option>Hà Nội</option>
+                                <option>Hồ Chí Minh</option>
+                                <option>Đồng Tháp</option>
+                                <option>An Giang</option>
+                                <option>Nha Trang</option>
+                                <option>Huế</option>
+                                <option>Đà Nẵng</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="district">District</label>
+                            <select id="district">
+                                <option value="" selected disabled>Quận huyện</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ward">Ward</label>
+                            <select id="ward">
+                                <option value="" selected disabled>Phường xã</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="note">Note</label>
+                            <textarea id="note" rows="3" placeholder="Ghi chú"></textarea>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="checkout-info-right">
+                <h3>Vận chuyển</h3>
+                <div class="checkout-sidebars">
+                    <div class="shipping-note">
+                        <label for="shipping-note" class="payment-option">
+                            <input type="radio" id="shipping-note">
+                            <span>Giao hàng tận nơi</span>
+                        </label>
+                        <div class="shipping-price">
+                            <span>88.800₫</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="payment">
+                    <h3>Thanh toán</h3>
+                    <div class="payment-options">
+                        <label for="payment-cod" class="payment-option">
+                            <input type="radio" id="payment-cod">
+                            <span>Thanh toán khi giao hàng (COD)</span>
+                            <i class="fa fa-money-bill-alt"></i>
+                        </label>
+                        <div class="payment-info">
+                            <span>Bạn chỉ phải thanh toán khi nhận được hàng</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="checkout-sidebar">
+        <div class="order-info">
+            <div class="order-amount">
+                <h3>Đơn hàng (15 sản phẩm)</h3>
+            </div>
+            <div class="order-product">
+                <div class="order-summary">
+                    <div class="cart-row">
+                        <div class="cart-items">
+                            <div class="cart-image">
+                                <a href="#" class="cart-item">
+                                    <img src="https://bizweb.dktcdn.net/thumb/thumb/100/485/241/products/untitled-2-03162065-80a1-4a78-b15c-1902bac875e1.png?v=1686285555017" alt="bokhay">
+                                </a>
+                                <span class="quantity">1</span>
+                            </div>
+                            <div class="cart-info">
+                                <a href="#" class="cart-item-name">Bộ khay mức 31.5cm thiên kim</a>
+                            </div>
+                        </div>
+                        <div class="price-total">
+                            <span>1.688.800₫</span>
+                        </div>
+                    </div>
+                    <div class="cart-row">
+                        <div class="cart-items">
+                            <div class="cart-image">
+                                <a href="#" class="cart-item">
+                                    <img src="https://bizweb.dktcdn.net/thumb/thumb/100/485/241/products/untitled-2-03162065-80a1-4a78-b15c-1902bac875e1.png?v=1686285555017" alt="bokhay">
+                                </a>
+                                <span class="quantity">1</span>
+                            </div>
+                            <div class="cart-info">
+                                <a href="#" class="cart-item-name">Bộ khay mức 31.5cm thiên kim</a>
+                            </div>
+                        </div>
+                        <div class="price-total">
+                            <span>1.688.800₫</span>
+                        </div>
+                    </div>
+                    <div class="cart-row">
+                        <div class="cart-items">
+                            <div class="cart-image">
+                                <a href="#" class="cart-item">
+                                    <img src="https://bizweb.dktcdn.net/thumb/thumb/100/485/241/products/untitled-2-03162065-80a1-4a78-b15c-1902bac875e1.png?v=1686285555017" alt="bokhay">
+                                </a>
+                                <span class="quantity">1</span>
+                            </div>
+                            <div class="cart-info">
+                                <a href="#" class="cart-item-name">Bộ khay mức 31.5cm thiên kim</a>
+                            </div>
+                        </div>
+                        <div class="price-total">
+                            <span>1.688.800₫</span>
+                        </div>
+                    </div>
+                    <div class="cart-row">
+                        <div class="cart-items">
+                            <div class="cart-image">
+                                <a href="#" class="cart-item">
+                                    <img src="https://bizweb.dktcdn.net/thumb/thumb/100/485/241/products/untitled-2-03162065-80a1-4a78-b15c-1902bac875e1.png?v=1686285555017" alt="bokhay">
+                                </a>
+                                <span class="quantity">1</span>
+                            </div>
+                            <div class="cart-info">
+                                <a href="#" class="cart-item-name">Bộ khay mức 31.5cm thiên kim</a>
+                            </div>
+                        </div>
+                        <div class="price-total">
+                            <span>1.688.800₫</span>
+                        </div>
+                    </div>
+                    <div class="cart-row">
+                        <div class="cart-items">
+                            <div class="cart-image">
+                                <a href="#" class="cart-item">
+                                    <img src="https://bizweb.dktcdn.net/thumb/thumb/100/485/241/products/untitled-2-03162065-80a1-4a78-b15c-1902bac875e1.png?v=1686285555017" alt="bokhay">
+                                </a>
+                                <span class="quantity">1</span>
+                            </div>
+                            <div class="cart-info">
+                                <a href="#" class="cart-item-name">Bộ khay mức 31.5cm thiên kim</a>
+                            </div>
+                        </div>
+                        <div class="price-total">
+                            <span>1.688.800₫</span>
+                        </div>
+                    </div>
+                    <div class="cart-row">
+                        <div class="cart-items">
+                            <div class="cart-image">
+                                <a href="#" class="cart-item">
+                                    <img src="https://bizweb.dktcdn.net/thumb/thumb/100/485/241/products/untitled-2-03162065-80a1-4a78-b15c-1902bac875e1.png?v=1686285555017" alt="bokhay">
+                                </a>
+                                <span class="quantity">1</span>
+                            </div>
+                            <div class="cart-info">
+                                <a href="#" class="cart-item-name">Bộ khay mức 31.5cm thiên kim</a>
+                            </div>
+                        </div>
+                        <div class="price-total">
+                            <span>1.688.800₫</span>
+                        </div>
+                    </div>
+                    <div class="cart-row">
+                        <div class="cart-items">
+                            <div class="cart-image">
+                                <a href="#" class="cart-item">
+                                    <img src="https://bizweb.dktcdn.net/thumb/thumb/100/485/241/products/untitled-2-03162065-80a1-4a78-b15c-1902bac875e1.png?v=1686285555017" alt="bokhay">
+                                </a>
+                                <span class="quantity">1</span>
+                            </div>
+                            <div class="cart-info">
+                                <a href="#" class="cart-item-name">Bộ khay mức 31.5cm thiên kim</a>
+                            </div>
+                        </div>
+                        <div class="price-total">
+                            <span>1.688.800₫</span>
+                        </div>
+                    </div>
+                    <div class="cart-row">
+                        <div class="cart-items">
+                            <div class="cart-image">
+                                <a href="#" class="cart-item">
+                                    <img src="https://bizweb.dktcdn.net/thumb/thumb/100/485/241/products/untitled-2-03162065-80a1-4a78-b15c-1902bac875e1.png?v=1686285555017" alt="bokhay">
+                                </a>
+                                <span class="quantity">1</span>
+                            </div>
+                            <div class="cart-info">
+                                <a href="#" class="cart-item-name">Bộ khay mức 31.5cm thiên kim</a>
+                            </div>
+                        </div>
+                        <div class="price-total">
+                            <span>1.688.800₫</span>
+                        </div>
+                    </div>
+                    <div class="cart-row">
+                        <div class="cart-items">
+                            <div class="cart-image">
+                                <a href="#" class="cart-item">
+                                    <img src="https://bizweb.dktcdn.net/thumb/thumb/100/485/241/products/untitled-2-03162065-80a1-4a78-b15c-1902bac875e1.png?v=1686285555017" alt="bokhay">
+                                </a>
+                                <span class="quantity">1</span>
+                            </div>
+                            <div class="cart-info">
+                                <a href="#" class="cart-item-name">Bộ khay mức 31.5cm thiên kim</a>
+                            </div>
+                        </div>
+                        <div class="price-total">
+                            <span>1.688.800₫</span>
+                        </div>
+                    </div>
+                    <div class="cart-row">
+                        <div class="cart-items">
+                            <div class="cart-image">
+                                <a href="#" class="cart-item">
+                                    <img src="https://bizweb.dktcdn.net/thumb/thumb/100/485/241/products/untitled-2-03162065-80a1-4a78-b15c-1902bac875e1.png?v=1686285555017" alt="bokhay">
+                                </a>
+                                <span class="quantity">1</span>
+                            </div>
+                            <div class="cart-info">
+                                <a href="#" class="cart-item-name">Bộ khay mức 31.5cm thiên kim</a>
+                            </div>
+                        </div>
+                        <div class="price-total">
+                            <span>1.688.800₫</span>
+                        </div>
+                    </div>
+                    <div class="cart-row">
+                        <div class="cart-items">
+                            <div class="cart-image">
+                                <a href="#" class="cart-item">
+                                    <img src="https://bizweb.dktcdn.net/thumb/thumb/100/485/241/products/untitled-2-03162065-80a1-4a78-b15c-1902bac875e1.png?v=1686285555017" alt="bokhay">
+                                </a>
+                                <span class="quantity">1</span>
+                            </div>
+                            <div class="cart-info">
+                                <a href="#" class="cart-item-name">Bộ khay mức 31.5cm thiên kim</a>
+                            </div>
+                        </div>
+                        <div class="price-total">
+                            <span>1.688.800₫</span>
+                        </div>
+                    </div>
+                    <div class="cart-row">
+                        <div class="cart-items">
+                            <div class="cart-image">
+                                <a href="#" class="cart-item">
+                                    <img src="https://bizweb.dktcdn.net/thumb/thumb/100/485/241/products/untitled-2-03162065-80a1-4a78-b15c-1902bac875e1.png?v=1686285555017" alt="bokhay">
+                                </a>
+                                <span class="quantity">1</span>
+                            </div>
+                            <div class="cart-info">
+                                <a href="#" class="cart-item-name">Bộ khay mức 31.5cm thiên kim</a>
+                            </div>
+                        </div>
+                        <div class="price-total">
+                            <span>1.688.800₫</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-code">
+                    <input type="text" placeholder="Nhập mã giảm giá">
+                    <button type="button">Áp dụng</button>
+                </div>
+                <div class="order-total">
+                    <div class="order-total-top">
+                        <span>Tạm tính</span>
+                        <span class="price">36.047.000₫</span>
+                    </div>
+                    <div class="order-total-bottom">
+                        <span>Phí vận chuyển</span>
+                        <span class="price">88.800₫</span>
+                    </div>
+                </div>
+                <div class="order-price">
+                    <div class="order-price-top">
+                        <span>Tổng cộng</span>
+                        <span class="price">36.047.000₫</span>
+                    </div>
+                    <div class="order-price-bottom">
+                        <a href="./shopping-cart.html" class="back-to-cart">
+                            <span>Quay về giỏ hàng</span>
+                        </a>
+                        <button type="button"><a href="./order-success.html" class="btn-order">Đặt hàng</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

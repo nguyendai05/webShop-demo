@@ -1,0 +1,351 @@
+body{
+    font-family: "Poppins", "Segoe UI", sans-serif;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.checkout-layout {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    max-width: 1200px;
+    margin: 0 150px 0 150px;
+    gap: 25px;
+    padding: 0;
+}
+
+.header {
+    padding: 10px 0;
+    text-align: center;
+}
+
+.header .logo a {
+    text-decoration: none;
+    font-family: "Poppins", "Segoe UI", sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #c0392b;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.section-header h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+}
+.login-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #3498db;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.form-group label {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    font-size: 12px;
+    color: #555;
+    background-color: white;
+    padding: 0 5px;
+}
+
+.form-group input[type="email"],
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.phone-input-group {
+    display: flex;
+}
+.phone-input-group .country-code {
+    width: 70px;
+    border-left: none;
+    border-radius: 0 5px 5px 0;
+}
+.phone-input-group input[type="tel"] {
+    flex-grow: 1;
+    border-radius:  5px 0  0 5px ;
+}
+.checkout-sidebars{
+    margin-bottom: 20px;
+
+}
+
+.checkout-info-right h3,
+.payment h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 5px;
+}
+.shipping-note{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top:50%;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+.payment-options {
+    font-size: 14px;
+    font-weight: 400;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+.shipping-price{
+    color: #c97a3a;
+}
+
+.payment-option input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #3498db;
+}
+
+.payment-option span {
+    flex-grow: 1;
+    font-weight: 500;
+    color: #333;
+}
+
+.payment-option i {
+    font-size: 20px;
+    color: #3498db;
+}
+
+.payment-info {
+    font-size: 14px;
+    color: #777;
+    margin-top: 10px;
+    font-weight: 400;
+    padding-left: 40px;
+}
+
+.checkout-sidebar {
+    padding: 10px 0 0 20px;
+    border-left: 2px solid  #eeeeee;
+    top: 30px;
+}
+
+.order-amount h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 0;
+    border-bottom: 2px solid #eeeeee;
+    padding-bottom: 15px;
+}
+
+.order-product {
+    display: flex;
+    flex-direction: column;
+}
+
+.order-summary {
+    max-height: 300px;
+    overflow-y: auto;
+    scrollbar-color: #cccccc #f0f0f0;
+    padding-top: 10px;
+}
+
+.cart-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #eeeeee;
+}
+
+.cart-row:last-child {
+    border-bottom: none;
+}
+
+.cart-items {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.cart-image {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.cart-image .cart-item img {
+    width: 60px;
+    height: 60px;
+    border: 2px solid #eeeeee;
+    border-radius: 5px;
+    background-color: #fff;
+    object-fit: contain;
+}
+.quantity {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #3498db;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.cart-item-name {
+    font-size: 15px;
+    color: #333;
+    text-decoration: none;
+}
+.price-total span {
+    font-size: 16px;
+    font-weight: 500;
+    color: #c97a3a;
+
+}
+
+.order-code {
+    display: flex;
+    margin-top: 20px;
+    border-top: 1px solid #eeeeee;
+    padding-top: 20px;
+    gap: 15px;
+}
+
+.order-code input {
+    flex-grow: 1;
+    padding: 15px;
+    border: 2px solid #eeeeee;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.order-code button {
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.order-code button:hover {
+    background-color: #2378ea;
+}
+
+.order-total {
+    margin-top: 15px;
+    border-top: 1px solid #eeeeee;
+    padding-top: 20px;
+}
+
+.price{
+    color: #c97a3a;
+}
+
+.order-total-top, .order-total-bottom {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.order-price {
+    margin-top: 10px;
+    border-top: 1px solid #eeeeee;
+    padding-top: 20px;
+}
+
+.order-price-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.order-price-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-price-bottom a.btn-order {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+a.back-to-cart {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.order-price-bottom button {
+    background-color: #3498db;
+    color: white;
+    font-size: 17px;
+    font-weight: 500;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.order-price-bottom button:hover {
+    background-color: #2378ea;
+}

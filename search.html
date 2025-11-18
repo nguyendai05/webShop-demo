@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/hero-section.css">
+    <link rel="stylesheet" href="./css/search.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <title>Search Page</title>
+</head>
+<body>
+<header id="header">
+    <div class="container">
+        <div class="logo">
+            Nhóm 10
+        </div>
+        <div class="menu">
+            <li class="nav-item"><a href="./index.html">Trang chủ</a></li>
+            <li class="nav-item"><a href="./about.html">Giới thiệu</a></li>
+            
+            <li class="nav-item list-product">
+                <a href="./products.html" class="caret-down a">
+                    Sản phẩm
+                    <i class="fa-solid fa-caret-down"></i>
+                </a>
+                
+                <div class="dropdown">
+                    <div class="product-items">
+                        
+                        <div class="menu-product-item">
+                            <h4><a href="#">Đồ mây tre đan</a></h4>
+                            <ul>
+                                <li><a href="#">Giỏ</a></li>
+                                <li><a href="#">Đèn tre</a></li>
+                                <li><a href="#">Túi cói</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="menu-product-item">
+                            <h4><a href="#">Gốm sứ</a></h4>
+                            <ul>
+                                <li><a href="#">Bình</a></li>
+                                <li><a href="#">Ấm chén</a></li>
+                                <li><a href="#">Tượng gốm</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="menu-product-item">
+                            <h4><a href="#">Đồ gỗ mỹ nghệ</a></h4>
+                            <ul>
+                                <li><a href="#">Tượng</a></li>
+                                <li><a href="#">Hộp</a></li>
+                                <li><a href="#">Khung ảnh</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="menu-product-item">
+                            <h4><a href="#">Dệt thêu & may mặc thủ công</a></h4>
+                            <ul>
+                                <li><a href="#">Khăn</a></li>
+                                <li><a href="#">Túi</a></li>
+                                <li><a href="#">Áo thổ cẩm</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="menu-product-item">
+                            <h4><a href="#">Trang sức & phụ kiện thủ công</a></h4>
+                            <ul>
+                                <li><a href="#">Vòng</a></li>
+                                <li><a href="#">Dây chuyền</a></li>
+                                <li><a href="#">Nhẫn</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="menu-product-item">
+                            <h4><a href="#">Đồ trang trí & quà tặng nghệ thuật</a></h4>
+                            <ul>
+                                <li><a href="#">Nến</a></li>
+                                <li><a href="#">Thiệp 3D</a></li>
+                                <li><a href="#">Tranh giấy</a></li>
+                            </ul>
+                        </div>
+
+                    </div> <div class="dropdown-image">
+                         <img width="300" src="https://madebymaries.com/wp-content/uploads/2021/09/wicker-baskets-6526674_1920.jpg" alt="Gốm sứ Bát Tràng">
+                    </div>
+                </div> </li>
+            <li class="nav-item"><a href="./news.html">Tin tức</a></li>
+            <li class="nav-item"><a href="./cart.html">Cửa hàng</a></li>
+            <li class="nav-item"><a href="./contact.html">Liên hệ</a></li>
+        </div>
+        <div class="others">
+            <div class="others">
+                <div class="icon">
+                    <label for="search-toggle" class="search-toggle-label">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </label>
+                </div>
+                <a href="./login.html" class="icon">
+                    <i class="fa-regular fa-user"></i>
+                </a>
+                <div class="icon badge" >
+                    <i class="fa-regular fa-heart"></i>
+                    <span>0</span>
+                </div>
+                <div class="icon badge">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="hero-section-container">
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Trang tìm kiếm</h1>
+            <div class="breadcrumb">
+                <a href="#">Trang chủ</a> / Tìm kiếm
+            </div>
+        </div>
+    </section>
+
+    <div class="categories-wrapper">
+        <button id="prevButton" class="nav-button prev-button">&#8249;</button>
+        <div class="categories" id="categoriesContainer">
+            <div class="category-item">
+                <div class="category-circle">
+                    <img src="https://bizweb.dktcdn.net/100/485/241/themes/911577/assets/danhmuc_1.jpg?1758008990171"
+                        alt="Category">
+                </div>
+                <div class="category-name">Nồi sứ dinh dưỡng</div>
+            </div>
+            <div class="category-item">
+                <div class="category-circle">
+                    <img src="https://bizweb.dktcdn.net/100/485/241/themes/911577/assets/danhmuc_2.jpg?1758008990171"
+                        alt="Category">
+                </div>
+                <div class="category-name">Phòng ăn</div>
+            </div>
+            <div class="category-item">
+                <div class="category-circle">
+                    <img src="https://bizweb.dktcdn.net/100/485/241/themes/911577/assets/danhmuc_3.jpg?1758008990171"
+                        alt="Category">
+                </div>
+                <div class="category-name">Sứ dinh dưỡng</div>
+            </div>
+            <div class="category-item">
+                <div class="category-circle">
+                    <img src="https://bizweb.dktcdn.net/100/485/241/themes/911577/assets/danhmuc_4.jpg?1758008990171"
+                        alt="Category">
+                </div>
+                <div class="category-name">Trà - cà phê</div>
+            </div>
+        </div>
+        <button id="nextButton" class="nav-button next-button">&#8250;</button>
+    </div>
+</div>
+<main class="search-page-container">
+    <div class="search-results-header">
+        <h3>Có 45 kết quả tìm kiếm phù hợp</h3>
+    </div>
+
+    <div class="product-grid-container">
+        
+        <div class="product-card">
+            <a href="#" class="product-link">
+                <div class="product-image-wrapper">
+                    <img src="https://bizweb.dktcdn.net/thumb/large/100/485/241/products/3-64a2c56a-11a5-4424-8178-0e98031e42c5.jpg" alt="Khay mứt 5 ngăn">
+                    </div>
+                <div class="product-info">
+                    <p class="product-name">Khay mứt 5 ngăn - Viền chỉ vàng</p>
+                    <p class="product-price">847.000đ</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="product-card">
+            <a href="#" class="product-link">
+                <div class="product-image-wrapper">
+                    <img src="https://bizweb.dktcdn.net/thumb/large/100/485/241/products/2-d7b1029c-70e0-4039-8692-0a86fd94a86c.jpg" alt="Khay cơm cá nhân">
+                </div>
+                <div class="product-info">
+                    <p class="product-name">Khay cơm cá nhân - Dưỡng sinh IFP - Trắng ngà</p>
+                    <p class="product-price">385.000đ</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="product-card">
+            <a href="#" class="product-link">
+                <div class="product-image-wrapper">
+                    <img src="https://bizweb.dktcdn.net/thumb/large/100/485/241/products/2-4da8f8da-90da-4a6c-b3b3-841f4769018c.jpg" alt="Khay đường">
+                </div>
+                <div class="product-info">
+                    <p class="product-name">Khay đường 10,5 x 7 cm - Daisy - Trắng Ngà</p>
+                    <p class="product-price">36.300đ</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="product-card">
+            <a href="#" class="product-link">
+                <div class="product-image-wrapper">
+                    <img src="https://bizweb.dktcdn.net/thumb/large/100/485/241/products/2-9e32f943-4b67-4228-a6d5-1c5c99e1bc89.jpg" alt="Thố 15 cm">
+                </div>
+                <div class="product-info">
+                    <p class="product-name">Thố 15 cm + nắp - Jasmine - Chỉ Xanh Lá</p>
+                    <p class="product-price">338.800đ</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="product-card">
+            <a href="#" class="product-link">
+                <div class="product-image-wrapper">
+                    <img src="https://bizweb.dktcdn.net/thumb/large/100/485/241/products/2-68b0f1fa-8664-4bf8-a46c-0e24ec1403eb.jpg" alt="Thố 2 quai">
+                    <span class="discount-badge">Giảm 50%</span>
+                </div>
+                <div class="product-info">
+                    <p class="product-name">Thố 2 quai 0.3 L - Gastroline - Đồng Tâm Xanh Dương</p>
+                    <p class="product-price">302.500đ <span class="original-price">600.000đ</span></p>
+                </div>
+            </a>
+        </div>
+
+        <div class="product-card">
+            <a href="#" class="product-link">
+                <div class="product-image-wrapper">
+                    <img src="https://bizweb.dktcdn.net/thumb/large/100/485/241/products/3-5569d67b-134d-452f-8a03-9bb6a22f2b7d.jpg" alt="Thố 0.88 L">
+                </div>
+                <div class="product-info">
+                    <p class="product-name">Thố 0.88 L + nắp - Daisy - Trắng Ngà</p>
+                    <p class="product-price">139.700đ</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="product-card">
+            <a href="#" class="product-link">
+                <div class="product-image-wrapper">
+                    <img src="https://bizweb.dktcdn.net/thumb/large/100/485/241/products/2-7489da1f-d38e-4ab8-953e-f3f20f04e8d3.jpg" alt="Thố 0.23 L">
+                </div>
+                <div class="product-info">
+                    <p class="product-name">Thố 0.23 L + nắp - Daisy - Trắng</p>
+                    <p class="product-price">91.300đ</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="product-card">
+            <a href="#" class="product-link">
+                <div class="product-image-wrapper">
+                    <img src="https://bizweb.dktcdn.net/thumb/large/100/485/241/products/3-469b76c8-522f-488d-a468-b3d4f828a2a4.jpg" alt="Thố 0.23 L">
+                </div>
+                <div class="product-info">
+                    <p class="product-name">Thố 0.23 L + nắp - Daisy - Trắng Ngà</p>
+                    <p class="product-price">58.300đ</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="product-card">
+            <a href="#" class="product-link">
+                <div class="product-image-wrapper">
+                    <img src="https://bizweb.dktcdn.net/thumb/large/100/485/241/products/3-copy-f1fa9f1f-d45a-47d3-b1d5-738ac8c0a852.jpg" alt="Tô 15 cm">
+                </div>
+                <div class="product-info">
+                    <p class="product-name">Tô 15 cm - Jasmine - Thôn Dã</p>
+                    <p class="product-price">101.200đ</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="product-card">
+            <a href="#" class="product-link">
+                <div class="product-image-wrapper">
+                    <img src="https://bizweb.dktcdn.net/thumb/large/100/485/241/products/2-copy-2e389b0d-71b5-4a64-9b88-15024d2621cb.jpg" alt="Tô 15 cm">
+                </div>
+                <div class="product-info">
+                    <p class="product-name">Tô 15 cm - Jasmine - Tứ Quý</p>
+                    <p class="product-price">101.200đ</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="product-card">
+            <a href="#" class="product-link">
+                <div class="product-image-wrapper">
+                    <img src="https://bizweb.dktcdn.net/thumb/large/100/485/241/products/bo-khay-mut-31-5cm-thien-kim-01.jpg" alt="Bộ khay mứt">
+                    <span class="discount-badge left">Giảm 44%</span>
+                </div>
+                <div class="product-info">
+                    <p class="product-name">Bộ khay mứt 31.5cm Thiên Kim</p>
+                    <p class="product-price">1.688.500đ <span class="original-price">3.000.000đ</span></p>
+                </div>
+            </a>
+        </div>
+        
+         <div class="product-card">
+            <a href="#" class="product-link">
+                <div class="product-image-wrapper">
+                    <img src="https://bizweb.dktcdn.net/thumb/large/100/485/241/products/lo-bud-vase-trong-silver-spruce-01.jpg" alt="Lọ Bud Vase">
+                    <span class="discount-badge left">Giảm 50%</span>
+                </div>
+                <div class="product-info">
+                    <p class="product-name">Lọ Bud Vase trong Silver Spruce</p>
+                    <p class="product-price">2.500.000đ <span class="original-price">5.000.000đ</span></p>
+                </div>
+            </a>
+        </div>
+        
+    </div>
+
+    <nav class="pagination-container" aria-label="Pagination">
+        <ul class="pagination">
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">&rsaquo;</a></li>
+        </ul>
+    </nav>
+</main>
+<footer id="footer">
+    <div class="container">
+        <div class="content">
+            <div class="info">
+                <div class="info_details">
+                    <h2>Thông tin</h2>
+                    <div>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <p>Trường Đại học Nông Lâm Tp.Hcm</p>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-phone"></i>
+                        <p>0337429995</p> </div>
+                    <div>
+                        <i class="fa-solid fa-envelope"></i>
+                        <p>23130240@st.hcmuaf.edu.vn</p> </div>
+                </div>
+
+                <div class="info_media">
+                    <h2>Mạng xã hội</h2>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon zalo" aria-label="Zalo">
+                            <strong>Za</strong>
+                        </a>
+                        <a href="#" class="social-icon fb" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon yt" aria-label="YouTube">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                        <a href="#" class="social-icon gg" aria-label="Google">
+                            <i class="fa-brands fa-google"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="policy-guide-wrapper">
+                <div class="component policy">
+                    <h2>Chính sách</h2> <ul> <li><a href="#" class="hover color">Chính sách bảo mật</a></li>
+                        <li><a href="#" class="hover color">Chính sách vận chuyển</a></li>
+                        <li><a href="#" class="hover color">Chính sách đổi trả</a></li>
+                        <li><a href="#" class="hover color">Quy định sử dụng</a></li>
+                    </ul> </div>
+                <div class="component guide">
+                    <h2>Hướng dẫn</h2> <ul> <li><a href="#" class="hover color">Hướng dẫn mua hàng</a></li>
+                        <li><a href="#" class="hover color">Hướng dẫn thanh toán</a></li>
+                        <li><a href="#" class="hover color">Hướng dẫn giao nhận</a></li>
+                        <li><a href="#" class="hover color">Điều khoản sử dụng</a></li>
+                    </ul> </div>
+            </div>
+
+            <div class="others">
+                <h2>Đăng ký nhận tin</h2>
+                <p>Đăng ký ngay! Để nhận nhiều ưu đãi</p>
+                <div class="input">
+                    <input type="text" name="Email" id="email" placeholder="Nhập địa chỉ email">
+                    <button>Đăng ký</button>
+                </div>
+                </div>
+        </div>
+    </div>
+</footer>
+<input type="checkbox" id="search-toggle" class="hidden-checkbox">
+
+<label for="search-toggle" class="search-overlay"></label>
+
+<div id="search-panel">
+    <div class="search-panel-header">
+        <label for="search-toggle" class="close-search-label">
+            <i class="fa-solid fa-xmark"></i>
+        </label>
+    </div>
+    
+    <div class="search-panel-content">
+        <div class="search-form">
+            <input type="text" placeholder="Nhập tên sản phẩm...">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        </div>
+        
+        <h3>Sản phẩm được tìm nhiều nhất</h3>
+        
+        <div class="search-results-list">
+            
+            <a href="./search.html" class="search-result-item">
+                <div class="search-item-image">
+                    <img src="https://via.placeholder.com/60x60/f5f5f5/cccccc?text=Img" alt="Ca tháp">
+                </div>
+                <div class="search-item-info">
+                    <p class="product-name">Ca tháp quai tròn 0.35 L - Jasmine - Trắng</p>
+                    <p class="product-price">93.500đ</p>
+                </div>
+            </a>
+
+            <a href="#" class="search-result-item">
+                <div class="search-item-image">
+                    <img src="https://via.placeholder.com/60x60/f5f5f5/cccccc?text=Img" alt="Ca thon">
+                </div>
+                <div class="search-item-info">
+                    <p class="product-name">Ca thon quai số 7 0.33 L - Jasmine - Trắng</p>
+                    <p class="product-price">79.200đ</p>
+                </div>
+            </a>
+
+            <a href="#" class="search-result-item">
+                <div class="search-item-image">
+                    <img src="https://via.placeholder.com/60x60/f5f5f5/cccccc?text=Img" alt="Ca trà">
+                </div>
+                <div class="search-item-info">
+                    <p class="product-name">Ca trà 0.30 L - Mẫu Đơn IFP - Chỉ Vàng</p>
+                    <p class="product-price">176.000đ</p>
+                </div>
+            </a>
+
+            <a href="#" class="search-result-item">
+                <div class="search-item-image">
+                    <img src="https://via.placeholder.com/60x60/f5f5f5/cccccc?text=Img" alt="Ca trà">
+                </div>
+                <div class="search-item-info">
+                    <p class="product-name">Ca trà 0.30 L - Mẫu Đơn - Trắng</p>
+                    <p class="product-price">108.900đ</p>
+                </div>
+            </a>
+
+            <a href="#" class="search-result-item">
+                <div class="search-item-image">
+                    <img src="https://via.placeholder.com/60x60/f5f5f5/cccccc?text=Img" alt="Ca bia">
+                </div>
+                <div class="search-item-info">
+                    <p class="product-name">Ca bia 0.36 L - Jasmine - Trắng</p>
+                    <p class="product-price">75.900đ</p>
+                </div>
+            </a>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

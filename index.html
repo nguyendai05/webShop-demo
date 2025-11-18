@@ -7,7 +7,8 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="./style.css"> 
+    
+    <link rel="stylesheet" href="./css/index.css"> 
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/footer.css">
     <title>Website Handmake</title>
@@ -86,7 +87,7 @@
                         </div>
 
                     </div> <div class="dropdown-image">
-                         <img width="300" src="public/img_products.png" alt="Gốm sứ Bát Tràng">
+                         <img width="300" src="https://madebymaries.com/wp-content/uploads/2021/09/wicker-baskets-6526674_1920.jpg" alt="Gốm sứ Bát Tràng">
                     </div>
                 </div> </li>
             <li class="nav-item"><a href="./news.html">Tin tức</a></li>
@@ -96,38 +97,40 @@
         <div class="others">
             <div class="others">
                 <div class="icon">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <label for="search-toggle" class="search-toggle-label">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </label>
                 </div>
-                <div class="icon">
+                <a href="./login.html" class="icon">
                     <i class="fa-regular fa-user"></i>
-                </div>
-                <div class="icon badge" >
+                </a>
+                <a href="./wishlist.html" class="icon badge" >
                     <i class="fa-regular fa-heart"></i>
                     <span>0</span>
-                </div>
-                <div class="icon badge">
+                </a>    
+                <a href="./shopping-cart.html" class="icon badge">
                     <i class="fa-solid fa-cart-shopping"></i>
                     <span>0</span>
-                </div>
+                </a>
             </div>
         </div>
     </div>
 </header>
 <main class="component">
-    <section class="intro">
-        <div class="intro-text">
+    <section class="section_intro">
+        <div class="section_intro-content">
             <h1>Đồ thủ công mỹ nghệ</h1>
             <p>Tinh tế – Mộc mạc – Đậm bản sắc Việt</p>
-            <a href="#" class="btn">Khám phá ngay</a>
+            <a href="./products.html" class="btn">Khám phá ngay</a>
         </div>
     </section>
     <section class="section_danhmuc">
         <div class="container">
             <div class="category-list">
                 <div class="category-item">
-                    <a href="#">
+                    <a href="./productdetail.html">
                         <div class="category-image-wrapper">
-                            <img src="public/maytredan.jpg" alt="Mây tre đan">
+                            <img src="https://denmaytre.net/wp-content/uploads/2019/12/san-pham-may-tre-dan-xuat-khau-lang-nghe-tang-tien.jpg.webp" alt="Mây tre đan">
                         </div>
                         <h3>Mây tre đan</h3>
                         <p>+ 0 sản phẩm</p>
@@ -137,7 +140,7 @@
                 <div class="category-item">
                     <a href="#">
                         <div class="category-image-wrapper">
-                            <img src="public/maytredan.jpg" alt="Gốm sứ">
+                            <img src="https://cdn.pixabay.com/photo/2023/05/29/18/10/pottery-8026823_1280.jpg" alt="Gốm sứ">
                         </div>
                         <h3>Gốm sứ</h3>
                         <p>+ 30 sản phẩm</p>
@@ -147,7 +150,7 @@
                 <div class="category-item">
                     <a href="#">
                         <div class="category-image-wrapper">
-                            <img src="public/maytredan.jpg" alt="Đồ gỗ mỹ nghệ">
+                            <img src="https://dntt.mediacdn.vn/197608888129458176/2023/7/14/27-1-1689328749793900374452.jpg" alt="Đồ gỗ mỹ nghệ">
                         </div>
                         <h3>Đồ gỗ mỹ nghệ</h3>
                         <p>+ 0 sản phẩm</p>
@@ -157,7 +160,7 @@
                 <div class="category-item">
                     <a href="#">
                         <div class="category-image-wrapper">
-                            <img src="public/maytredan.jpg" alt="Dệt thêu & may mặc thủ công">
+                            <img src="https://images.pexels.com/photos/236748/pexels-photo-236748.jpeg" alt="Dệt thêu & may mặc thủ công">
                         </div>
                         <h3>Dệt thêu & may mặc thủ công</h3>
                         <p>+ 21 sản phẩm</p>
@@ -167,7 +170,7 @@
                 <div class="category-item">
                     <a href="#">
                         <div class="category-image-wrapper">
-                            <img src="public/maytredan.jpg" alt="Trang sức & phụ kiện thủ công">
+                            <img src="https://nvhphunu.vn/wp-content/uploads/2023/12/2023-07-29_0000478.png" alt="Trang sức & phụ kiện thủ công">
                         </div>
                         <h3>Trang sức & phụ kiện thủ công</h3>
                         <p>+ 0 sản phẩm</p>
@@ -177,7 +180,7 @@
                 <div class="category-item">
                     <a href="#">
                         <div class="category-image-wrapper">
-                            <img src="public/maytredan.jpg" alt="Đồ trang trí & quà tặng nghệ thuật">
+                            <img src="https://chus.vn/images/detailed/239/10237_21_F1.jpg" alt="Đồ trang trí & quà tặng nghệ thuật">
                         </div>
                         <h3>Đồ trang trí & quà tặng nghệ thuật</h3>
                         <p>+ 0 sản phẩm</p>
@@ -185,29 +188,22 @@
                 </div>
 
             </div> 
-            <div id="special-promotions-block">
-                <div class="promotions-container">
+            <div class="product-block">
+                <div class="promotions-container discount">
                     <div class="section-header">
                         <h2>Khuyến mãi đặc biệt</h2>
                         <a href="#" class="view-all">Chương trình đã kết thúc, hẹn gặp lại trong thời gian sớm nhất! →</a>
                     </div>
 
                     <div class="product-grid">
-
                         <div class="product-card">
                             <span class="discount-badge">Giảm 44%</span>
                             <div class="product-image">
-                                <img src="https://via.placeholder.com/200x200/f0f0f0/cccccc?text=H%C3%ACnh+S%E1%BA%A3n+Ph%E1%BA%A9m+1" alt="Bộ khay mứt">
+                                <img src="https://bizweb.dktcdn.net/100/485/241/themes/911577/assets/danhmuc_4.jpg?1758008990171" alt="Bộ khay mứt">
                                 <div class="action-buttons">
-                                    <div class="action-button" title="Thêm vào giỏ hàng">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 22a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm11 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm-13.81-8.15l2.76-7.85H21a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H7.88l-.94 2.68A2 2 0 0 0 7 17a2 2 0 0 0 2 2h9a1 1 0 0 1 0 2H9a4 4 0 0 1-3.81-4.85z"/></svg>
-                                    </div>
-                                    <div class="action-button" title="Thêm vào yêu thích">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                                    </div>
-                                    <div class="action-button" title="Xem nhanh">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-                                    </div>
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                    <i class="fa-solid fa-heart"></i>
+                                    <i class="fa-solid fa-magnifying-glass"></i>
                                 </div>
                             </div>
                             <h3 class="product-name">Bộ khay mứt 31.5cm Thiên Kim</h3>
@@ -216,21 +212,14 @@
                                 <span class="original-price">3.000.000₫</span>
                             </div>
                         </div>
-
                         <div class="product-card">
                             <span class="discount-badge">Giảm 62%</span>
                             <div class="product-image">
-                                <img src="https://via.placeholder.com/200x200/f0f0f0/cccccc?text=H%C3%ACnh+S%E1%BA%A3n+Ph%E1%BA%A9m+2" alt="Bộ trà">
+                                <img src="https://bizweb.dktcdn.net/100/485/241/themes/911577/assets/danhmuc_4.jpg?1758008990171" alt="Bộ trà">
                                 <div class="action-buttons">
-                                    <div class="action-button" title="Thêm vào giỏ hàng">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 22a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm11 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm-13.81-8.15l2.76-7.85H21a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H7.88l-.94 2.68A2 2 0 0 0 7 17a2 2 0 0 0 2 2h9a1 1 0 0 1 0 2H9a4 4 0 0 1-3.81-4.85z"/></svg>
-                                    </div>
-                                    <div class="action-button" title="Thêm vào yêu thích">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                                    </div>
-                                    <div class="action-button" title="Xem nhanh">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-                                    </div>
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                    <i class="fa-solid fa-heart"></i>
+                                    <i class="fa-solid fa-magnifying-glass"></i>
                                 </div>
                             </div>
                             <h3 class="product-name">Bộ trà 0.35 L - IFP - Chỉ Vàng</h3>
@@ -239,21 +228,14 @@
                                 <span class="original-price">2.000.000₫</span>
                             </div>
                         </div>
-
                         <div class="product-card">
                             <span class="discount-badge">Giảm 50%</span>
                             <div class="product-image">
-                                <img src="https://via.placeholder.com/200x200/f0f0f0/cccccc?text=H%C3%ACnh+S%E1%BA%A3n+Ph%E1%BA%A9m+3" alt="Lọ Bud Vase">
+                                <img src="https://bizweb.dktcdn.net/100/485/241/themes/911577/assets/danhmuc_4.jpg?1758008990171" alt="Lọ Bud Vase">
                                 <div class="action-buttons">
-                                    <div class="action-button" title="Thêm vào giỏ hàng">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 22a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm11 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm-13.81-8.15l2.76-7.85H21a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H7.88l-.94 2.68A2 2 0 0 0 7 17a2 2 0 0 0 2 2h9a1 1 0 0 1 0 2H9a4 4 0 0 1-3.81-4.85z"/></svg>
-                                    </div>
-                                    <div class="action-button" title="Thêm vào yêu thích">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                                    </div>
-                                    <div class="action-button" title="Xem nhanh">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-                                    </div>
+                                    <div class="action-button" title="Thêm vào giỏ hàng"><svg>...</svg></div>
+                                    <div class="action-button" title="Thêm vào yêu thích"><svg>...</svg></div>
+                                    <div class="action-button" title="Xem nhanh"><svg>...</svg></div>
                                 </div>
                             </div>
                             <h3 class="product-name">Lọ Bud Vase trong Silver Spruce</h3>
@@ -262,21 +244,14 @@
                                 <span class="original-price">5.000.000₫</span>
                             </div>
                         </div>
-
                         <div class="product-card">
                             <span class="discount-badge">Giảm 11%</span>
                             <div class="product-image">
-                                <img src="https://via.placeholder.com/200x200/f0f0f0/cccccc?text=H%C3%ACnh+S%E1%BA%A3n+Ph%E1%BA%A9m+4" alt="Bát sâu lòng">
+                                <img src="https://bizweb.dktcdn.net/100/485/241/themes/911577/assets/danhmuc_4.jpg?1758008990171" alt="Bát sâu lòng">
                                 <div class="action-buttons">
-                                    <div class="action-button" title="Thêm vào giỏ hàng">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 22a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm11 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm-13.81-8.15l2.76-7.85H21a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H7.88l-.94 2.68A2 2 0 0 0 7 17a2 2 0 0 0 2 2h9a1 1 0 0 1 0 2H9a4 4 0 0 1-3.81-4.85z"/></svg>
-                                    </div>
-                                    <div class="action-button" title="Thêm vào yêu thích">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                                    </div>
-                                    <div class="action-button" title="Xem nhanh">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-                                    </div>
+                                    <div class="action-button" title="Thêm vào giỏ hàng"><svg>...</svg></div>
+                                    <div class="action-button" title="Thêm vào yêu thích"><svg>...</svg></div>
+                                    <div class="action-button" title="Xem nhanh"><svg>...</svg></div>
                                 </div>
                             </div>
                             <h3 class="product-name">Bát sâu trong Silver Spruce</h3>
@@ -285,10 +260,154 @@
                                 <span class="original-price">1.790.000₫</span>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
+
+            <div class="product-block">
+                <div class="promotions-container">
+                    <div class="section-header featured-header">
+                        <h2>Sản phẩm nổi bật</h2>
+                        <nav class="filter-tabs">
+                            <ul>
+                                <li><a href="#" class="active">Tất cả</a></li>
+                                <li><a href="#">Bộ Trà</a></li>
+                                <li><a href="#">Cà phê</a></li>
+                                <li><a href="#">Phụ kiện trà - cà phê</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <span class="discount-badge">Giảm 44%</span>
+                            <div class="product-image">
+                                <img src="https://bizweb.dktcdn.net/thumb/large/100/485/241/products/untitled-2.png?v=1686285750047" alt="Bộ khay mứt 31.5cm Thiên Kim">
+                                <div class="action-buttons">...</div>
+                            </div>
+                            <h3 class="product-name">Bộ khay mứt 31.5cm Thiên Kim</h3>
+                            <div class="product-price">
+                                <span class="sale-price">1.688.500₫</span>
+                                <span class="original-price">3.000.000₫</span>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card">
+                            <span class="discount-badge">Giảm 62%</span>
+                            <div class="product-image">
+                                <img src="https://bizweb.dktcdn.net/thumb/large/100/485/241/products/untitled-2.png?v=1686285750047" alt="Bộ trà 0.35 L - IFP - Chỉ Vàng">
+                                <div class="action-buttons">...</div>
+                            </div>
+                            <h3 class="product-name">Bộ trà 0.35 L - IFP - Chỉ Vàng</h3>
+                            <div class="product-price">
+                                <span class="sale-price">764.500₫</span>
+                                <span class="original-price">2.000.000₫</span>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://bizweb.dktcdn.net/thumb/large/100/485/241/products/untitled-2.png?v=1686285750047" alt="Bộ trà 1.3 L - Hoàng Cung - Họa Tiết Vàng">
+                                <div class="action-buttons">...</div>
+                            </div>
+                            <h3 class="product-name">Bộ trà 1.3 L - Hoàng Cung - Họa Tiết Vàng</h3>
+                            <div class="product-price">
+                                <span class="sale-price">8.712.000₫</span>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://bizweb.dktcdn.net/thumb/large/100/485/241/products/untitled-2.png?v=1686285750047" alt="Bộ trà 1.3 L - Hoàng Cung - Sen Vàng">
+                                <div class="action-buttons">...</div>
+                            </div>
+                            <h3 class="product-name">Bộ trà 1.3 L - Hoàng Cung - Sen Vàng</h3>
+                            <div class="product-price">
+                                <span class="sale-price">5.929.000₫</span>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://bizweb.dktcdn.net/thumb/large/100/485/241/products/untitled-2.png?v=1686285750047" alt="Bộ trà 1.3 L - Hoàng Cung - Sen Vàng">
+                                <div class="action-buttons">...</div>
+                            </div>
+                            <h3 class="product-name">Bộ trà 1.3 L - Hoàng Cung - Sen Vàng</h3>
+                            <div class="product-price">
+                                <span class="sale-price">5.929.000₫</span>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://bizweb.dktcdn.net/thumb/large/100/485/241/products/untitled-2.png?v=1686285750047" alt="Bộ trà 1.3 L - Hoàng Cung - Sen Vàng">
+                                <div class="action-buttons">...</div>
+                            </div>
+                            <h3 class="product-name">Bộ trà 1.3 L - Hoàng Cung - Sen Vàng</h3>
+                            <div class="product-price">
+                                <span class="sale-price">5.929.000₫</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="news-section">
+        <div class="container">
+
+        <div class="section-header">
+            <h2>Tin tức mới nhất</h2>
+            <p>Cập nhật những tin tức xu hướng mới nhất hiện nay.</p>
+        </div>
+
+        <div class="news-grid">
+
+            <article class="news-card">
+                <div class="card-image-container">
+                    <a href="./news-detail.html">
+                        <img src="https://bizweb.dktcdn.net/100/485/241/articles/blog2.jpg?v=1685960411533" alt="Hình ảnh bài viết về gốm sứ">
+                        <span class="date-badge">
+                            <i class="fa-regular fa-clock"></i> Ngày 17/11/2025
+                        </span>
+                    </a>
+                </div>
+                <div class="card-content">
+                    <h3><a href="./news-detail.html">Mẹo phát hiện ly cốc bát đĩa nhiễm độc và cách phòng tránh</a></h3>
+                    <a href="./news-detail.html" class="read-more">Xem thêm</a>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <div class="card-image-container">
+                    <a href="#">
+                        <img src="https://bizweb.dktcdn.net/100/485/241/articles/blog2.jpg?v=1685960411533" alt="Hình ảnh bài viết về bảo quản ấm chén">
+                        <span class="date-badge">
+                            <i class="fa-regular fa-clock"></i> Ngày 17/11/2025
+                        </span>
+                    </a>
+                </div>
+                <div class="card-content">
+                    <h3><a href="./news-detail.html">Bí quyết bảo quản bộ ấm chén uống trà trông như mới</a></h3>
+                    <a href="./news-detail.html" class="read-more">Xem thêm</a>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <div class="card-image-container">
+                    <a href="./news-detail.html">
+                        <img src="https://bizweb.dktcdn.net/100/485/241/articles/blog2.jpg?v=1685960411533" alt="Hình ảnh bài viết về nghệ thuật gốm">
+                        <span class="date-badge">
+                            <i class="fa-regular fa-clock"></i> Ngày 17/11/2025
+                        </span>
+                    </a>
+                </div>
+                <div class="card-content">
+                    <h3><a href="./news-detail.html">Tinh hoa nghề gốm xưa và nay</a></h3>
+                    <a href="./news-detail.html" class="read-more">Xem thêm</a>
+                </div>
+            </article>
+        </div>
+        <a href="./news.html" class="btn-view-all">Xem Tất Cả</a>
         </div>
     </section>
 </main>
@@ -355,6 +474,118 @@
         </div>
     </div>
 </footer>
-<script src="script.js"></script>
+<input type="checkbox" id="search-toggle" class="hidden-checkbox">
+
+<label for="search-toggle" class="search-overlay"></label>
+
+<div id="search-panel">
+    <div class="search-panel-header">
+        <label for="search-toggle" class="close-search-label">
+            <i class="fa-solid fa-xmark"></i>
+        </label>
+    </div>
+    
+    <div class="search-panel-content">
+        <div class="search-form">
+            <input type="text" placeholder="Nhập tên sản phẩm...">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        </div>
+        
+        <h3>Sản phẩm được tìm nhiều nhất</h3>
+        
+        <div class="search-results-list">
+            
+            <a href="./search.html" class="search-result-item">
+                <div class="search-item-image">
+                    <img src="https://via.placeholder.com/60x60/f5f5f5/cccccc?text=Img" alt="Ca tháp">
+                </div>
+                <div class="search-item-info">
+                    <p class="product-name">Ca tháp quai tròn 0.35 L - Jasmine - Trắng</p>
+                    <p class="product-price">93.500đ</p>
+                </div>
+            </a>
+
+            <a href="#" class="search-result-item">
+                <div class="search-item-image">
+                    <img src="https://via.placeholder.com/60x60/f5f5f5/cccccc?text=Img" alt="Ca thon">
+                </div>
+                <div class="search-item-info">
+                    <p class="product-name">Ca thon quai số 7 0.33 L - Jasmine - Trắng</p>
+                    <p class="product-price">79.200đ</p>
+                </div>
+            </a>
+
+            <a href="#" class="search-result-item">
+                <div class="search-item-image">
+                    <img src="https://via.placeholder.com/60x60/f5f5f5/cccccc?text=Img" alt="Ca trà">
+                </div>
+                <div class="search-item-info">
+                    <p class="product-name">Ca trà 0.30 L - Mẫu Đơn IFP - Chỉ Vàng</p>
+                    <p class="product-price">176.000đ</p>
+                </div>
+            </a>
+
+            <a href="#" class="search-result-item">
+                <div class="search-item-image">
+                    <img src="https://via.placeholder.com/60x60/f5f5f5/cccccc?text=Img" alt="Ca trà">
+                </div>
+                <div class="search-item-info">
+                    <p class="product-name">Ca trà 0.30 L - Mẫu Đơn - Trắng</p>
+                    <p class="product-price">108.900đ</p>
+                </div>
+            </a>
+
+            <a href="#" class="search-result-item">
+                <div class="search-item-image">
+                    <img src="https://via.placeholder.com/60x60/f5f5f5/cccccc?text=Img" alt="Ca bia">
+                </div>
+                <div class="search-item-info">
+                    <p class="product-name">Ca bia 0.36 L - Jasmine - Trắng</p>
+                    <p class="product-price">75.900đ</p>
+                </div>
+            </a>
+
+        </div>
+    </div>
+</div>
+<script>
+    // Chờ cho toàn bộ nội dung trang web được tải xong
+    document.addEventListener("DOMContentLoaded", function() {
+        
+        // 1. Chọn phần tử section
+        const sliderSection = document.querySelector('.section_intro');
+        
+        // 2. Tạo một danh sách (mảng) chứa các ảnh nền
+        // (Bạn hãy thay bằng link ảnh của bạn)
+        const images = [
+            'https://denmaytre.net/wp-content/uploads/2019/12/may-tre-dan-ninh-so-vuon-minh-ra-bien-lon.jpg',
+            'https://madebymaries.com/wp-content/uploads/2021/09/ancient-2179091_1920.jpg',
+            'https://madebymaries.com/wp-content/uploads/2021/09/clay-1139098_1920.jpg' 
+        ];
+        
+        let currentIndex = 0; // Bắt đầu từ ảnh đầu tiên (vị trí 0)
+
+        // Hàm để thay đổi ảnh
+        function changeBackground() {
+            // Tăng chỉ số (index) lên 1
+            currentIndex++;
+            
+            // Nếu chỉ số vượt quá số lượng ảnh, quay lại ảnh đầu tiên
+            if (currentIndex >= images.length) {
+                currentIndex = 0;
+            }
+            
+            // Cập nhật thuộc tính background-image của section
+            // CSS transition ở trên sẽ lo phần hiệu ứng
+            sliderSection.style.backgroundImage = `url('${images[currentIndex]}')`;
+        }
+
+        // 3. Đặt ảnh nền đầu tiên khi tải trang
+        sliderSection.style.backgroundImage = `url('${images[0]}')`;
+
+        // 4. Tự động gọi hàm changeBackground() mỗi 5 giây
+        setInterval(changeBackground, 5000); // 5000ms = 5 giây
+    });
+</script>
 </body>
 </html>
