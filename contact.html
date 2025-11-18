@@ -331,22 +331,7 @@
         </div>
     </div>
     <script src="script.js"></script>
-    <script>
-
-        // Form submission
-        document.querySelector('form').addEventListener('submit', function (e) {
-            e.preventDefault();
-            alert('Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi sớm nhất.');
-            this.reset();
-        });
-
-        // Newsletter form
-        document.querySelector('.newsletter-form').addEventListener('submit', function (e) {
-            e.preventDefault();
-            alert('Đăng ký thành công!');
-            this.querySelector('input').value = '';
-        });
-    </script>
+    <script src="js/contact.js"></script>
 </body>
 
 </html>
