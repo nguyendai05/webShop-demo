@@ -130,3 +130,32 @@
     font-size: 13px;
     color: #333;
 }
+
+/* Ripple Effect Animation */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(216, 67, 21, 0.3);
+    transform: scale(0);
+    animation: ripple-animation 0.6s ease-out;
+    pointer-events: none;
+    z-index: 10;
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/* Category Item Enhanced Interactions */
+.category-item {
+    transition: transform 150ms ease;
+}
+
+.category-circle {
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 300ms ease;
+}
