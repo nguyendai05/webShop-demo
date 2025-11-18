@@ -93,6 +93,34 @@
  /* Store List */
  .store-list {
      padding: 15px;
+     overflow-y: auto;
+     max-height: calc(100vh - 200px);
+ }
+
+ /* Custom Scrollbar for Store List */
+ .store-list::-webkit-scrollbar {
+     width: 6px;
+ }
+
+ .store-list::-webkit-scrollbar-track {
+     background: #f0f0f0;
+     border-radius: 10px;
+ }
+
+ .store-list::-webkit-scrollbar-thumb {
+     background: #ff8c00;
+     border-radius: 10px;
+     transition: background 300ms ease;
+ }
+
+ .store-list::-webkit-scrollbar-thumb:hover {
+     background: #e67e00;
+ }
+
+ /* Firefox scrollbar */
+ .store-list {
+     scrollbar-width: thin;
+     scrollbar-color: #ff8c00 #f0f0f0;
  }
 
  .store-card {
