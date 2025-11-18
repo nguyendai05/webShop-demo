@@ -1513,3 +1513,443 @@
     `;
     document.head.appendChild(style);
 })();
+
+// ============================================================
+// H. RESPONSIVE BEHAVIORS (Hành vi responsive)
+// ============================================================
+
+(function() {
+    'use strict';
+
+    // Đảm bảo DOM đã load xong
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initResponsiveBehaviors);
+    } else {
+        initResponsiveBehaviors();
+    }
+
+    function initResponsiveBehaviors() {
+        // ============================================================
+        // 1. MOBILE ADAPTATIONS
+        // ============================================================
+
+        /**
+         * Check if mobile screen
+         */
+        function isMobile() {
+            return window.innerWidth < 768;
+        }
+
+        /**
+         * Apply mobile-specific behaviors
+         */
+        function applyMobileAdaptations() {
+            const prevButton = document.getElementById('prevButton');
+            const nextButton = document.getElementById('nextButton');
+            const searchSection = document.querySelector('.search-section');
+
+            if (isMobile()) {
+                // Hide carousel arrows on mobile (touch swipe already implemented)
+                if (prevButton) prevButton.style.display = 'none';
+                if (nextButton) nextButton.style.display = 'none';
+
+                // Simplify search section for mobile
+                if (searchSection) {
+                    searchSection.classList.add('mobile-search');
+                }
+            } else {
+                // Show carousel arrows on desktop
+                if (prevButton) prevButton.style.display = 'flex';
+                if (nextButton) nextButton.style.display = 'flex';
+
+                // Remove mobile search class
+                if (searchSection) {
+                    searchSection.classList.remove('mobile-search');
+                }
+            }
+        }
+
+        // Apply on load
+        applyMobileAdaptations();
+
+        // Apply on resize with debounce
+        let resizeTimeout;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(applyMobileAdaptations, 150);
+        });
+
+        // ============================================================
+        // 2. TOUCH GESTURES - Pull to Refresh
+        // ============================================================
+
+        const storeList = document.querySelector('.store-list');
+        if (storeList && isMobile()) {
+            let touchStartY = 0;
+            let touchEndY = 0;
+            let pullDistance = 0;
+            let isPulling = false;
+
+            // Create pull to refresh indicator
+            const pullIndicator = document.createElement('div');
+            pullIndicator.className = 'pull-to-refresh-indicator';
+            pullIndicator.innerHTML = '<i class="fas fa-sync-alt"></i><span>Kéo để làm mới</span>';
+            pullIndicator.style.cssText = `
+                position: absolute;
+                top: -60px;
+                left: 0;
+                right: 0;
+                height: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                color: #ff8c00;
+                font-size: 14px;
+                transition: transform 300ms ease;
+                z-index: 100;
+            `;
+            storeList.style.position = 'relative';
+            storeList.insertBefore(pullIndicator, storeList.firstChild);
+
+            storeList.addEventListener('touchstart', function(e) {
+                if (storeList.scrollTop === 0) {
+                    touchStartY = e.touches[0].clientY;
+                    isPulling = true;
+                }
+            }, { passive: true });
+
+            storeList.addEventListener('touchmove', function(e) {
+                if (!isPulling) return;
+
+                touchEndY = e.touches[0].clientY;
+                pullDistance = touchEndY - touchStartY;
+
+                if (pullDistance > 0 && pullDistance < 100) {
+                    pullIndicator.style.transform = `translateY(${pullDistance}px)`;
+                    const icon = pullIndicator.querySelector('i');
+                    icon.style.transform = `rotate(${pullDistance * 3.6}deg)`;
+                }
+            }, { passive: true });
+
+            storeList.addEventListener('touchend', function() {
+                if (pullDistance > 80) {
+                    // Trigger refresh
+                    pullIndicator.querySelector('span').textContent = 'Đang làm mới...';
+                    const icon = pullIndicator.querySelector('i');
+                    icon.style.animation = 'spin 1s linear infinite';
+
+                    // Simulate refresh (reload filters)
+                    setTimeout(() => {
+                        // Reset filters
+                        const searchInput = document.querySelector('.search-input');
+                        const provinceDropdown = document.querySelector('.filter-dropdown');
+                        const districtDropdown = document.querySelector('.district-dropdown');
+
+                        if (searchInput) searchInput.value = '';
+                        if (provinceDropdown) provinceDropdown.selectedIndex = 0;
+                        if (districtDropdown) {
+                            districtDropdown.selectedIndex = 0;
+                            districtDropdown.disabled = true;
+                        }
+
+                        // Show all store cards
+                        const storeCards = document.querySelectorAll('.store-card');
+                        storeCards.forEach(card => {
+                            card.style.display = 'block';
+                            card.style.opacity = '1';
+                        });
+
+                        showToast('Đã làm mới danh sách cửa hàng', 'success');
+
+                        icon.style.animation = '';
+                        pullIndicator.querySelector('span').textContent = 'Kéo để làm mới';
+                    }, 1000);
+                }
+
+                // Reset
+                pullIndicator.style.transform = 'translateY(0)';
+                pullIndicator.querySelector('i').style.transform = 'rotate(0)';
+                isPulling = false;
+                pullDistance = 0;
+            }, { passive: true });
+        }
+
+        console.log('Responsive behaviors initialized successfully');
+    }
+})();
+
+// ============================================================
+// I. PAGE LOAD ANIMATION SEQUENCE
+// ============================================================
+
+(function() {
+    'use strict';
+
+    // Đảm bảo DOM đã load xong
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initPageLoadAnimations);
+    } else {
+        initPageLoadAnimations();
+    }
+
+    function initPageLoadAnimations() {
+        // Set initial states (hidden)
+        const categoriesWrapper = document.querySelector('.categories-wrapper');
+        const searchSection = document.querySelector('.search-section');
+        const storeCards = document.querySelectorAll('.store-card');
+        const mapSection = document.querySelector('.map-section');
+        const floatButtons = document.querySelectorAll('.float-btn, .play-btn');
+
+        // Hide elements initially
+        if (categoriesWrapper) {
+            categoriesWrapper.style.opacity = '0';
+            categoriesWrapper.style.transform = 'translateY(-20px)';
+        }
+
+        if (searchSection) {
+            searchSection.style.opacity = '0';
+            searchSection.style.transform = 'translateY(-10px)';
+        }
+
+        storeCards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+        });
+
+        if (mapSection) {
+            mapSection.style.opacity = '0';
+        }
+
+        floatButtons.forEach(btn => {
+            btn.style.opacity = '0';
+            btn.style.transform = 'scale(0.8)';
+        });
+
+        // Animation sequence
+        const timeline = [
+            // 0ms: Categories fade in
+            { delay: 100, element: categoriesWrapper, animation: fadeIn },
+            // 300ms: Search section slide down
+            { delay: 300, element: searchSection, animation: slideDown },
+            // 500ms: Store cards fade in (stagger)
+            { delay: 500, elements: storeCards, animation: staggerFadeIn, staggerDelay: 100 },
+            // 800ms: Map fade in
+            { delay: 800, element: mapSection, animation: fadeIn },
+            // 1000ms: Floating buttons fade in (stagger)
+            { delay: 1000, elements: floatButtons, animation: staggerScaleIn, staggerDelay: 50 }
+        ];
+
+        /**
+         * Fade in animation
+         */
+        function fadeIn(element) {
+            if (!element) return;
+            element.style.transition = 'opacity 400ms ease, transform 400ms ease';
+            element.style.opacity = '1';
+            element.style.transform = 'translateY(0)';
+        }
+
+        /**
+         * Slide down animation
+         */
+        function slideDown(element) {
+            if (!element) return;
+            element.style.transition = 'opacity 300ms ease, transform 300ms ease';
+            element.style.opacity = '1';
+            element.style.transform = 'translateY(0)';
+        }
+
+        /**
+         * Stagger fade in for multiple elements
+         */
+        function staggerFadeIn(elements, staggerDelay) {
+            if (!elements || elements.length === 0) return;
+            elements.forEach((element, index) => {
+                setTimeout(() => {
+                    element.style.transition = 'opacity 400ms ease, transform 400ms ease';
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }, index * staggerDelay);
+            });
+        }
+
+        /**
+         * Stagger scale in for multiple elements
+         */
+        function staggerScaleIn(elements, staggerDelay) {
+            if (!elements || elements.length === 0) return;
+            elements.forEach((element, index) => {
+                setTimeout(() => {
+                    element.style.transition = 'opacity 300ms ease, transform 300ms ease';
+                    element.style.opacity = '1';
+                    element.style.transform = 'scale(1)';
+                }, index * staggerDelay);
+            });
+        }
+
+        /**
+         * Execute timeline
+         */
+        timeline.forEach(item => {
+            setTimeout(() => {
+                if (item.element) {
+                    item.animation(item.element);
+                } else if (item.elements) {
+                    item.animation(item.elements, item.staggerDelay);
+                }
+            }, item.delay);
+        });
+
+        console.log('Page load animations initialized successfully');
+    }
+})();
+
+// ============================================================
+// J. PERFORMANCE OPTIMIZATIONS
+// ============================================================
+
+(function() {
+    'use strict';
+
+    // ============================================================
+    // 1. THROTTLE FUNCTION
+    // ============================================================
+
+    /**
+     * Throttle function for scroll events
+     * @param {Function} func - Function to throttle
+     * @param {number} limit - Time limit in ms
+     */
+    window.throttle = function(func, limit) {
+        let inThrottle;
+        return function() {
+            const args = arguments;
+            const context = this;
+            if (!inThrottle) {
+                func.apply(context, args);
+                inThrottle = true;
+                setTimeout(() => inThrottle = false, limit);
+            }
+        };
+    };
+
+    // ============================================================
+    // 2. OPTIMIZE SCROLL EVENTS
+    // ============================================================
+
+    const storeList = document.querySelector('.store-list');
+    if (storeList) {
+        // Get existing scroll handlers
+        const scrollHandlers = [];
+
+        // Replace with throttled version
+        const optimizedScrollHandler = window.throttle(function() {
+            // Trigger all scroll handlers
+            scrollHandlers.forEach(handler => handler());
+        }, 100);
+
+        // Store reference to add handlers
+        window.addOptimizedScrollHandler = function(handler) {
+            scrollHandlers.push(handler);
+        };
+
+        storeList.addEventListener('scroll', optimizedScrollHandler);
+    }
+
+    // ============================================================
+    // 3. REQUEST ANIMATION FRAME FOR SMOOTH ANIMATIONS
+    // ============================================================
+
+    /**
+     * Smooth scroll with RAF
+     */
+    window.smoothScrollTo = function(element, target, duration) {
+        const start = element.scrollTop;
+        const change = target - start;
+        const startTime = performance.now();
+
+        function animateScroll(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+
+            // Easing function (ease-out)
+            const easeOut = 1 - Math.pow(1 - progress, 3);
+
+            element.scrollTop = start + (change * easeOut);
+
+            if (progress < 1) {
+                requestAnimationFrame(animateScroll);
+            }
+        }
+
+        requestAnimationFrame(animateScroll);
+    };
+
+    // ============================================================
+    // 4. LAZY LOADING FOR IMAGES (If needed)
+    // ============================================================
+
+    /**
+     * Intersection Observer for lazy loading
+     */
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    if (img.dataset.src) {
+                        img.src = img.dataset.src;
+                        img.removeAttribute('data-src');
+                        observer.unobserve(img);
+                    }
+                }
+            });
+        }, {
+            rootMargin: '50px'
+        });
+
+        // Observe all images with data-src
+        document.querySelectorAll('img[data-src]').forEach(img => {
+            imageObserver.observe(img);
+        });
+    }
+
+    // ============================================================
+    // 5. DEBOUNCE (Already implemented in search, expose globally)
+    // ============================================================
+
+    /**
+     * Debounce function (global utility)
+     */
+    window.debounce = function(func, delay) {
+        let timeoutId;
+        return function(...args) {
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => func.apply(this, args), delay);
+        };
+    };
+
+    console.log('Performance optimizations initialized successfully');
+})();
+
+// ============================================================
+// INITIALIZE ALL MODULES
+// ============================================================
+
+(function() {
+    'use strict';
+
+    console.log('%c Cart.js Fully Loaded! ', 'background: #ff8c00; color: white; font-size: 16px; padding: 8px; border-radius: 4px;');
+    console.log('All modules initialized:');
+    console.log('✓ Categories Carousel');
+    console.log('✓ Search & Filter System');
+    console.log('✓ Store Card Interactions');
+    console.log('✓ Floating Buttons');
+    console.log('✓ Map Interactions');
+    console.log('✓ Loading States');
+    console.log('✓ Toast Notifications');
+    console.log('✓ Responsive Behaviors');
+    console.log('✓ Page Load Animations');
+    console.log('✓ Performance Optimizations');
+})();
