@@ -94,7 +94,7 @@
  .store-list {
      padding: 15px;
      overflow-y: auto;
-     max-height: calc(100vh - 200px);
+     max-height: 100vh;
  }
 
  /* Custom Scrollbar for Store List */
@@ -187,7 +187,7 @@
      flex: 1;
      position: relative;
      background: #e5e3df;
-     min-height: 700px; /* Increased height for better visibility */
+     min-height: 100vh;
  }
 
  #map {
@@ -261,28 +261,6 @@
      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
  }
 
- /* Mobile Search Simplification */
- .mobile-search .search-box {
-     flex-direction: column;
-     gap: 10px;
- }
-
- .mobile-search .search-input,
- .mobile-search .filter-dropdown,
- .mobile-search .district-dropdown {
-     width: 100%;
-     min-width: auto;
- }
-
- /* Pull to Refresh Indicator (Mobile) */
- .pull-to-refresh-indicator {
-     font-weight: 500;
- }
-
- .pull-to-refresh-indicator i {
-     font-size: 18px;
- }
-
  /* Responsive */
  @media (max-width: 768px) {
      .container {
@@ -291,112 +269,10 @@
 
      .sidebar {
          width: 100%;
-         height: auto;
-         max-height: 60vh;
-     }
-
-     .store-list {
-         max-height: 50vh;
+         height: 50vh;
      }
 
      .map-section {
          height: 50vh;
-         min-height: 400px;
-     }
-
-     /* Hide navigation buttons on mobile (JS handles this too) */
-     .nav-button {
-         display: none !important;
-     }
-
-     /* Adjust floating buttons for mobile */
-     .float-buttons {
-         bottom: 20px;
-         right: 20px;
-         gap: 8px;
-     }
-
-     .float-btn {
-         width: 45px;
-         height: 45px;
-         font-size: 18px;
-     }
-
-     .play-btn {
-         bottom: 20px;
-         left: 20px;
-         width: 45px;
-         height: 45px;
-         font-size: 18px;
-     }
-
-     /* Simplify search section */
-     .search-section {
-         padding: 15px;
-     }
-
-     .search-box {
-         flex-direction: column;
-         gap: 10px;
-     }
-
-     .search-input,
-     .filter-dropdown,
-     .district-dropdown {
-         width: 100%;
-         min-width: auto;
-     }
-
-     /* Store cards spacing */
-     .store-card {
-         padding: 15px;
-         margin-bottom: 12px;
-     }
-
-     /* Categories wrapper */
-     .categories-wrapper {
-         padding: 0 20px;
-     }
-
-     .category-circle {
-         width: 80px;
-         height: 80px;
-     }
-
-     .category-name {
-         font-size: 12px;
-     }
- }
-
- /* Small mobile devices */
- @media (max-width: 480px) {
-     .search-section {
-         padding: 12px;
-     }
-
-     .store-card {
-         padding: 12px;
-     }
-
-     .float-buttons {
-         bottom: 15px;
-         right: 15px;
-     }
-
-     .float-btn {
-         width: 40px;
-         height: 40px;
-         font-size: 16px;
-     }
-
-     .play-btn {
-         width: 40px;
-         height: 40px;
-         font-size: 16px;
-     }
-
-     .category-circle {
-         width: 70px;
-         height: 70px;
      }
  }
