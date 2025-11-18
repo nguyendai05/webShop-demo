@@ -15,7 +15,60 @@ const nextButton = document.getElementById('nextButton');
 const scrollAmount = 320; // Pixels mỗi lần scroll
 
 // ========================================
-// 2. NAVIGATION BUTTONS
+// 2. CATEGORY DATA - Đồng bộ với header menu
+// ========================================
+
+/**
+ * Dữ liệu danh mục sản phẩm
+ * Bao gồm: tên, hình ảnh, danh mục con, màu chủ đạo, mô tả
+ */
+const categoryData = {
+    'may-tre-dan': {
+        name: 'Đồ mây tre đan',
+        image: 'https://denmaytre.net/wp-content/uploads/2019/12/san-pham-may-tre-dan-xuat-khau-lang-nghe-tang-tien.jpg.webp',
+        subcategories: ['Giỏ', 'Đèn tre', 'Túi cói'],
+        color: '#8B4513',
+        description: 'Sản phẩm thủ công từ mây tre tự nhiên'
+    },
+    'gom-su': {
+        name: 'Gốm sứ',
+        image: 'https://cdn.pixabay.com/photo/2023/05/29/18/10/pottery-8026823_1280.jpg',
+        subcategories: ['Bình', 'Ấm chén', 'Tượng gốm'],
+        color: '#d84315',
+        description: 'Gốm sứ Bát Tràng truyền thống'
+    },
+    'go-my-nghe': {
+        name: 'Đồ gỗ mỹ nghệ',
+        image: 'https://dntt.mediacdn.vn/197608888129458176/2023/7/14/27-1-1689328749793900374452.jpg',
+        subcategories: ['Tượng', 'Hộp', 'Khung ảnh'],
+        color: '#6B4423',
+        description: 'Nghệ thuật chạm khắc gỗ tinh xảo'
+    },
+    'det-theu': {
+        name: 'Dệt thêu & may mặc thủ công',
+        image: 'https://images.pexels.com/photos/236748/pexels-photo-236748.jpeg',
+        subcategories: ['Khăn', 'Túi', 'Áo thổ cẩm'],
+        color: '#C41E3A',
+        description: 'Thổ cẩm và dệt thêu truyền thống'
+    },
+    'trang-suc': {
+        name: 'Trang sức & phụ kiện thủ công',
+        image: 'https://nvhphunu.vn/wp-content/uploads/2023/12/2023-07-29_0000478.png',
+        subcategories: ['Vòng', 'Dây chuyền', 'Nhẫn'],
+        color: '#FFD700',
+        description: 'Trang sức thủ công độc đáo'
+    },
+    'trang-tri': {
+        name: 'Đồ trang trí & quà tặng nghệ thuật',
+        image: 'https://chus.vn/images/detailed/239/10237_21_F1.jpg',
+        subcategories: ['Nến', 'Thiệp 3D', 'Tranh giấy'],
+        color: '#FF6B6B',
+        description: 'Quà tặng ý nghĩa và nghệ thuật'
+    }
+};
+
+// ========================================
+// 3. NAVIGATION BUTTONS
 // ========================================
 
 /**
@@ -43,7 +96,7 @@ if (nextButton) {
 }
 
 // ========================================
-// 3. BUTTON STATES (Ẩn/Hiện Nút)
+// 4. BUTTON STATES (Ẩn/Hiện Nút)
 // ========================================
 
 /**
@@ -91,7 +144,7 @@ if (categoriesContainer) {
 window.addEventListener('resize', updateButtons);
 
 // ========================================
-// 4. CATEGORY HOVER EFFECTS & RIPPLE
+// 5. CATEGORY HOVER EFFECTS & RIPPLE
 // ========================================
 
 /**
@@ -159,7 +212,7 @@ categoryItems.forEach(item => {
 });
 
 // ========================================
-// 5. KHỞI ĐỘNG
+// 6. KHỞI ĐỘNG
 // ========================================
 
 /**
