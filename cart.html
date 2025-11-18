@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/cart.css">
-    <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/hero-section.css">
 </head>
@@ -118,50 +117,70 @@
     </header>
     <main>
         <div class="hero-section-container">
-            <section class="hero">
-                <div class="hero-content">
-                    <h1>Cửa hàng</h1>
-                    <div class="breadcrumb">
-                        <a href="#">Trang chủ</a> / Cửa hàng
-                    </div>
-                </div>
-            </section>
-
-            <div class="categories-wrapper">
-                <button id="prevButton" class="nav-button prev-button">&#8249;</button>
-                <div class="categories" id="categoriesContainer">
-                    <div class="category-item">
-                        <div class="category-circle">
-                            <img src="//bizweb.dktcdn.net/100/485/241/themes/911577/assets/danhmuc_1.jpg?1758008990171"
-                                alt="Category">
-                        </div>
-                        <div class="category-name">Nồi sứ dinh dưỡng</div>
-                    </div>
-                    <div class="category-item">
-                        <div class="category-circle">
-                            <img src="//bizweb.dktcdn.net/100/485/241/themes/911577/assets/danhmuc_2.jpg?1758008990171"
-                                alt="Category">
-                        </div>
-                        <div class="category-name">Phòng ăn</div>
-                    </div>
-                    <div class="category-item">
-                        <div class="category-circle">
-                            <img src="//bizweb.dktcdn.net/100/485/241/themes/911577/assets/danhmuc_3.jpg?1758008990171"
-                                alt="Category">
-                        </div>
-                        <div class="category-name">Sứ dinh dưỡng</div>
-                    </div>
-                    <div class="category-item">
-                        <div class="category-circle">
-                            <img src="//bizweb.dktcdn.net/100/485/241/themes/911577/assets/danhmuc_4.jpg?1758008990171"
-                                alt="Category">
-                        </div>
-                        <div class="category-name">Trà - cà phê</div>
-                    </div>
-                </div>
-                <button id="nextButton" class="nav-button next-button">&#8250;</button>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Liên hệ</h1>
+            <div class="breadcrumb">
+                <a href="#">Trang chủ</a> / Liên hệ
             </div>
         </div>
+    </section>
+
+    <div class="categories-wrapper">
+        <button id="prevButton" class="nav-button prev-button">&#8249;</button>
+        <div class="categories" id="categoriesContainer">
+            <!-- Đồng bộ với header menu -->
+            <div class="category-item" data-category="may-tre-dan">
+                <div class="category-circle">
+                    <img src="https://denmaytre.net/wp-content/uploads/2019/12/san-pham-may-tre-dan-xuat-khau-lang-nghe-tang-tien.jpg.webp"
+                        alt="Đồ mây tre đan">
+                </div>
+                <div class="category-name">Đồ mây tre đan</div>
+            </div>
+
+            <div class="category-item" data-category="gom-su">
+                <div class="category-circle">
+                    <img src="https://cdn.pixabay.com/photo/2023/05/29/18/10/pottery-8026823_1280.jpg"
+                        alt="Gốm sứ">
+                </div>
+                <div class="category-name">Gốm sứ</div>
+            </div>
+
+            <div class="category-item" data-category="go-my-nghe">
+                <div class="category-circle">
+                    <img src="https://dntt.mediacdn.vn/197608888129458176/2023/7/14/27-1-1689328749793900374452.jpg"
+                        alt="Đồ gỗ mỹ nghệ">
+                </div>
+                <div class="category-name">Đồ gỗ mỹ nghệ</div>
+            </div>
+
+            <div class="category-item" data-category="det-theu">
+                <div class="category-circle">
+                    <img src="https://images.pexels.com/photos/236748/pexels-photo-236748.jpeg"
+                        alt="Dệt thêu & may mặc thủ công">
+                </div>
+                <div class="category-name">Dệt thêu & may mặc thủ công</div>
+            </div>
+
+            <div class="category-item" data-category="trang-suc">
+                <div class="category-circle">
+                    <img src="https://nvhphunu.vn/wp-content/uploads/2023/12/2023-07-29_0000478.png"
+                        alt="Trang sức & phụ kiện thủ công">
+                </div>
+                <div class="category-name">Trang sức & phụ kiện thủ công</div>
+            </div>
+
+            <div class="category-item" data-category="trang-tri">
+                <div class="category-circle">
+                    <img src="https://chus.vn/images/detailed/239/10237_21_F1.jpg"
+                        alt="Đồ trang trí & quà tặng nghệ thuật">
+                </div>
+                <div class="category-name">Đồ trang trí & quà tặng nghệ thuật</div>
+            </div>
+        </div>
+        <button id="nextButton" class="nav-button next-button">&#8250;</button>
+    </div>
+</div>
         <div class="search-section">
             <div class="search-box">
                 <input type="text" class="search-input" placeholder="Nhập tên cửa hàng bạn muốn tìm">
@@ -359,16 +378,6 @@
                 storeCards.forEach(c => c.style.borderColor = '#ff8c00');
                 this.style.borderColor = '#ff5500';
             });
-        });
-
-        // Location button
-        document.querySelector('.btn-location').addEventListener('click', function () {
-            alert('Đang xác định vị trí của bạn...');
-        });
-
-        // Messenger button
-        document.querySelector('.btn-messenger').addEventListener('click', function () {
-            window.open('https://m.me/your-page', '_blank');
         });
     </script>
 </body>
